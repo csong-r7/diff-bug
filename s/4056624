@@ -1,0 +1,28 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="72083b5a-c212-4dda-bd57-406b49e0b78a" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2010-11-17T17:50:05.112Z" PublisherID="923ae562-605a-4ba7-baca-950d77fd85ea"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Bing Bar NOT present</upd:Title>
+        <upd:Description>Checks for Bing Bar version 3,4,5,6 NOT being on the system. 
+
+Note this is in the Windows Live category, will work only if WL toolbar is on the system</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="0ea196ba-7a32-4e76-afd8-46bd54ecd3c6"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSN\Toolbar" Value="Version" Type="REG_SZ" RegType32="true"/>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5d7f7ad1-85e3-4be2-942d-77576daf6299" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-01-03T01:22:41.978Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="781680" MinDownloadSize="506123">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7136"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\LSASRV.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7147"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\LSASRV.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="jQfN18s+44Gw00Xc/fp8k5PZN6A=" DigestAlgorithm="SHA1" FileName="Windows2000-KB943485-x86-Express-PTB.EXE" Size="498728" Modified="2007-11-18T23:45:09.893" PatchingType="Express"/>
+      <upd:File Digest="7fWG7x+oWNMeROab2abAvAHXI2U=" DigestAlgorithm="SHA1" FileName="Windows2000-KB943485-x86-PTB.EXE" Size="781680" Modified="2007-11-18T23:45:10.173" PatchingType="SelfContained"/>
+      <upd:File Digest="K1limwvWhRJNseFROFRafeR27hg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB943485-x86-PTB.psf" Size="1024044" Modified="2007-11-18T23:45:10.58" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

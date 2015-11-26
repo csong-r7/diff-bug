@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="affae762-8ab8-40a7-b9c7-0617cbf5594c" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-09-03T19:26:05.716Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1537608" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary de</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="d633bdc5-c56a-45de-8519-a67fd1e87f29"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\Microsoft Shared\VGX\VGX.DLL" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1612"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\Microsoft Shared\VGX\VGX.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="6.0.2800.1106"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="6.0.2900.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="6.0.2800.1106"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="6.0.2900.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="dDg/sixY3a+qk5A8+579mN0jLqI=" DigestAlgorithm="SHA1" FileName="IE6.0sp1-KB938464-Windows2000-x86-DEU.exe" Size="1537608" Modified="2008-07-30T12:40:04.357" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

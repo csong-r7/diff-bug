@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7407f7fb-57a3-4050-9260-c9a91002ce8c" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T05:01:00.187Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="568576" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\rdpwd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4996"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="4tFxIMvJfja4kFDHUcGlgwvwSOE=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2685939-x86-enu.exe" Size="568576" Modified="2012-05-30T21:17:07.687Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ZRASmRRRCgfmlVfop0+ZHrzV1J89nDbBFuWHkt8i+G8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

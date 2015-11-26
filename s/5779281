@@ -1,0 +1,53 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="56fc1dc5-f180-4979-a12c-b55beb99aad4" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T02:19:22.931Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="740448" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="925a2f73-b455-43f1-945b-05d7970ce96a"/>
+          <upd:UpdateIdentity UpdateID="ac3f94ca-1be9-4abb-a156-605bde52906f"/>
+          <upd:UpdateIdentity UpdateID="d4582781-71b3-4c1a-a56e-256285ad219f"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6100" Csidl="36"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\TabletPC" Value="Installed" Comparison="EqualTo" Data="1"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\MediaCenter" Value="Installed" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{FDC11A6F-17D1-48f9-9EA3-9051954BAA24}" Value="Version" Comparison="EqualTo" Data="1.0.3705.3"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="WWwA25fC/4rSKKAsioo/YqIa+T0=" DigestAlgorithm="SHA1" FileName="ndp1.0sp3-kb2656378-x86-ocm-cht.exe" Size="740448" Modified="2012-05-15T12:54:19.493Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ugou7zFWrX+8ZS2niBpr5uCNZMIYj/oKNXVLiKgI0ww=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

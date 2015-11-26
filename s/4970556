@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d7d77cc4-0d96-44fc-8aae-98618003e9b0" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:34:06.721Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="6614936" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:UpdateIdentity UpdateID="f3ee5fed-5660-45e4-b629-4d44f214e887"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a0dd7e72-90ec-41e3-b370-c86a245cd44f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiProductInstalled ProductCode="{c2f60bda-462a-4a72-8e4d-ca431a56e9ea}"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1033" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1041" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1031" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1040" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1036" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\3082" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1028" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\2052" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1042" Value="Install" Type="REG_DWORD"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\8.0\RED\1049" Value="Install" Type="REG_DWORD"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="3vCm0f3tPWZteLoWHxyqCRqurSM=" DigestAlgorithm="SHA1" FileName="vcredist_IA64.exe" Size="6614936" Modified="2011-06-03T10:31:09.093Z">
+        <upd:AdditionalDigest Algorithm="SHA256">88L/K1mk4gfQ6AapNZg26fZ9j4K/P72reSOotgYe2H4=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q:a /c:&quot;msiexec /i vcredist.msi /qn&quot;" Program="vcredist_IA64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

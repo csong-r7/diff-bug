@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7f679db9-c132-4311-965e-2109088d0758" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="700120" MinDownloadSize="560482" PublicationState="Published" CreationDate="2015-03-16T21:20:46.486Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb3002657-v2-x86-kor</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\netlogon.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5581"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\netlogon.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\netlogon.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\netlogon.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Exbe37zts1NTV030X2+rGqHEDsI=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3002657-v2-x86-kor.exe" Size="700120" Modified="2015-03-16T10:02:20Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">xrrAi787i3XX9n+rVE6uO8zaZteke0iBXH4rOknnDmw=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="EMUG1CQMRlrz11q6hcNkL6XQTSM=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3002657-v2-x86-express-kor.exe" Size="506592" Modified="2015-03-16T10:02:20Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">bMys4jZkI/Pss429hK7yFMnbA53orYl+42Skxxo/B0Y=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="0WSGDlpTDxiomIsbm+eoH+9dx3M=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3002657-v2-x86-kor.psf" Size="479687" Modified="2015-03-16T10:02:20Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">LLtXR9p5mUVE7UXtFyIH1oHGxijlsJPQs4QfEzSvF9c=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

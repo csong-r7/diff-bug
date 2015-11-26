@@ -1,0 +1,97 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e0a9a49c-c296-403d-a198-7a2adcd31753" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="2228464" MinDownloadSize="764004" PublicationState="Published" CreationDate="2015-07-14T03:00:42.390Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ie7-windowsxp-kb3074886-x86-embedded-ara</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="37bd9a6b-cec8-40db-8605-8fe73774a725"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\mshtml.dll" Comparison="GreaterThanOrEqualTo" Version="7.0.6000.21482"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="GreaterThanOrEqualTo" Version="7.0.5730.11"/>
+                <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="LessThan" Version="7.1.0.0"/>
+              </lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\7.0\WU" Value="ForcePostUpdateInstall" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.0.5730.11"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="7.1.0.0"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="GreaterThanOrEqualTo" Version="7.0.5730.11"/>
+                <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="LessThan" Version="7.1.0.0"/>
+              </lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\7.0\WU" Value="ForcePostUpdateInstall" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.0.5730.11"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="7.1.0.0"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="RYg0rJwYknPFYfCxrMFB1wY2MCg=" DigestAlgorithm="SHA1" FileName="ie7-windowsxp-kb3074886-x86-embedded-ara.exe" Size="2228464" Modified="2015-07-08T14:25:53Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ENW1YNpd9FdCU56Nt9Z7IF0AC6t+mrfKMVLXDxjhn7s=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="SuPYYFzNbjzeMstInHxmbj1dE7A=" DigestAlgorithm="SHA1" FileName="ie7-windowsxp-kb3074886-x86-embedded-express-ara.cab" Size="257476" Modified="2015-07-08T14:25:53Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">4M9rQYY+RlXpokLcebGMdWCWHkmoYGe9HoKsWNVoajY=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="FdeKJRZq6yTf/tAxYWOAq8l2Wpg=" DigestAlgorithm="SHA1" FileName="ie7-windowsxp-kb3074886-x86-embedded-ara.psf" Size="29661488" Modified="2015-07-08T14:25:55Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">s9SEn+Wru17YdfsomFt4jHeAb5z4KQ/Tp8qQT/QMHLg=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

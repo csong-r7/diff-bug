@@ -1,0 +1,36 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="21d48c56-b34a-4ba7-a7f4-f8c7b963aff5" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2012-04-23T22:59:14.808Z" PublisherID="bccf8ca0-2819-4598-8d15-c1506e363e92"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows Defender: Product Enabled</upd:Title>
+        <upd:Description>Detects whether Microsoft Windows Defender has been disabled by either configuration or policy.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8c3fcc84-7410-4a95-8b89-a166a0190486"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!-- WD filter should not exist, if it does it means that Windows 8 Defender (AMP) is deployed -->
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WdFilter"/>
+          </lar:Not>
+          <lar:Or>
+            <!-- MpClient.dll exists in the Program Files folder (Vista + Win7) -->
+            <bar:FileExists Path="Windows Defender\MpClient.dll" Csidl="38"/>
+            <!-- MpClient.dll exists in the installation directory (downlevel) - 
+                 this is relevant to cases defender was installed by user -->
+            <bar:FileExistsPrependRegSz Path="MpClient.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender" Value="InstallLocation"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,70 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e8e0943b-fbbb-475c-8f24-bb9f01bbf756" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-12T07:08:10.778Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="385768" MinDownloadSize="315366">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ar</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Or>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\Itss.dll"/>
+              </lar:Not>
+              <bar:FileVersion Csidl="37" Path="\Itss.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.173"/>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp1hfm.exe" Comparison="GreaterThanOrEqualTo" Version="5.5.13.0"/>
+            <lar:Not>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            </lar:Not>
+          </lar:And>
+          <lar:And>
+            <lar:Or>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\itss.dll"/>
+              </lar:Not>
+              <bar:FileVersion Csidl="37" Path="\itss.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.173"/>
+            </lar:Or>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9BuHG1y03x2nARatpLBr7A4LmIE=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB840315-x86-ara.exe" Size="385768" Modified="2004-07-09T18:59:11.1774167-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="mT/2dtHpRjzpiHn5B3udk+UiX9g=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB840315-x86-ara.psf" Size="698608" Modified="2004-07-09T18:59:13.2086277-07:00" PatchingType="Express"/>
+      <upd:File Digest="gD/ypuuZyhzrJBsyTOWiXVJzPN0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB840315-x86-ara-express.exe" Size="315112" Modified="2004-07-09T18:59:14.2867320-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

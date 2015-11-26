@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="42798ed6-b019-4922-9503-2e776bc647e8" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="942320" MinDownloadSize="358598" PublicationState="Published" CreationDate="2014-02-10T23:02:12.703Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2916036-x86-hun</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\msxml3.dll" Comparison="GreaterThanOrEqualTo" Version="8.100.1054.0"/>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\msxml3.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\msxml3.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\msxml3.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="em1vBSpk7Og0ssveDtf6Ba4WXoo=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2916036-x86-hun.exe" Size="942320" Modified="2014-01-20T18:38:28Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">EQoeeiV/vB7RA03Q5Ex3L74VG5Lmc4IzX1DRdTis9eg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="XPvk06W6IAE5GCnYYfPwL+iFgQA=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2916036-x86-express-hun.cab" Size="256281" Modified="2014-01-20T18:38:28Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">2MATKCVZzW89fA1jMuID3Wo+7XIQ/uqXCq838m7eVmw=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="3yiFBgkB7+eaZUHUsoiilMG9vrc=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2916036-x86-hun.psf" Size="1227710" Modified="2014-01-20T18:38:29Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">SiNpm/xL00kk3xxegvaQ/X06s6n9ZAepVHnOQFkXYSU=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e4d60ae5-b4df-4c86-aa18-fc23450f32e6" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-04-07T22:22:57.857Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="660728" MinDownloadSize="529210">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing">
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB976323" Value="Installed" Comparison="EqualTo" Data="1"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\SMTPSVC" RegType32="false"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="pmdaXN6bK2D7INhWCrDPFaxq5o0=" DigestAlgorithm="SHA1" FileName="windows2000-kb976323-x86-nor.exe" Size="660728" Modified="2010-03-24T03:56:52.78" PatchingType="SelfContained"/>
+      <upd:File Digest="fpv7yfxivmHpag1824nNk/Kz6kM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB976323-x86-Express-NOR.EXE" Size="494456" Modified="2010-03-24T03:56:53.077" PatchingType="Express"/>
+      <upd:File Digest="xJ73Dqrt1H2tfLe4aVo08fORS7E=" DigestAlgorithm="SHA1" FileName="Windows2000-KB976323-x86-NOR.psf" Size="320892" Modified="2010-03-24T03:56:53.327" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

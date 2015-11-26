@@ -1,0 +1,93 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="58e2e30b-47bd-4811-a574-178b0ae99174" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-10-09T04:24:28.565Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="875056" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="77a1d80c-5efc-4546-9397-1eaef135377a"/>
+          <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\SysWOW64\msw3prt.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.3208"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\SysWOW64\msw3prt.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\msw3prt.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.3208"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\msw3prt.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\win32spl.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.3208"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\win32spl.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\SysWOW64\msw3prt.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4371"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\SysWOW64\msw3prt.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\msw3prt.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4371"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\msw3prt.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\win32spl.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4371"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\win32spl.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="iis_www" Type="REG_DWORD"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="iis_www" Comparison="EqualTo" Data="1"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="iis_www" Type="REG_DWORD"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="iis_www" Comparison="EqualTo" Data="1"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="hA0vbUKK2KpMGKS43WDXEoa96Gw=" DigestAlgorithm="SHA1" FileName="WindowsServer2003.WindowsXP-KB953155-x64-JPN.exe" Size="875056" Modified="2008-09-24T18:49:42.037" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

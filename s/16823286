@@ -1,0 +1,82 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b86f4caf-9bd0-4a6d-b359-a24bc02e136c" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="2513624" MinDownloadSize="1162032" PublicationState="Published" CreationDate="2015-03-16T21:34:36.630Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb3033395-v2-x86-rus</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\fltmgr.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5107"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\fltmgr.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5580"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntkrnlpa.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5580"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\drivers\fltmgr.sys"/>
+            <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+            <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="37" Path="\drivers\fltmgr.sys"/>
+          <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+          <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ya9NMSJZs6gNT73FlCWQhYdrp+Q=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3033395-v2-x86-rus.exe" Size="2513624" Modified="2015-03-13T07:46:18Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">PlmOEsEBPw/OX+VSMyU7K9mX8cvUZlUeA73Q9hx5FQg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="/+4/mISuPShEbeMB4PPfv4Ytjtw=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3033395-v2-x86-express-rus.exe" Size="513752" Modified="2015-03-13T07:46:18Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">OWONRiz0+oiZRKXWy07U+GnD+UEwO6VEyjhigWcyHP8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="sbBOq/BIaWSfhAmrG3sID9v3NkU=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3033395-v2-x86-rus.psf" Size="15306685" Modified="2015-03-13T07:46:20Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">V0zi2FsEqjWQ9DMDm4iXxevFRH57GcKU/AlJHit+qbw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

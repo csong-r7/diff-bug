@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1893f2e7-f6f4-4851-8344-c9aca99e45c3" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-08-09T00:12:19.113Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2306976" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3354"/>
+            <bar:FileVersion Path="\wmp.dll" Comparison="LessThan" Version="10.0.0.0" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3354"/>
+            <bar:FileVersion Path="\wmp.dll" Comparison="LessThan" Version="10.0.0.0" Csidl="37"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.2980"/>
+          <bar:FileVersion Path="\wmp.dll" Comparison="LessThan" Version="9.0.0.3354" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="cj/VS8RThafB58nGDQruJZ3HSX8=" DigestAlgorithm="SHA1" FileName="WindowsMedia9-KB936782-x86-CSY.exe" Size="2306976" Modified="2007-08-06T18:00:04.003" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

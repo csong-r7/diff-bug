@@ -1,0 +1,59 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8c4a575f-5895-4018-aca1-6d661d8ab2bd" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2009-01-22T22:18:44.983Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="39762280" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>el</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ELL</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8eb8b3af-c51f-4759-8347-46daa955ff08"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5\1032" Value="SP" Type="REG_DWORD" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5\1032" Value="SP" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="SP" Type="REG_DWORD" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="SP" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Path="\Microsoft.NET\Framework\v2.0.50727\el\mscorlib.resources.dll" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v2.0.50727\el\mscorlib.resources.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.50727.3053" Csidl="36"/>
+          <bar:FileExists Path="\Reference Assemblies\Microsoft\Framework\v3.0\el\system.servicemodel.resources.dll" Csidl="38"/>
+          <bar:FileVersion Path="\Reference Assemblies\Microsoft\Framework\v3.0\el\system.servicemodel.resources.dll" Comparison="GreaterThanOrEqualTo" Version="3.0.04506.2123" Csidl="38"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="03cK2Z3toHkaLvxELXoydXMo/Ro=" DigestAlgorithm="SHA1" FileName="dotnetfx35langpack_X64el.exe" Size="39762280" Modified="2009-01-22T14:12:46.787"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /norestart" Program="dotnetfx35langpack_X64el.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

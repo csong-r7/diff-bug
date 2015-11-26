@@ -1,0 +1,32 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="798d58a3-de4b-4a93-a80e-36d51d048675" RevisionNumber="51"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="Application Locale" PublicationState="Published" CreationDate="2005-05-31T17:41:22.501Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Exchange Core ITA Lang</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4d6255d2-e2e4-4a6f-b345-b82d153a2e6c"/>
+          <upd:UpdateIdentity UpdateID="80adf5c5-6efe-474f-9894-8d8e3eb9fbde"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Exchange\" Value="Server Language" Comparison="EqualTo" Data="1040"/>
+          <lar:Or>
+            <bar:WindowsLanguage xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Language="it"/>
+            <bar:WindowsLanguage xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Language="en"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

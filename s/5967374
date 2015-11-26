@@ -1,0 +1,67 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9836a233-59f3-4902-903f-f34a23a70a3d" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="600" RecommendedMemory="512" RecommendedHardDiskSpace="1900" PublicationState="Published" CreationDate="2012-09-27T23:21:09.973Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33" MaxDownloadSize="118577080" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5f0b23c-e990-4b71-9808-718d353f533a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!--sql_rs_keyfile.dll-->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2007.100.4067.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+              <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2007.100.4200.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+          <lar:Not>
+            <!--sql_rs_keyfile.dll-->
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2007.100.4000.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2007.100.4067.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <!--sql_rs_keyfile.dll-->
+        <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+          <lar:And>
+            <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2007.100.4000.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+            <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2007.100.4067.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+          </lar:And>
+        </bar:RegKeyLoop>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="gWTgU0JIJQA2yT9bPadrK5vSrBU=" DigestAlgorithm="SHA1" FileName="SQLServer2008-KB2716434-IA64.exe" Size="118577080" Modified="2012-09-19T16:54:27.78Z">
+        <upd:AdditionalDigest Algorithm="SHA256">QuHcmoYHVwqMRCEnxRI0Q08c8PSMx7EgAVFgj1zYzpQ=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole" Program="SQLServer2008-KB2716434-IA64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2068643838"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

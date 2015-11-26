@@ -1,0 +1,61 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2abd40c6-8094-4b5b-bdcf-4813769bd484" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2013-04-02T22:50:54.861Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1272432" MinDownloadSize="483524">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2801109-x86-kor</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+            <bar:FileVersion Csidl="36" Path="\adam\adambsrv.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+            <bar:FileVersion Csidl="36" Path="\adam\ntdsatq.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5122"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\ADAM"/>
+            <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.0000.0000"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\ADAM"/>
+          <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.0000.0000"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="TgspFvZLz15x+Mc5q1FjxBh9rAU=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2801109-x86-kor.exe" Size="1272432" Modified="2013-03-04T13:03:56.6Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">AhptBakXdBeofudhH/TXxonDjYLIg1k6gH/YFyHtSF4=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="kvJrhsyOXBgHpvaGEJoypr6lu+w=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2801109-x86-express-kor.cab" Size="256056" Modified="2013-03-04T13:03:56.723Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">keFv8yD7axW7uszrLvElq4IqpY2KHfvBNrCnNSTb47I=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="U+Re1BLbuc9GhWwOiJ0JZ8H/nfM=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2801109-x86-kor.psf" Size="2996030" Modified="2013-03-04T13:03:56.927Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">10Y9gvlFLc0/6Kmr4QRJT29hwAO17WDqXnVpkPqjSgg=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

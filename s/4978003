@@ -1,0 +1,85 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <!--PUID[526537]Name[SPSMUISP1_12.0.6219.1000_ELL]-->
+    <upd:UpdateIdentity UpdateID="64717714-0abc-46a1-9373-f51b2a6b6932" RevisionNumber="104"/>
+    <upd:Properties UpdateType="Software" DefaultPropertiesLanguage="en" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T21:34:29.442Z" PublisherID="9b068e57-8e2d-4e42-b091-74bdb345f120" MaxDownloadSize="300884" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>el</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>SPSMUISP1_12.0.6219.1000_ELL</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="1fe05139-8a34-4bf8-8260-e2ba052ed4d4"/>
+        <upd:UpdateIdentity UpdateID="49A99042-5C74-4FA9-A62C-48A2A0CB5712"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Or>
+              <lar:Not>
+                <mar:MsiProductInstalled ProductCode="{90120000-104e-0408-0000-0000000ff1ce}"/>
+              </lar:Not>
+              <mar:MsiProductInstalled ProductCode="{90120000-104e-0408-0000-0000000ff1ce}" VersionMin="12.0.6219.1000" VersionMax="12.0.6219.1000"/>
+            </lar:Or>
+            <lar:Or>
+              <mar:MsiProductInstalled ProductCode="{90120000-104e-0408-0000-0000000ff1ce}"/>
+            </lar:Or>
+          </lar:And>
+          <mar:MsiPatchInstalled/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsSuperseded>
+        <mar:MsiPatchSuperseded/>
+      </upd:IsSuperseded>
+      <upd:IsInstallable>
+        <mar:MsiPatchInstallable/>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{24C4E680-D8DB-4CA4-A616-D24D0E4EDC42}" MinMsiVersion="5" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="100">
+              <TargetProductCode Validate="true">{90120000-104E-0408-0000-0000000FF1CE}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">12.0.4518.1028</TargetVersion>
+              <UpdatedVersion>12.0.6219.1000</UpdatedVersion>
+              <TargetLanguage Validate="false">1032</TargetLanguage>
+              <UpdatedLanguages>1032</UpdatedLanguages>
+              <UpgradeCode Validate="false">{00120000-104E-0000-0000-0000000FF1CE}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{90120000-104E-0408-0000-0000000FF1CE}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>patchca</PatchFamily>
+              <Sequence>12.0.6219.1000</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+            <SequenceData>
+              <PatchFamily>spsmui_1032</PatchFamily>
+              <Sequence>12.0.6219.1000</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+            <SequenceData>
+              <PatchFamily>spsmui_1032_sp1</PatchFamily>
+              <Sequence>12.0.6219.1000</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="pMyYh+Ms+ivmIIKb+thbgoAIuhE=" DigestAlgorithm="SHA1" FileName="spsmuisp1-el-gr.cab" Size="300884" Modified="2007-12-06T10:17:55.207Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Z62HKVxixSgjrkXT3cp1LRy2WM2CZtdJ1i+hvd5zueY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData CommandLine="DISABLESRCPROMPT=1 LOCALCACHESRCRES=0 NOLOCALCACHEROLLBACK=1" UninstallCommandLine="DISABLESRCPROMPT=1 LOCALCACHESRCRES=0 NOLOCALCACHEROLLBACK=1" FullFilePatchCode="{24c4e680-d8db-4ca4-a616-d24d0e4edc42}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

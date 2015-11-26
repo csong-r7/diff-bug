@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="436c744c-fc63-4fe1-948d-79ed2ed26e39" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-12-04T16:28:28.066Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="623144" MinDownloadSize="500447">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\GDI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7205"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\GDI32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\mf3216.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mf3216.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="cVVXUoKZnwroZ/B7nWSF96sGYbA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956802-x86-Express-PTG.EXE" Size="497008" Modified="2008-11-14T04:19:08.37" PatchingType="Express"/>
+      <upd:File Digest="ffuq5Q+QnTMCEg9i3nI4Ic3HqeQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956802-x86-PTG.EXE" Size="623144" Modified="2008-11-14T04:19:09.167" PatchingType="SelfContained"/>
+      <upd:File Digest="I1GliAaaSM3FqegrHlrWwDwlAO8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956802-x86-PTG.psf" Size="732533" Modified="2008-11-14T04:19:09.933" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

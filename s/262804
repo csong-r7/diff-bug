@@ -1,0 +1,35 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8cf9bd18-d6cb-4553-9a7f-cc032a79b617" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="Service Pack" PublicationState="Published" CreationDate="2005-11-08T02:49:03.759Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>WSS SP2 TPK prerequisite</upd:Title>
+        <upd:Description>Detectoid for WSS TPK SP2 (ensures that WSS SP2 has been installed)</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Shared Tools\Web Server Extensions\6.0" Value="SharePoint" Type="REG_SZ" RegType32="true"/>
+          <lar:Or>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="44" Path="Microsoft Shared\web server extensions\60\isapi\owssvr.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.6568.0"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft Shared\web server extensions\60\isapi\owssvr.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.6568.0" Csidl="43"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

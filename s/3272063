@@ -1,0 +1,34 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="true" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2009-10-12T17:15:55.576Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NOT Windows Server Core 2008 filter - USE FOR SERVER ONLY</upd:Title>
+        <upd:Description>Used to exclude updates from offering to Windows Server Core 2008 SKU.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Not>
+            <bar:FileExists Path="oclist.exe" Csidl="37"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:FileExists Path="scregedit.wsf" Csidl="37"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

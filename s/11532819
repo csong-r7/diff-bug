@@ -1,0 +1,89 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="07aee973-703c-4f27-83f1-3e764d9ed2c7" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2014-03-10T20:03:54.320Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Identify ADDS Machine</upd:Title>
+        <upd:Description>Identifies if a machine is running Active Directory Domain Services found in Win32_ServerFeature where ID = 10</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+          <upd:UpdateIdentity UpdateID="4d790e24-b3f8-4864-a2b6-49d082e3bbdc"/>
+          <upd:UpdateIdentity UpdateID="38ef50a8-dffe-449e-a287-35a57128e49f"/>
+          <upd:UpdateIdentity UpdateID="04437cf2-2157-44c9-96df-6cd88b0dc541"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+          <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!-- x64 for Windows Server 2008 R2, Windows Server 2012, or Windows Server 2012 R2 -->
+          <lar:And>
+            <lar:And>
+              <lar:Or>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="3" ProductType="2"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="3" ProductType="3"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="2" ProductType="2"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="2" ProductType="3"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="1" ProductType="2"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="1" ProductType="3"/>
+              </lar:Or>
+              <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+            </lar:And>
+            <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="Select ID From Win32_ServerFeature Where ID=10"/>
+          </lar:And>
+          <!-- x86 or x64 for Windows Server 2008 -->
+          <lar:And>
+            <lar:And>
+              <lar:Or>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" ProductType="2"/>
+                <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" ProductType="3"/>
+              </lar:Or>
+              <lar:Or>
+                <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="0"/>
+                <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+              </lar:Or>
+            </lar:And>
+            <lar:Or>
+              <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="Select ID From Win32_ServerFeature Where ID=9"/>
+              <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="Select ID From Win32_ServerFeature Where ID=10"/>
+            </lar:Or>
+          </lar:And>
+          <!-- x86 and x64 for Vista -->
+          <lar:And>
+            <lar:And>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" ProductType="1"/>
+              <lar:Or>
+                <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="0"/>
+                <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+              </lar:Or>
+            </lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntdsai.dll" Csidl="37"/>
+          </lar:And>
+          <!-- x86,x64,ia64 Windows Server 2003 -->
+          <lar:And>
+            <lar:Or>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="5" MinorVersion="2" BuildNumber="3790" ProductType="2"/>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="5" MinorVersion="2" BuildNumber="3790" ProductType="3"/>
+            </lar:Or>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\NTDS"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

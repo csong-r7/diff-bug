@@ -1,0 +1,29 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="969d4d73-98a2-49d3-a1a1-6099ed3a8526" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2013-11-07T02:11:08.065Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Internet Explorer  - NOT Inuktitut</upd:Title>
+        <upd:Description>IE10+  does not support language inuktitut, so this detectoid confirmsa that the client is not Inuktitus (LCID 2141)</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\MUI\UILanguages\iu-latn-ca" Value="LCID" Comparison="EqualTo" Data="2141"/>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="72cfda2d-7bda-459f-b5e0-52b5a66b61da" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T05:06:27.210Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="784640" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\rdpwd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4996"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\drivers\rdpwd.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="EKKUQ7zJOrRtV7JmFJxWZCtfpxw=" DigestAlgorithm="SHA1" FileName="windowsserver2003.windowsxp-kb2685939-x64-jpn.exe" Size="784640" Modified="2012-05-30T21:18:17.137Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">iAJ4sz/PTqnDMn2KGaqRVPrTA7KammV5PurJSX6bK+k=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

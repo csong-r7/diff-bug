@@ -1,0 +1,51 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="eb0a2104-eeef-4d9b-a6b8-a6a12ecc9320" RevisionNumber="107"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:33:20.327Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="10276696" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:UpdateIdentity UpdateID="f3ee5fed-5660-45e4-b629-4d44f214e887"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c9834186-a976-472b-8384-6bb8f2aa43d9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalledForProduct PatchCode="{FF966553-FFC4-3813-B3F4-4B7F6A36A864}" ProductCode="{DA5E371C-6333-3D8A-93A4-6FD5B20BCC6E}" VersionMax="10.0.30319" VersionMin="10.0.30319"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiProductInstalled ProductCode="{DA5E371C-6333-3D8A-93A4-6FD5B20BCC6E}"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\vc\Servicing\10.0\red\amd64\1033" Value="Bld" Type="REG_DWORD" RegType32="true"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\vc\Servicing\10.0\red\amd64\1033" Value="Bld" Comparison="EqualTo" Data="30319" RegType32="true"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\vc\Servicing\10.0\red\amd64\1033" Value="Rbld" Type="REG_DWORD" RegType32="true"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\vc\Servicing\10.0\red\amd64\1033" Value="Rbld" Comparison="LessThan" Data="415" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="sZIRGHyqcmYZ/v2A8Zm/ffMma7c=" DigestAlgorithm="SHA1" FileName="vcredist_x64.exe" Size="10276696" Modified="2011-03-23T12:33:10.137Z">
+        <upd:AdditionalDigest Algorithm="SHA256">CRSLSYuYfZHOEZifjwA2nHTd6IqA1izpBwTUn+I/pIY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /r:n" Program="vcredist_x64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

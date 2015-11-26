@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9f765278-ba0a-411d-aa35-24604d10137f" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:54.561Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="917145" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Office Communications Server 2007 R2, Web Components (KB 2501721)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a78f2c72-5147-4139-8d73-13db49147a8f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <mar:MsiPatchInstalled/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{2A65AB9C-57AD-4EC6-BD4E-BD61A7C583B3}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.225"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{A766C25B-A1D1-4711-A726-AC3E7CA4AAB3}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.206"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{9D9C4787-48DF-4CC5-89D3-A50D708E06D8}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="false">{EE71648B-43AA-4168-85C5-A43410E2ACD6}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.225</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EE0BCE29-4440-4582-A9EF-081EADF8AEDC}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{EE71648B-43AA-4168-85C5-A43410E2ACD6}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>webcompo</PatchFamily>
+              <Sequence>1.0.225.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="nCqQw7K0KRqIO+RJoKIHYyZ1Tw0=" DigestAlgorithm="SHA1" FileName="Webcomponents.cab" Size="917145" Modified="2011-04-05T12:14:52.717Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">fXLDtoW+/GiCYCBe9sO5F4zuGOTkD5YtwQkBgJlMmu8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{9d9c4787-48df-4cc5-89d3-a50d708e06d8}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

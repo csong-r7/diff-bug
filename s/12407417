@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3d092bc1-c9b6-4afa-9683-29a8ca219d20" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" MaxDownloadSize="18518284" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-06-10T02:02:16.052Z" PublisherID="416d1863-62f5-437a-a286-eef853950684">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update for Lync Server 2010 Web Components Server (KB2963286)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="dffff25f-221c-49cc-b3aa-c27105d36a24"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="04d85ac2-c29f-4414-9cb6-5bcd6c059070"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <lar:Not>
+            <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{2A65AB9C-57AD-4EC6-BD4E-BD61A7C583B3}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.0.7577.231"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{FF6359B1-B6F3-4F2A-9AEA-8442246212C3}" MinMsiVersion="5" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="405">
+              <TargetProductCode Validate="true">{B9EFB994-8B55-4B9C-8BF2-5AA346D3DEF2}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="GreaterThanOrEqual" ComparisonFilter="MajorMinorUpdate">4.0.7577.0</TargetVersion>
+              <UpdatedVersion>4.0.7577.231</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>0</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EE0BCE29-4440-4582-A9EF-081EADF8AEDC}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{B9EFB994-8B55-4B9C-8BF2-5AA346D3DEF2}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>PatchFamily_Update</PatchFamily>
+              <Sequence>1.0.231.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Onl25sOTk2bZ/cTBeBFNTRGEiyY=" DigestAlgorithm="SHA1" FileName="WebComponents.cab" Size="18518284" Modified="2014-05-28T14:59:08Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">63uu1ifzSAPGm8eg+eNjkUR2BMMTGWliJuvp0Flf2M0=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{ff6359b1-b6f3-4f2a-9aea-8442246212c3}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="E8FE2D39-0BD6-424E-A48D-50D8F03B69E4" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-08-26T21:38:10.520Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="266888" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>817787: Security Update Windows Media Player 7.1</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="C31C34CF-DF02-4B8E-B88D-A76CA2E2AEBB"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3B4B8621-726E-43A6-B43B-37D07EC7019F"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.1.0.3074" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows Media Player\wm817787\FileList\File1"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Value="Version" Comparison="LessThan" Data="7.10.0.3074" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}"/>
+          <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.01.0.3055" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}"/>
+          <lar:Not>
+            <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="9.0.0.2799" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="IEcpmgKVdKNbyOp3vV8De0fwvoE=" DigestAlgorithm="SHA1" FileName="WindowsMedia71-KB817787-x86-ITA.exe" Size="266888" Modified="2003-04-30T11:05:55.1241406-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="/q:a /r:n" Program="WindowsMedia71-KB817787-x86-ITA.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

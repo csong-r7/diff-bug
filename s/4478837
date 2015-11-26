@@ -1,0 +1,73 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="693996c2-7842-46e2-918a-69c429c27a9a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2011-06-16T20:44:07.700Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="637744" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Estonian Language Pack</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        <upd:UpdateIdentity UpdateID="cf2a755f-50f7-46b6-9f39-da7ad82f6bfb"/>
+        <upd:UpdateIdentity UpdateID="13452708-c326-465d-b82f-c7ca2c39557f"/>
+        <upd:UpdateIdentity UpdateID="90cde6a3-c576-46c0-9f63-334b74550ae7"/>
+        <upd:UpdateIdentity UpdateID="da8cfca6-8bb3-4adb-9028-1e2fac1728da"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-LanguagePack~31bf3856ad364e35~x86~et-EE~9.1.8112.16421"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~x86~~9.1.8112.16421"/>
+          </lar:Not>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Internet Explorer\iexplore.exe" Comparison="LessThan" Version="10.0.0.0" Csidl="38"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\MUI\UILanguages\et-EE" Value="LCID" Comparison="EqualTo" Data="1061"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="IHNUuafqsgoDO/CRJ/ichPPzeCU=" DigestAlgorithm="SHA1" FileName="IE9-langpack-WindowsVista-x86-eti.exe" Size="637744" Modified="2011-03-08T13:40:24.22"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q:a" Program="IE9-langpack-WindowsVista-x86-eti.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install successful</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>No retries; reboot required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="60000">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeed with retries</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="63010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeed with retries; reboot required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

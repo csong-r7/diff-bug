@@ -1,0 +1,85 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ca646705-99fb-4c7f-8576-539593a8bb2a" RevisionNumber="106"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2007-08-13T17:16:53.293Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1859416" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>MSXML 6 BRZ x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+          <upd:UpdateIdentity UpdateID="77a1d80c-5efc-4546-9397-1eaef135377a"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.10.1200.0" Csidl="37"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.99.9999.00" Csidl="37"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1046" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.10.1200.0" Csidl="41"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.99.9999.00" Csidl="41"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1046" Csidl="41"/>
+          </lar:And>
+          <bar:Processor Architecture="9"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.00.0000.0" Csidl="37"/>
+              <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.10.1200.0" Csidl="37"/>
+              <bar:FileExists Path="msxml6r.dll" Language="1046" Csidl="37"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.00.0000.0" Csidl="41"/>
+              <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.10.1200.0" Csidl="41"/>
+              <bar:FileExists Path="msxml6r.dll" Language="1046" Csidl="41"/>
+            </lar:And>
+          </lar:Or>
+          <bar:Processor Architecture="9"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="bXoq9B68sfVwekYWZh+vjccdMOQ=" DigestAlgorithm="SHA1" FileName="msxml6-KB933579-ptb-amd64.exe" Size="1859416" Modified="2007-06-29T14:19:57.157"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q REBOOT=ReallySuppress" Program="msxml6-KB933579-ptb-amd64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Success but Reboot Required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

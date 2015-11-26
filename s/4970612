@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f4c27383-aee1-41b6-a9e7-5f898b907159" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:35:50.556Z" PublisherID="3a4af7d4-087e-48b9-b5e3-1cb26d43995b" MaxDownloadSize="173960" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="AlwaysRequiresReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>VPC 2004 SP1</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="464c319e-1bf6-4ba0-ade8-e416efa766fb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c8a4436c-1043-4288-a065-0f37e9640d60"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\EDDFACCCCECE4EA4DB79400767BB4D9A\Patches" Value="VSPatcher2" Type="REG_SZ"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Not>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\EDDFACCCCECE4EA4DB79400767BB4D9A\Patches" Value="VSPatcher2" Type="REG_SZ"/>
+        </lar:Not>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="1qiAl5wyibsiuw1uhKi7HV/NFV4=" DigestAlgorithm="SHA1" FileName="VPC2004x86-KB969856.EXE" Size="173960" Modified="2009-07-07T16:27:51.297Z">
+        <upd:AdditionalDigest Algorithm="SHA256">flpT75USBDpHOAYa19qYNbFfKTopvTYbDY+H0BaOETE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="VPC2004x86-KB969856.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

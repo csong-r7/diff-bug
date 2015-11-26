@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="75eadc57-9289-4e03-b034-3382d98522af" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2013-03-04T05:17:03.785Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="25521169" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary PLK</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="253f0a4f-2b58-4d61-932d-c44cc1782fab"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a105a108-7c9b-4518-bbbe-73f0fe30012b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0415" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{6BAEAF39-7843-4102-A1AF-F061C901D9DD}" MinMsiVersion="1">
+            <TargetProduct MinMsiVersion="400">
+              <TargetProductCode Validate="true">{AE027AF5-AFD9-45B0-BF68-FE1D4B8FEDE5}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">6.2.2506.0</TargetVersion>
+              <UpdatedVersion>6.2.2506.1</UpdatedVersion>
+              <TargetLanguage Validate="false">1045</TargetLanguage>
+              <UpdatedLanguages>1045</UpdatedLanguages>
+              <UpgradeCode Validate="true">{1D007FBA-404E-4197-B4A3-AC24179CFA98}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{AE027AF5-AFD9-45B0-BF68-FE1D4B8FEDE5}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>AE027AF5AFD945B0BF68FE1D4B8FEDE5</PatchFamily>
+              <Sequence>2.2506.20751.17859</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="qfs9Cumz9FvBgz3MOXzWrIblTXY=" DigestAlgorithm="SHA1" FileName="WMS-KB2791647-PLK-x64.cab" Size="25521169" Modified="2013-03-03T20:44:12.323Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">dp82c/hpfQGrsEQj/DKmDzvn063asqc1sKYU0ErUMKc=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{6baeaf39-7843-4102-a1af-f061c901d9dd}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

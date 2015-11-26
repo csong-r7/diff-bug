@@ -1,0 +1,564 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="eab6a152-ee66-4337-9385-b50475585dce" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" MaxDownloadSize="396877" MinDownloadSize="396877" PublicationState="Published" CreationDate="2014-01-14T01:20:05.487Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windows6.1-kb2862330-v2-x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="71c1e8bb-9a5d-4e56-a456-10b0624c7188"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <!--
+
+            !WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7600.16385 installed
+
+            &&
+
+            !WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7601.17514 installed
+
+          ;-->
+          <lar:Not>
+            <lar:Or>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7600.16385"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7601.17514"/>
+            </lar:Or>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-21_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2862330_RTM" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-22_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2862330_SP1" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:07Z" lastUpdateTimeStamp="2013-11-27T07:38:07Z">
+            <assemblyIdentity name="Package_1_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_1_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_2_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_2_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_3_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_3_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-6_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                    <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+                <driver inf="usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_4_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_4_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usbport.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usbport.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2862330-10_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="embedded-usb.inf" ranking="currentDevices">
+                  <assemblyIdentity name="embedded-usb.inf" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_5_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c30f01ee61aa453e91e3c9f5cd6fc752" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_5_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c30f01ee61aa453e91e3c9f5cd6fc752" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2862330-12_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c31eb9a4e9bd48e4f17fd5840c880dcc" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_6_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c30f01ee61aa453e91e3c9f5cd6fc752" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_6_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c30f01ee61aa453e91e3c9f5cd6fc752" version="6.1.7601.22526" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2862330-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-GC-UsbForceReboot" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c31eb9a4e9bd48e4f17fd5840c880dcc" version="6.1.7601.18328" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_for_KB2862330_RTM_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_for_KB2862330_RTM" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_for_KB2862330_SP1_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-13_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:37:57Z" lastUpdateTimeStamp="2013-11-27T07:37:57Z">
+            <assemblyIdentity name="Package_for_KB2862330_SP1" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-16_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-17_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-18_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-19_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-20_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB2862330" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2862330" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330" creationTimeStamp="2013-11-27T07:38:08Z" lastUpdateTimeStamp="2013-11-27T07:38:08Z">
+            <assemblyIdentity name="Package_for_KB2862330_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2862330_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Common-Drivers-Package" version="6.1.7601.17514" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="WinEmb-usb" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-usbboot" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2862330-14_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2862330_RTM_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2862330-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2862330_SP1_BF" version="6.1.2.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="lUmVmHoui+DCedUabthClhujWC0=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2862330-v2-x64.cab" Size="396877" Modified="2013-12-04T13:10:54Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">lENMGD9Z4rdwzgFcJqCtgFf/U3AMKAJhqFS6Cn2LqS0=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="XtxOF0sbj+YjsUTAD5bWaDjAlcE=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2862330-v2-x64-express.cab" Size="58925" Modified="2013-12-04T13:10:54Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">Gv2B2R5mYsf7Ol82rZyun9GR6O0IiRu7v9VlNZRLME8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="vrQHfx+3o2tb8wMmpgAMHkvnPKU=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2862330-v2-x64.psf" Size="3847018" Modified="2013-12-04T13:10:56Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">H9TrvxgN0bxpAsNbsq9YejS1CPhuwFVMzeE+6dCFddM=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

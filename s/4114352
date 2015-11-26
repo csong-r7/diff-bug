@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d96ffd8d-b084-4b03-8348-ae8558a2fcd7" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2011-02-02T20:31:34.221Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1537679" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>IIS75_EN</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="inetsrv\ftpsvc.dll" Comparison="GreaterThanOrEqualTo" Version="7.5.7055.14307" Csidl="37"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="inetsrv\ftpsvc.dll" Comparison="LessThan" Version="7.5.7055.14310" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{E1A2C747-AA3F-4689-B6A4-B5BC7979A4AD}" MinMsiVersion="1">
+            <TargetProduct MinMsiVersion="400">
+              <TargetProductCode Validate="true">{36599245-6895-4CB9-8108-516E25EC5DC0}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">7.5.7055.14307</TargetVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EC76D79F-CEDB-435A-A1FE-E39D5241D62D}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{36599245-6895-4CB9-8108-516E25EC5DC0}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>Family1</PatchFamily>
+              <Sequence>7.5.0.0010</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="m9FoEYyLDgScbuweA1Yhu4DwNWE=" DigestAlgorithm="SHA1" FileName="ftp75_en_x64_kb2489256.cab" Size="1537679" Modified="2011-02-01T11:35:27.267" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{e1a2c747-aa3f-4689-b6a4-b5bc7979a4ad}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

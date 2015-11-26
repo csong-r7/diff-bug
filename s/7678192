@@ -1,0 +1,91 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="99adda56-1a13-40d6-8286-ef770729c257" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2013-04-02T22:47:25.525Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1287304" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb2801109-x86-ita</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:And>
+              <bar:FileVersion Csidl="36" Path="\adam\ntdsatq.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+              <bar:FileVersion Csidl="36" Path="\adam\adambsrv.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\adam\adamdsa.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="36" Path="\adam\adambsrv.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\adam\adamdsa.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\adam\ntdsatq.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.3790.5131"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\adam\ntdsatq.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\ADAM"/>
+            <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.0000.0000"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="36" Path="\adam\adamdsa.dll"/>
+            <bar:FileExists Csidl="36" Path="\adam\ntdsatq.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\ADAM"/>
+            <bar:FileVersion Csidl="36" Path="\adam\adamdsa.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.0000.0000"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="36" Path="\adam\adamdsa.dll"/>
+            <bar:FileExists Csidl="36" Path="\adam\ntdsatq.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="xawpLq0i3YSAyABfnx3ho/zmzh4=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2801109-x86-ita.exe" Size="1287304" Modified="2013-04-01T09:45:43.793Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">qO8uYkw09fJFskhyRnCTrVrwuysK90mjrmhBaz5l7Q8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,114 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6492fd33-a0d4-4c01-918b-c4bf5ed25109" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2011-10-04T16:54:59.872Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="297493" MinDownloadSize="297493">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="EHOME\ehshell.exe" Comparison="GreaterThanOrEqualTo" Version="6.1.1000.18273" Csidl="36"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="EHOME\ehshell.exe" Comparison="LessThan" Version="6.1.1000.99999" Csidl="36"/>
+          <lar:Or>
+            <bar:LicenseDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Value="Kernel-ProductInfo" Comparison="EqualTo" Data="1"/>
+            <bar:LicenseDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Value="Kernel-ProductInfo" Comparison="EqualTo" Data="3"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2579692" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2579692" creationTimeStamp="2011-08-03T12:16:09Z" lastUpdateTimeStamp="2011-08-03T12:16:09Z">
+            <assemblyIdentity name="Package_for_KB2579692" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2579692" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Media-Center-TV-Pack-Package" language="neutral" version="6.1.1000.18273" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2579692-4_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2579692_fiji" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2579692" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2579692" creationTimeStamp="2011-08-03T12:16:02Z" lastUpdateTimeStamp="2011-08-03T12:16:02Z">
+            <assemblyIdentity name="Package_1_for_KB2579692" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2579692" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Media-Center-TV-Pack-Package" language="neutral" version="6.1.1000.18273" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2579692-1_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Video-Capture-Filters-TVDigital" version="6.1.1000.18311" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8b00e559f54607441ad3615d2d4fda39" version="6.1.1000.18311" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2579692" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2579692" creationTimeStamp="2011-08-03T12:16:09Z" lastUpdateTimeStamp="2011-08-03T12:16:09Z">
+            <assemblyIdentity name="Package_for_KB2579692_fiji_0" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2579692" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Media-Center-TV-Pack-Package" language="neutral" version="6.1.1000.18273" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2579692-2_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2579692" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2579692" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2579692" creationTimeStamp="2011-08-03T12:16:09Z" lastUpdateTimeStamp="2011-08-03T12:16:09Z">
+            <assemblyIdentity name="Package_for_KB2579692_fiji" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2579692" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Media-Center-TV-Pack-Package" language="neutral" version="6.1.1000.18273" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2579692-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2579692_fiji_0" version="6.1.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UWkTOKACqmyLwWGFhZJqD3PTzJU=" DigestAlgorithm="SHA1" FileName="mcetvpack-windows6.0-kb2579692-x86.cab" Size="297493" Modified="2011-09-01T18:45:11.913" PatchingType="SelfContained"/>
+      <upd:File Digest="FkXJMrbYVfchUJ0mxHTk2ZYOm/U=" DigestAlgorithm="SHA1" FileName="mcetvpack-windows6.0-kb2579692-x86.psf" Size="1611357" Modified="2011-09-01T18:45:12.223" PatchingType="Express"/>
+      <upd:File Digest="an2F/mAGnos+zStGYPOoISGbOeo=" DigestAlgorithm="SHA1" FileName="mcetvpack-windows6.0-kb2579692-x86-express.cab" Size="24454" Modified="2011-09-01T18:45:11.96" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

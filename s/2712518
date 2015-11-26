@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="071f5e76-ec59-4b7d-9566-445eb56c7958" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2009-05-08T00:47:08.214Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="10703680" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary &lt;All Locales&gt;</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="77a1d80c-5efc-4546-9397-1eaef135377a"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{411EDCF7-755D-414E-A74B-3DCD6583F589}" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}" RegType32="true"/>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.00.2919.6307" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="dKWyXWWnC47NapwwGgrqENhIOiM=" DigestAlgorithm="SHA1" FileName="NDP1.1sp1-KB867460-X86.exe" Size="10703680" Modified="2005-02-26T19:39:59.1730000-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q" Program="NDP1.1sp1-KB867460-X86.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

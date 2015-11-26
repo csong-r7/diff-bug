@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="93944378-463a-4e05-920a-dc405ca7e494" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-09-21T00:22:03.593Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="808760" MinDownloadSize="257653">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="43" Path="\microsoft shared\vgx\vgx.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.2997"/>
+          <lar:Not>
+            <bar:FileExists Csidl="43" Path="\microsoft shared\vgx\vgx.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Path="\internet explorer\iexplore.exe" Comparison="LessThan" Version="7.0.0.0"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="iPKUX47o3JUSgOHxTyJNRgZOp64=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB925486-x86-RUS.exe" Size="808760" Modified="2006-09-20T13:39:19.4500000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="fOlCeoe68HAfNVJtcJQG1AGGvt0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB925486-x86-express-RUS.cab" Size="152121" Modified="2006-09-20T13:39:19.8730000-07:00" PatchingType="Express"/>
+      <upd:File Digest="2NSaKCxSZrWrIOkzOes18cbBOe8=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB925486-x86-RUS.psf" Size="858428" Modified="2006-09-20T13:39:20.6700000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

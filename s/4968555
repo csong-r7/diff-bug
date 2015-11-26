@@ -1,0 +1,66 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b91ccce0-7637-4649-842d-1f1c9d7882c2" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T01:09:41.073Z" PublisherID="4f18dc97-f61b-47c4-b9ac-2b83f7ac6214" MaxDownloadSize="3043082" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ESN</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="9dfa60d8-c79f-4951-bd63-157af439be52"/>
+        <upd:UpdateIdentity UpdateID="5c954228-6dc5-415f-b568-9872f7ef8a7d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b627a8ff-19cd-45f5-a938-32879dd90123"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:FileVersionPrependRegSz Path="\wspsrv.exe" Comparison="LessThan" Version="4.0.3445.909" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory"/>
+          <bar:FileExistsPrependRegSz Path="\wspsrv.exe" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{086462FA-F1C2-49F0-BA45-A10C31B3641D}" MinMsiVersion="3">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="true">{0AC95D97-1B75-4AC7-B061-F21E379FF809}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">4.0.3445</TargetVersion>
+              <TargetLanguage Validate="true">3082</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{5511D21C-DE76-471F-B405-A59952F00E85}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{0AC95D97-1B75-4AC7-B061-F21E379FF809}</TargetProductCode>
+            <ObsoletedPatch>{086462FA-F1C2-49F0-BA45-A10C31B3641D}</ObsoletedPatch>
+            <ObsoletedPatch>{F62B3BFA-CE89-4351-B453-7F862ED01F14}</ObsoletedPatch>
+            <SequenceData>
+              <PatchFamily>0AC95D971B754AC7B061F21E379FF809</PatchFamily>
+              <Sequence>0.3445.18834.62413</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ZOxwNwrdJ4Ad4mQHheU7ncGztwY=" DigestAlgorithm="SHA1" FileName="ISA2004EE-KB960995-X86-esn.cab" Size="3043082" Modified="2009-04-07T17:13:31.083Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ZQUjxyskxaU1It/oDGq08gUgiAM2BhyculU87pOliyA=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{086462fa-f1c2-49f0-ba45-a10c31b3641d}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

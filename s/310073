@@ -1,0 +1,78 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f217e9ab-f517-4653-9ee3-df3d4c6fde48" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-06-09T01:13:09.994Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="769848" MinDownloadSize="434766">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ar</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:And>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.8831"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="LessThan" Version="5.7.0.0" Csidl="37"/>
+            </lar:And>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:And>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.8831"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="LessThan" Version="5.7.0.0" Csidl="37"/>
+            </lar:And>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="internet explorer\iexplore.exe" Comparison="LessThan" Version="7.0.0.0" Csidl="38"/>
+          <lar:Or>
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+              <lar:And>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.0" Csidl="37"/>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="LessThan" Version="5.6.0.8831" Csidl="37"/>
+              </lar:And>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+              <lar:And>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.0" Csidl="37"/>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jscript.dll" Comparison="LessThan" Version="5.6.0.8831" Csidl="37"/>
+              </lar:And>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="D21Wq6lBS97aqIC1kHQnnrRMo+E=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB917344-x86-ARA.exe" Size="769848" Modified="2006-05-24T17:46:15.6600000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="TlRz+2oJU1Zha5Lucz7Q+AGPFyQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB917344-x86-express-ARA.cab" Size="151332" Modified="2006-05-24T17:46:16.0030000-07:00" PatchingType="Express"/>
+      <upd:File Digest="2AjLaIGoLqYlguVv0+tIysm/JK0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB917344-x86-ARA.psf" Size="1243452" Modified="2006-05-24T17:46:17.1930000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

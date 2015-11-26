@@ -1,0 +1,34 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="83aed513-c42d-4f94-b4dc-f2670973902d" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2007-05-08T02:59:14.249Z" PublisherID="fe781200-0d62-4fc0-8683-3c6ea046cb89"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CAPICOM</upd:Title>
+        <upd:Description>CAPICOM</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="9f9b1ace-a810-11db-bad5-f7f555d89593"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.1\CLSID" RegType32="true"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.2\CLSID" RegType32="true"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.3\CLSID" RegType32="true"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.4\CLSID" RegType32="true"/>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation CategoryType="Product" ProhibitsSubcategories="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

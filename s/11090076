@@ -1,0 +1,32 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c8c19432-f207-4d9d-ab10-764f3d29744d" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" IsPublic="true" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2014-02-07T01:26:44.796Z" PublisherID="42f20e12-2856-447d-a8b2-68f06c2e9b45"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Microsoft BitLocker Administration and Monitoring</upd:Title>
+        <upd:Description>Microsoft BitLocker Administration and Monitoring products family</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="56309036-4c77-4dd9-951a-99ee9c246a94"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MBAM Server"/>
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MBAM"/>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" CategoryType="ProductFamily" ProhibitsSubcategories="false" ProhibitsUpdates="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

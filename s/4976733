@@ -1,0 +1,40 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <!--PUID[518776]Name[LE_1_INTL]-->
+    <upd:UpdateIdentity UpdateID="4dc5793b-9ef4-4c4b-a488-816bb4717ad0" RevisionNumber="101"/>
+    <upd:Properties UpdateType="Software" DefaultPropertiesLanguage="en" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T20:44:05.596Z" PublisherID="9b068e57-8e2d-4e42-b091-74bdb345f120" MaxDownloadSize="562480" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>LE_1_INTL</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="477b856e-65c4-4473-b621-a8b230bb70d9"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Learning Essentials\1.0" Value="InstallPath" Path="\1.0\shrichedit.dll" Version="5.50.99.2011" Comparison="GreaterThanOrEqualTo"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Learning Essentials\1.0"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="n0ZZFckWOOoqrenNBFH6mjj3fdk=" DigestAlgorithm="SHA1" FileName="LE-KB929437-V15-x86Signed-ENU-ZIP.exe" Size="562480" Modified="2007-02-08T22:31:13.873Z">
+        <upd:AdditionalDigest Algorithm="SHA256">I0ATvypy6h9wstY557kqeSzn+PSd99eY+zE2aB37lro=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q:a /r:n" DefaultResult="Failed" Program="LE-KB929437-V15-x86Signed-ENU-ZIP.exe" RebootByDefault="false">
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

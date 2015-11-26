@@ -1,0 +1,40 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="bae58deb-a08b-41ce-aa09-b65ae77df5bd" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="Architecture" PublicationState="Published" CreationDate="2011-02-23T23:40:19.380Z" PublisherID="244eb2b6-cf4c-463b-af39-ded14a998061"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>SCVMM 2008 R2 Administrator Console (32 bit)</upd:Title>
+        <upd:Description>This detects if the Microsoft System Center Virtual Machine Manager 2008 R2 Administrator Console product is installed. 
+This is 32 bit only.
+
+Ensures that this installation has not been upgraded to SP1.
+Product code for SP1 RTM, version 2.0.4521.0 = 
+{5FE7C045-2FB6-4D39-9E09-DCDE2AEEE2C9}
+Product code for SP1 , version 2.0.4516.0 = 
+{E8204915-AA18-43EA-8536-742C06732C4E}</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="9476d3f6-a119-4d6e-9952-8ad28a55bba6"/>
+        <upd:UpdateIdentity UpdateID="7e5d0309-78dd-4f52-a756-0259f88b634b"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{2b75994f-6590-4b59-9382-83308689fc4c}"/>
+          <lar:Not>
+            <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{5fe7c045-2fb6-4d39-9e09-dcde2aeee2c9}"/>
+          </lar:Not>
+          <lar:Not>
+            <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{e8204915-aa18-43ea-8536-742c06732c4e}"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

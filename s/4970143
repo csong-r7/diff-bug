@@ -1,0 +1,52 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="cf0fe13f-c919-449d-b25d-975804123523" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:18:09.452Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe" MaxDownloadSize="93260096" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>JapaneseSMS2003SP2</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="da7d0f02-1061-471c-bfc2-8a0e59925939"/>
+        <upd:UpdateIdentity UpdateID="230d44ca-f1a3-41ba-8ecc-f1e046e377d6"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5a456666-3ac5-4162-9f52-260885d6533a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full Version" Comparison="GreaterThanOrEqualTo" Data="2.50.4160.2000"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full UI Version" Comparison="GreaterThanOrEqualTo" Data="2.50.4160.2000"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full Version" Comparison="EqualTo" Data="2.50.3174.1018"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full Version" Comparison="EqualTo" Data="2.50.2726.0020"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full UI Version" Comparison="EqualTo" Data="2.50.3174.1018"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full UI Version" Comparison="EqualTo" Data="2.50.2726.0020"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8Rn36JocQ+TZy/20YzTKaXuUG+s=" DigestAlgorithm="SHA1" FileName="SMS2003SP2.exe" Size="93260096" Modified="2006-12-04T16:10:56.117Z">
+        <upd:AdditionalDigest Algorithm="SHA256">qrARHYWtLN+bRt+U4sKwDECVU5MgyVarWp7AFcp9tmo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="SMS2003SP2.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

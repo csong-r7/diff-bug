@@ -1,0 +1,90 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1ca3a0ed-baa2-45d1-8a3b-67c00b34ff55" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-06-14T14:58:48.620Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="760824" MinDownloadSize="501944">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\msafd.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6602"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\msafd.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\wshtcpip.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6601"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\wshtcpip.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\AFD.SYS" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6687"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\AFD.SYS"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\tcpip.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7049"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\tcpip.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\tdi.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6655"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\tdi.sys"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\blackdrv.sys" Csidl="37"/>
+          </lar:Not>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\blackdrv.sys" Comparison="LessThan" Version="7.0.0.0" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\blackdrv.sys" Comparison="GreaterThanOrEqualTo" Version="7.0.319.0" Csidl="37"/>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\blackdrv.sys" Comparison="LessThan" Version="3.6.0.0" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\blackdrv.sys" Comparison="GreaterThanOrEqualTo" Version="3.6.319.0" Csidl="37"/>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8KPjeJTbvNC76M58p77mcAmw/sY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB893066-v2-x86-Express-NOR.EXE" Size="486632" Modified="2005-05-25T15:39:18.8730000-07:00" PatchingType="Express"/>
+      <upd:File Digest="a8OMkR9IIwR9YAu/ivQc0cicJ14=" DigestAlgorithm="SHA1" FileName="Windows2000-KB893066-v2-x86-NOR.EXE" Size="760824" Modified="2005-05-25T15:39:18.4830000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="g8nJOffl4LmaDhgwgbscWeBN7a0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB893066-v2-x86-NOR.psf" Size="862958" Modified="2005-05-25T15:39:19.4070000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

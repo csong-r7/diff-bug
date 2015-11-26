@@ -1,0 +1,33 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="032e3af5-1ac5-4205-9ae5-461b4e8cd26d" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2008-08-18T23:45:16.972Z" PublisherID="80932d24-5d10-44c4-a845-cbb869fe8020"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows Small Business Server 2003</upd:Title>
+        <upd:Description>This is the top level category from WIndows Small Business Server 2003</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="68623613-134c-4b18-bcec-7497ac1bfcb0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5" MinorVersion="2"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\LicenseInfoSuites\SmallBusiness" Value="ConcurrentLimit" Comparison="EqualTo" Data="750"/>
+          <bar:WindowsVersion SuiteMask="32"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation CategoryType="Product" ProhibitsSubcategories="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,428 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7855e4d7-6f7a-4578-8e93-cb8724e6009d" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="1434" RecommendedMemory="1024" RecommendedHardDiskSpace="657" PublicationState="Published" CreationDate="2012-09-11T19:14:10.349Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33" MaxDownloadSize="314561888" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CHS ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bb7bc3a7-857b-49d4-8879-b639cf5e8c3c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!--Check the language-->
+          <lar:Or>
+            <lar:And>
+              <!--At Least one loc instance needs to be patched-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.51.2500.0"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2549.0"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--Or at least one shared feature needs to be patched-->
+            <lar:Or>
+              <lar:And>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.51.2500.0"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="LessThan" Data="10.51.2549.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.51.2500.0"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2549.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.51.2500.0"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2549.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.51.2500.0"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2549.0"/>
+              </lar:And>
+              <!--For Express / Express Adv - Client Tools SDK only-->
+              <lar:And>
+                <lar:Not>
+                  <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                    <lar:And>
+                      <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                    </lar:And>
+                  </bar:RegKeyLoop>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Or>
+                  <lar:And>
+                    <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                    <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2549.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                    <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Bootstrap R2\2052"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.2500.0" Csidl="38"/>
+                    <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2549.0" Csidl="38"/>
+                    <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Bootstrap R2\2052"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+          <lar:And>
+            <!--Check if File Version of Non-Instance Neutral is correct-->
+            <lar:Not>
+              <!--sql_common_core_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_common_core_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_common_core_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_engine_core_shared_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_is_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_is_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_is_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_ssms_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_ssms_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_ssms_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_tools_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_tools_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_tools_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <!--Check if File Version of Non-Instance Loc is correct-->
+            <lar:Not>
+              <!--sqlbrowser_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlbrowser_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlbrowser_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052"/>
+              </lar:And>
+            </lar:Not>
+            <!--<lar:Not>-->
+            <!--sqlsqm_keyfile.dll-->
+            <!--<lar:And>-->
+            <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--</lar:And>-->
+            <!--</lar:Not>-->
+            <lar:Not>
+              <!--sqlsupport10_5_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlsupport10_5_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlsupport10_5_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Csidl="38"/>
+                <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Csidl="38"/>
+              </lar:And>
+            </lar:Not>
+            <!--Check if File Version of Instance Aware Neutral is correct-->
+            <lar:Not>
+              <!--sql_engine_core_inst_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="EqualTo" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <lar:Or>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                    </lar:Or>
+                  </lar:And>
+                </lar:Or>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_fulltext_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_rs_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_as_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <!--Check the language-->
+          <lar:Or>
+            <lar:And>
+              <!--At Least one loc instance needs to be patched-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2500.0"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--At Least one loc instance needs to be patched (for DS issue)-->
+            <lar:And>
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="EqualTo" Data="10.51.2500.0"/>
+                  <lar:Or>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                  </lar:Or>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--Or at least one shared feature needs to be patched-->
+            <lar:Or>
+              <lar:And>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="LessThan" Data="10.51.2500.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2500.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2500.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="10.51.2500.0"/>
+              </lar:And>
+              <!--For Express / Express Adv - Client Tools SDK only-->
+              <lar:And>
+                <lar:Not>
+                  <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                    <lar:And>
+                      <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                    </lar:And>
+                  </bar:RegKeyLoop>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="10.50.1600.1"/>
+                </lar:Not>
+                <lar:Or>
+                  <lar:And>
+                    <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                    <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                    <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Bootstrap R2\2052"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Csidl="38"/>
+                    <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Csidl="38"/>
+                    <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100\Bootstrap R2\2052"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+          <lar:Or>
+            <!--Check if File Version of Non-Instance Neutral is correct-->
+            <lar:Or>
+              <!--sql_common_core_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_common_core_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_common_core_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_engine_core_shared_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_is_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_is_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_is_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_ssms_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_ssms_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_ssms_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_tools_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_tools_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\sql_tools_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Or>
+            <!--Check if File Version of Non-Instance Loc is correct-->
+            <lar:Or>
+              <!--sqlbrowser_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlbrowser_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlbrowser_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\2052"/>
+              </lar:And>
+              <!--sqlsqm_keyfile.dll-->
+              <!--<lar:And>-->
+              <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--</lar:And>-->
+              <!--sqlsupport10_5_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlsupport10_5_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlsupport10_5_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz Path="KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\100" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <lar:And>
+                <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Csidl="38"/>
+                <bar:FileVersion Path="Microsoft SQL Server\100\KeyFile\2052\sqlncli_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Csidl="38"/>
+              </lar:And>
+            </lar:Or>
+            <!--Check if File Version of Instance Aware Neutral is correct-->
+            <lar:Or>
+              <!--sql_engine_core_inst_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="EqualTo" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <lar:Or>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                    </lar:Or>
+                  </lar:And>
+                </lar:Or>
+              </bar:RegKeyLoop>
+              <!--sql_fulltext_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+              <!--sql_rs_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+              <!--sql_as_keyfile.dll-->
+              <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="2052"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2009.100.1600.1" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="LessThan" Version="2009.100.2500.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Or>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="4AmrpAKasJOIwxIdsbK9XQUm/WQ=" DigestAlgorithm="SHA1" FileName="SQLServer2008R2SP1-KB2528583-IA64-CHS.exe" Size="314561888" Modified="2011-07-10T20:17:49.647Z">
+        <upd:AdditionalDigest Algorithm="SHA256">OrkmbHFAOBrY0gM517ismH70xgMUCDV18Pn+FjlMqGY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole /IAcceptSQLServerLicenseTerms" Program="SQLServer2008R2SP1-KB2528583-IA64-CHS.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

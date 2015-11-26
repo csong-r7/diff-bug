@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="dd7e8a92-7e18-4c79-bcd1-5be7b7c978c7" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-07-27T20:53:36.415Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1331952" MinDownloadSize="589216">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-cn</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="30b6a809-9ba3-4c0f-9ca3-f569d01dab11"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="d633bdc5-c56a-45de-8519-a67fd1e87f29"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\inetcomm.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.326"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\inetcomm.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Outlook Express\msoe.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.326"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Outlook Express\msoe.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB823353" Value="Installed" Comparison="EqualTo" Data="1"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB887797" Value="Installed" Comparison="EqualTo" Data="1"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="S4ZURlT3ofk5Nl3hEUdMN8JkeTc=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB897715-x86-chs.exe" Size="1331952" Modified="2005-07-25T16:12:26.7230000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="9HIcdd5l1uCb2K6+7Tlp/dSsrP4=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB897715-x86-chs.psf" Size="1790710" Modified="2005-07-25T16:12:29.6930000-07:00" PatchingType="Express"/>
+      <upd:File Digest="/gI2Z61ZX64KUF9vXl9qLuXgKZk=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB897715-x86-express-chs.exe" Size="476912" Modified="2005-07-25T16:12:30.3030000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

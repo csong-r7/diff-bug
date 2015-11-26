@@ -1,0 +1,52 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0276e60e-db17-4389-87e3-74b1c83d3f1a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:30:04.857Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="3340144" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>DACProjectSystemSetup_enu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c9834186-a976-472b-8384-6bb8f2aa43d9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiProductInstalled ProductCode="{7A56D81D-6406-40E7-9184-8AC1769C4D69}" VersionMax="10.50.1750.9" VersionMin="10.50.1750.9"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server 2008 Redist\DACProjectSystem\1033\CurrentVersion" Value="Version" Type="REG_SZ" RegType32="true"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server 2008 Redist\DACProjectSystem\1033\CurrentVersion" Value="Version" Comparison="LessThanOrEqualTo" Data="10.50.1750.9" RegType32="true"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server 2008 Redist\DACProjectSystem\1033\CurrentVersion" Value="Version" Type="REG_SZ" RegType32="false"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server 2008 Redist\DACProjectSystem\1033\CurrentVersion" Value="Version" Comparison="LessThanOrEqualTo" Data="10.50.1750.9" RegType32="false"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UseH3FIJo+CpXKcX7s8xXL5KJfA=" DigestAlgorithm="SHA1" FileName="DACProjectSystemSetup_enu.exe" Size="3340144" Modified="2011-10-13T14:54:55.963Z">
+        <upd:AdditionalDigest Algorithm="SHA256">foDNv6yNJ/keHShIMwcSnT1QFBxN8EDUB1A97k+Uy0c=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="DACProjectSystemSetup_enu.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

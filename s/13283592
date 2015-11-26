@@ -1,0 +1,44 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b45236b7-2163-4835-8861-545e033e6f8f" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="13438616" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-07-29T00:54:14.089Z" PublisherID="b6627d84-ce42-453b-8fa7-34f4cd19a3df">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB2966012 for DPM UI 32 bit</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2353d48c-e621-456d-8d15-05b3c1e0768d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dd6318d7-1cff-44ed-a0b1-9d410c196792"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstalledForProduct xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" PatchCode="{d98f8fa1-b851-416b-b52a-c898c9c45ca2}" ProductCode="{13cf2b59-e470-4141-9851-082a35363e90}" VersionMax="4.1.3441.0" VersionMin="4.1.3313.0"/>
+          <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="0"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="0"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="gcwNykj04ripFJ6cCdzPz8k0sVI=" DigestAlgorithm="SHA1" FileName="DPMManagementShell2012-KB2966012.exe" Size="13438616" Modified="2014-07-21T02:39:23Z">
+        <upd:AdditionalDigest Algorithm="SHA256">Z/17T50wLzQLt5yCj1MZQj7yhIbhVmgiY5oA4XN+fxE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q" Program="DPMManagementShell2012-KB2966012.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

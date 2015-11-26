@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8ce177c0-ec64-44ae-ae40-a8e3753fed55" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-11-12T22:25:58.029Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="165931" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary 1</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiPatchInstalled/>
+          <bar:FileVersion Path="Inetsrv\Ftpsvc.dll" Comparison="GreaterThanOrEqualTo" Version="7.0.6545.14980" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:FileVersion Path="Inetsrv\Ftpsvc.dll" Comparison="LessThan" Version="7.0.6545.14980" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{76AB527E-27D6-45D8-B2A2-229CB45D537A}" MinMsiVersion="1">
+            <TargetProduct MinMsiVersion="400">
+              <TargetProductCode Validate="true">{47227506-80D3-4768-B822-F9F4BCFBE7C1}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">7.0.6545.13931</TargetVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EC76D79F-CEDB-435A-A1FE-E39D5241D62D}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{47227506-80D3-4768-B822-F9F4BCFBE7C1}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>Family1</PatchFamily>
+              <Sequence>7.0.0.14980</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="j/6WbfxR0S33xGkXOi0OLZ+Wemo=" DigestAlgorithm="SHA1" FileName="ftp7_x86_kb2716513.cab" Size="165931" Modified="2012-11-07T22:24:23.817Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">kZf2L20/59pNPoXR50zUuyqN1fYGYzycV/e/OeBqAG8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{76ab527e-27d6-45d8-b2a2-229cb45d537a}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

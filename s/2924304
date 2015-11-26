@@ -1,0 +1,237 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="97315206-c26c-4947-91d0-56a32b4e24aa" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-08-05T23:09:06.200Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1326968" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\Downloaded Program Files\msrdp.ocx" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4522"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\Downloaded Program Files\msrdp.ocx"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3581"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileModified Csidl="36" Path="\web\tsweb\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\web\tsweb\msrdp.cab"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileModifiedPrependRegSz Path="\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z" Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\TS Web Clients" Value="InstallDir" RegType32="true"/>
+              <lar:Not>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\TS Web Clients" RegType32="true"/>
+              </lar:Not>
+              <lar:Not>
+                <bar:FileExistsPrependRegSz Path="\msrdp.cab" Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\TS Web Clients" Value="InstallDir" RegType32="true"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:And>
+              <lar:Or>
+                <bar:FileModified Path="A:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="A:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="B:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="B:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="C:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="C:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="D:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="D:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="E:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="E:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="F:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="F:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="G:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="G:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="H:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="H:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="I:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="I:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="J:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="J:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="K:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="K:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="L:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="L:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="M:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="M:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="N:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="N:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="O:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="O:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="P:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="P:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="Q:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="Q:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="R:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="R:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="S:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="S:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="T:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="T:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="U:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="U:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="V:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="V:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="W:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="W:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="X:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="X:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="Y:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="Y:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileModified Path="Z:\inetpub\remote\msrdp.cab" Comparison="GreaterThan" Modified="2009-06-03T00:00:00.0000000Z"/>
+                <lar:Not>
+                  <bar:FileExists Path="Z:\inetpub\remote\msrdp.cab"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.0.0"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="LessThanOrEqualTo" Version="5.2.0.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+          <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.0.0"/>
+          <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="LessThanOrEqualTo" Version="5.2.0.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="1uE+Z0QuT/R8YCjOqBhRBtJNy2U=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB958470-x86-CSY.exe" Size="1326968" Modified="2009-06-23T23:34:11.233" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

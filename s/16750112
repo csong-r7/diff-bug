@@ -1,0 +1,78 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="01dd52cd-4311-4771-a3ea-276883fa7edc" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="651984" MinDownloadSize="287904" PublicationState="Published" CreationDate="2015-03-10T01:08:49.552Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb3033889-x86-embedded-nor</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\msctf.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6727"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\msctf.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\msctf.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\msctf.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="wTdZFOgSYLc6Dev/FQTZmShD5ss=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3033889-x86-embedded-nor.exe" Size="651984" Modified="2015-02-09T09:02:47Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">yy+i1ejwWcBOj32w75VIWoBiBkGEl5YLXlnqyP9aZi8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="2pfKqdMygTAZWOSImClKE6oS+CU=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3033889-x86-embedded-express-nor.cab" Size="255800" Modified="2015-02-09T09:02:47Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">NXuf1RDQTBetmXyA19HAFZ+8e76ev/7jN7Vff6VRG0s=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="EBOuc3gN/DDYDDhe7i/kekEB9N0=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3033889-x86-embedded-nor.psf" Size="243469" Modified="2015-02-09T09:02:48Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">PKHavAnBjfmRaJcwqt5JLVzcE4BlbPBpk5hQRjzmbX8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

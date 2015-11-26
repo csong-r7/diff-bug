@@ -1,0 +1,69 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="54da5237-e885-47f5-977f-ec5e9f5967f2" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2010-06-03T01:19:42.165Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="915033" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary 0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder"/>
+          <bar:FileVersionPrependRegSz Path="wmenceng.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3369" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder" Value="InstallDir"/>
+          <bar:FileVersionPrependRegSz Path="wmenceng.dll" Comparison="LessThanOrEqualTo" Version="9.0.0.4499" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder" Value="InstallDir"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder"/>
+          <bar:FileVersionPrependRegSz Path="wmenceng.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.2980" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder" Value="InstallDir"/>
+          <bar:FileVersionPrependRegSz Path="wmenceng.dll" Comparison="LessThan" Version="9.0.0.3369" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Media\Encoder" Value="InstallDir"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{950E24CA-CA7E-4606-8F0D-DEDBC94F2A1E}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="100">
+              <TargetProductCode Validate="true">{E38C00D0-A68B-4318-A8A6-F7D4B5B1DF0E}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">9.00.2980</TargetVersion>
+              <UpdatedVersion>9.00.3369</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{A5D18DDF-9E23-4580-B077-837823AE35C1}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{E38C00D0-A68B-4318-A8A6-F7D4B5B1DF0E}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>WMEApps</PatchFamily>
+              <Sequence>1</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="jkPn8ifjUZWsVPKvR/MXK4ZJX2I=" DigestAlgorithm="SHA1" FileName="WindowsMedia9-KB979332-INTL.cab" Size="915033" Modified="2010-05-12T17:32:09.82" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{950e24ca-ca7e-4606-8f0d-dedbc94f2a1e}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

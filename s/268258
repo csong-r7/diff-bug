@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="27f7a7c6-2c75-48ac-a7ab-728526491583" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-12-08T19:20:44.635Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="792840" MinDownloadSize="492174">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja-nec</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja-nec</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a3475da7-e20a-46a8-b235-170794365b3d"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.9.732" Csidl="37"/>
+          <lar:Not>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\quartz.dll" Csidl="37"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.9.726" Csidl="37"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\quartz.dll" Comparison="LessThan" Version="6.1.9.732" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="V2sqIrU+fAFBrxYJzx9bgoy0GdQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB904706-v2-nec98-JPN.exe" Size="792840" Modified="2005-11-16T22:04:25.3530000-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="7eiBAlTmI6csWu6ewt/nL1a6Ic0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB904706-nec98-Express-JPN.EXE" Size="481512" Modified="2005-09-14T13:57:24.8500000-07:00" PatchingType="Express"/>
+      <upd:File Digest="eoIv2u/iCsVRWhH3FtA8CkFRvJk=" DigestAlgorithm="SHA1" FileName="windows2000-kb904706-nec98-jpn.psf" Size="900334" Modified="2005-09-14T13:57:25.4770000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

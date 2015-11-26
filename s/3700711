@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="29a83b4c-d587-4a8f-9ab5-d8a919131313" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-04-07T21:48:58.628Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1245056" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary it</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing">
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\rdbss.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4671"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\rdbss.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mrxsmb.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4671"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mrxsmb.sys"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="DSbA/3rYYU8Expc1jINcFx8Uu+o=" DigestAlgorithm="SHA1" FileName="windowsserver2003.windowsxp-kb980232-x64-ita.exe" Size="1245056" Modified="2010-03-24T03:45:55.773" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

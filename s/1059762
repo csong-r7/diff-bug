@@ -1,0 +1,35 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5a456666-3ac5-4162-9f52-260885d6533a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2008-02-25T06:34:26.588Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Systems Management Server 2003</upd:Title>
+        <upd:Description>The Systems Management Server 2003 category will allow Service Packs 2 and Updates to be offered to Systems Management Server product family. </upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="78f4e068-1609-4e7a-ac8e-174288fa70a1"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS"/>
+          <lar:Or>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full Version" Comparison="BeginsWith" Data="2.50" RegType32="true"/>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full UI Version" Comparison="BeginsWith" Data="2.50" RegType32="true"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cat:Category">
+      <cat:CategoryInformation xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" CategoryType="Product" ProhibitsSubcategories="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

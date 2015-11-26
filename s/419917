@@ -1,0 +1,40 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="242d252d-a34f-4251-bd28-0a362c9acd70" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="Windows Locale" PublicationState="Published" CreationDate="2007-01-27T00:49:15.168Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Hold Em banned languages filter</upd:Title>
+        <upd:Description>This detectoid will return true (is Installed) if the install language of the OS is anything other than Chinese Traditional, Chinese Simplified, Chinese Hong Kong, Korean or Arabic.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e7441a84-4561-465f-9e0e-7fc16fa25ea7"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0804"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0c04"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0404"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0412"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0401"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

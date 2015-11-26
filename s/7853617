@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fb3712d6-dacd-4dc5-ae9f-e6043d049272" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2013-04-16T22:34:39.299Z" PublisherID="81878342-fc35-4385-8554-a6184f59a8f8" MaxDownloadSize="22209293" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB2826392_AdminConsole_amd64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="66708a26-1d3a-4976-ae1b-3b6a6c61eed3"/>
+          <upd:UpdateIdentity UpdateID="c6972075-20f5-4e49-a7fb-ac3817de4692"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba649061-a2bd-42a9-b7c3-825ce12c3cd6"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{32A2C205-610D-4C45-B5C0-ADC606346D2E}"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{392CA022-BA3C-42BC-9865-B19924804A19}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="301">
+              <TargetProductCode Validate="true">{CDFB453F-5FA4-4884-B282-F46BDFC06051}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.1.6011.0</TargetVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{D7F75BB1-5137-466B-ADC5-F170844C9C61}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{CDFB453F-5FA4-4884-B282-F46BDFC06051}</TargetProductCode>
+            <ObsoletedPatch>{32A2C205-610D-4C45-B5C0-ADC606346D2E}</ObsoletedPatch>
+            <SequenceData>
+              <PatchFamily>client</PatchFamily>
+              <Sequence>1.1.20</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="iU4F3KY/W6bY0/XYnAIJDR6tgGU=" DigestAlgorithm="SHA1" FileName="KB2826392_AdminConsole_amd64.cab" Size="22209293" Modified="2013-04-01T10:43:27.68Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">nlDd94tkahMJiR5+lGV/RERuMuw4TwSL2f9tz1+Sn3o=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{392ca022-ba3c-42bc-9865-b19924804a19}" CommandLine="BOOTSTRAPPED=1" UninstallCommandLine="BOOTSTRAPPED=1"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

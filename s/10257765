@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6f37f6e1-a448-48e0-a092-4eb6ff92500d" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="1452792" MinDownloadSize="673256" PublicationState="Published" CreationDate="2013-12-09T23:02:16.489Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb2893984-x86-jpn</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5250"/>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\win32k.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\win32k.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\win32k.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="LwS/TuqmCFq2ek5sgq9rDvhWHXg=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2893984-x86-jpn.exe" Size="1452792" Modified="2013-11-08T12:10:56Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">HfMf7T06sj0vzAb4pIeYAG3lXH75cTR02PT7R8jJmXg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="33NqO+xh1HApN7/oipL/nC1KsKI=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2893984-x86-express-jpn.exe" Size="507128" Modified="2013-11-08T12:10:59Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">1V99gJTPsHX7scagLcvQtGjVE41dTlhbnEt2QISOQuM=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="7xPYSfzsagJ5Oh1lzsjUKxogZeM=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2893984-x86-jpn.psf" Size="7343063" Modified="2013-11-08T12:11:25Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">HutthIrNnOhgM2syO4Fi4DzY7deyF2M5AzzueE4wDSw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

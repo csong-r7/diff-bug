@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6e26930e-878c-4155-a515-ec48e59379b6" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-10-06T03:50:21.913Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2569600" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\SysWOW64\comctl32.dll" Comparison="GreaterThanOrEqualTo" Version="5.82.3790.4770"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\SysWOW64\comctl32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\comctl32.dll" Comparison="GreaterThanOrEqualTo" Version="5.82.3790.4770"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\comctl32.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="36" Path="\SysWOW64\comctl32.dll"/>
+            <bar:FileExists Csidl="37" Path="\comctl32.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="36" Path="\SysWOW64\comctl32.dll"/>
+          <bar:FileExists Csidl="37" Path="\comctl32.dll"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="KNGDkcZpaVscjOBzk2phn/GJjDs=" DigestAlgorithm="SHA1" FileName="windowsserver2003.windowsxp-kb2296011-x64-enu.exe" Size="2569600" Modified="2010-09-15T12:08:32.517" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

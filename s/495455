@@ -1,0 +1,95 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0f51c6b8-0b39-4361-9b22-82638b2c7985" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-05-01T00:31:59.520Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="701240" MinDownloadSize="549977">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Not>
+              <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+            </lar:Not>
+            <bar:FileVersion Csidl="37" Path="\ws03res.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.586"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentsvr.exe" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentsvr.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentdp2.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentdp2.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <bar:FileVersion Csidl="37" Path="\w03a2409.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.2781"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentsvr.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.1242"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentsvr.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.1242"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\msagent\agentdp2.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.1242"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\msagent\agentdp2.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Z4fp3Cb8evEyRTUwLot//Pmea2Y=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB920213-x86-express-PTB.exe" Size="491320" Modified="2006-09-22T17:37:44.897" PatchingType="Express"/>
+      <upd:File Digest="tK+svRWrbXLykuxmmsAAI1vdw3E=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB920213-x86-PTB.exe" Size="701240" Modified="2006-09-22T17:37:45.303" PatchingType="SelfContained"/>
+      <upd:File Digest="ygPhqjF6CIFWraMwT0r0l0e9etQ=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB920213-x86-PTB.psf" Size="1032512" Modified="2006-09-22T17:37:45.787" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

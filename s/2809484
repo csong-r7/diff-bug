@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b9e161d9-624e-4e4c-92b5-f0354e7930f5" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-06-25T07:31:06.783Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1054072" MinDownloadSize="631354">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.5.2600.3580"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.5.2600.5822"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="TxDjJdQtJlCaTipISyYDpqIKlsU=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB971633-x86-CSY.exe" Size="1054072" Modified="2009-06-09T19:36:26.987" PatchingType="SelfContained"/>
+      <upd:File Digest="2ZUFMn2WYsBrXht5AIvC44pxOAQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB971633-x86-CSY.psf" Size="9571854" Modified="2009-06-09T19:36:29.423" PatchingType="Express"/>
+      <upd:File Digest="fsm7sEbT8LZeaecHQoiK3V45wJI=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB971633-x86-express-CSY.cab" Size="244358" Modified="2009-06-09T19:36:29.72" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

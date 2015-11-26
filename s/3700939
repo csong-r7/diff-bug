@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b9959634-dfd4-416f-a68a-d99986c2b6dd" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-04-07T21:57:04.961Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="681848" MinDownloadSize="404662">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\l3codecx.ax" Comparison="GreaterThanOrEqualTo" Version="1.6.0.51"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\l3codecx.ax"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\l3codeca.acm" Comparison="GreaterThanOrEqualTo" Version="1.9.0.306"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\l3codeca.acm"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="b51Wnam7hywYY5H+LfI50eLCyKI=" DigestAlgorithm="SHA1" FileName="windowsxp-kb977816-x86-cht.exe" Size="681848" Modified="2010-03-24T03:22:13.93" PatchingType="SelfContained"/>
+      <upd:File Digest="+0rA7YB2MF6f27ZMTuuH2PldGU0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB977816-x86-express-CHT.cab" Size="244582" Modified="2010-03-24T03:22:14.15" PatchingType="Express"/>
+      <upd:File Digest="Q1UM2J0xkcRLUX5raE+hC2Xta60=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB977816-x86-CHT.psf" Size="671246" Modified="2010-03-24T03:22:14.43" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

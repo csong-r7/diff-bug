@@ -1,0 +1,51 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="55f67862-0c58-4a7e-8c73-91946a47e192" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2005-02-19T01:26:39.860Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="362344" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update for Windows 2000 (KB830352)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="61324697-eb51-4b21-9731-c431c3e3493d"/>
+          <upd:UpdateIdentity UpdateID="bdc29f4c-646c-4f37-9d28-230e47a0b4f7"/>
+          <upd:UpdateIdentity UpdateID="11367cca-26cd-4ae5-b826-8988733dbd17"/>
+          <upd:UpdateIdentity UpdateID="7a62d92d-bad0-4ab8-ae61-d6cc4383e6ff"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersion Csidl="37" Path="\wins.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6870"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Csidl="37" Path="\wins.exe"/>
+          <bar:FileVersion Csidl="37" Path="\wins.exe" Comparison="LessThan" Version="5.0.2195.6870"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="kOyRNNJHzpe0hQELfjPXMqlRZNY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB830352-x86-PTG.EXE" Size="362344" Modified="2003-12-16T12:57:50.3446974-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z -ER" Program="Windows2000-KB830352-x86-PTG.EXE">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

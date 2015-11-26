@@ -1,0 +1,74 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="05bb8395-2d49-42ad-b47c-047b8db652c4" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-04-23T19:33:33.428Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="650112" MinDownloadSize="542106">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\wintrust.dll" Comparison="GreaterThanOrEqualTo" Version="5.131.3790.4970"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\wintrust.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\imagehlp.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4970"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\imagehlp.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\wintrust.dll"/>
+            <bar:FileExists Csidl="37" Path="\imagehlp.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\wintrust.dll"/>
+          <bar:FileExists Csidl="37" Path="\imagehlp.dll"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zrbOE24rq7S8yC0Q4N8vxlsfRpk=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2653956-x86-ptb.exe" Size="650112" Modified="2012-03-15T14:49:20.4Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">/bRIV8w+X0B3ETrh2kJgE+9vfnYhggeIb4xsQG1cssQ=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="gHfaiW6l9mqs29QsZgohRIpRTOM=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2653956-x86-express-ptb.exe" Size="499584" Modified="2012-03-15T14:49:20.697Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">wEvPx/oncJJWdq5pNEwoJFszJtqTb6nquSmcHAAO8yY=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="zr768PfqrzXWkKM0MnLxQHgzQbQ=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2653956-x86-ptb.psf" Size="661544" Modified="2012-03-15T14:49:21.073Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">ZaakM4EYOArtwA3ySaxwGBDHOhDbsVjWru+OZJOD5Y8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

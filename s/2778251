@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="45cffaf6-f40e-4df4-b2d9-c559babe931f" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-06-04T04:38:18.917Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="994032" MinDownloadSize="523388">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="11367cca-26cd-4ae5-b826-8988733dbd17"/>
+          <upd:UpdateIdentity UpdateID="7a62d92d-bad0-4ab8-ae61-d6cc4383e6ff"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntdsa.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7292"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntdsa.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7226"/>
+          </lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\NTDS"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\NTDS"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zL+BZHys1wjipDAhOThrZI7s31c=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969805-x86-Express-KOR.EXE" Size="493440" Modified="2009-05-14T01:06:18.883" PatchingType="Express"/>
+      <upd:File Digest="Arp/KHIeD05rP/1dFLIjYrSZupU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969805-x86-KOR.EXE" Size="994032" Modified="2009-05-14T01:06:19.773" PatchingType="SelfContained"/>
+      <upd:File Digest="JwJJw0hsd7kn7IgO7bqtCyfk3G4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969805-x86-KOR.psf" Size="2362257" Modified="2009-05-14T01:06:21.603" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

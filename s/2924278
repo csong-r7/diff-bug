@@ -1,0 +1,92 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="115007a9-f215-464b-8b6b-6ea3caa2cc4a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-08-05T23:08:14.811Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1533688" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3552"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3581"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\Downloaded Program Files\msrdp.ocx" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4522"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\Downloaded Program Files\msrdp.ocx"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3581"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4522"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\remote desktop\mstsc.exe"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4524"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{7584c670-2274-4efb-b00b-d6aaba6d3850}" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{7584c670-2274-4efb-b00b-d6aaba6d3850}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{7584c670-2274-4efb-b00b-d6aaba6d3850}" Value="AlternateCLSID" Comparison="EqualTo" Data="{6A6F4B83-45C5-4ca9-BDD9-0D81C12295E4}" RegType32="true"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{9059f30f-4eb1-4bd2-9fdc-36f43a218f4a}" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{9059f30f-4eb1-4bd2-9fdc-36f43a218f4a}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{9059f30f-4eb1-4bd2-9fdc-36f43a218f4a}" Value="AlternateCLSID" Comparison="EqualTo" Data="{971127BB-259F-48c2-BD75-5F97A3331551}" RegType32="true"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{4EDCB26C-D24C-4e72-AF07-B576699AC0DE}" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{4EDCB26C-D24C-4e72-AF07-B576699AC0DE}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{4EDCB26C-D24C-4e72-AF07-B576699AC0DE}" Value="AlternateCLSID" Comparison="EqualTo" Data="{54CE37E0-9834-41ae-9896-4DAB69DC022B}" RegType32="true"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="VBDUAetFVV89xpz1+PRcGxm3j30=" DigestAlgorithm="SHA1" FileName="Windows2000-KB958470-x86-HUN.EXE" Size="1533688" Modified="2009-07-09T00:16:10.787" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

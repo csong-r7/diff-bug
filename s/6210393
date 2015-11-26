@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b5935d27-dbb5-40bd-849d-7c8533e848cc" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-11-08T05:55:50.207Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="536128" MinDownloadSize="267044">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary he</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\synceng.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6293"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\synceng.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\synceng.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\synceng.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UkamVMtxd3ddyj5U10Rxgq6oX+U=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2727528-x86-heb.exe" Size="536128" Modified="2012-10-24T16:26:11.093Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">NdGYa0YvncRmVGvcGiMHxz4lvZ5KdCy4VV+0GYoc1JY=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="LJryqTo+b1/vFlrQ3mBN8Q0gmoc=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2727528-x86-express-heb.cab" Size="255098" Modified="2012-10-24T16:26:11.483Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">VFSFkIqoC624ddel4Kd+k7q4NKoIlgLzWx4hp8eampc=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="jCxxtlQev1IOghfSQH9WYf3GMyQ=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2727528-x86-heb.psf" Size="98558" Modified="2012-10-24T16:26:11.92Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">jTNdZ0khuoAYKOM6N3TPDHVeD13Xya6RsECfJSRZnhI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

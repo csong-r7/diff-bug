@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="723c6f57-9d15-41cd-9931-a4c3481bc70f" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T04:09:25.609Z" PublisherID="416d1863-62f5-437a-a286-eef853950684" MaxDownloadSize="163605" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update for Microsoft Unified Communications Managed API 3.0, Windows Workflow Activities Runtime 64 bit (2568557)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2fe889f2-6a4f-4eaf-a504-27bf46f12b95"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="04d85ac2-c29f-4414-9cb6-5bcd6c059070"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <lar:Not>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\UCMA\{B4353F44-608B-4460-AB47-01013A9DADA2}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.0.7577.158"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{DF4AD96A-CEBF-4137-9BB7-9F397EDECF94}" MinMsiVersion="5" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="true">{C732A314-2A0C-46D9-961B-4ED0D6B9F36E}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="GreaterThanOrEqual" ComparisonFilter="MajorMinorUpdate">4.0.7577.0</TargetVersion>
+              <UpdatedVersion>4.0.7577.158</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{D477BCEE-336F-4303-A258-CF9D27DDBF84}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{C732A314-2A0C-46D9-961B-4ED0D6B9F36E}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>PatchFamily_Update</PatchFamily>
+              <Sequence>1.0.158.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="/hLDP/mMF8NUGh0HZcw7VZVp6A8=" DigestAlgorithm="SHA1" FileName="UcmaWorkflowRuntime.cab" Size="163605" Modified="2011-08-16T23:50:37.22Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">qLNuUnwt4NQLzwQToelZ12nTlPXNn4do7urR06abThk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{df4ad96a-cebf-4137-9bb7-9f397edecf94}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

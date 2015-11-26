@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5120063c-1c53-42de-9c41-1c2159bec81a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2004-10-27T00:32:04.715Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3907328" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="d633bdc5-c56a-45de-8519-a67fd1e87f29"/>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:UpdateIdentity UpdateID="fc367815-5227-41ca-b3aa-32447a82e946"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:WUv4RegKeySubstring xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Data="Q823353" Value="MinorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\Inetcomm.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1441"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\Inetres.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\Msoeacct.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\Msoert2.dll " Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:WUv4RegKeyValue xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Data="6.0.2800.1106" Value="Version" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UJk1OXdu6cf1ZEwH5NJSyF/uhfI=" DigestAlgorithm="SHA1" FileName="IE6.0sp1-KB823353-ia64-ENU.exe" Size="3907328" Modified="2004-06-29T15:53:53.6317241-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q:a /r:n" Program="IE6.0sp1-KB823353-ia64-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Installation Succeded</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Installation Succeded, Reboot Required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

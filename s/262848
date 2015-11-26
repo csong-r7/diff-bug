@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a5647328-e6f9-4bf5-98c9-1c6ae5bf4109" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2005-11-08T15:34:23.126Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="398592" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update for Windows 2000 (KB822343)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="61324697-eb51-4b21-9731-c431c3e3493d"/>
+          <upd:UpdateIdentity UpdateID="bdc29f4c-646c-4f37-9d28-230e47a0b4f7"/>
+          <upd:UpdateIdentity UpdateID="11367cca-26cd-4ae5-b826-8988733dbd17"/>
+          <upd:UpdateIdentity UpdateID="7a62d92d-bad0-4ab8-ae61-d6cc4383e6ff"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows Media Services\wm822343\FileList\File1" Value="Version" Comparison="EqualTo" Data="4.1.0.3932"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows Media Services\KB822343" Value="IsInstalled" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Path="..\Inetpub\Scripts\nsiislog.dll"/>
+            </lar:Not>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Path="..\Inetpub\Scripts\nsiislog.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Path="..\Inetpub\Scripts\nsiislog.dll" Comparison="GreaterThanOrEqualTo" Version="4.1.0.3932"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\nscmperf.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\nscmperf.dll" Comparison="LessThan" Version="4.9.9.9999"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Path="..\Inetpub\Scripts\nsiislog.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Path="..\Inetpub\Scripts\nsiislog.dll" Comparison="LessThan" Version="4.1.0.3932"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="Windows Media\Server\nsiislog.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="Windows Media\Server\nsiislog.dll" Comparison="LessThan" Version="4.1.0.3932"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="glWe1yndLRW9a8nlnJkd5Hqf3D0=" DigestAlgorithm="SHA1" FileName="WindowsMedia41-KB822343-CHT.exe" Size="398592" Modified="2004-03-02T16:55:16.0966875-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="-q -z -ER" Program="WindowsMedia41-KB822343-CHT.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

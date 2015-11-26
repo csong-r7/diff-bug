@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="bbfa9480-de7f-4270-b741-a9a39aec9bfb" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-10-06T22:01:34.508Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="526328" MinDownloadSize="503442">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="37" Path="\netman.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7061"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\netman.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="O3Z0DosZx5i2RfIEMZhS6abGXj8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB905414-x86-HUN.EXE" Size="526328" Modified="2005-09-14T14:03:20.6330000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="h2pad8cg8hI3iLpbv8xtj0hbSLw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB905414-x86-Express-HUN.EXE" Size="487144" Modified="2005-09-14T14:03:20.8370000-07:00" PatchingType="Express"/>
+      <upd:File Digest="1R8vpxcN7w4vJkhieldy1MpRCaU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB905414-x86-HUN.psf" Size="108782" Modified="2005-09-14T14:03:20.9930000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

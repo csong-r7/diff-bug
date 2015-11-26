@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="54973a7f-79a5-4e81-ad50-afda2dcbf8eb" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-04-09T08:54:16.062Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="930856" MinDownloadSize="631289">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\NETLOGON.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7011"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\NETLOGON.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7151"/>
+          <bar:FileVersion Csidl="37" Path="\winhttp.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3490"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\MSV1_0.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6926"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\MSV1_0.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="HhadrTpdQhGhESMQyxXDuBDQLQs=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960803-x86-Express-NOR.EXE" Size="495472" Modified="2009-03-25T23:16:49.697" PatchingType="Express"/>
+      <upd:File Digest="GsHZTBaXAN0LF4ow+fygwPChaVg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960803-x86-NOR.EXE" Size="930856" Modified="2009-03-25T23:16:50.573" PatchingType="SelfContained"/>
+      <upd:File Digest="thsuhZs8mRH58s810Pljzfvb5w0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960803-x86-NOR.psf" Size="1640821" Modified="2009-03-25T23:16:51.587" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

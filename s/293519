@@ -1,0 +1,72 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="75043b10-d565-472a-9a30-dc89957cfe02" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-04-21T18:39:02.080Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="270999272" MinDownloadSize="78643200">
+      <upd:InstallationBehavior Impact="RequiresExclusiveHandling" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>nl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NL Package for Windows XP SP2 (WUS)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e0823a95-2884-43e8-bddc-a19eac2e516c"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="761366f4-621f-48d7-acc2-30399d599eb9"/>
+        <upd:UpdateIdentity UpdateID="ff2a96fb-cc89-4e5e-83b2-7d48aa179840"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntoskrnl.exe" Comparison="EqualTo" Version="5.1.2600.2180" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+          </lar:Not>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntoskrnl.exe" Comparison="EqualTo" Version="5.1.2600.2096" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntoskrnl.exe" Comparison="EqualTo" Version="5.1.2600.2149" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntoskrnl.exe" Comparison="EqualTo" Version="5.1.2600.2162" Csidl="37"/>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="ntoskrnl.exe" Comparison="EqualTo" Version="5.1.2600.2174" Csidl="37"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ZFUaU1mB+82cK6w/kd8wxrNhByU=" DigestAlgorithm="SHA1" FileName="xpSP2.exe" Size="270999272" Modified="2004-09-14T02:24:10.9570000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="H4EWV2XGpn/okJbAWV2OX25JDec=" DigestAlgorithm="SHA1" FileName="WindowsXP-sp2-x86fre-nl-2180.psf" Size="753000682" Modified="2004-09-14T02:41:36.6870000-07:00" PatchingType="Express"/>
+      <upd:File Digest="vDulelOKzmgluJFkj7CiStOWYZw=" DigestAlgorithm="SHA1" FileName="xpSP2-express.exe" Size="1582496" Modified="2004-09-14T02:41:40.5770000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

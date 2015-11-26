@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="aa32e30b-dbd3-4926-8c34-a7bfc4f8920a" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T01:10:45.454Z" PublisherID="4f18dc97-f61b-47c4-b9ac-2b83f7ac6214" MaxDownloadSize="831056" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+      <upd:Language>zh-tw</upd:Language>
+      <upd:Language>en</upd:Language>
+      <upd:Language>fr</upd:Language>
+      <upd:Language>de</upd:Language>
+      <upd:Language>it</upd:Language>
+      <upd:Language>ja</upd:Language>
+      <upd:Language>ko</upd:Language>
+      <upd:Language>pt-br</upd:Language>
+      <upd:Language>ru</upd:Language>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>allLanguages</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e24a1d05-ac97-4554-8517-904436848d88"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2cdbfa44-e2cb-4455-b334-fce74ded8eda"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{0002E559-0000-0000-C000-000000000046}" Value="Compatibility Flags" Type="REG_DWORD"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{0002E559-0000-0000-C000-000000000046}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024"/>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{0002E55B-0000-0000-C000-000000000046}" Value="Compatibility Flags" Type="REG_DWORD"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{0002E55B-0000-0000-C000-000000000046}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExistsPrependRegSz Path="\owc11.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="/RlL5Cu7egOspC6r60s6tUL+uN4=" DigestAlgorithm="SHA1" FileName="isaserver-kb947826-fullfile-x86-glb.exe" Size="831056" Modified="2009-08-04T10:53:25.653Z">
+        <upd:AdditionalDigest Algorithm="SHA256">klKCWJKyFTOnSbebfaclWqUH/FNjL0KLz9LFd4U9NUM=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/passive" Program="isaserver-kb947826-fullfile-x86-glb.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

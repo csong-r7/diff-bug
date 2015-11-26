@@ -1,0 +1,1077 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fab2bdc2-b324-486d-93e6-196504ef8290" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" MaxDownloadSize="20030723" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-02-10T22:57:12.717Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ie8-windows6.0-kb2909921-x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5312e4f1-6372-442d-aeb2-15f2132c9bd7"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\8.0\WU" Value="ForcePostUpdateInstall" Comparison="EqualTo" Data="1"/>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\8.0\WU" Value="ForcePostUpdateDownload" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\8.0\WU" Value="IEDUVersion" Comparison="EqualTo" Data="18702"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:37Z" lastUpdateTimeStamp="2014-02-03T17:47:37Z">
+            <assemblyIdentity name="Package_for_KB2909921" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-59_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2909921_ie8" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:43Z" lastUpdateTimeStamp="2014-02-03T17:47:43Z">
+            <assemblyIdentity name="Package_1_for_KB2909921_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bd415f5a83d3e0472a86577a0fd8f3eb" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3cf871d307464a281a0b35a9567d8027" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae010d6b79445653fc0cf18264b67bf7" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="d0eeb26c4fd62f4e46d95f010d5cf92d" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="daa24281bf47eb95b32f63587d9ca8ab" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="55c43ffa22fa0ec1565c399ca39acca0" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="774efec347de47ad8224aa8b210b7a37" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-8_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7be935d38b40e2fa480d8794146ff034" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="79165548fd23ec9cbb8057663686a609" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5a88d5b441f2fdf8bd9ba205b9eac009" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f018c919abfff51aeea388fca28e7dc9" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-12_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7605e2b2ed5c13b2164d5a13875fc527" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e7e761ccb697ce2da7275a08a194851d" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-14_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4d1d718a5b1cb6c1b2d1de74642b931a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="16829356178062680ae881ac84531c8e" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-16_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="d7ca9a989fe243c09b478071d02db846" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="adc8f12614bb0f82f7067735558163ff" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-18_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4c08998b3ecb9d96f79c2f0e127e156a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-19_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="355dec5c03f40224af063d5d1975cab4" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-20_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7d6cd8538b1ef2189c01d45c4f70352a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-21_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9b408ae6dc5ea83fe72de33caf5c6b6b" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-22_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8e6d7076b273e352f4b0bc84caaf13e4" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-23_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3d8826d15c5ce18a0d73c46c0e2b467c" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-24_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7a54d261d8bdc6606213f8a875e4f227" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-25_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4e387bcc1d69794a799065c9d934c968" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-26_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7335e25c8a6c613ec29b5e286780e362" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-27_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.23562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3915f23077b323f64bfd0768384a54d0" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-28_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.23562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="25ba68f52b4d9e7180e66d7491110f4c" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:03Z" lastUpdateTimeStamp="2014-02-03T17:47:03Z">
+            <assemblyIdentity name="Package_1_for_KB2909921" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bd415f5a83d3e0472a86577a0fd8f3eb" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-WinsockAutodialStub" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="cc5fc2205e11e6abf0eb249621e416a2" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3cf871d307464a281a0b35a9567d8027" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-VGX" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="44dbec9db68d97e108ad14aa7850ec32" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae010d6b79445653fc0cf18264b67bf7" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-6_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Sysprep" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f03756213af2b34a7b05758a66ae10c3" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="d0eeb26c4fd62f4e46d95f010d5cf92d" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="fda15bd90c1cfd9f472a63473bb42f95" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="daa24281bf47eb95b32f63587d9ca8ab" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-10_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-RuntimeUtilities" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="433a10097e2ebea81ad548a2b0968a69" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="55c43ffa22fa0ec1565c399ca39acca0" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-12_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e54bb28906ce7102fb458d25d3283cea" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="774efec347de47ad8224aa8b210b7a37" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-JScriptDebugUI" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="813983ef9c463298af67eab6e3862952" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7be935d38b40e2fa480d8794146ff034" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-16_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="21ee997f2e71adb45ebfc65e23919c81" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="79165548fd23ec9cbb8057663686a609" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-18_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IEInstal" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="997b5ce74558fcf76a27ac170d77a705" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-19_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5a88d5b441f2fdf8bd9ba205b9eac009" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-20_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEShims" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2ad7fca4f56c34e32955469d99f6d744" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-21_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f018c919abfff51aeea388fca28e7dc9" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-22_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-IEProxy" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bae770bd77598713292d76f8f5d47b00" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-23_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7605e2b2ed5c13b2164d5a13875fc527" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-24_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRenderingAdvanced" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53ff29c17b52991865202a671d299511" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-25_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e7e761ccb697ce2da7275a08a194851d" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-26_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="690da9e3d8ff7d784ae507fb2144989d" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-27_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4d1d718a5b1cb6c1b2d1de74642b931a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-28_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditing" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="85bddd12d8e35f99d3c9e2a41059f68f" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-29_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="16829356178062680ae881ac84531c8e" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-30_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLConverter" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="1afc88af689d789ffedf6466dd086958" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-31_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="d7ca9a989fe243c09b478071d02db846" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-32_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLActiveXCompat" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b48fa1654122c0dc20a9d605eb457836" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-33_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="adc8f12614bb0f82f7067735558163ff" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-34_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-ieframe" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="96d032b4c83ee807870fed6219956c41" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-35_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4c08998b3ecb9d96f79c2f0e127e156a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-36_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feeds-Platform" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="dd4f441440d8c7059f2b9a7f82553ca5" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-37_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="355dec5c03f40224af063d5d1975cab4" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-38_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Feedsbs" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="33508e3942e34c4b17ba921eb7150766" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-39_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7d6cd8538b1ef2189c01d45c4f70352a" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-40_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtCompat" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="54c1c80829342c73de4455917a371386" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-41_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9b408ae6dc5ea83fe72de33caf5c6b6b" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-42_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-DevTools" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="71fc9473438f8cccc5cc6c3e2057be20" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-43_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8e6d7076b273e352f4b0bc84caaf13e4" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-44_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Controls" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a5a8b2c1c34e17546c5673fa6e96c440" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-45_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3d8826d15c5ce18a0d73c46c0e2b467c" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-46_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e51bb520c3c5012f726ff6e62c4f6973" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-47_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7a54d261d8bdc6606213f8a875e4f227" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-48_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e3aadcfdf33d608d0a2dd60d7d915481" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-49_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4e387bcc1d69794a799065c9d934c968" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-50_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="808090b49ffb1ee30190c850f6bccbe2" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-51_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.23562" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7335e25c8a6c613ec29b5e286780e362" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-52_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ActiveXPolicyProvider" version="8.0.6001.19499" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="df801077cb1c5e642e78364baf41a81c" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-53_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.23562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="3915f23077b323f64bfd0768384a54d0" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-54_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer" version="8.0.6001.19499" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bcf63b1b120d934fed2bf29eab330881" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-55_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.23562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="25ba68f52b4d9e7180e66d7491110f4c" version="8.0.6001.23562" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2909921-56_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer" version="8.0.6001.19499" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="539f35d46704ab71964546f8b0c5a919" version="8.0.6001.19499" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:58Z" lastUpdateTimeStamp="2014-02-03T17:47:58Z">
+            <assemblyIdentity name="Package_for_KB2909921_ie8_0_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-29_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2909921_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:37Z" lastUpdateTimeStamp="2014-02-03T17:47:37Z">
+            <assemblyIdentity name="Package_for_KB2909921_ie8_0" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-57_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2909921" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:59Z" lastUpdateTimeStamp="2014-02-03T17:47:59Z">
+            <assemblyIdentity name="Package_for_KB2909921_ie8_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-Package" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-30_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2909921_ie8_0_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:37Z" lastUpdateTimeStamp="2014-02-03T17:47:37Z">
+            <assemblyIdentity name="Package_for_KB2909921_ie8" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-Package" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-58_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2909921_ie8_0" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2909921" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2909921" creationTimeStamp="2014-02-03T17:47:59Z" lastUpdateTimeStamp="2014-02-03T17:47:59Z">
+            <assemblyIdentity name="Package_for_KB2909921_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2909921_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-8-RTM-Update" language="neutral" version="8.0.6001.18702" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2909921-31_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2909921_ie8_BF" version="8.0.1.1" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="WLRTq0IqCj58cysXIvqLKNL0AJU=" DigestAlgorithm="SHA1" FileName="ie8-windows6.0-kb2909921-x64.cab" Size="20030723" Modified="2014-02-07T15:12:15Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Zc/tFx0M37xUP4kblQdcUdoeAHo/bOMQzAP0247+vZg=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,67 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="35be4c3c-fbfd-40d3-84e2-02a9c9998c02" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" MaxDownloadSize="10905078" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-09-09T01:25:28.444Z" PublisherID="416d1863-62f5-437a-a286-eef853950684">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update Rollup for Windows Fabric v1 CU3 (KB2967486)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e1da3d8c-e055-4de8-b6bb-d5ef24bf88cb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="01ce995b-6e10-404b-8511-08142e6b814e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{A593FD00-64F1-4288-A6F4-E699ED9DCA35}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.0.8308.726"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{A858938B-9E4E-46C5-A815-D9A4A0AA74FF}" MinMsiVersion="5">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="true">{DC35903C-6D48-40A1-BBDD-307E27E691A3}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="GreaterThanOrEqual" ComparisonFilter="MajorMinorUpdate">1.0.960.0</TargetVersion>
+              <UpdatedVersion>1.0.1008.0</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{264C4397-2CA3-4F58-901A-7D67D9474DBF}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{DC35903C-6D48-40A1-BBDD-307E27E691A3}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>WinFabBinaries_Family</PatchFamily>
+              <Sequence>1.0.1008.0</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+            <SequenceData>
+              <PatchFamily>EnvironmentVariableFamily</PatchFamily>
+              <Sequence>1.0.1008.0</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="7w/LqocKe55ZSXk/HZbFFdWGjJs=" DigestAlgorithm="SHA1" FileName="WindowsFabricPatch.CAB" Size="10905078" Modified="2014-08-29T01:48:32Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">doPocNihBEdlBMW0zQpfg1SJJvk4CqQ/8O/UooM1noY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{a858938b-9e4e-46c5-a815-d9a4a0aa74ff}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

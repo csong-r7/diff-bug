@@ -1,0 +1,52 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="247130c3-34de-4d60-8482-70dcaac1c458" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2005-06-13T22:53:51.596Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="246616" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows Malicious Software Removal Tool - June 2005 (KB890830) &lt;Hebrew - Delta&gt;</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\RemovalTools\MRT" Value="SendFullPackage" Comparison="EqualTo" Data="1"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\RemovalTools\MRT" Value="Version" Comparison="EqualTo" Data="08112F4F-11BF-4129-A90A-9C8DD0104005"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="b1hFNaqF8qQyoXN0Wi9CsYqnOvg=" DigestAlgorithm="SHA1" FileName="Windows-KB890830-V1.5-Delta-HEB.exe" Size="246616" Modified="2005-06-13T13:08:29.1370000-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/Q /W" Program="Windows-KB890830-V1.5-Delta-HEB.exe" RebootByDefault="false" DefaultResult="Succeeded">
+        <cmd:ReturnCode Reboot="false" Result="Failed" Code="1603"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,73 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f5a9599f-0aa6-4f85-b1f3-364909a6fdc4" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-08-05T23:10:02.121Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="918776" MinDownloadSize="515901">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fi</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary fi</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing">
+        <upd:UpdateIdentity UpdateID="cca37ce0-6151-428e-9aa8-006ff23c2b8d"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3581"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3552"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Terminal Server Client" Value="UninstallString" Type="REG_SZ"/>
+            <bar:FileExists Csidl="38" Path="\Terminal Services Client\mstsc.exe"/>
+          </lar:Or>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB958471" Value="Installed" Comparison="EqualTo" Data="1"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Terminal Server Client" Value="UninstallString" Type="REG_SZ"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Path="\Terminal Services Client\mstsc.exe"/>
+          </lar:Or>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstsc.exe"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="MZj9D/2JVm05yAvGCSB870VKhuM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB958471-x86-Express-FIN.EXE" Size="496488" Modified="2009-07-20T20:15:25.737" PatchingType="Express"/>
+      <upd:File Digest="eCid0lDNDcFz1rVuFQJBHhf+GS4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB958471-x86-FIN.EXE" Size="918776" Modified="2009-07-20T20:15:25.58" PatchingType="SelfContained"/>
+      <upd:File Digest="93dsFMQKbaMcO1+rGO2MPzMlYKc=" DigestAlgorithm="SHA1" FileName="Windows2000-KB958471-x86-FIN.psf" Size="597871" Modified="2009-07-20T20:15:25.91" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

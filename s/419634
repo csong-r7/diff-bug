@@ -1,0 +1,27 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="dcb265c2-90d6-424a-a076-9b4bc8ae1f12" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="WMI Detection" PublicationState="Published" CreationDate="2007-01-27T00:10:50.276Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Detectoid for 925528 -- target nVidia chipsets and 2GB memory</upd:Title>
+        <upd:Description>This is to check if a machine has the nVidia nForce chipset and 2GB or greater of physical memory for the 925528 vista launch update.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="SELECT TotalPhysicalMemory FROM Win32_ComputerSystem WHERE TotalPhysicalMemory &gt;= '2147483648'"/>
+          <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="SELECT DeviceID FROM Win32_USBController WHERE (DeviceID LIKE '%VEN[_]10DE&amp;DEV[_]003C%') OR (DeviceID LIKE '%VEN[_]10DE&amp;DEV[_]005B%') OR (DeviceID LIKE '%VEN[_]10DE&amp;DEV[_]0068%') OR (DeviceID LIKE '%VEN[_]10DE&amp;DEV[_]00D8%') OR (DeviceID LIKE '%VEN[_]10DE&amp;DEV[_]00E8%')"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

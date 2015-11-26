@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f6d665fa-6789-474b-8def-96863f06ea14" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:19:42.803Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe" MaxDownloadSize="184671608" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Japan SMS2003SP3</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="da7d0f02-1061-471c-bfc2-8a0e59925939"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="230d44ca-f1a3-41ba-8ecc-f1e046e377d6"/>
+          <upd:UpdateIdentity UpdateID="947dc71b-c747-4d6c-ac86-be9c66e99c8a"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5a456666-3ac5-4162-9f52-260885d6533a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\SMS\setup" Value="Full version" Comparison="GreaterThanOrEqualTo" Data="2.50.4253.3000"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="FULL UI Version" Comparison="GreaterThanOrEqualTo" Data="2.50.4253.3000"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ecA/0oZfmXZtOM1ROwx8WVSRcvI=" DigestAlgorithm="SHA1" FileName="SMS2003sp3.exe" Size="184671608" Modified="2007-07-30T17:15:43.57Z">
+        <upd:AdditionalDigest Algorithm="SHA256">9HwDX+qNzJ3iQGMEs+pkQANrqfqLUYXgrQPRvTwDeZI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="SMS2003sp3.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

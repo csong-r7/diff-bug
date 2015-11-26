@@ -1,0 +1,284 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c34c0df8-dcd0-4981-9ef1-995174a64963" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" MaxDownloadSize="0" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-01-09T17:44:39.217Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NOT (Pre 4.5.2 Lang Packs)</upd:Title>
+        <upd:Description>This detectoid lists all the keys for .NET 4 and pre 4.5.2 LPs and is used for not offering any update if it contains any of those LPs. </upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!--  ************ .NET 4 RTM LP or any less than .NET 4.5.2 RTM 379893 ************   -->
+          <lar:Or>
+            <!--  ************ ARA - 1025 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1025" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1025" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1025" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1025" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ CHS - 2052 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2052" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2052" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2052" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2052" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ CHT - 1028 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1028" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1028" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1028" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1028" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ CSY - 1029 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1029" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1029" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1029" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1029" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ DAN - 1030 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1030" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1030" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1030" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1030" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ DEU - 1031 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1031" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1031" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1031" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1031" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ ELL-Greece - 1032 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1032" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1032" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1032" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1032" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ ESN - 3082 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\3082" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\3082" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\3082" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\3082" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ FIN - 1035 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1035" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1035" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1035" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1035" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ FRA - 1036 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1036" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1036" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1036" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1036" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ HEB - 1037 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1037" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1037" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1037" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1037" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ HUN - 1038 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1038" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1038" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1038" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1038" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ ITA - 1040 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1040" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1040" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1040" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1040" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ JPN - 1041 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1041" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1041" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1041" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1041" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ KOR - 1042 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1042" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1042" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1042" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1042" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ NLD - 1043 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1043" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1043" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1043" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1043" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ NOR - 1044 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1044" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1044" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1044" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1044" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ PLK - 1045 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1045" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1045" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1045" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1045" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ PTB - 1046 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1046" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1046" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1046" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1046" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ PTG - 2070 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2070" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2070" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2070" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\2070" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ RUS - 1049 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1049" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1049" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1049" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1049" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ SVE - 1053 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1053" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1053" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1053" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1053" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <!--  ************ TRK - 1055 ************   -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1055" Value="Install" Comparison="EqualTo" Data="1"/>
+              <lar:Or>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1055" Value="Version" Comparison="EqualTo" Data="4.0.30319.0"/>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1055" Value="Release" Type="REG_DWORD"/>
+                  <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1055" Value="Release" Comparison="LessThan" Data="379893"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,32 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0301235c-cc2a-4058-b8de-5aa8417ca703" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="Architecture" PublicationState="Published" CreationDate="2009-06-11T03:01:22.999Z" PublisherID="244eb2b6-cf4c-463b-af39-ded14a998061"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>SCVMM 2008 RTM Server (64 bit)</upd:Title>
+        <upd:Description>This detects if the Microsoft System Center Virtual Machine Manager 2008 Server product is installed. 
+Also detects that the VMMService is installed (this is not installed if "/prep"  option is given at setup.  This update should not be offered if the VMMService is not installed, only after the entire setup process is complete).
+This is 64 bit only.
+The version of the SCVMM 2008 RTM is 2.0.3444.0</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="9476d3f6-a119-4d6e-9952-8ad28a55bba6"/>
+        <upd:UpdateIdentity UpdateID="7e5d0309-78dd-4f52-a756-0259f88b634b"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{D6F2516B-7E5E-4CE5-A1E4-FC5F1221641B}" VersionMax="2.0.3444.0" VersionMin="2.0.3444.0"/>
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\VMMService"/>
+          <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\Setup" Value="ProductVersion" Comparison="EqualTo" Data="2.0.3444.0"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

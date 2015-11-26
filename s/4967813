@@ -1,0 +1,154 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9190b0b0-d1f6-42a8-8d17-22693b858a1b" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="600" RecommendedMemory="512" RecommendedHardDiskSpace="1900" PublicationState="Published" CreationDate="2012-04-05T00:24:55.001Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33" MaxDownloadSize="189381472" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot" CanRequestUserInput="true"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU x64 Cluster</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:UpdateIdentity UpdateID="24d69bc3-37f8-41a1-843b-88a9f060ff2d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+          <upd:UpdateIdentity UpdateID="d7f1d4f3-8c9b-4ca5-964a-ffb09b8ef369"/>
+          <upd:UpdateIdentity UpdateID="4d790e24-b3f8-4864-a2b6-49d082e3bbdc"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="60916385-7546-4e9b-836e-79d65e517bab"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <!-- SSMS -->
+            <lar:And>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.3.4340.0"/>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.3.4999.0"/>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="FeatureList" Comparison="Contains" Data="SQL_Tools90"/>
+            </lar:And>
+            <!-- DS -->
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2005.90.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+                <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="LessThan" Version="2005.90.4999.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+                <!--Not WYUKON-->
+                <lar:Not>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Edition" Comparison="Contains" Data="Windows Internal Database"/>
+                </lar:Not>
+              </lar:And>
+            </bar:RegKeyLoop>
+            <!-- RS -->
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+                <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="LessThan" Version="9.0.4999.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+                <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="LessThan" Version="9.0.4999.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Or>
+          <!-- Not IsInstallable -->
+          <lar:Not>
+            <!-- SSMS -->
+            <lar:And>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.3.4205.0"/>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.3.4340.0"/>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="FeatureList" Comparison="Contains" Data="SQL_Tools90"/>
+            </lar:And>
+          </lar:Not>
+          <lar:Not>
+            <!-- DS -->
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2005.90.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+                <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="LessThan" Version="2005.90.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+                <!--Not WYUKON-->
+                <lar:Not>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Edition" Comparison="Contains" Data="Windows Internal Database"/>
+                </lar:Not>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Not>
+          <lar:Not>
+            <!-- RS -->
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+                <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="LessThan" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+                <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="LessThan" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <!-- SSMS -->
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.3.4205.0"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.3.4340.0"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="FeatureList" Comparison="Contains" Data="SQL_Tools90"/>
+          </lar:And>
+          <!-- DS -->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2005.90.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+              <bar:FileVersionPrependRegSz Path="sqlservr.exe" Comparison="LessThan" Version="2005.90.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot"/>
+              <!--Not WYUKON-->
+              <lar:Not>
+                <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Edition" Comparison="Contains" Data="Windows Internal Database"/>
+              </lar:Not>
+            </lar:And>
+          </bar:RegKeyLoop>
+          <!-- RS -->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              <bar:FileVersionPrependRegSz Path="ReportServer\bin\ReportingServicesWebServer.dll" Comparison="LessThan" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.4205.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+              <bar:FileVersionPrependRegSz Path="ReportManager\bin\ReportingServicesWebUserInterface.dll" Comparison="LessThan" Version="9.0.4340.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPath"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="K9xCBX71pLE7KtSuL7Ox2GfIqQE=" DigestAlgorithm="SHA1" FileName="SQLServer2005-KB2494112-x64-ENU.exe" Size="189381472" Modified="2011-05-10T12:12:28.867Z">
+        <upd:AdditionalDigest Algorithm="SHA256">cs5VD+qJiH+wihzxblPhoBKcY2o9azcoG51UGkvtY5c=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Program="SQLServer2005-KB2494112-x64-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

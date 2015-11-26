@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a296cfc2-e511-47d7-99b0-766829fb0bd9" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-03T05:37:24.137Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="512760" MinDownloadSize="498009">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\CSRSRV.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7366"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\CSRSRV.DLL"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="6X0oT2rxrK3WveaJGZV4Za72v0Q=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-RUS.EXE" Size="512760" Modified="2010-01-13T11:43:24.067" PatchingType="SelfContained"/>
+      <upd:File Digest="8jrvVmzF6BU9YAT6xWFxbH9FeUM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-Express-RUS.EXE" Size="497016" Modified="2010-01-13T11:43:24.393" PatchingType="Express"/>
+      <upd:File Digest="CylUpo6GgbE4kwJzR8yBmSbdWAg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-RUS.psf" Size="34172" Modified="2010-01-13T11:43:24.55" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

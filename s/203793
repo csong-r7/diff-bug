@@ -1,0 +1,81 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4e9d6f61-4fc9-4e33-90f7-9438257c628a" RevisionNumber="11"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-04-26T08:20:04.990Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1104888" MinDownloadSize="382845">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\LLSSRV.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7021"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\LLSSRV.EXE"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\rpcrt4.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6904"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\rpcrt4.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\rpcss.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7021"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\rpcss.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\llsrpc.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6601"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\llsrpc.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\OLE32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7021"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\OLE32.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions" Value="ProductType" Comparison="EqualTo" Data="ServerNT"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions" Value="ProductType" Comparison="EqualTo" Data="LanmanNT"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="cgWnDTFVi4UlNqJHciWxUe72w8Y=" DigestAlgorithm="SHA1" FileName="Windows2000-KB885834-x86-CSY.EXE" Size="1104888" Modified="2005-02-07T16:13:56.8730000-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="mTmWvAPy/ggav2XcRsqw1TpmYXA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB885834-x86-CSY.psf" Size="6858988" Modified="2005-02-07T16:14:00.0300000-08:00" PatchingType="Express"/>
+      <upd:File Digest="lJQGq8WfluMmWjh3B4j4FSuINd8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB885834-x86-Express-CSY.EXE" Size="343272" Modified="2005-02-07T16:14:00.3600000-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f199665a-758e-4723-82df-3ecfd0de30f0" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-04-04T22:10:29.931Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a" MaxDownloadSize="513784" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+      <upd:Language>fr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>FRA Non-Clustered</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="d918846d-0d0b-42c8-b4a4-5aa0471287c2"/>
+        <upd:UpdateIdentity UpdateID="164b3ae0-abdd-4999-9db7-cfbb495180be"/>
+        <upd:UpdateIdentity UpdateID="42fc76c2-c51e-4907-8a26-1272ca1a1615"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3cf32f7c-d8ee-43f8-a0da-8b88a6f8af1a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Exchange Server 2003\SP1\KB894549"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Not>
+          <bar:ClusteredOS/>
+        </lar:Not>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="RrIi3bCEe5O8pfeqbGcUVz8ghb8=" DigestAlgorithm="SHA1" FileName="Exchange2003-KB894549-x86-FRA.exe" Size="513784" Modified="2005-05-31T11:05:24.663Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">PDMdbBbYyDBux4WxkyVXpbtsWpJ0dN3QX6WuMM2y/8w=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="/norestart /quiet"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

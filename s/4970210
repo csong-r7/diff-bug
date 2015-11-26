@@ -1,0 +1,978 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d550ee1f-307d-431e-ba18-ebd60d07e610" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:21:57.011Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="13293000" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+      <upd:Language>zh-tw</upd:Language>
+      <upd:Language>en</upd:Language>
+      <upd:Language>fr</upd:Language>
+      <upd:Language>de</upd:Language>
+      <upd:Language>it</upd:Language>
+      <upd:Language>ja</upd:Language>
+      <upd:Language>ko</upd:Language>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="63bcdad5-dd75-45d6-9c52-ddbcba8a25aa"/>
+          <upd:UpdateIdentity UpdateID="636f082b-42b3-438b-b190-d7260615b7d0"/>
+          <upd:UpdateIdentity UpdateID="c0620cac-e091-4a23-bcb6-c8827f45cf06"/>
+          <upd:UpdateIdentity UpdateID="23bdd8b1-c983-4a6e-a9e6-df4755d1c4f2"/>
+          <upd:UpdateIdentity UpdateID="d3043b94-5709-4180-af5c-19685f023016"/>
+          <upd:UpdateIdentity UpdateID="756bb9db-95bf-404f-af37-cd2e3f5412b4"/>
+          <upd:UpdateIdentity UpdateID="373d207c-810b-4c6e-8764-11712138b538"/>
+          <upd:UpdateIdentity UpdateID="2d49d06a-3d60-43fe-84b8-6e29287d10aa"/>
+          <upd:UpdateIdentity UpdateID="7e66b246-451c-49b1-8f94-4d779d9a55b8"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a0dd7e72-90ec-41e3-b370-c86a245cd44f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:FileExists Path="Business Objects\2.7\Bin\craxddrt.dll" Csidl="43"/>
+              <bar:FileVersion Path="Business Objects\2.7\Bin\craxddrt.dll" Comparison="GreaterThanOrEqualTo" Version="10.2.0.1222" Csidl="43"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileExists Path="Business Objects\2.7\Bin\craxddrt.dll" Csidl="44"/>
+              <bar:FileVersion Path="Business Objects\2.7\Bin\craxddrt.dll" Comparison="GreaterThanOrEqualTo" Version="10.2.0.1222" Csidl="44"/>
+            </lar:And>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ENU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ENU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ENU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ENU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - ENU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - ENU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - ENU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - ENU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1033" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - ENU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - ENU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - JPN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - JPN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - JPN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - JPN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - JPN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - JPN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - JPN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - JPN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1041" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - JPN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - JPN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - DEU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - DEU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - DEU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - DEU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - DEU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - DEU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - DEU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - DEU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1031" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - DEU\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - DEU\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - FRA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - FRA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - FRA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - FRA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - FRA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - FRA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - FRA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - FRA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1036" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - FRA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - FRA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ITA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ITA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ITA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ITA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - ITA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - ITA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - ITA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - ITA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1040" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - ITA\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - ITA\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ESN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - ESN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ESN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - ESN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Testers - ESN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Testers - ESN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Developers - ESN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Developers - ESN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\3082" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Architects - ESN\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team para Software Architects - ESN\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - KOR\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - KOR\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - KOR\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - KOR\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - KOR\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - KOR\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - KOR\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - KOR\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1042" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - KOR\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - KOR\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - CHS\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - CHS\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - CHS\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - CHS\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - CHS\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - CHS\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - CHS\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - CHS\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\2052" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - CHS\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - CHS\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTS\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - CHT\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Suite - CHT\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\PRO\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - CHT\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Professional Edition - CHT\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTT\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - CHT\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Testers - CHT\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTD\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - CHT\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Developers - CHT\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:Or>
+                <lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DevDiv\VS\Servicing\8.0\VSTA\1028" Value="SP" Comparison="EqualTo" Data="0" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - CHT\KB937060" Value="Installed" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Microsoft Visual Studio 2005 Team Edition for Software Architects - CHT\KB937060" Value="Installed" Comparison="EqualTo" Data="1" RegType32="true"/>
+                </lar:And>
+              </lar:And>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Path="Business Objects\2.7\Bin\craxddrt.dll" Csidl="43"/>
+          <bar:FileExists Path="Business Objects\2.7\Bin\craxddrt.dll" Csidl="44"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ZYzLe3ZYhyhRlpFK3YM1kK6cYT0=" DigestAlgorithm="SHA1" FileName="VS80-KB937060-X86.exe" Size="13293000" Modified="2007-09-06T20:46:46.72Z">
+        <upd:AdditionalDigest Algorithm="SHA256">Uoun9GEiEQk88jFWWaF+HJBu8Rp34gR+dwLcaWI+7Zw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="-q" Program="VS80-KB937060-X86.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

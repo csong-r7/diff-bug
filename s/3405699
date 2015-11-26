@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b54d174e-e5ef-43e5-a5ef-608fd0715763" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-12-02T23:15:06.879Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="558832" MinDownloadSize="502919">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\RASCHAP.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7344"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\RASCHAP.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\rastls.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7344"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\rastls.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ju+UJ2A1e++R6AE6P/AAmOXTh4o=" DigestAlgorithm="SHA1" FileName="Windows2000-KB974318-x86-CHT.EXE" Size="558832" Modified="2009-11-18T16:40:43.387" PatchingType="SelfContained"/>
+      <upd:File Digest="xZNPPpOUELJg7NRQniuDbfI1d7A=" DigestAlgorithm="SHA1" FileName="Windows2000-KB974318-x86-Express-CHT.EXE" Size="491368" Modified="2009-11-18T16:40:43.7" PatchingType="Express"/>
+      <upd:File Digest="pOZKW6mX8xmSG6oxBKqdMRjg1IE=" DigestAlgorithm="SHA1" FileName="Windows2000-KB974318-x86-CHT.psf" Size="203119" Modified="2009-11-18T16:40:43.933" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,159 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="65797526-9ce2-4596-9b18-f1afdb9ae300" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-17T02:59:58.846Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="4415720" MinDownloadSize="1129446">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Not>
+              <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+            </lar:Not>
+            <lar:Or>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="LessThan" Data="6.0.2800.1106" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet   Explorer"/>
+                <lar:Or>
+                  <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.00.2750.167"/>
+                  <lar:Not>
+                    <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                  </lar:Not>
+                </lar:Or>
+              </lar:And>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="EqualTo" Data="6.0.2800.1106" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <lar:Or>
+                  <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1584"/>
+                  <lar:Not>
+                    <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                  </lar:Not>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2750.166"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntlanman.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.165"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntlanman.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Path="\linkinfo.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.165" Csidl="37"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\linkinfo.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\grpconv.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.166"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\grpconv.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\fldrclnr.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2750.165"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\fldrclnr.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp1hfm.exe" Comparison="GreaterThanOrEqualTo" Version="5.5.31.0"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:And>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\sxs.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1579"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\sxs.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1584"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1580"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\linkinfo.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1579"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\linkinfo.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\grpconv.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1580"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\grpconv.exe"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\fldrclnr.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1579"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\fldrclnr.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <bar:FileVersion Csidl="37" Path="\xpsp2res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1580"/>
+            </lar:And>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows XP\SP2\KB841356"/>
+          </lar:Not>
+          <lar:And>
+            <lar:Not>
+              <bar:FileVersion Path="grpconv.exe" Comparison="GreaterThan" Version="5.1.2600.166" Csidl="37"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:FileVersion Path="linkinfo.dll" Comparison="GreaterThan" Version="5.1.2600.165" Csidl="37"/>
+            </lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows XP\SP2\KB887822"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows XP\SP2\KB841356"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="xLWJuAFlTXxeb0IBCCXaEYKfkLw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841356-x86-express-rus.exe" Size="740072" Modified="2004-10-11T21:37:08.4870151-07:00" PatchingType="Express"/>
+      <upd:File Digest="ZkAjZrUxJYyGTwTzPXeTDmJVfgU=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841356-x86-rus.exe" Size="4415720" Modified="2004-10-11T21:37:15.9087476-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="5DY5uK1GXnpBelBNxv8i8Fl1naM=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841356-x86-rus.psf" Size="32064240" Modified="2004-10-11T21:37:58.3454328-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

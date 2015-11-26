@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="62e9805f-869f-49f0-b536-a5943bbd2e84" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-04-06T18:02:29.941Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="582536" MinDownloadSize="139536">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\xpsp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3100"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3425"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="93CG5ZeX8ruknA5ZNQ9kjmP97tw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB932168-x86-ESN.exe" Size="582536" Modified="2007-03-30T15:03:31.07" PatchingType="SelfContained"/>
+      <upd:File Digest="6ArwsCQ5gGvHfNJSt4JmZ+eA8To=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB932168-x86-ESN.psf" Size="1203594" Modified="2007-03-30T15:03:32.04" PatchingType="Express"/>
+      <upd:File Digest="1dUAKWDvRgCAOr3ZPuoFuXms0b4=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB932168-x86-express-ESN.cab" Size="103540" Modified="2007-03-30T15:03:32.477" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

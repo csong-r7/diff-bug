@@ -1,0 +1,72 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="70382f5e-f7ac-408c-b2c7-776372afab42" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-10-04T05:19:32.279Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="7831064" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5059"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:And>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\hal.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4354"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\hal.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5059"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+            <bar:FileExists Csidl="37" Path="\hal.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+          <bar:FileExists Csidl="37" Path="\hal.dll"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="119CG/WPqCSULR9q8S38+CvE9ew=" DigestAlgorithm="SHA1" FileName="windowsserver2003.windowsxp-kb2724197-x64-jpn.exe" Size="7831064" Modified="2012-09-04T14:12:38.157Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">3BdGFR1QPLt5UFNjSxJIwelcMr1ZSF3sgc0knwoGNo8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

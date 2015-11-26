@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="17ab8aba-2c64-418e-b7f0-40b56c9d05b5" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-11-05T23:04:21.260Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="720624" MinDownloadSize="645719">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja-nec</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja-nec</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a3475da7-e20a-46a8-b235-170794365b3d"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.6002.22145"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:FileVersion Csidl="37" Path="\jscript.DLL" Comparison="LessThan" Version="5.8.0.0"/>
+            <bar:FileVersion Csidl="37" Path="\jscript.DLL" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\jscript.DLL" Comparison="LessThan" Version="5.8.0.0"/>
+          <bar:FileVersion Csidl="37" Path="\jscript.DLL" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="5T7sVAA6L4hAXnxDGSgzX+cT6wM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975542-nec98-JPN.EXE" Size="720624" Modified="2009-10-22T12:06:06.6" PatchingType="SelfContained"/>
+      <upd:File Digest="1QcpGI6dSM3U/PfC39wTNWep9tU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975542-nec98-Express-JPN.EXE" Size="492920" Modified="2009-10-22T12:06:07.197" PatchingType="Express"/>
+      <upd:File Digest="XFzdEJ4AdT2BL9cdFWIK/R3tl+E=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975542-nec98-JPN.psf" Size="2908527" Modified="2009-10-22T12:06:08.477" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

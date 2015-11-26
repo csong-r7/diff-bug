@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="afbeb86d-c996-4d0c-bdd4-6f21a862c909" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-07-28T21:17:12.629Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="621544" MinDownloadSize="497300">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary de</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="37" Path="\NETAPI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7105"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\NETAPI32.DLL"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="NDZW7fthoOC+Q2cfn5XUz8r4Biw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921883-x86-DEU.EXE" Size="621544" Modified="2006-07-17T20:20:40.8770000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="VsP5dZ7NzfwjaYx/0K1S0nFWGjM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921883-x86-DEU.psf" Size="533304" Modified="2006-07-17T20:20:41.0630000-07:00" PatchingType="Express"/>
+      <upd:File Digest="WxiFh0cJTh+qfUuua1G8uUtc2/4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921883-x86-Express-DEU.EXE" Size="494384" Modified="2006-07-17T20:20:41.2830000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

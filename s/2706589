@@ -1,0 +1,108 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6a676083-14a7-4e23-9752-6d8da74aa77a" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-05-07T01:52:07.714Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3082632" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\SysWOW64\mswsock.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4318"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\SysWOW64\mswsock.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\SysWOW64\dnsperf.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4460"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\SysWOW64\dnsperf.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mswsock.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4318"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mswsock.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\dnsperf.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4460"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\dnsperf.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\dns.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4460"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\dns.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\tcpip6.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4318"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\tcpip6.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\tcpip.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4318"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\tcpip.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4392"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\afd.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="dns" Type="REG_DWORD"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="dns" Comparison="EqualTo" Data="1"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="dns" Type="REG_DWORD"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="dns" Comparison="EqualTo" Data="1"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="CqWk47jyh2/MBPsVt5hJYsjSOM8=" DigestAlgorithm="SHA1" FileName="WindowsServer2003.WindowsXP-KB961063-x64-RUS.exe" Size="3082632" Modified="2009-02-19T02:51:12.883" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

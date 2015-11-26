@@ -1,0 +1,46 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="dfb34e6f-158c-4962-9f75-bac3ac43fa3b" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="469664" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-10-14T00:49:49.428Z" PublisherID="aa8eda78-4700-aa2c-7ec7-f6b31f440ba7">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>RuntimeEXE</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3811ec41-e21e-441c-9945-9f474b8fe1fc"/>
+        <upd:UpdateIdentity UpdateID="51471f48-5009-4961-a6aa-45da33aab3bb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="fa5ef799-b817-439e-abf7-c76ba0cacb75"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\ASPNETMVC\Servicing\3.0\STD" Value="ProductVersion" Comparison="GreaterThanOrEqualTo" Data="3.0.50813.0" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{dcdec776-badd-48b9-8f9a-dff513c3d7fa}" VersionMax="3.0.20105.0" VersionMin="3.0.20105.0"/>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft\NetFramework\BreadcrumbStore\System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Csidl="35"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="QUsGyPmADojhq7aijq2T5EX5KHg=" DigestAlgorithm="SHA1" FileName="AspNetMVC3-KB2993937.EXE" Size="469664" Modified="2014-10-13T13:00:29Z">
+        <upd:AdditionalDigest Algorithm="SHA256">AohekdQFLg2sPqBtIJnZ+cy+ILJ6+bn/ZIE9k4PyEmo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Program="AspNetMVC3-KB2993937.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

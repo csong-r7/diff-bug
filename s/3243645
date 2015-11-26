@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d20aa89a-7d7b-4fc0-a70b-f59ed16f196c" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-10-08T23:54:19.648Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1054960" MinDownloadSize="600507">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\query.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7320"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\query.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="U9QKmtI4TmPA2kpY+Tkd+29Fh/I=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969059-x86-PTG.EXE" Size="1054960" Modified="2009-09-23T09:25:55.76" PatchingType="SelfContained"/>
+      <upd:File Digest="4ft2gfJvefFTtUZ4Ali5tZmTN/A=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969059-x86-Express-PTG.EXE" Size="495992" Modified="2009-09-23T09:25:56.087" PatchingType="Express"/>
+      <upd:File Digest="Z7al3NCCO5NJ1uVyhiblvyqRfrU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB969059-x86-PTG.psf" Size="1642876" Modified="2009-09-23T09:25:56.743" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

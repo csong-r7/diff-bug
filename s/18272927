@@ -1,0 +1,68 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="bd92a517-318d-4e8e-b688-babad87c2df4" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="600" RecommendedMemory="512" RecommendedHardDiskSpace="1900" MaxDownloadSize="408492224" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-07-14T02:49:54.023Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="caab596c-64f2-4aa9-bbe3-784c6e2ccf9c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120\SQLServer2014"/>
+          <lar:And>
+            <lar:Not>
+              <!--sql_engine_core_inst_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+                <lar:And>
+                  <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2300.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" RegType32="true"/>
+                  <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2014.120.2548.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" RegType32="true"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120\SQLServer2014"/>
+          <!--sql_engine_core_inst_keyfile.dll-->
+          <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2300.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" RegType32="true"/>
+              <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2014.120.2548.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" RegType32="true"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="iHc3sF+70NVEx7SvrNKfaTwjTXs=" DigestAlgorithm="SHA1" FileName="SQLServer2014-KB3045323-x86.exe" Size="408492224" Modified="2015-06-10T21:03:52Z">
+        <upd:AdditionalDigest Algorithm="SHA256">zqI/M740MT4o4+7W4JoIvAejHf9BNn3MczhH7TRYln8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole /IAcceptSQLServerLicenseTerms" Program="SQLServer2014-KB3045323-x86.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

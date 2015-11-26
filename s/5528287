@@ -1,0 +1,59 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="268983e3-47cc-4bc9-b9bc-42d095b280d3" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-05-01T20:28:02.726Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="4869920" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ESN</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="925a2f73-b455-43f1-945b-05d7970ce96a"/>
+          <upd:UpdateIdentity UpdateID="ac3f94ca-1be9-4abb-a156-605bde52906f"/>
+          <upd:UpdateIdentity UpdateID="d4582781-71b3-4c1a-a56e-256285ad219f"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\mscorwks.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6098" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\mscorjit.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6098" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\System.Windows.Forms.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6098" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\System.web.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6098" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.0.3705\System.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6098" Csidl="36"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\TabletPC" Value="Installed" Comparison="EqualTo" Data="1"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\MediaCenter" Value="Installed" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{FDC11A6F-17D1-48f9-9EA3-9051954BAA24}" Value="Version" Comparison="EqualTo" Data="1.0.3705.3"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ITxvHie7O+hVS4KMrz0fTp//35Y=" DigestAlgorithm="SHA1" FileName="NDP1.0sp3-KB2604042-X86-Ocm-Esn.exe" Size="4869920" Modified="2012-03-15T13:09:34.147Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">h20z6FJwXnbmm0Trfj8nrSdsWy+LRgrKyVoEl/GF0gQ=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

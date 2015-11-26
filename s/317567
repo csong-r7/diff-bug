@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="93e83971-095c-4d71-8960-a4dbb4c52140" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2006-07-06T00:07:14.849Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="916344" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>IA64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft.NET\Framework\v2.0.50727\aspnet_filter.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.50727.101" Csidl="36"/>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft.NET\Framework64\v2.0.50727\aspnet_filter.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.50727.101" Csidl="36"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{72eb0c4f-a51d-4203-b841-e529f6c4f571}" VersionMax="2.0.50727" VersionMin="2.0.50727" Language="0"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zCQgqavnfXP8IiYzY3+iz5hQI6Q=" DigestAlgorithm="SHA1" FileName="NDP20-KB917283-IA64.exe" Size="916344" Modified="2006-05-05T15:26:00.1900000-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q" Program="NDP20-KB917283-IA64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Success</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Success - Requires Restart</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

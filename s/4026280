@@ -1,0 +1,72 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a02bae13-7691-49cb-92cc-631503546fd5" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-10-07T00:10:25.098Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="9838448" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary it</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="db1725d3-da00-4113-8405-3080eebfa27a"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3372"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThanOrEqualTo" Version="9.0.0.4499"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="10.0.0.4081"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThanOrEqualTo" Version="10.0.0.4999"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5280"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThanOrEqualTo" Version="11.0.5721.9999"/>
+            </lar:And>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\wmp.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="9.0.0.2980"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThan" Version="9.0.0.3372"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="10.0.0.3646"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThan" Version="10.0.0.4081"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5145"/>
+              <bar:FileVersion Csidl="37" Path="\wmp.dll" Comparison="LessThan" Version="11.0.5721.5280"/>
+            </lar:And>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\wmp.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="pjaPiRxktGrX4Ge8tpOa2bhfZ1U=" DigestAlgorithm="SHA1" FileName="WindowsXP-SP2CSA-WindowsMedia-KB2378111-x86-ITA.exe" Size="9838448" Modified="2010-09-30T16:54:01.31" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

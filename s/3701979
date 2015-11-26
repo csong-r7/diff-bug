@@ -1,0 +1,61 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a3a326b7-d9a6-475f-adb9-58d19c3741ce" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-04-08T07:27:01.533Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="685944" MinDownloadSize="392396">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.6002.22354"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+          <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+          <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="gCCx1MQ6G2Br2RUoOVqcazaICkc=" DigestAlgorithm="SHA1" FileName="windowsxp-kb981349-x86-cht.exe" Size="685944" Modified="2010-03-24T03:10:07.72" PatchingType="SelfContained"/>
+      <upd:File Digest="NvsqpYbZMSVEv7oF0lfyJTERBVQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB981349-x86-express-CHT.cab" Size="244570" Modified="2010-03-24T03:10:07.94" PatchingType="Express"/>
+      <upd:File Digest="qCPQE9pQnJknBL+e1AguBVU3wVg=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB981349-x86-CHT.psf" Size="1019918" Modified="2010-03-24T03:10:08.283" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,34 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7ef955e3-5bf5-4084-a5a7-a31a0b5fc240" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2012-10-24T00:52:27.557Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>.NET 1.1 SP1 - MSI Patches</upd:Title>
+        <upd:Description>This is used for updates that target .NET Framework 1.1 SP1 MSI Patches.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+          <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiProductInstalled ProductCode="{CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}"/>
+          <lar:Or>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{411EDCF7-755D-414E-A74B-3DCD6583F589}" Value="IsInstalled" Comparison="EqualTo" Data="1"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{411EDCF7-755D-414E-A74B-3DCD6583F589}" Value="IsInstalled" Comparison="EqualTo" Data="1" RegType32="true"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

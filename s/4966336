@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="32ec8a22-c616-4c6f-8e51-4326e43db507" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-04-04T22:10:02.662Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a" MaxDownloadSize="2775800" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>DEU Non-Clustered</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="21bd3815-3565-4a51-985c-b58aa8422064"/>
+        <upd:UpdateIdentity UpdateID="fbbac54c-5210-4fb4-9119-4b2a4c38ec12"/>
+        <upd:UpdateIdentity UpdateID="42fc76c2-c51e-4907-8a26-1272ca1a1615"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3cf32f7c-d8ee-43f8-a0da-8b88a6f8af1a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Exchange Server 2003\SP3\KB912442" Value="PackageVersion" Comparison="EqualTo" Data="1"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Not>
+          <bar:ClusteredOS/>
+        </lar:Not>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="MU9KShgWWVICzo4hXy/3ix3EUjE=" DigestAlgorithm="SHA1" FileName="Exchange2003-KB912442-x86-DEU.exe" Size="2775800" Modified="2006-06-08T17:31:14.38Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Y7RH0NUyHxarRc7TijqTp0kdxE3I9DKqu9naUfEzjJk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="/norestart /quiet"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

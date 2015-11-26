@@ -1,0 +1,71 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0ae11a98-3e4d-426a-a327-2fdc851e6055" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2009-09-16T19:11:19.204Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="16905568" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hin</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersion Path="\Internet Explorer\iexplore.exe" Comparison="GreaterThanOrEqualTo" Version="8.0.6001.18702" Csidl="38"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WindowsVersion Comparison="LessThan" MajorVersion="6" MinorVersion="0" BuildNumber="5000"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows Interface Pack" Value="LIPInstalled" Comparison="EqualTo" Data="0439"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="246L9/HtjJY5OjRa51jEQ3EPhMY=" DigestAlgorithm="SHA1" FileName="IE8-WindowsXP-x86-HIN.exe" Size="16905568" Modified="2009-09-16T11:45:21.863"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/wu-silent" Program="IE8-WindowsXP-x86-HIN.exe" RebootByDefault="true" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded.</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded. Reboot reqauired. </cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="19">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>User chose, "Don't install". </cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="17">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>User cancelled.</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

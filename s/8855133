@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2b3bb866-e942-441e-80c4-69428d806c9c" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="813720" MinDownloadSize="282427" PublicationState="Published" CreationDate="2013-08-13T00:30:46.210Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>sv</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2849470-x86-sve</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="b6558568-5399-41c5-8804-6cef3d27a238"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\rpcrt4.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6399"/>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\rpcrt4.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\rpcrt4.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\rpcrt4.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="AgQHdHFNi2RTJZtDGLI3tA7qk/0=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2849470-x86-sve.exe" Size="813720" Modified="2013-06-18T19:26:11Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">I0EgS7Dj5lpGjwN5OBcPtrCCnjOP/vapBmILi4N4+b0=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="eT2OesLSuzlPTMF7nmNSELYPtFQ=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2849470-x86-express-sve.cab" Size="255582" Modified="2013-06-18T19:26:11Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">Htu2bvzrxbTBDc8foC+QUgQIi1zXXg4oNnvd+vwE9nY=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="ycVNvxbJe+ZsIdf9FooCXgqO9ng=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2849470-x86-sve.psf" Size="780139" Modified="2013-06-18T19:26:12Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">tdZD47hZGcEA0NJyDgQeclUbBScbjClBjABAX+58QpM=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

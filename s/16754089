@@ -1,0 +1,40 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5d9796dc-918b-4646-b307-7f5183740258" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2015-03-10T02:58:52.631Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Is ServerCore</upd:Title>
+        <upd:Description>Updates will offer to ServerCore machine</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <lar:Or>
+              <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root/cimv2" WqlQuery="SELECT OperatingSystemSKU FROM Win32_OperatingSystem WHERE OperatingSystemSKU = 12"/>
+              <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root/cimv2" WqlQuery="SELECT OperatingSystemSKU FROM Win32_OperatingSystem WHERE OperatingSystemSKU = 13"/>
+              <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root/cimv2" WqlQuery="SELECT OperatingSystemSKU FROM Win32_OperatingSystem WHERE OperatingSystemSKU = 14"/>
+            </lar:Or>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Data="1" Comparison="EqualTo" Value="ServerCore" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Server\ServerLevels" Key="HKEY_LOCAL_MACHINE"/>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="oclist.exe"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="scregedit.wsf"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b1a64e50-53f5-4c18-8c73-737c721794d1" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-06-10T23:32:09.650Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="727280" MinDownloadSize="531761">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\srv.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1683"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\srv.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\srv.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2673"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\srv.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="X3U8sBjJNYD2yQ7KVfkVSESCHTs=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896422-x86-CSY.exe" Size="727280" Modified="2005-06-10T15:34:13.2300000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="ISsYN011S8J2T4Bb8ytnQkvTQOI=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896422-x86-CSY.psf" Size="3746546" Modified="2005-06-10T15:34:15.3270000-07:00" PatchingType="Express"/>
+      <upd:File Digest="lv0mKdw3QTQZ9Ho/3fkJwtUQpfQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896422-x86-express-CSY.exe" Size="484592" Modified="2005-06-10T15:34:15.7000000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

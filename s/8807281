@@ -1,0 +1,40 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="697565d1-9bc8-421f-adab-fd089e3caf6d" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="true" DetectoidType="Service Pack" PublicationState="Published" CreationDate="2013-08-09T23:51:50.484Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Detectoid Exchange Server 2007 and Above Hygiene Basic</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a7ff3792-d6b3-4903-9ac3-c6bf117b84f3"/>
+          <upd:UpdateIdentity UpdateID="9b135dd5-fc75-4609-a6ae-fb5d22333ef0"/>
+          <upd:UpdateIdentity UpdateID="d3d7c7a6-3e2f-4029-85bf-b59796b82ce7"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{C3F10D8C-BD70-4516-B2B4-BF6901980741}" ExcludeVersionMax="true" ExcludeVersionMin="true"/>
+          <lar:Or>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Exchange\v8.0\Hygiene" Value="Mode" Comparison="EqualTo" Data="1"/>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\ExchangeServer\v14\Hygiene"/>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\ExchangeServer\v15\Hygiene"/>
+          </lar:Or>
+          <lar:Or>
+            <lar:Not>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Exchange\v8.0\Hygiene" Value="InvisibleEnabled" Type="REG_DWORD"/>
+            </lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Exchange\v8.0\Hygiene" Value="InvisibleEnabled" Comparison="EqualTo" Data="0"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

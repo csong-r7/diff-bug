@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4647fb6d-c54c-44ed-9df9-b7405cec739b" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2005-03-25T09:36:22.021Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="800104" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>sv</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Q811114: Security Update (Windows XP or Windows XP Service Pack 1)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="b6558568-5399-41c5-8804-6cef3d27a238"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="393c81f7-14f5-4913-a516-9236c9916533"/>
+          <upd:UpdateIdentity UpdateID="79e2741c-893a-459a-be85-6543a08907b1"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="Installed" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q811114"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\inetsrv\httpext.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2600.1189"/>
+            <bar:FileVersion Csidl="37" Path="\inetsrv\Isatq.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2600.1182"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="iis_common" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents"/>
+          <bar:WUv4RegKeyValue Data="5" Value="MajorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\INetStp"/>
+          <bar:WUv4RegKeyValue Data="1" Value="MinorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\INetStp"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8NC9RAOhCwTBENhYCF27YMA1Etc=" DigestAlgorithm="SHA1" FileName="Q811114_WXP_SP2_x86_SVE.exe" Size="800104" Modified="2003-04-23T18:33:09.6430000-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z" Program="Q811114_WXP_SP2_x86_SVE.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

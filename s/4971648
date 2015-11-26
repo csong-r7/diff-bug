@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f59a555f-582e-43b3-85e0-2f5b7f8491c6" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:51:01.820Z" PublisherID="bcfcf0bb-9354-4536-8afa-2a258cb3e28c" MaxDownloadSize="15130193" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="AlwaysRequiresReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>wd 1049</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="6e92a85c-1cef-42a2-8c95-e757e304b265"/>
+        <upd:UpdateIdentity UpdateID="3811ec41-e21e-441c-9945-9f474b8fe1fc"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="00b2d754-4512-4278-b50b-d073efb27f37"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SoftGrid\4.5\Client\Configuration" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.5.3.0" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SoftGrid\4.5\Client\Configuration" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.5.0.1485" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SoftGrid\4.5\Client\Configuration" Value="Version" Comparison="LessThan" Data="4.5.3.0" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiApplicationMetadata>
+          <mar:ProductCode Version="4.5.3.19480">{c6fc75b9-7d86-4c44-8bdb-eafe1f0e200d}</mar:ProductCode>
+        </mar:MsiApplicationMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="TFpTv5BvlQ7LqyhwvWTUB6srBQU=" DigestAlgorithm="SHA1" FileName="setup_upgrade_1049.cab" Size="15130193" Modified="2010-05-19T18:59:57.7Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">fAjE0J6UNYSQdgDCvNN/GGGULgtcYMbdsV2aGfZ7EEs=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstallerApp">
+      <msp:MsiData ProductCode="{c6fc75b9-7d86-4c44-8bdb-eafe1f0e200d}" MsiFile="setup_upgrade_1049.msi"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

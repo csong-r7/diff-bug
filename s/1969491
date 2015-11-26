@@ -1,0 +1,22 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="80a776cd-4be9-462d-b2b3-4c6e68c87ea1" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="true" DetectoidType="Windows Locale" PublicationState="Published" CreationDate="2008-11-20T22:05:02.533Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NOT Chinese Hong Kong</upd:Title>
+        <upd:Description>This item should be included on the CHT binary when a CHH binary also exists.  CHH receives the same updates as CHT users, with the exception of Service Packs and a few other very specific updates.  In this case, we want to deliver only the CHH version and not the CHT.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships/>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Telephony\Country List\886" Value="Name" Comparison="EqualTo" Data="&#x53F0;&#x7063;"/>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

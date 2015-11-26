@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6229a206-cbf8-4ace-a9fc-73c9442ffe23" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-10-09T16:43:58.183Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="627424" MinDownloadSize="513389">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pl</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="362b580c-ef1b-44ed-9ba4-a5d5440ad788"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\drivers\SRV.SYS" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7177"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\drivers\SRV.SYS"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="aTSc++iJXrZu6UgtEXFB2iYmjl8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB957095-x86-Express-PLK.EXE" Size="500776" Modified="2008-09-24T19:46:06.657" PatchingType="Express"/>
+      <upd:File Digest="aLnNCn/PslLcgnoSxp4K2tlkXCQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB957095-x86-PLK.EXE" Size="627424" Modified="2008-09-24T19:46:07.297" PatchingType="SelfContained"/>
+      <upd:File Digest="20X2vjg0BBe+A1IoYLcmXe9vJ/o=" DigestAlgorithm="SHA1" FileName="Windows2000-KB957095-x86-PLK.psf" Size="433708" Modified="2008-09-24T19:46:08.033" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

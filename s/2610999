@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="864dbbfb-3b0e-4aeb-af1d-24c1284d626f" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2009-04-10T18:51:05.519Z" PublisherID="1f9d078c-1524-429b-abc4-72e017bd4bff" MaxDownloadSize="2625309" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>PTB</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="4541d0e9-9ffc-4c11-afa8-a152aa178902"/>
+        <upd:UpdateIdentity UpdateID="07314784-fb19-4cda-9add-c71a2f0f335b"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="06bdf56c-1360-4bb9-8997-6d67b318467c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\wspsrv.exe" Comparison="LessThan" Version="6.0.6417.153" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory" RegType32="true"/>
+          <bar:FileExistsPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\wspsrv.exe" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{0F1742F4-D0C7-45F0-A9D5-04601AB81121}" MinMsiVersion="3">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="true">{FAA20DE6-1150-4026-B56A-33E9FFB8DDAD}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">6.0.6417</TargetVersion>
+              <TargetLanguage Validate="true">1046</TargetLanguage>
+              <UpdatedLanguages>1046</UpdatedLanguages>
+              <UpgradeCode Validate="true">{5511D21C-DE76-471F-B405-A59952F00E85}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{FAA20DE6-1150-4026-B56A-33E9FFB8DDAD}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>FAA20DE611504026B56A33E9FFB8DDAD</PatchFamily>
+              <Sequence>0.6417.18869.49539</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="oxYCRu964ZJYW+QE+ScIlQWtcsU=" DigestAlgorithm="SHA1" FileName="ISATMGMBE-KB968075-ptb.cab" Size="2625309" Modified="2009-04-08T02:05:18.6" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{0f1742f4-d0c7-45f0-a9d5-04601ab81121}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

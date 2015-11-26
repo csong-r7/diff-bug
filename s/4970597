@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ac7e8ab6-56b7-496b-a31e-1edb88649136" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:35:29.308Z" PublisherID="fe781200-0d62-4fc0-8683-3c6ea046cb89" MaxDownloadSize="383376" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CAPICOM-KB931906-v2102</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="83aed513-c42d-4f94-b4dc-f2670973902d"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.4\CLSID" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.1\CLSID" RegType32="true"/>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.2\CLSID" RegType32="true"/>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.3\CLSID" RegType32="true"/>
+          </lar:Or>
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Classes\CAPICOM.Certificates.4\CLSID" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="WJG13ozjMdyZhlbiDxzgt5Xoh4Y=" DigestAlgorithm="SHA1" FileName="CAPICOM-KB931906-v2102.exe" Size="383376" Modified="2007-05-01T17:20:14.03Z">
+        <upd:AdditionalDigest Algorithm="SHA256">jZltgJ4pxMMB1PCme/tL3RC5cCCWLi3cD6Xac0Ggr1k=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/Q" Program="CAPICOM-KB931906-v2102.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

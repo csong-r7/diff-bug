@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0ea2d02c-403b-46a8-b76f-c6f9bda31c7a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-08-29T02:11:43.059Z" PublisherID="416d1863-62f5-437a-a286-eef853950684" MaxDownloadSize="397848" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update Rollup for Microsoft Lync Server 2010, Mobility Service (KB2708617)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f6b4f057-8b05-46e0-8ad1-6eb898993dad"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="04d85ac2-c29f-4414-9cb6-5bcd6c059070"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <lar:Not>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{41F5A591-1D94-40C9-8A29-8B7A8D485D5A}" Value="DisplayVersion" Comparison="GreaterThanOrEqualTo" Data="4.0.7577.199"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{78FDD7FC-AB9F-4E08-8664-768DB1022736}" MinMsiVersion="5" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="405">
+              <TargetProductCode Validate="true">{41F5A591-1D94-40C9-8A29-8B7A8D485D5A}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="GreaterThanOrEqual" ComparisonFilter="MajorMinorUpdate">4.0.7577.183</TargetVersion>
+              <UpdatedVersion>4.0.7577.199</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{7B16DF27-3474-4408-8DF0-F36182702BC0}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{41F5A591-1D94-40C9-8A29-8B7A8D485D5A}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>PatchFamily_Update</PatchFamily>
+              <Sequence>1.0.199.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ZW6SMBny0w6qRgMzpVPTLB1tUe8=" DigestAlgorithm="SHA1" FileName="McxStandalone.cab" Size="397848" Modified="2012-07-03T13:59:15.333Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">+82kdCs8AX3FKbNu6IUihT9vfQdXXbUVdmiV/uUw7tY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{78fdd7fc-ab9f-4e08-8664-768db1022736}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

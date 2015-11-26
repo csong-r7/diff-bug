@@ -1,0 +1,49 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9c226efb-219c-4359-9f04-57f8fe3291c3" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:28:34.205Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="2284376" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB971119</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="79adaa30-d83b-4d9c-8afd-e099cf34855f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VB\Servicing\9.0\ROS\1033" Value="Version" Comparison="GreaterThan" Data="9.0.30730.65535" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <mar:MsiProductInstalled ProductCode="{af2a8e58-dbc6-36d3-a145-7252029f6f48}"/>
+            <mar:MsiProductInstalled ProductCode="{76a3f253-cf8b-3e30-9472-0c39ec38e024}"/>
+          </lar:Or>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Comparison="EqualTo" Data="1"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="DOCRi243xpvyH+kW5lVfqhvXJrQ=" DigestAlgorithm="SHA1" FileName="ReportViewer.exe" Size="2284376" Modified="2009-09-22T21:28:08.213Z">
+        <upd:AdditionalDigest Algorithm="SHA256">oihBB2bHJOVhCinrcau/1DxialbEqICTQnLoqSJyth4=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /norestart" Program="ReportViewer.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

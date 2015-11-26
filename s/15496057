@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b07f8d35-7643-481b-a2e4-2f3749f2a7af" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="512590064" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-10-27T18:08:24.264Z" PublisherID="b6627d84-ce42-453b-8fa7-34f4cd19a3df">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB3009516 for DPM Server</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f6263a61-b535-4a5f-8a21-5e453e5295ab"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="e54f3c9b-eec3-48f4-a791-ef1e2b0586d0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstalledForProduct xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" PatchCode="{FAD456B5-CF58-48CB-946C-F0990252310C}" ProductCode="{99EFD904-A89C-4116-91C9-80FD7FD40DA7}" VersionMax="4.2.1264.0" VersionMin="4.2.1205.0"/>
+          <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zSWr8ntw7ydS7jlWwJQd6foqCuE=" DigestAlgorithm="SHA1" FileName="DataProtectionManager2012R2-KB3009516.exe" Size="512590064" Modified="2014-10-17T01:38:06Z">
+        <upd:AdditionalDigest Algorithm="SHA256">B3aI4g6SYzJIGRRt1a0l92l2bXty06lKrzX0XxCM5FI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/quiet /l*v ..\DPMKB30009516log.txt" Program="DataProtectionManager2012R2-KB3009516.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

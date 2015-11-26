@@ -1,0 +1,207 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="12d4fbe1-de43-408c-94f5-b5795d566873" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-06-03T01:16:39.175Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2218253" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB979913-ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Type="REG_DWORD"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Comparison="EqualTo" Data="1" RegType32="false"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Type="REG_DWORD" RegType32="false"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Comparison="EqualTo" Data="1" RegType32="false"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_for_KB979913" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="979913-32_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979913_server" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="979913-33_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979913_sc" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_for_KB979913_server" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_for_KB979913_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_for_KB979913_server_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_for_KB979913_server_0" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_for_KB979913_server_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_for_KB979913_sc" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_for_KB979913_sc_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_for_KB979913_sc_0" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_for_KB979913_sc_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:55Z" lastUpdateTimeStamp="2010-03-10T11:47:55Z">
+            <assemblyIdentity name="Package_3_for_KB979913" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_3_for_KB979913_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:54Z" lastUpdateTimeStamp="2010-03-10T11:47:54Z">
+            <assemblyIdentity name="Package_2_for_KB979913" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:09Z" lastUpdateTimeStamp="2010-03-10T11:48:09Z">
+            <assemblyIdentity name="Package_2_for_KB979913_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.0.6001.18000" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:47:54Z" lastUpdateTimeStamp="2010-03-10T11:47:54Z">
+            <assemblyIdentity name="Package_1_for_KB979913" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979913" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979913" creationTimeStamp="2010-03-10T11:48:08Z" lastUpdateTimeStamp="2010-03-10T11:48:08Z">
+            <assemblyIdentity name="Package_1_for_KB979913_BF" version="6.0.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979913_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="YMDAleLHQCOiX9wXLROCPdjB5X4=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB979913-ia64.cab" Size="2218253" Modified="2010-03-10T17:01:18.407" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="858697d0-0b71-417c-8a74-f226e58d2269" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="600" RecommendedMemory="512" RecommendedHardDiskSpace="1900" MaxDownloadSize="192124064" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-08-11T23:44:03.982Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="caab596c-64f2-4aa9-bbe3-784c6e2ccf9c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!--sql_mds_keyfile.dll-->
+          <lar:And>
+            <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2254.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+            <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="LessThan" Version="2014.120.2299.9" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+          </lar:And>
+          <lar:Not>
+            <!--sql_mds_keyfile.dll-->
+            <lar:And>
+              <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+              <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="LessThan" Version="2014.120.2254.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+            </lar:And>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <!--sql_mds_inst_keyfile.dll-->
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+          <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="LessThan" Version="2014.120.2254.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Lm/yPyUJHu9HtpnCVnWstck5Qh8=" DigestAlgorithm="SHA1" FileName="SQLServer2014-KB2977315-x64-ENU.exe" Size="192124064" Modified="2014-08-02T10:21:19Z">
+        <upd:AdditionalDigest Algorithm="SHA256">QeyvooKNrpwC0YHibF2RcIlLkAEwH1yGLQlfdu/UIEE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole /IAcceptSQLServerLicenseTerms" Program="SQLServer2014-KB2977315-x64-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

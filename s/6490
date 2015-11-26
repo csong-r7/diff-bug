@@ -1,0 +1,52 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1B85DAC1-6223-4225-9B1E-0911151638CF" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-11-14T01:17:07.990Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="11702864" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Cumulative Patch for SQL Server 2000 Desktop Engine (Windows)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="B200A06A-909B-4F0F-BC17-74C536528BAA"/>
+          <upd:UpdateIdentity UpdateID="0BDB7D2E-0753-419C-A01F-B690E83CC854"/>
+          <upd:UpdateIdentity UpdateID="0D27B716-280A-42A2-864A-BCD065C162E9"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="076F2A77-FACB-49CE-9B9C-21DFFAA3D2E1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="DBF57A08-0D5A-46FF-B30C-7715EB9498E9"/>
+          <upd:UpdateIdentity UpdateID="7F44C2A7-BC36-470B-BE3B-C01B6DC5DD4E"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\UDDI\HotFixes\0818"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="{B42339CD-9F22-4A6A-A023-D12990E0B918}" Value="ProductCode" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\UDDI\Setup"/>
+          <bar:WUv4RegKeyValue Data="1034" Value="Language" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\UDDI\MSSQLServer\CurrentVersion"/>
+          <bar:WUv4RegKeyValue Data="8.00.760" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\UDDI\MSSQLServer\CurrentVersion"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Tw+Hj8KUs9/8wjmPe3+e8Hpc7nI=" DigestAlgorithm="SHA1" FileName="SQL2000-KB815495-8.00.0818-ESN.exe" Size="11702864" Modified="2003-07-17T14:35:21.6671250-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="/a /q INSTANCENAME=UDDI" Program="SQL2000-KB815495-8.00.0818-ESN.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

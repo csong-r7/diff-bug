@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a8110b8b-1ded-42f0-941a-09d0d91abe35" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-06-09T00:51:20.815Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="817128" MinDownloadSize="536497">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7087"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mrxsmb.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7097"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mrxsmb.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\rdbss.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7061"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\rdbss.sys"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="7s0ZpM8ENFt28I2pNXl3xBWHVIM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB914389-x86-Express-RUS.EXE" Size="494896" Modified="2006-06-02T13:11:04.7370000-07:00" PatchingType="Express"/>
+      <upd:File Digest="wh1kKEoxuODgeFlR5u0ePpTMEOg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB914389-x86-RUS.EXE" Size="817128" Modified="2006-06-02T13:11:05.0630000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="C1Pvp+QdVvu0Kd8iQIAVyhUYNgI=" DigestAlgorithm="SHA1" FileName="windows2000-kb914389-x86-rus.psf" Size="1107256" Modified="2006-06-02T13:11:05.6900000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

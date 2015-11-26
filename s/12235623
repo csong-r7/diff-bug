@@ -1,0 +1,44 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ebb7b17b-560c-413f-9b01-a8c2051e9171" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="7048776" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-05-20T22:31:31.632Z" PublisherID="b6627d84-ce42-453b-8fa7-34f4cd19a3df">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB2963543 for DPM UI 64 bit</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8c9f71ab-8074-4c2d-b897-889bbd9918cc"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="e54f3c9b-eec3-48f4-a791-ef1e2b0586d0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstalledForProduct xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" PatchCode="{193A3EE7-FDA0-41B8-9FF6-348D31DB2861}" ProductCode="{DFF93860-2113-4207-A7AC-3901ABCE8002}" VersionMax="4.2.1226.0" VersionMin="4.2.1205.0"/>
+          <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="AVrJZSo8uz/vF0lv2vkKC2T+65U=" DigestAlgorithm="SHA1" FileName="DPMManagementShell-KB2963543.exe" Size="7048776" Modified="2014-05-17T15:19:09Z">
+        <upd:AdditionalDigest Algorithm="SHA256">P4HUa0e53hBqrDw1jjHaX2xVsIuG5zafTjgyVNJ0+90=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q" Program="DPMManagementShell-KB2963543.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

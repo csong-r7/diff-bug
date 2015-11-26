@@ -1,0 +1,30 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="42b19392-8bf9-4ee4-81f4-bd084eaff839" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="Architecture" PublicationState="Published" CreationDate="2013-01-05T00:54:36.993Z" PublisherID="81878342-fc35-4385-8554-a6184f59a8f8"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>SC2012 SP1 - vmm Server</upd:Title>
+        <upd:Description>Detectoid for SC2012 SP1 vmmServer. Similar to that of SC2012 vmmServer. Only difference is the version info.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="26a5d0a5-b108-46f1-93fa-f2a9cf10d029"/>
+        <upd:UpdateIdentity UpdateID="ba649061-a2bd-42a9-b7c3-825ce12c3cd6"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiProductInstalled ProductCode="{59518b15-fc64-4cf9-a4d1-0ee1b4a63088}"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\SCVMMService"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\Setup" Value="ProductVersion" Comparison="GreaterThanOrEqualTo" Data="3.1.6011.0"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\Setup" Value="ProductVersion" Comparison="LessThan" Data="3.2.0000.0"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

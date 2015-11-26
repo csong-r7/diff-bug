@@ -1,0 +1,33 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ab62c5bd-5539-49f6-8aea-5a114dd42314" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2013-08-09T23:44:10.939Z" PublisherID="842a0a33-2344-46a3-b256-da62dd205c04"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Exchange Server 2007 and Above Anti-spam</upd:Title>
+        <upd:Description>Microsoft Exchange Server 2007 and Above Anti-spam</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="352f9494-d516-4b40-a21a-cd2416098982"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\exchange\setup" Value="MsiProductMajor" Comparison="EqualTo" Data="8"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\ExchangeServer\v14\setup" Value="MsiProductMajor" Comparison="EqualTo" Data="14"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="software\microsoft\ExchangeServer\v15\setup" Value="MsiProductMajor" Comparison="EqualTo" Data="15"/>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" CategoryType="Product" ProhibitsSubcategories="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

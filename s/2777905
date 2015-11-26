@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e5aaf5b0-1061-4a3a-9305-80434dd65989" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-06-04T04:21:53.420Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="916720" MinDownloadSize="510850">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\spoolss.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7054"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\spoolss.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\faxui.dll" Comparison="GreaterThanOrEqualTo" Version="0.2.0.2"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\faxui.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\LOCALSPL.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7296"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\LOCALSPL.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\WIN32SPL.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7266"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\WIN32SPL.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\WINSRV.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7135"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\WINSRV.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="1GgfwSzNFvgkKsZKrXo/z081IX8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB961501-x86-CHT.EXE" Size="916720" Modified="2009-05-12T19:05:38.86" PatchingType="SelfContained"/>
+      <upd:File Digest="5W8nW1n+GWd+T880z5WMfR5UU8k=" DigestAlgorithm="SHA1" FileName="Windows2000-KB961501-x86-CHT.psf" Size="1996143" Modified="2009-05-12T19:05:39.313" PatchingType="Express"/>
+      <upd:File Digest="dUnn7hDh1sDBecr7gUhpyfX3QoQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB961501-x86-Express-CHT.EXE" Size="492392" Modified="2009-05-12T19:05:39.517" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

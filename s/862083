@@ -1,0 +1,83 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c533879f-425c-4ff9-bd30-7e2ce40b62b1" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-11-02T18:42:51.244Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1011568" MinDownloadSize="539036">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary he</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\jpeg2x32.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7134"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\jpeg2x32.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\tifflt.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.7134"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\tifflt.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7136"/>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\oieng400.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7144"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\oieng400.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\ImageVue\kodakimg.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7136"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\ImageVue\kodakimg.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\ImageVue\kodakprv.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7136"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\ImageVue\kodakprv.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <bar:FileExists Path="\oieng400.dll" Csidl="37"/>
+          <bar:FileExists Path="\tifflt.dll" Csidl="37"/>
+          <bar:FileExists Path="\jpeg2x32.dll" Csidl="41"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\oieng400.dll" Csidl="37"/>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\tifflt.dll" Csidl="37"/>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\jpeg2x32.dll" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="LKoeS8Nfw/OApm+CiLWNNnDwWqc=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923810-x86-Express-HEB.EXE" Size="499072" Modified="2007-09-12T12:14:39.22" PatchingType="Express"/>
+      <upd:File Digest="4cBJFTCKEvFuQVALWkb8FhkjT0I=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923810-x86-HEB.EXE" Size="1011568" Modified="2007-09-12T12:14:39.593" PatchingType="SelfContained"/>
+      <upd:File Digest="KEWxonT1qWVaCvjZZc3izLzgul4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923810-x86-HEB.psf" Size="798598" Modified="2007-09-12T12:14:40" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

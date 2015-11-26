@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d6cd7110-da68-46ea-8006-77f3191bc5ba" RevisionNumber="10"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-08T19:33:08.550Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1082600" MinDownloadSize="339742">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="38" Path="\messenger\msmsgs.exe" Comparison="GreaterThanOrEqualTo" Version="4.7.0.3001"/>
+          <lar:Not>
+            <bar:FileExists Csidl="38" Path="\messenger\msmsgs.exe"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileVersion Path="\messenger\msmsgs.exe" Comparison="EqualTo" Version="4.7.0.3000" Csidl="38"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="wiCvBp4ORw2p0IwMRFiT2uisLRM=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB887472-x86-express-kor.exe" Size="334056" Modified="2005-02-07T13:28:34.0417926-08:00" PatchingType="Express"/>
+      <upd:File Digest="BLypdKN+CHFOPY+NEAFcWlcHtPE=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB887472-x86-kor.exe" Size="1082600" Modified="2005-02-07T13:28:35.5417638-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="NcRsuoPkVqFOlZLsR3l+t8ibR3M=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB887472-x86-kor.psf" Size="4611824" Modified="2005-02-07T13:28:38.6979532-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

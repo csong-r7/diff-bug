@@ -1,0 +1,78 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e6d94ca3-ae0e-4216-bb95-6d0886a811be" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-12-04T16:44:13.882Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2198576" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8c46fba-117b-4d92-ba53-cc216e54e3f8"/>
+          <upd:UpdateIdentity UpdateID="ce12ec73-196e-47d9-a01d-cdb901e4e5f7"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="f1b3a0e1-0941-4b7a-baab-0a9e259d16e6"/>
+          <upd:UpdateIdentity UpdateID="be2c4060-3808-4e4a-bf54-ca20404ceb46"/>
+          <upd:UpdateIdentity UpdateID="d7b3edf7-11a3-4977-a0a8-5e560f075df2"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="c50113b4-7c17-48ee-94d0-feff70af99d2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\windows media\server\wmsserver.dll" Comparison="GreaterThanOrEqualTo" Version="9.1.1.3845"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\windows media\server\wmsserver.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\windows media\server\wmsserver.dll" Comparison="GreaterThanOrEqualTo" Version="9.1.1.5000"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\windows media\server\wmsserver.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\windows media\server\wmsserver.dll"/>
+            <bar:FileVersion Csidl="37" Path="\windows media\server\wmsserver.dll" Comparison="GreaterThanOrEqualTo" Version="9.1.1.3814"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Csidl="37" Path="\windows media\server\wmsserver.dll"/>
+          <bar:FileVersion Csidl="37" Path="\windows media\server\wmsserver.dll" Comparison="GreaterThanOrEqualTo" Version="9.1.1.3814"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="7A4P/XxdvihJKL9SNOlJSEv/rc0=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB952068-x86-ESN.exe" Size="2198576" Modified="2008-11-14T04:50:20.26" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

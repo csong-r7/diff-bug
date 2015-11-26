@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2822d08b-009a-4540-bc7b-dfcaf0464b10" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:13.782Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="1755551" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Office Communications Server 2007 R2, Application Sharing Server (KB 977347)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="90b2b335-22f2-4cb2-af8b-0673e8c2c4d7"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Real-Time Communications\{98b63b18-2a09-428d-8083-d79cf75c37b0}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{928C8414-A48F-4597-84EB-10391D887A15}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="false">{3B7EC914-248C-4D2D-A4D7-B9B243424CF8}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.196</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{222C384D-1258-422C-A741-B78E79487D86}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{3B7EC914-248C-4D2D-A4D7-B9B243424CF8}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>appshare</PatchFamily>
+              <Sequence>1.0.196.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="xLP7Yt+loAyZG2nrRKnn66XbHzM=" DigestAlgorithm="SHA1" FileName="OCS2007R2-KB977347-amd64-AppSharemcu.cab" Size="1755551" Modified="2010-04-20T17:10:16.277Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ClCIBM5O1oPoxity3kGgnlFeuugvqznJyCkw3NDYmaA=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{928c8414-a48f-4597-84eb-10391d887a15}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,77 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5f1adb70-47a5-49b7-a4c4-20ae5fb50aa8" RevisionNumber="50"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-04-12T09:42:05.338Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="4648176" MinDownloadSize="1270777">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\sxs.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1579"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\sxs.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1643"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\fldrclnr.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1579"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\fldrclnr.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp2res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1643"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.2620"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="cFmekz/uyed6BKza+p31He+c7/M=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB893086-x86-express-PTB.exe" Size="889072" Modified="2005-04-11T14:01:07.1270000-07:00" PatchingType="Express"/>
+      <upd:File Digest="j2WlGQxk0I7TQKHkurFLknK7ZUg=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB893086-x86-PTB.exe" Size="4648176" Modified="2005-04-11T14:01:09.9870000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="lOEeRW2nuI2ZajpUrzwAvDfKWRw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB893086-x86-PTB.psf" Size="134407410" Modified="2005-04-11T14:02:14.9070000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

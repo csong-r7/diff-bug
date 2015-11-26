@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6c797943-5b5a-430e-a1b2-aaf2db44d53e" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-11-07T19:31:14.189Z" PublisherID="416d1863-62f5-437a-a286-eef853950684" MaxDownloadSize="4915134" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update Rollup for Microsoft Unified Communications Managed API 3.0 Core Runtime 64-bit (KB2740406)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3198d4bd-2a7b-4da7-8a6b-dab48fecfecd"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="04d85ac2-c29f-4414-9cb6-5bcd6c059070"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <lar:Not>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\UCMA\{902F4F35-D5DC-4363-8671-D5EF0D26C21D}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.0.7577.203"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{1FA63020-D5A4-4A99-B22A-BE5BBEF82D46}" MinMsiVersion="5" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="true">{100B5297-413F-435B-8CBB-A3D21487C221}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="GreaterThanOrEqual" ComparisonFilter="MajorMinorUpdate">4.0.7577.0</TargetVersion>
+              <UpdatedVersion>4.0.7577.203</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{7CA5F91F-26AA-42F9-AB67-B85371B1D5E0}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{100B5297-413F-435B-8CBB-A3D21487C221}</TargetProductCode>
+            <TargetProductCode>{949A97F8-DC8F-435B-B337-7C1ACFF24608}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>PatchFamily_Update</PatchFamily>
+              <Sequence>1.0.203.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Zg5Mkfxd0nLkvKFCPADZiZMt9eo=" DigestAlgorithm="SHA1" FileName="UcmaRuntime.cab" Size="4915134" Modified="2012-11-06T15:18:35.06Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">3qxrfWJSDh85G38CisYkoII/shSdb5KslH39xjqwxDw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{1fa63020-d5a4-4a99-b22a-be5bbef82d46}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

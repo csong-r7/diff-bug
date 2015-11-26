@@ -1,0 +1,74 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3d553cbb-35c3-478f-9dd1-7e7e4d65ed18" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2011-03-04T20:55:04.213Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="897408" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4807"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\remote desktop\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4807"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\remote desktop\mstsc.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.0.0"/>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="LessThanOrEqualTo" Version="6.0.6000.0"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstsc.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.0.0"/>
+            <bar:FileVersion Csidl="38" Path="\remote desktop\mstscax.dll" Comparison="LessThanOrEqualTo" Version="6.0.6000.0"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstscax.dll"/>
+            <bar:FileExists Csidl="38" Path="\remote desktop\mstsc.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="83CnkCMKfo83Wp+CmH/TIkqwfXI=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2483618-x86-nor.exe" Size="897408" Modified="2011-02-17T08:38:22.653" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

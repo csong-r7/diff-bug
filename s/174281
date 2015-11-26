@@ -1,0 +1,91 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fd808f7d-fa30-435e-9323-f70dbe471bfc" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2004-11-20T09:17:57.607Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="720616" MinDownloadSize="501517">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Not>
+              <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+            </lar:Not>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netdde.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.158"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netdde.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\nddenb32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.149"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\nddenb32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp1hfm.exe" Comparison="GreaterThanOrEqualTo" Version="5.5.31.0"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\winlogon.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.149"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\winlogon.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netdde.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1567"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netdde.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\nddenb32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1555"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\nddenb32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\winlogon.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1557"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\winlogon.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="WqUde8tvWJ7eU8eLbdVK4uNBi80=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841533-x86-express-jpn.exe" Size="331496" Modified="2004-10-11T17:07:41.6411745-07:00" PatchingType="Express"/>
+      <upd:File Digest="NfHm1bWZ+LLuEzl9YIZrmJsFNCg=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841533-x86-jpn.exe" Size="720616" Modified="2004-10-11T17:07:43.5942620-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="nMNzCvPt/TwrXCf+YbsYxduBMGY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841533-x86-jpn.psf" Size="2731760" Modified="2004-10-11T17:07:48.9535341-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

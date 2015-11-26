@@ -1,0 +1,51 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <!--PUID[531513]Name[PPTVIEW_11.0.8161_CHS]-->
+    <upd:UpdateIdentity UpdateID="5420c925-1e8c-4a6d-ad25-bfce424f6892" RevisionNumber="102"/>
+    <upd:Properties UpdateType="Software" DefaultPropertiesLanguage="en" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T22:00:10.919Z" PublisherID="9b068e57-8e2d-4e42-b091-74bdb345f120" MaxDownloadSize="2787776" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>PPTVIEW_11.0.8161_CHS</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="31e366a9-cbdc-41c5-94e6-a01faf245c9a"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\GDIPlus.dll" Version="11.0.8165.0" Comparison="GreaterThanOrEqualTo"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\UniCows.dll" Version="1.0.3703.0" Comparison="GreaterThanOrEqualTo"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\IntlDate.dll" Version="11.0.5510.0" Comparison="GreaterThanOrEqualTo"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\Saext.dll" Version="11.0.8161.0" Comparison="GreaterThanOrEqualTo"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\PPTView.exe" Version="11.0.8164.0" Comparison="GreaterThanOrEqualTo"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{90AF0804-6000-11D3-8CFE-0150048383C9}" Value="InstallLocation" Path="PowerPoint Viewer\PPVWintl.dll" Version="11.0.8161.0" Comparison="GreaterThanOrEqualTo"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <mar:MsiProductInstalled ProductCode="{90AF0804-6000-11D3-8CFE-0150048383C9}" VersionMax="11.0.5614.0" VersionMin="11.0.5614.0"/>
+          <mar:MsiProductInstalled ProductCode="{90AF0804-6000-11D3-8CFE-0150048383C9}" VersionMax="11.0.6463.0" VersionMin="11.0.6463.0"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="izhScGWxZixlMRi63gCKToTwMPE=" DigestAlgorithm="SHA1" FileName="office2003-kb949041-fullfile-x86-zh-cn.exe" Size="2787776" Modified="2008-07-31T13:11:47.677Z">
+        <upd:AdditionalDigest Algorithm="SHA256">S1dX1llyZmSzvFc7FAWLErDTKLm+hOOAzMHgjovViYM=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/quiet" DefaultResult="Failed" Program="office2003-kb949041-fullfile-x86-zh-cn.exe" RebootByDefault="false">
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

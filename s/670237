@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e4ba36d3-dff3-43ea-810f-e4a933147672" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-08-08T01:52:08.079Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="630664" MinDownloadSize="120465">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pl</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="362b580c-ef1b-44ed-9ba4-a5d5440ad788"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\gdi32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3159"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\gdi32.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="KlmJcGrbR8Bz3/GoWnnLoZS1sgE=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB938829-x86-express-PLK.cab" Size="103977" Modified="2007-08-06T12:37:04.393" PatchingType="Express"/>
+      <upd:File Digest="iJwPWrAF+8bN1mNCsCKRYev8ShU=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB938829-x86-PLK.exe" Size="630664" Modified="2007-08-06T12:37:04.953" PatchingType="SelfContained"/>
+      <upd:File Digest="QKE3blpXV76+J/YPAoqvIwFkGrY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB938829-x86-PLK.psf" Size="1436184" Modified="2007-08-06T12:37:05.72" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

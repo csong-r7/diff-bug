@@ -1,0 +1,87 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fb1b1f57-9cd4-4eaa-b399-3731fb257a63" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="166" RecommendedMemory="128" RecommendedHardDiskSpace="250" PublicationState="Published" CreationDate="2009-03-02T23:36:00.452Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="76413800" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CHT SHAREPOINT x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!--Check if WMSDE is installed and not upgraded-->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" RegType32="true"/>
+          <!--Check if SQL Language is correct-->
+          <mar:MsiProductInstalled ProductCode="{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" Language="1028"/>
+          <!--WMSDE SP4 update is installed-->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2000.80.2055.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+              <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="LessThan" Version="2000.99.9999.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+              <!--Product(MST) Check-->
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="ProductCode" Comparison="EqualTo" Data="{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" RegType32="true"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+          <!--Not any instance is installable-->
+          <lar:Not>
+            <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2000.80.761.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+                <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="LessThan" Version="2000.80.2055.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+                <!--Product(MST) Check-->
+                <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="ProductCode" Comparison="EqualTo" Data="{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" RegType32="true"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <!--Check if WMSDE is installed and not upgraded-->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" RegType32="true"/>
+          <!--Check if SQL Language is correct-->
+          <mar:MsiProductInstalled ProductCode="{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" Language="1028"/>
+          <!--Any instance is installable-->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+            <lar:And>
+              <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="GreaterThanOrEqualTo" Version="2000.80.761.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+              <bar:FileVersionPrependRegSz Path="binn\sqlservr.exe" Comparison="LessThan" Version="2000.80.2055.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLPATH" RegType32="true"/>
+              <!--Product(MST) Check-->
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="ProductCode" Comparison="EqualTo" Data="{65657C59-23A8-4974-B8E0-BA04EBD04E4F}" RegType32="true"/>
+            </lar:And>
+          </bar:RegKeyLoop>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="NzgOnsAy5S9a91MqgrKef6vBSjk=" DigestAlgorithm="SHA1" FileName="SQLWMSDE-KB960082-x86-CHT.exe" Size="76413800" Modified="2009-01-22T02:30:17.077"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/quiet /upgradesp sqlrun BLANKSAPWD=1 INSTANCENAME=SHAREPOINT /norestart" Program="SQLWMSDE-KB960082-x86-CHT.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

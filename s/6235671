@@ -1,0 +1,66 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="375364ce-cf6f-43a6-ba8e-f7436ada0a8e" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-11-12T22:22:34.420Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1516275" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>IIS75 EN</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiPatchInstalled/>
+          <bar:FileVersion Path="Inetsrv\Ftpsvc.dll" Comparison="GreaterThanOrEqualTo" Version="7.5.7055.14980" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:FileVersion Path="inetsrv\ftpsvc.dll" Comparison="GreaterThanOrEqualTo" Version="7.5.7055.14307" Csidl="37"/>
+          <bar:FileVersion Path="inetsrv\ftpsvc.dll" Comparison="LessThan" Version="7.5.7055.14980" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{DB245921-D1A0-4563-B542-421AEE18E375}" MinMsiVersion="1">
+            <TargetProduct MinMsiVersion="400">
+              <TargetProductCode Validate="true">{9C983913-7208-49CC-8D25-BF30EFA943AA}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">7.5.7055.14307</TargetVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EC76D79F-CEDB-435A-A1FE-E39D5241D62D}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{9C983913-7208-49CC-8D25-BF30EFA943AA}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>Family1</PatchFamily>
+              <Sequence>7.5.0.14980</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="jIWqMDicfQFJV83f8SsaXpefeDo=" DigestAlgorithm="SHA1" FileName="ftp75_en_x86_kb2716513.cab" Size="1516275" Modified="2012-11-07T22:25:15.7Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">bUMGGT9nGL9kPlQfpnfmFLeEJqhW9qvqU0M3KaKBHgo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{db245921-d1a0-4563-b542-421aee18e375}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

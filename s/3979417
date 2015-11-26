@@ -1,0 +1,74 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="207e173d-d1d8-4010-909a-1a266aad3672" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2010-08-07T00:52:58.439Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="13760" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB981852~31bf3856ad364e35~x86~~6.0.1.2"/>
+          <lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6002.18267" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6002.20480" Csidl="37"/>
+              </lar:And>
+              <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6002.22420" Csidl="37"/>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6001.18488" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6001.20480" Csidl="37"/>
+              </lar:And>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6001.22707" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6002.0" Csidl="37"/>
+              </lar:And>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6000.17074" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6000.20480" Csidl="37"/>
+              </lar:And>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.0.6000.21278" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6001.0" Csidl="37"/>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="vKn/d3Ca4szSB7L5xsGrhG8zXk8=" DigestAlgorithm="SHA1" FileName="mpsyschk.exe" Size="13760" Modified="2010-06-24T11:47:44.73"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="" Program="mpsyschk.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

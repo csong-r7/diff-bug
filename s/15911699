@@ -1,0 +1,27 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="753DC3DA-8C06-4CA7-BDCA-AF5487CF9F2B" RevisionNumber="207"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="WMI Detection" PublicationState="Published" CreationDate="2014-12-11T23:34:01.973Z" PublisherID="fa34d14e-27d3-42c2-bc5f-070f466300d1"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NTDEV Domain Targeting</upd:Title>
+        <upd:Description>This detectoid resolves true if the user's machine is a member of wingroup.windeploy.ntdev.microsoft.com or ntdev.corp.microsoft.com domains</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="34f268b4-7e2d-40e1-8966-8bb6ea3dad27"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="SELECT domain from Win32_ComputerSystem WHERE domain = 'ntdev.corp.microsoft.com'"/>
+          <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="SELECT domain FROM Win32_ComputerSystem WHERE domain = 'wingroup.windeploy.ntdev.microsoft.com'"/>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

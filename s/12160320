@@ -1,0 +1,73 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="cd8f708e-fdec-4f8b-b3df-dd3e25f70b10" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="1528016" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-05-13T02:45:39.006Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Croatian Language Pack</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:UpdateIdentity UpdateID="71c1e8bb-9a5d-4e56-a456-10b0624c7188"/>
+        <upd:UpdateIdentity UpdateID="05b5497d-f647-4f3e-b8f4-4a5d68f1000d"/>
+        <upd:UpdateIdentity UpdateID="969d4d73-98a2-49d3-a1a1-6099ed3a8526"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-LanguagePack~31bf3856ad364e35~amd64~hr-HR~11.2.9600.16428"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~amd64~~11.2.9600.16428"/>
+          </lar:Not>
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Internet Explorer\iexplore.exe" Comparison="LessThan" Version="12.0.0.0" Csidl="38"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\MUI\UILanguages\hr-HR" Value="LCID" Comparison="EqualTo" Data="1050"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9DW9VJ5oiezbPkvLHE5/RMHSJyE=" DigestAlgorithm="SHA1" FileName="WU-IE11-KB2841134-x64-hr-HR.exe" Size="1528016" Modified="2013-10-31T14:07:33Z">
+        <upd:AdditionalDigest Algorithm="SHA256">F/7S3nFtog7NpqvXjumQIEWdJIV+wT6NTbQh9FPlYZk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Program="WU-IE11-KB2841134-x64-hr-HR.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install successful</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>No retries; reboot required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="60000">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeed with retries</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="63010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeed with retries; reboot required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

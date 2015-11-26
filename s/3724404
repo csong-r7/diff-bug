@@ -1,0 +1,76 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="99fac49c-5b38-4f65-9708-17dbf8c41504" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-05-06T01:18:40.879Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1345912" MinDownloadSize="610666">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing">
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\inetcomm.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.3664"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\inetcomm.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Outlook Express\msoe.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.3664"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Outlook Express\msoe.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\inetcomm.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.5931"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\inetcomm.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Outlook Express\msoe.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.5931"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Outlook Express\msoe.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="KR5KH5nUE9cTA7nS+dXE7a1RpV4=" DigestAlgorithm="SHA1" FileName="windowsxp-kb978542-x86-rus.exe" Size="1345912" Modified="2010-04-12T15:29:23.38" PatchingType="SelfContained"/>
+      <upd:File Digest="Nk8mRgYLgU/oIn8iRSwB+GGh5/U=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB978542-x86-express-RUS.cab" Size="247814" Modified="2010-04-12T15:29:23.583" PatchingType="Express"/>
+      <upd:File Digest="HcmCtb4Mz2LyzGZuAr3PxwNu1i0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB978542-x86-RUS.psf" Size="10917390" Modified="2010-04-12T15:29:24.367" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,43 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="cb02aa1f-98a0-4570-bde6-244d4d63ba06" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="471200" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-10-14T00:49:57.836Z" PublisherID="aa8eda78-4700-aa2c-7ec7-f6b31f440ba7">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>RuntimeEXE</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="4fbf93df-3aab-4353-9830-7c44b3ac9d41"/>
+        <upd:UpdateIdentity UpdateID="3811ec41-e21e-441c-9945-9f474b8fe1fc"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="fa5ef799-b817-439e-abf7-c76ba0cacb75"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Updates\AspNetWebFxUpdate_KB2994397" Value="ProductVersion" Comparison="GreaterThanOrEqualTo" Data="5.1.20821.0" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft\NetFramework\BreadcrumbStore\System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Csidl="35"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="u+c8S/mqR0f2dTysoJWlRZ7Cd74=" DigestAlgorithm="SHA1" FileName="AspNetWebFxUpdate_KB2994397.EXE" Size="471200" Modified="2014-10-13T13:02:36Z">
+        <upd:AdditionalDigest Algorithm="SHA256">WkLp84R+rAj9ax+KVbCu0UlQcDSqaKEffrXTmT06bdc=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Program="AspNetWebFxUpdate_KB2994397.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

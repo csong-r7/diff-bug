@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="06b58e76-9b84-4d01-92cb-b53d3c7fdb7a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:31:48.832Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="2667872" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>SpTools_x86_jpn</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="e318c6b4-4873-43f6-8f09-f5597a31971c"/>
+          <upd:UpdateIdentity UpdateID="aebc258f-831e-4f2e-993e-064f4a93944b"/>
+          <upd:UpdateIdentity UpdateID="5009ef30-acb1-4963-be85-8caaf60f27d4"/>
+          <upd:UpdateIdentity UpdateID="ffb869b5-6bb7-4840-84fd-ed05c59d5616"/>
+          <upd:UpdateIdentity UpdateID="929df832-1f6b-4ec4-890b-bad05b5f0d87"/>
+          <upd:UpdateIdentity UpdateID="52a26ccb-149d-48fb-b9fd-9d6f75449e76"/>
+          <upd:UpdateIdentity UpdateID="6b896a27-b515-4d38-9e6a-b6609ff5c364"/>
+          <upd:UpdateIdentity UpdateID="1402239b-4352-41c4-b8ef-1508c7f54fd1"/>
+          <upd:UpdateIdentity UpdateID="760432fc-103e-4f3b-933f-dc4f6094d8a4"/>
+          <upd:UpdateIdentity UpdateID="1eb17060-0180-4a20-b686-0444172d9ddb"/>
+          <upd:UpdateIdentity UpdateID="f07fe5cd-202c-448b-bd8a-4484186f5ca1"/>
+          <upd:UpdateIdentity UpdateID="a810500b-67e5-4348-b746-6ae13e163e51"/>
+          <upd:UpdateIdentity UpdateID="d7072d5e-898a-45b2-9038-b9c3ad76486c"/>
+          <upd:UpdateIdentity UpdateID="64a78878-fb90-404b-92ca-cd6243556c4d"/>
+          <upd:UpdateIdentity UpdateID="44ac2ebd-9de9-4cdb-9a56-9d111c32c400"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="f3ee5fed-5660-45e4-b629-4d44f214e887"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c9834186-a976-472b-8384-6bb8f2aa43d9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiProductInstalled ProductCode="{5D757758-65D1-33E0-894F-A417D43B1B38}" VersionMax="10.0.40219" VersionMin="10.0.40219"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\sptools\Servicing\10.0\setup" Value="Version" Type="REG_SZ" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\sptools\Servicing\10.0\setup" Value="Version" Comparison="LessThanOrEqualTo" Data="40219.01.0.0" RegType32="true"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\sptools\Servicing\10.0\setup\1041" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zloIiHnc2e6i7zVBXKqhWsd2ZHc=" DigestAlgorithm="SHA1" FileName="SpTools_x86_jpn.exe" Size="2667872" Modified="2011-10-13T18:45:11.53Z">
+        <upd:AdditionalDigest Algorithm="SHA256">xIId/6rS2cthrn2GbYnoTATeAMlMmz+YgMBcAtlKxZI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="SpTools_x86_jpn.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

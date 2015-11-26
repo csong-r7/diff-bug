@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3b48cb1e-8ffa-4718-b023-67471a595543" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:45.575Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="4172052" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Communications Server 2007 R2, Unified Communications Managed API 2.0 Core Redist 64-bit: November 2010 </upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="28fee99c-48d7-49e1-9202-4ba9b49ff149"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <mar:MsiPatchInstalled/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{902F4F35-D5DC-4363-8671-D5EF0D26C21D}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.221"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{902F4F35-D5DC-4363-8671-D5EF0D26C21D}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.206"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{439C9CE4-1333-4B18-BDC7-9C6F5798A9F7}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="false">{7EB901DD-CB50-4046-A434-3E9A112E8F86}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.221</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{7CA5F91F-26AA-42F9-AB67-B85371B1D5E0}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{7EB901DD-CB50-4046-A434-3E9A112E8F86}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>ucmaredi</PatchFamily>
+              <Sequence>1.0.221.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UlRbEpoDYJT1rbirzCznVbK8MqM=" DigestAlgorithm="SHA1" FileName="UcmaRedist.cab" Size="4172052" Modified="2011-01-19T01:11:09.187Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">oWzyQl7Jrut+MtsMqHjJfb+64Sm3raNMwzJt3xb9hOo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{439c9ce4-1333-4b18-bdc7-9c6f5798a9f7}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

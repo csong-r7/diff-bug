@@ -1,0 +1,80 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b15f581f-19f2-4aeb-b9d7-1484d81c0c9a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="500" RecommendedMemory="512" RecommendedHardDiskSpace="600" PublicationState="Published" CreationDate="2012-04-04T22:46:11.029Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33" MaxDownloadSize="245958000" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Traditional Chinese x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="1028d4e1-bd33-4b59-919b-458ca1f867bd"/>
+        <upd:UpdateIdentity UpdateID="e1185dcd-b5fb-4392-a725-18ae723f9f0d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="60916385-7546-4e9b-836e-79d65e517bab"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <!--For all given x, 
+<Regroot>\Setup\Feature list has SQL_Engine
+And
+<Regroot>\Setup\Language = LCID
+And
+	SQLPath\binn\sqlserver.exe >=  {}
+-->
+        <lar:And>
+          <!-- Client Tools  -->
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="ProductCode" Comparison="EqualTo" Data="{8EE03A13-C138-4B66-B3A7-645DC60F6F09}" RegType32="true"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1028" RegType32="true"/>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.2.3042.00" RegType32="true"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.99.9999.00" RegType32="true"/>
+          </lar:And>
+          <!-- Express Toolkit  -->
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <!--For all given x, 
+<Regroot>\Setup\Feature list has SQL_Engine
+And
+<Regroot>\Setup\Language = LCID
+And
+	SQLPath\binn\sqlserver.exe >=  {}
+-->
+        <lar:And>
+          <!-- Client Tools  -->
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="ProductCode" Comparison="EqualTo" Data="{8EE03A13-C138-4B66-B3A7-645DC60F6F09}" RegType32="true"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1028" RegType32="true"/>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.00.1399.00" RegType32="true"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.2.3042.00" RegType32="true"/>
+          </lar:And>
+          <!-- Express Toolkit  -->
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="iMk65OAPbAoi/v7jwdT8ER3eOL4=" DigestAlgorithm="SHA1" FileName="SQLEXPR_TOOLKIT_CHT.EXE" Size="245958000" Modified="2007-03-07T01:49:52.543Z">
+        <upd:AdditionalDigest Algorithm="SHA256">LGT+8EzYypKI1aubN0jNcIX+0ZlilptastHIgwuhleI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/qn REINSTALL=ALL" Program="SQLEXPR_TOOLKIT_CHT.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

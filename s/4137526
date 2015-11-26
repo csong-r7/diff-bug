@@ -1,0 +1,89 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="11ba4fba-b386-4d87-a7e0-5da03fc90e25" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2011-03-04T01:11:36.096Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2104704" MinDownloadSize="2104704">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ar</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:And>
+              <lar:Or>
+                <lar:And>
+                  <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16722"/>
+                  <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="LessThan" Version="6.1.7600.20480"/>
+                </lar:And>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16722"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+                </lar:Not>
+              </lar:Or>
+              <bar:FileVersion Csidl="37" Path="\tsgqec.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16385"/>
+              <bar:FileVersion Csidl="37" Path="\aaclient.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16385"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\tsgqec.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.20861"/>
+              <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.20861"/>
+              <bar:FileVersion Csidl="37" Path="\mstsc.exe" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.20861"/>
+              <bar:FileVersion Csidl="37" Path="\aaclient.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.20861"/>
+            </lar:And>
+          </lar:Or>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16385"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="LessThan" Version="6.1.7601.0"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16385"/>
+            <bar:FileVersion Csidl="37" Path="\mstscax.dll" Comparison="LessThan" Version="6.1.7601.0"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\mstscax.dll"/>
+            <bar:FileExists Csidl="37" Path="\mstsc.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="GxR0iawhb8KJu9P91yWYUcS2eJg=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2483614-x86-ara.exe" Size="2104704" Modified="2010-12-28T09:32:51.653" PatchingType="SelfContained"/>
+      <upd:File Digest="D2v80xCoudhqgvEntggCr3AVH/o=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB2483614-x86-express-ARA.cab" Size="245897" Modified="2010-12-28T09:32:51.84" PatchingType="Express"/>
+      <upd:File Digest="6MxogHbyN/MePe0SNPZQxBkxOOA=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB2483614-x86-ARA.psf" Size="5528083" Modified="2010-12-28T09:32:52.433" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

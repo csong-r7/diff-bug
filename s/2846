@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="05160382-F7BB-4D8E-96C6-CCC3A5E7EA2A" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-06-18T13:48:14.573Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1388960" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Q320920: Security Update (Windows Media Player for Windows XP)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="D8361D81-2D0F-4833-A96B-945BA682BF48"/>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="61DD6F14-5433-4D46-9CA1-B6A1F2AA341D"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558F4BC3-4827-49E1-ACCF-EA79FD72D4C9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="IsInstalled" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows Media Player\wm320920.1"/>
+          <bar:WUv4RegKeyValue Data="8" Value="PlayerVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Windows Media Player\wm320920.1"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="2600" Value="CurrentBuildNumber" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion"/>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Not>
+          <bar:RegSzToVersion Value="Version" Comparison="LessThan" Data="9.0.0.2799" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}"/>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="ServerNT" Value="ProductType" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="0YA+TB7FpOLkSDTwBvwF42t7a8E=" DigestAlgorithm="SHA1" FileName="wm320920_8.exe" Size="1388960" Modified="2002-07-17T12:42:20.9744030-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="/q:a /r:n" Program="wm320920_8.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

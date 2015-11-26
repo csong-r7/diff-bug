@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9a5ef545-9642-4a0b-bd51-8f9958714fb9" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2005-02-19T01:25:48.781Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="320608" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>sv</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update for Windows XP (KB828028)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="b6558568-5399-41c5-8804-6cef3d27a238"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:FileVersion Csidl="37" Path="\msasn1.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.119"/>
+            <lar:Not>
+              <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            </lar:Not>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion Csidl="37" Path="\msasn1.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1274"/>
+            <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="OFFuHkOgoXm5X8Q6nuvW8844oIY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB828028-x86-SVE.exe" Size="320608" Modified="2003-10-28T12:51:34.3896800-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z -ER" Program="WindowsXP-KB828028-x86-sve.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

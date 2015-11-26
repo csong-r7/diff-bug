@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6dbcdc00-5d16-4ce1-8197-cd8899b2876b" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-03T20:43:21.652Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1240312" MinDownloadSize="505528">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mrxsmb.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7362"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mrxsmb.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\rdbss.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7362"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\rdbss.sys"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="l5LOI26AOK7CsaqyJ5AGCh5XTH8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978251-x86-ENU.EXE" Size="1240312" Modified="2009-12-10T16:21:47.037" PatchingType="SelfContained"/>
+      <upd:File Digest="8bETRFHM5F/tz81CBxc0joeHIHo=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978251-x86-Express-ENU.EXE" Size="490872" Modified="2009-12-10T16:21:47.397" PatchingType="Express"/>
+      <upd:File Digest="ANB8ye02Tya47/GAEajgPGMwpYo=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978251-x86-ENU.psf" Size="3308924" Modified="2009-12-10T16:21:48.223" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

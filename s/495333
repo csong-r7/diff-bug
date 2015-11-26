@@ -1,0 +1,69 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="cc55b49d-3d0d-493e-bdfc-8eaca58bffec" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-05-01T00:11:39.544Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="524016" MinDownloadSize="478771">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-cn</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="30b6a809-9ba3-4c0f-9ca3-f569d01dab11"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+              <bar:FileVersion Csidl="37" Path="\xpsp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1688"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3423"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+              <bar:FileVersion Csidl="37" Path="\xpsp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2678"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3423"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{F5BE8BD2-7DE6-11D0-91FE-00C04FD701A5}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="U+Vgi6XUUBVMXXn+U3jgns20UM8=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB890046-x86-CHS.exe" Size="524016" Modified="2005-06-08T12:28:57.53" PatchingType="SelfContained"/>
+      <upd:File Digest="ooRFDmxSWcrvw1tu7PUvAPOH1iI=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB890046-x86-CHS.psf" Size="364274" Modified="2005-06-08T12:28:57.907" PatchingType="Express"/>
+      <upd:File Digest="1xQ/0ltdfrSUVxASyIkYxf0Y/ss=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB890046-x86-express-CHS.exe" Size="477936" Modified="2005-06-08T12:28:58.5" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

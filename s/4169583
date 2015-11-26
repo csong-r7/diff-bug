@@ -1,0 +1,928 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3ca47bf5-c8b3-45f3-8160-fb83dea83dbb" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2011-04-06T22:00:35.241Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="467439" MinDownloadSize="467439">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-37_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-38_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-39_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:05Z" lastUpdateTimeStamp="2011-02-18T00:09:05Z">
+            <assemblyIdentity name="Package_1_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:50Z" lastUpdateTimeStamp="2011-02-18T00:08:50Z">
+            <assemblyIdentity name="Package_1_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="721dcf78748757b4698651882717ddf0" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="47be286981b0ac9b04d33d387c7e117a" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_2_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_2_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-7_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="721dcf78748757b4698651882717ddf0" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-8_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-9_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="47be286981b0ac9b04d33d387c7e117a" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_3_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-8_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_3_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="53bd75ad1ae1a193d6e1847099ddc261" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-12_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="721dcf78748757b4698651882717ddf0" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="179c416625cc64f03d47d436027e2061" version="6.0.6001.22854" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="47be286981b0ac9b04d33d387c7e117a" version="6.0.6001.18599" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_4_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_4_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-16_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-17_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="edac94f6ccaf6977dc3bee0d56d0f0c0" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-18_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-19_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9596498e5ef812e711e1ed6081b0d67c" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_5_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-14_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_5_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-21_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-22_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="edac94f6ccaf6977dc3bee0d56d0f0c0" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-23_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-24_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9596498e5ef812e711e1ed6081b0d67c" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_6_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-16_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_6_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-26_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="2d456ae1d43f9ebd58b3b4ddad2368b5" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-27_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="edac94f6ccaf6977dc3bee0d56d0f0c0" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-28_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be4f2d61d29767763ea4fc4884a2a22d" version="6.0.6002.22589" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510581-29_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9596498e5ef812e711e1ed6081b0d67c" version="6.0.6002.18405" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_client_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_client_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_client_2_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_client_2" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-20_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_client_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-19_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-22_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client_2_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_client" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-31_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-34_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client_2" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc_0" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-18_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-30_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-21_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_sc" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-33_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc_0" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-36_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_server_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_server_0" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_server_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_server_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-25_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB2510581" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_server_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-20_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:08:51Z" lastUpdateTimeStamp="2011-02-18T00:08:51Z">
+            <assemblyIdentity name="Package_for_KB2510581_server" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-32_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server_0" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-35_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server_1" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510581" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510581" creationTimeStamp="2011-02-18T00:09:06Z" lastUpdateTimeStamp="2011-02-18T00:09:06Z">
+            <assemblyIdentity name="Package_for_KB2510581_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510581_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_25_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_129_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_239_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510581-25_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_client_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-26_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_server_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510581-27_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510581_sc_BF" version="6.0.1.0" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="h7huSAihJEWgQzDYppnKtVMNm+8=" DigestAlgorithm="SHA1" FileName="windows6.0-kb2510581-x86.cab" Size="467439" Modified="2011-03-10T13:20:30.28" PatchingType="SelfContained"/>
+      <upd:File Digest="NzH5Zea6QxmRaD3RQVSx18bRYCk=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB2510581-x86-EXPRESS.cab" Size="60560" Modified="2011-03-10T13:20:30.327" PatchingType="Express"/>
+      <upd:File Digest="+/J4jCKvNCaWrFiV7zCImhCr3Bs=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB2510581-x86.psf" Size="5285822" Modified="2011-03-10T13:20:30.92" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

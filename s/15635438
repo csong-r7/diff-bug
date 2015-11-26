@@ -1,0 +1,108 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2451e518-b38c-4227-a4b1-7f4a3663b992" RevisionNumber="208"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="1031888" MinDownloadSize="276106" PublicationState="Published" CreationDate="2014-11-11T01:44:45.328Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>nl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2991963-x86-embedded-nld</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e0823a95-2884-43e8-bddc-a19eac2e516c"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\imjp81k.dll" Comparison="GreaterThanOrEqualTo" Version="8.1.4305.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\imjp81k.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\ime\imjp8_1\imjputyc.dll" Comparison="GreaterThanOrEqualTo" Version="8.1.4305.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputyc.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\ime\imjp8_1\imjputy.exe" Comparison="GreaterThanOrEqualTo" Version="8.1.4305.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputy.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="36" Path="\ime\imjp8_1\imjpdsvr.exe" Comparison="GreaterThanOrEqualTo" Version="8.1.4305.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjpdsvr.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\imjp81k.dll"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputyc.dll"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputy.exe"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjpdsvr.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <lar:Or>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\imjp81k.dll"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputyc.dll"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjputy.exe"/>
+            <bar:FileExists Csidl="36" Path="\ime\imjp8_1\imjpdsvr.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="GvPaT9XinTQsjbgKMQgoOYypMHc=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2991963-x86-embedded-nld.exe" Size="1031888" Modified="2014-09-24T22:46:03Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">EKPWHwdrqX1M6gjBNeQHg1qbxa6o6orxfSaN90HhiLw=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="jSDue29daqZAj/f2wVv75ZGdFAs=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2991963-x86-embedded-express-nld.cab" Size="256692" Modified="2014-09-24T22:46:03Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">k5707vDHQ5P4jX3EXvwM+2dGUdPhGlkQej0ut4hJ6f0=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="oZ4su3IylKsmgzwafu1TKj66/4k=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2991963-x86-embedded-nld.psf" Size="1005329" Modified="2014-09-24T22:46:04Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">7Oov6paIxH2I4bem9FjOYFXa80DRcfqgQo1JOk3hB9A=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

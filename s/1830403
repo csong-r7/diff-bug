@@ -1,0 +1,26 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="CEAAF34B-2FFB-482e-A2E5-E8912E413D7B" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2008-10-22T02:29:24.617Z" PublisherID="fa34d14e-27d3-42c2-bc5f-070f466300d1"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>WDDM 1.0 Detection</upd:Title>
+        <upd:Description>This is to evaluate if a WDDM 1.0 driver is currently installed</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="6964AAB4-C5B5-43BD-A17D-FFB4346A8E1D"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}" TrueIf="Any">
+          <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="\" Value="FeatureScore" Comparison="GreaterThanOrEqualTo" Data="246"/>
+        </bar:RegKeyLoop>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

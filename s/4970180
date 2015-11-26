@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3faaa3ba-4430-4b1f-b2a0-99abbb5fef4e" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:20:04.238Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe" MaxDownloadSize="158000640" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>English SCCM2007SP1</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        <upd:UpdateIdentity UpdateID="d22b3d16-bc75-418f-b648-e5f3d32490ee"/>
+        <upd:UpdateIdentity UpdateID="a4b98966-4d73-4906-b735-61cc3983eba3"/>
+        <upd:UpdateIdentity UpdateID="826da319-7d54-4ac8-afe2-5aa432828631"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d22b3d16-bc75-418f-b648-e5f3d32490ee"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\ConfigMgr\Setup" Value="Full UI Version" Comparison="GreaterThanOrEqualTo" Data="4.00.6221.1000" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\ConfigMgr\Setup" Value="Full UI Version" Comparison="GreaterThanOrEqualTo" Data="4.00.6221.1000"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="1WDuOeDHY7PLwwKOldAk+vVe8o0=" DigestAlgorithm="SHA1" FileName="RTW_Setup_fre_nowaik.exe" Size="158000640" Modified="2008-06-10T23:49:58.403Z">
+        <upd:AdditionalDigest Algorithm="SHA256">gDl3hcwlw97jK4wMKEtG5urygZgdCbZ+pEMNDZJjrSs=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Program="RTW_Setup_fre_nowaik.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

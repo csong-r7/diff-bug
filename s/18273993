@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b9365988-0686-4209-ae0b-b9ef3ef31252" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="605376" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-07-14T03:15:10.062Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsmedia-kb3067903-x86-deu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5295"/>
+              <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="LessThanOrEqualTo" Version="11.0.5721.9999"/>
+            </lar:And>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\cewmdm.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\cewmdm.dll"/>
+            <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5145"/>
+            <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="LessThanOrEqualTo" Version="11.0.5721.9999"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\cewmdm.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\cewmdm.dll"/>
+            <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5145"/>
+            <bar:FileVersion Csidl="37" Path="\cewmdm.dll" Comparison="LessThanOrEqualTo" Version="11.0.5721.9999"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\cewmdm.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="1SxtIySY1ShB/T8jAyEVbyuQABQ=" DigestAlgorithm="SHA1" FileName="windowsmedia-kb3067903-x86-deu.exe" Size="605376" Modified="2015-07-09T09:01:45Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">fb/K1LTE8vgOL06jJEmGFCpp1vqCNyBGkC3lot2sJec=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

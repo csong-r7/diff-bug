@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9c99ae43-7af5-463e-aaf7-63a362d91055" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-10-04T05:08:11.815Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="14248" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="28eb9ce9-b17c-4a99-904a-88214399ac5e"/>
+          <upd:UpdateIdentity UpdateID="1af6287e-3381-44fb-9b51-2d6177658334"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f4b9c883-f4db-4fb5-b204-3343c11fa021"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Package_for_KB2724197~31bf3856ad364e35~x86~~6.1.1.3"/>
+          <lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7601.17944" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.1.7601.20480" Csidl="37"/>
+              </lar:And>
+              <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7601.22103" Csidl="37"/>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7600.17118" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.1.7600.20480" Csidl="37"/>
+              </lar:And>
+              <lar:And>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7600.21315" Csidl="37"/>
+                <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.1.7601.0" Csidl="37"/>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:And>
+            <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7600.16385" Csidl="37"/>
+            <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.1.7601.0" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThan" Version="6.1.7601.17514" Csidl="37"/>
+            <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.1.7602.0" Csidl="37"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="N6zT96CJ10+xjM4pYSF9wLGFgn8=" DigestAlgorithm="SHA1" FileName="mpsyschk.exe" Size="14248" Modified="2012-09-04T13:59:30.507Z">
+        <upd:AdditionalDigest Algorithm="SHA256">JiIYOStvqJzTUX8H8heTUz7fe9AuQ7m+AGTE9o1wNdk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="" Program="mpsyschk.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b3cdf760-65b5-4e9d-ae2f-99b8e8615453" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2013-04-04T17:04:51.223Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1474160" MinDownloadSize="473199">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>tr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2808735-x86-trk</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="26427c31-6632-49d9-b7c6-a91b5a65ed2c"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6364"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\win32k.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="hkwHoU/k07NBG9X+VcjHDecDwyA=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2808735-x86-trk.exe" Size="1474160" Modified="2013-03-04T13:31:03.64Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">R5G4r/z3qxnvmNVEygruf6HcX8et8zbOOcoGwkIK3a0=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="gpw+0cG8N9RH3U/j2b8bLSKDPL8=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2808735-x86-express-trk.cab" Size="272401" Modified="2013-03-04T13:31:03.75Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">oYIUMJczOu7xwesdFeik+Vo7fxavBgd7k7hwDLWY5+o=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="Qp0vUIhjFY1hma6s2o4dTusOCaA=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2808735-x86-trk.psf" Size="11550529" Modified="2013-03-04T13:31:04.377Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">kkShK5nJH3fnNTRWqMDb1xPrAtrZNrsIEPcUJuV7yM4=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

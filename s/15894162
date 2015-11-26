@@ -1,0 +1,84 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a076d6a1-8c32-4540-b733-a4aae1e12596" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="707280" MinDownloadSize="285018" PublicationState="Published" CreationDate="2014-12-09T04:14:17.985Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fi</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb3012172-x86-embedded-fin</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="cca37ce0-6151-428e-9aa8-006ff23c2b8d"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.6002.23528"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="KhdvDvgi8lvgVZbhDWfZOU7sfYs=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3012172-x86-embedded-fin.exe" Size="707280" Modified="2014-11-20T07:45:32Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">vJDlQmquPptJQ/9hvGeqH0x2HN0R4DP39BYVx/2J8TI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="hy7CA0M9VhHw32VHdWYpIWgj7S8=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3012172-x86-embedded-express-fin.cab" Size="256956" Modified="2014-11-20T07:45:32Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">F5h+x37pC281MPrYmE7NYLysb+eb9eAQ2XiC6b74Vvw=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="KSY1yDmijfPDczdA63JV9JS/EBg=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3012172-x86-embedded-fin.psf" Size="345524" Modified="2014-11-20T07:45:32Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">vAvnqDta2A6xGO5GiPChnKVE1KqmQXrgIL4ge6lSjfU=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

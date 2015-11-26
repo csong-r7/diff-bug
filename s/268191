@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b005fe00-d012-40e3-9940-a2dfd1e35d59" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-12-08T18:53:21.651Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1611240" MinDownloadSize="515703">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja-nec</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja-nec</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a3475da7-e20a-46a8-b235-170794365b3d"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mup.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7006"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mup.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\NTKRNLPA.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7071"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\NTKRNLPA.EXE"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\NTOSKRNL.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7071"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\NTOSKRNL.EXE"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="v7qSYgNdmzQrOEyqAIcUEf41yR0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB908523-nec98-JPN.EXE" Size="1611240" Modified="2005-11-22T16:31:21.5100000-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="/zpof8CcSBoPOQiK0QgQkBcZYP4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB908523-nec98-Express-JPN.EXE" Size="492264" Modified="2005-11-22T16:31:21.7300000-08:00" PatchingType="Express"/>
+      <upd:File Digest="DssL7Y0BwieZSOkAyTWOYtzqQ84=" DigestAlgorithm="SHA1" FileName="Windows2000-KB908523-nec98-JPN.psf" Size="11255022" Modified="2005-11-22T16:31:24.4330000-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

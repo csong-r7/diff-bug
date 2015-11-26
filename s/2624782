@@ -1,0 +1,68 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="08f02e54-2269-4e29-afe3-06ba333139b8" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-04-14T01:58:46.074Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="901176" MinDownloadSize="513181">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\mswrd6.wpc" Comparison="GreaterThanOrEqualTo" Version="10.0.803.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\mswrd6.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\mswrd8.wpc" Comparison="GreaterThanOrEqualTo" Version="10.0.803.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\mswrd8.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\write.wpc" Comparison="GreaterThanOrEqualTo" Version="10.0.803.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\write.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\wordpad.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7155"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\wordpad.exe"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="38" Path="\Windows NT\Accessories\wordpad.exe"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Path="\Windows NT\Accessories\wordpad.exe"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="e6wd2im4N99uwfzVbAuQfGPY3pE=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923561-x86-CHT.EXE" Size="901176" Modified="2009-04-03T09:52:56.62" PatchingType="SelfContained"/>
+      <upd:File Digest="RmPXs6/bEKPzbz0SHhRodLilG3Q=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923561-x86-CHT.psf" Size="789905" Modified="2009-04-03T09:52:56.963" PatchingType="Express"/>
+      <upd:File Digest="lwv9fOULuxjaO7MG4vTcsp475a8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923561-x86-Express-CHT.EXE" Size="492416" Modified="2009-04-03T09:52:57.197" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

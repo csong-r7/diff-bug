@@ -1,0 +1,66 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7ba8c590-008b-4a57-9c5a-645123cbba2e" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="500" RecommendedMemory="128" RecommendedHardDiskSpace="25" PublicationState="Published" CreationDate="2012-04-05T02:43:53.550Z" PublisherID="e19b4f1e-3b06-11dc-a787-966056d89593" MaxDownloadSize="4937608" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CoreRuntime</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="1fdbe0d0-745c-435c-a7ec-b80dace8fb6f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="9f3dd20a-1004-470e-ba65-3dc62d982958"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiProductInstalled ProductCode="{89f4137d-6c26-4a84-bdb8-2e5a4bb71e00}"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.0.50611.00" RegType32="true"/>
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight\Components\Debugging" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiProductInstalled ProductCode="{89f4137d-6c26-4a84-bdb8-2e5a4bb71e00}"/>
+          <lar:Or>
+            <lar:Not>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="EqualTo" Data="1.0.30109.0" RegType32="true"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="ActivationRequired" Comparison="EqualTo" Data="1" RegType32="true"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="LessThan" Data="3.0.50611.00" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="GreaterThanOrEqualTo" Data="2.0.30523.06" RegType32="true"/>
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight\Components\Debugging" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ptVHtslilpmMnWkynsswNHaCkas=" DigestAlgorithm="SHA1" FileName="Silverlight.3.0.exe" Size="4937608" Modified="2010-08-03T10:20:03.86Z">
+        <upd:AdditionalDigest Algorithm="SHA256">G4lorpQ9d9cYZEnv1Pe8O0hS+5ipUNGKHGsxEEGhSNg=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q /ignorewarnings /enableAutomaticUpdates" Program="Silverlight.3.0.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="1502"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="1508"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="1511"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,108 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fd26c0d6-6e07-4441-b614-09379ffa4195" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="887512" MinDownloadSize="325628" PublicationState="Published" CreationDate="2015-05-12T02:30:56.496Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb3050945-x86-embedded-deu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="874a7757-3a13-43b2-a7f2-cf2ff43dd6bf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.6002.23659"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.6002.23659"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <lar:Or>
+              <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\WindowsEmbedded\ProductVersion" Value="FeaturePackVersion" Comparison="EqualTo" Data="SP3"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\WPA\WES" Value="Installed" Comparison="EqualTo" Data="1"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.7.0.0"/>
+              <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.8.0.0"/>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="vsjAzlrDnu7sVFY+MRRdj7dgM4Q=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3050945-x86-embedded-deu.exe" Size="887512" Modified="2015-04-22T14:16:19Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">vB8VUkMkc1Q+W77lAnUowf+xYUamKTkOPWo1sjPW/PI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="l6oKdiC2GZuJPwvRkOq6pBMGylU=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3050945-x86-embedded-express-deu.cab" Size="257246" Modified="2015-04-22T14:16:19Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">Uqj8M/pw44Z/zHVe1GexH2Yz38JbzgIREi8iA+AAIOg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="LxXXllRjgsNhVbIFoj6sHLjkMyo=" DigestAlgorithm="SHA1" FileName="windowsxp-kb3050945-x86-embedded-deu.psf" Size="852760" Modified="2015-04-22T14:16:19Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">zfyXikpvV160yQxlcb2i9nitrIkpr0gPsE7KNZvoEw8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

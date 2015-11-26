@@ -1,0 +1,296 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e31a5edc-4fff-4795-8e09-bf71d314c326" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-06-03T01:38:42.376Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="131627" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB979911-x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Type="REG_DWORD"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Comparison="EqualTo" Data="1" RegType32="false"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Type="REG_DWORD" RegType32="false"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Comparison="EqualTo" Data="2" RegType32="false"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="979911-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979911_client" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="979911-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979911_server" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="979911-25_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979911_sc" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_server" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_server_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_server_0" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_server_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_sc" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_sc_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.0.6001.18000" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_sc_0" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_sc_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_client" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_client_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_for_KB979911_client_1" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_for_KB979911_client_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_5_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_5_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_8_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_4_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_4_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_7_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_3_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_3_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="detect">
+                <assemblyIdentity name="Package_6_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:45Z" lastUpdateTimeStamp="2010-03-10T11:42:45Z">
+            <assemblyIdentity name="Package_2_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:55Z" lastUpdateTimeStamp="2010-03-10T11:42:55Z">
+            <assemblyIdentity name="Package_2_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_4_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:44Z" lastUpdateTimeStamp="2010-03-10T11:42:44Z">
+            <assemblyIdentity name="Package_1_for_KB979911" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979911" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979911" creationTimeStamp="2010-03-10T11:42:54Z" lastUpdateTimeStamp="2010-03-10T11:42:54Z">
+            <assemblyIdentity name="Package_1_for_KB979911_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979911_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="delegate" disposition="staged">
+                <assemblyIdentity name="Package_2_for_KB948609" language="neutral" version="6.0.6001.3053" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Rs5N2HMZfSXuGSAmsr2KGr/W37E=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB979911-x64.cab" Size="131627" Modified="2010-03-10T13:56:17.533" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

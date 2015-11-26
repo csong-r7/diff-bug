@@ -1,0 +1,59 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8d887d00-b58b-4cfc-86b9-1c3856e31f2b" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-03-25T09:22:42.167Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="442608" MinDownloadSize="318316">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:Not>
+              <bar:FileExists Path="dplayx.dll" Csidl="37"/>
+            </lar:Not>
+            <bar:FileVersion Path="dplayx.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.163" Csidl="37"/>
+          </lar:Or>
+          <lar:Or>
+            <lar:Not>
+              <bar:FileExists Path="dpwsockx.dll" Csidl="37"/>
+            </lar:Not>
+            <bar:FileVersion Path="dpwsockx.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.163" Csidl="37"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DirectX" Value="Version" Comparison="EqualTo" Data="4.08.01.810"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="py9DE3vi5x2zkysrmJAxysbgu1g=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB839643-x86-CHT.EXE" Size="442608" Modified="2004-06-10T14:19:50.0500000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="mh58YINKROE9lnmFtDMZSWNoXhg=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB839643-x86-CHT.psf" Size="303860" Modified="2004-06-10T14:19:51.0030000-07:00" PatchingType="Express"/>
+      <upd:File Digest="1FhIQH2Z/nUP4S7bluQ3/Vpe1JQ=" DigestAlgorithm="SHA1" FileName="WINDOWSSERVER2003-KB839643-X86-CHT-express.EXE" Size="317168" Modified="2004-06-10T14:19:51.9870000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

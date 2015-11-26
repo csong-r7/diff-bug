@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7204b46c-5b78-48e6-9526-d92c832dd308" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-05-01T00:31:42.333Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="705848" MinDownloadSize="274199">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\xpsp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3016"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent\agentsvr.exe" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent\agentsvr.exe"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent\agentdp2.dll" Comparison="GreaterThanOrEqualTo" Version="2.0.0.3424"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent\agentdp2.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="t2DkNFJvpiGKbm+BlE1tC8nlV0Q=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB920213-x86-express-KOR.cab" Size="152749" Modified="2006-11-03T23:51:14.46" PatchingType="Express"/>
+      <upd:File Digest="CkTwA9J73IuT7vFo7KmSELO2Pok=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB920213-x86-KOR.exe" Size="705848" Modified="2006-11-03T23:51:15.023" PatchingType="SelfContained"/>
+      <upd:File Digest="llWlGMJhcs4o9e7BkdYVjh+X+bA=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB920213-x86-KOR.psf" Size="1643836" Modified="2006-11-03T23:51:15.867" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

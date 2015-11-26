@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="baf29951-445e-4f59-9ee2-f30e48840067" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:21:25.171Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe" MaxDownloadSize="174668656" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:Language>fr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ConfigMgr07SP2 FRA</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5be762cc-de5d-430a-99fd-d67fb1d227c6"/>
+        <upd:UpdateIdentity UpdateID="a4b98966-4d73-4906-b735-61cc3983eba3"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="826da319-7d54-4ac8-afe2-5aa432828631"/>
+          <upd:UpdateIdentity UpdateID="5ac659bd-ba25-435c-a062-489d606287fa"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d22b3d16-bc75-418f-b648-e5f3d32490ee"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\ConfigMgr\Setup" Value="Full UI Version" Comparison="GreaterThanOrEqualTo" Data="4.00.6487.2000"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\ConfigMgr\Setup" Value="Full UI Version" Comparison="GreaterThanOrEqualTo" Data="4.00.6487.2000" RegType32="true"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="L59xl9uwXtU9s1lXbHoNgRPIL4M=" DigestAlgorithm="SHA1" FileName="ConfigMgr07SP2Upgrade_RTM_FRA_6487.exe" Size="174668656" Modified="2010-01-21T18:05:19.347Z">
+        <upd:AdditionalDigest Algorithm="SHA256">DmnJdMJT3TWYSzg8Ep1MgBDfB+0N01y6sT4kwWba9Zk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Program="ConfigMgr07SP2Upgrade_RTM_FRA_6487.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

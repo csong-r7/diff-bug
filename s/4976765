@@ -1,0 +1,44 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <!--PUID[518885]Name[CMS2002_2_GER]-->
+    <upd:UpdateIdentity UpdateID="60f08c08-aa5f-4092-a188-0384ff2d4593" RevisionNumber="101"/>
+    <upd:Properties UpdateType="Software" DefaultPropertiesLanguage="en" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T20:44:49.136Z" PublisherID="9b068e57-8e2d-4e42-b091-74bdb345f120" MaxDownloadSize="8128408" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CMS2002_2_GER</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="9fc2f85a-2290-482d-a854-2d0bbcb955c0"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion" Value="ProgramFilesDir" Path="Microsoft Content Management Server\Shared Files\ncbmprdr.dll" Version="5.0.5317.0" Comparison="GreaterThanOrEqualTo"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\NCompass\Setup" Value="Language" Comparison="EqualTo" Data="DE"/>
+          <bar:FileVersionPrependRegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion" Value="ProgramFilesDir" Path="Microsoft Content Management Server\Shared Files\ncbmprdr.dll" Version="5.0.5054.0" Comparison="GreaterThanOrEqualTo"/>
+          <mar:MsiProductInstalled ProductCode="{A014D982-EAE5-4654-9D1B-4782C5868E9A}"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="JxE3CsvfNJX0w749iiuHliFSrJM=" DigestAlgorithm="SHA1" FileName="CMS2002-KB924429-FullFile-DEU.EXE" Size="8128408" Modified="2007-04-06T11:01:15.387Z">
+        <upd:AdditionalDigest Algorithm="SHA256">3MJCF2uhUws8ClbNKyugtbmX0TJ86FHF5/0pAjOhnAY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q:a /r:n" DefaultResult="Failed" Program="CMS2002-KB924429-FullFile-DEU.EXE" RebootByDefault="false">
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

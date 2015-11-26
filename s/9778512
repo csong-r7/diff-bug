@@ -1,0 +1,137 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5477ca7d-4204-4fe6-845a-52f0b264267b" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" MaxDownloadSize="416972" MinDownloadSize="0" PublicationState="Published" CreationDate="2013-10-21T15:22:26.155Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windows6.1-kb2862330-x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="1af6287e-3381-44fb-9b51-2d6177658334"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f4b9c883-f4db-4fb5-b204-3343c11fa021"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:Or>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7600.16385"/>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot~31bf3856ad364e35~amd64~~6.1.7601.17514"/>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot-TopLevel~31bf3856ad364e35~amd64~~6.1.7601.17950"/>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="WinEmb-usbboot-TopLevel~31bf3856ad364e35~amd64~~6.1.7601.17916"/>
+          </lar:Or>
+          <lar:Or>
+            <!-- 
+		(SS Version >= 6.1.7601.17592)
+            ||
+		(SP1 Refresh SSU installed)
+	-->
+            <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="GreaterThanOrEqualTo" Data="6.1.7601.17592" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_none_4a207b402ad93a1c\6.1" Value=""/>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB2533552~31bf3856ad364e35~amd64~~6.1.1.1"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="KB2862330 for Bootable Windows USB Stack" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2862330">
+            <assemblyIdentity buildType="release" language="neutral" name="WinEmb-usbboot-TopLevel" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+            <package identifier="KB2862330" applicabilityEvaluation="deep" releaseType="Security Update">
+              <parent>
+                <assemblyIdentity name="Microsoft-Windows-Embedded-LanguagePack-Package" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="en-US" buildType="release"/>
+              </parent>
+              <update name="WinEmb-usbboot-Neutral" displayName="" description="">
+                <package integrate="hidden">
+                  <assemblyIdentity buildType="release" language="neutral" name="WinEmb-usbboot" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+                </package>
+              </update>
+              <update name="WinEmb-usbboot-en-us-LP-Toplevel" displayName="" description="">
+                <package integrate="hidden">
+                  <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbboot-MiniLP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="" displayName="" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="">
+            <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbboot-MiniLP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+            <package identifier="WinEmb-usbboot-Package-en-us-MiniLP" applicabilityEvaluation="deep" releaseType="Security Update">
+              <parent>
+                <assemblyIdentity name="Microsoft-Windows-Embedded-LanguagePack-Package" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="en-US" buildType="release"/>
+              </parent>
+              <update name="WinEmb-usbboot-en-us-LP" displayName="" description="">
+                <package integrate="hidden">
+                  <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbboot" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved." manifestVersion="1.0">
+            <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbboot" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+            <package identifier="WinEmb-usbboot-FeatureSet_en-US" releaseType="Language Pack">
+              <update description="" displayName="" name="INF_usb">
+                <component>
+                  <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usb.inf-Deployment-LanguagePack" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update description="" displayName="" name="INF_usbstor">
+                <component>
+                  <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbport.inf-Deployment-LanguagePack" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update description="" displayName="" name="INF_usbport">
+                <component>
+                  <assemblyIdentity buildType="release" language="en-US" name="WinEmb-usbstor.inf-Deployment-LanguagePack" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved." description="KB2862330 for Bootable Windows USB Stack" displayName="default" manifestVersion="1.0" supportInformation="http://support.microsoft.com/?kbid=2862330">
+            <assemblyIdentity buildType="release" language="neutral" name="WinEmb-usbboot" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.18254"/>
+            <package identifier="KB2862330" releaseType="Feature Pack">
+              <parent integrate="delegate">
+                <assemblyIdentity buildType="release" language="neutral" name="Microsoft-Windows-EmbeddedCore-Package" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7600.16385"/>
+                <assemblyIdentity buildType="release" language="neutral" name="Microsoft-Windows-EmbeddedCore-Package" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="6.1.7601.17514"/>
+              </parent>
+              <update description="" displayName="" name="INF_usb" restart="required">
+                <driver inf="usb.inf" ranking="normal">
+                  <assemblyIdentity buildType="release" language="neutral" name="usb.inf" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" type="driverUpdate" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update description="" displayName="" name="INF_usbstor" restart="required">
+                <driver inf="usbstor.inf" ranking="normal">
+                  <assemblyIdentity buildType="release" language="neutral" name="usbstor.inf" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" type="driverUpdate" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update description="" displayName="" name="INF_usbport" restart="required">
+                <driver inf="usbport.inf" ranking="normal">
+                  <assemblyIdentity buildType="release" language="neutral" name="usbport.inf" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" type="driverUpdate" version="7.1.7601.18254" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ga1LGZNisTIl9EQsxqgNiC5yjsk=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2862330-x64.cab" Size="416972" Modified="2013-09-18T17:29:13Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">1rr+pCvqRb7bjBYUutsWsHPnKZtP6J8mXtCND5iRdnQ=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

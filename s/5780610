@@ -1,0 +1,82 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="aff35acf-2227-49a8-916b-da9a1bf3a4f9" RevisionNumber="107"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T05:39:55.242Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="723936" MinDownloadSize="555992">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pl</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="362b580c-ef1b-44ed-9ba4-a5d5440ad788"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\schannel.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5014"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msv1_0.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4587"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\ksecdd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5014"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+            <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+            <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+          <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+          <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="YT76D3RbDikI1pkoEXByztW36rI=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2655992-x86-plk.exe" Size="723936" Modified="2012-06-07T12:26:49.193Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">OXgK2rDeHZbnLtnVrEkuL964qezDMGVWEGb7HQvyc0o=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="4AiNKDOfKInEwz2zZ3MBKKe+c3Q=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2655992-x86-express-plk.exe" Size="511456" Modified="2012-06-07T12:26:49.617Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">JvR8Oz9y7FhlTv0Fc2uNKY8XTnPE1jQ16p0U+SQO1ts=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="hZ48Nz/Wj+KLBtYRqBs6pEGGSP4=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2655992-x86-plk.psf" Size="1209025" Modified="2012-06-07T12:26:50.35Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">ZVLyfIO+szTuEZrHiRiwlF5m7AvtkEOy70/bNwxV1F4=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

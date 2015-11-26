@@ -1,0 +1,54 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="695ac03d-ccf2-4fd6-bd24-acf3e838d679" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-04T20:38:08.843Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="813304" MinDownloadSize="537942">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.9.738"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Path="\quartz.dll" Csidl="37"/>
+          <bar:FileVersion Path="\quartz.dll" Comparison="LessThanOrEqualTo" Version="6.1.9.999" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Path="\quartz.dll" Csidl="37"/>
+          <bar:FileVersion Path="\quartz.dll" Comparison="LessThanOrEqualTo" Version="6.1.9.999" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="VREtaqptQQStFBn4JA7DabS2oFs=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975560-x86-KOR.EXE" Size="813304" Modified="2010-01-13T11:59:29.947" PatchingType="SelfContained"/>
+      <upd:File Digest="OzvqlUex0nkioBwlqJnPudpI9Uw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975560-x86-Express-KOR.EXE" Size="492408" Modified="2010-01-13T11:59:30.197" PatchingType="Express"/>
+      <upd:File Digest="DxSWBNRGBKWj4zLtodn8CHxF8cU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975560-x86-KOR.psf" Size="1828732" Modified="2010-01-13T11:59:30.697" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

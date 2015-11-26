@@ -1,0 +1,83 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="901db142-dc79-4f69-9ae5-0104cbc5fcc8" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-06-03T01:20:49.042Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="899456" MinDownloadSize="641297">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary it</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\strmfilt.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\strmfilt.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\httpapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\httpapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\http.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\http.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\inetsrv\w3isapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\inetsrv\w3isapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\inetsrv\w3dt.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\inetsrv\w3dt.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\inetsrv\w3core.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.4693"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\inetsrv\w3core.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\inetsrv\w3core.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.4616"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="xuwqyYe5/1kg60gXgzaCuSsckIw=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb982666-x86-ita.exe" Size="899456" Modified="2010-05-05T02:37:39.61" PatchingType="SelfContained"/>
+      <upd:File Digest="hptTQIHW68nbWNIc8mU5NOi8SoI=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB982666-x86-express-ITA.exe" Size="500096" Modified="2010-05-05T02:37:39.907" PatchingType="Express"/>
+      <upd:File Digest="nwcadrRXTHJ7cHiTcTLI2/NTHfs=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB982666-x86-ITA.psf" Size="1268260" Modified="2010-05-05T02:37:40.207" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

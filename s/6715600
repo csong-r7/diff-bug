@@ -1,0 +1,80 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9c411a72-a264-4ce7-a8ee-2bdaed4c8aeb" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2013-01-01T04:07:20.820Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2062296" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>MSXML 4 GDR Package CHS</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+          <upd:UpdateIdentity UpdateID="8998699c-434c-4222-b880-855ea4421d2c"/>
+          <upd:UpdateIdentity UpdateID="d7f1d4f3-8c9b-4ca5-964a-ffb09b8ef369"/>
+          <upd:UpdateIdentity UpdateID="71c1e8bb-9a5d-4e56-a456-10b0624c7188"/>
+          <upd:UpdateIdentity UpdateID="4d790e24-b3f8-4864-a2b6-49d082e3bbdc"/>
+          <upd:UpdateIdentity UpdateID="f8c1d184-7116-498a-903e-25b17eb66bac"/>
+          <upd:UpdateIdentity UpdateID="38ef50a8-dffe-449e-a287-35a57128e49f"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+          <upd:UpdateIdentity UpdateID="2ee2ad83-828c-4405-9479-544d767993fc"/>
+          <upd:UpdateIdentity UpdateID="a105a108-7c9b-4518-bbbe-73f0fe30012b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Path="msxml4.dll" Comparison="GreaterThanOrEqualTo" Version="4.30.2117.0" Csidl="41"/>
+          <bar:FileVersion Path="msxml4.dll" Comparison="LessThan" Version="4.30.2999.9" Csidl="41"/>
+          <bar:FileExists Path="msxml4r.dll" Language="2052" Csidl="41"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileVersion Path="msxml4.dll" Comparison="GreaterThan" Version="4.30.0000.0" Csidl="41"/>
+          <bar:FileVersion Path="msxml4.dll" Comparison="LessThan" Version="4.30.2117.0" Csidl="41"/>
+          <bar:FileExists Path="msxml4r.dll" Language="2052" Csidl="41"/>
+          <lar:Not>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\MSXML4SP3\Q2758694" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Ld6fWlN/KlpLmbCAvUgPCfnCrX4=" DigestAlgorithm="SHA1" FileName="msxml4-KB2758694-chs.exe" Size="2062296" Modified="2012-12-19T16:24:07.753Z">
+        <upd:AdditionalDigest Algorithm="SHA256">T6KbSxrv0IHqJuW6PCr0mI11QzxNCoviU9xrpif9Rag=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q REBOOT=ReallySuppress" Program="msxml4-KB2758694-chs.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Success but Reboot Required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

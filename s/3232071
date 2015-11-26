@@ -1,0 +1,79 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7f2d9895-38a1-4893-8c22-c31ea85f1bc3" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-10-07T02:48:58.492Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="758136" MinDownloadSize="361802">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msv1_0.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3625"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msv1_0.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5876"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netlogon.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3520"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netlogon.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msv1_0.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3625"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB968389" Value="Installed" Comparison="EqualTo" Data="1"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="e4Ihlluoq4JMQCZy9Ws4DMe6qVM=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB975467-x86-CSY.exe" Size="758136" Modified="2009-09-30T16:39:11.26" PatchingType="SelfContained"/>
+      <upd:File Digest="qEI8sfIW2HPKzMWOEV/f/O7QUhc=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB975467-x86-express-CSY.cab" Size="244424" Modified="2009-09-30T16:39:11.51" PatchingType="Express"/>
+      <upd:File Digest="fYAVKr2R8N0CZHwetWTc+AynRaU=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB975467-x86-CSY.psf" Size="723969" Modified="2009-09-30T16:39:11.857" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

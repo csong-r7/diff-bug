@@ -1,0 +1,67 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0dde229e-21e5-493a-a4a0-78356afc6946" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="25056" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-01-27T16:14:37.464Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>IEFlashUpdatePrep</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="38ef50a8-dffe-449e-a287-35a57128e49f"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:UpdateIdentity UpdateID="d2346bef-6aa9-4975-8931-71ca677ce85a"/>
+        <upd:UpdateIdentity UpdateID="34100a31-9443-4129-b0c0-406a3e5e7674"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a105a108-7c9b-4518-bbbe-73f0fe30012b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\Flash.ocx"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\Flash.ocx" Version="13.0.0.206" Comparison="GreaterThanOrEqualTo"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.dll" Version="13.0.0.206" Comparison="GreaterThanOrEqualTo"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.exe"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.exe" Version="13.0.0.206" Comparison="GreaterThanOrEqualTo"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:And>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\Flash.ocx"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\Flash.ocx" Version="13.0.0.182" Comparison="GreaterThanOrEqualTo"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.dll" Version="13.0.0.182" Comparison="GreaterThanOrEqualTo"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.exe"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="41" Path="\Macromed\Flash\FlashUtil_ActiveX.exe" Version="13.0.0.182" Comparison="GreaterThanOrEqualTo"/>
+            <lar:Not>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB3035034~31bf3856ad364e35~AMD64~~6.2.1.0"/>
+            </lar:Not>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="rwHxJTfq6DGdPzHDHoBDkLHlVNs=" DigestAlgorithm="SHA1" FileName="IEFlashUpdatePrep.exe" Size="25056" Modified="2013-02-06T14:03:50Z">
+        <upd:AdditionalDigest Algorithm="SHA256">VUxEF/Bn7Y58/AwmjTfOe5mlIyGIZqskQr9hk2n8TaM=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Program="IEFlashUpdatePrep.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

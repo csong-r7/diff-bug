@@ -1,0 +1,74 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <!--PUID[527215]Name[BCMLPKSP1_12_ROM]-->
+    <upd:UpdateIdentity UpdateID="2bb4caa4-6c70-4d57-a857-ea8e95ff11d4" RevisionNumber="104"/>
+    <upd:Properties UpdateType="Software" DefaultPropertiesLanguage="en" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T21:25:57.056Z" PublisherID="9b068e57-8e2d-4e42-b091-74bdb345f120" MaxDownloadSize="1105956" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ro</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>BCMLPKSP1_12_ROM</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="534f4b2b-8bf4-41d9-8607-4ff60f62ec8d"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Or>
+              <lar:Not>
+                <mar:MsiProductInstalled ProductCode="{b8385f9c-9fc1-4da1-bb83-16ae70170385}"/>
+              </lar:Not>
+              <mar:MsiProductInstalled ProductCode="{b8385f9c-9fc1-4da1-bb83-16ae70170385}" VersionMin="3.0.6912.0" VersionMax="3.0.6912.0"/>
+            </lar:Or>
+            <lar:Or>
+              <mar:MsiProductInstalled ProductCode="{b8385f9c-9fc1-4da1-bb83-16ae70170385}"/>
+            </lar:Or>
+          </lar:And>
+          <mar:MsiPatchInstalled/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsSuperseded>
+        <mar:MsiPatchSuperseded/>
+      </upd:IsSuperseded>
+      <upd:IsInstallable>
+        <mar:MsiPatchInstallable/>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{61F12C64-583D-41D1-B8F6-E74F54F11534}" MinMsiVersion="3" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="true">{B8385F9C-9FC1-4DA1-BB83-16AE70170385}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.0.5828.0</TargetVersion>
+              <UpdatedVersion>3.0.6912.0</UpdatedVersion>
+              <TargetLanguage Validate="false">1048</TargetLanguage>
+              <UpdatedLanguages>1048</UpdatedLanguages>
+              <UpgradeCode Validate="true">{143FE6D3-0704-4F3A-8153-D0990CEE21F2}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{B8385F9C-9FC1-4DA1-BB83-16AE70170385}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>BCMLP</PatchFamily>
+              <Sequence>6912.0</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ToGW+MfS5o0w4Q3sFfziUkXwq4U=" DigestAlgorithm="SHA1" FileName="BCM2007LangpackSP1-KB942470-FullFile-ROM.CAB" Size="1105956" Modified="2007-12-05T21:35:01.9Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">VhXOqAWWu4+UwS25JXZaMqnDk0GQJI0/dFXX/rS/CFY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData CommandLine="DISABLESRCPROMPT=1 LOCALCACHESRCRES=0 NOLOCALCACHEROLLBACK=1" UninstallCommandLine="DISABLESRCPROMPT=1 LOCALCACHESRCRES=0 NOLOCALCACHEROLLBACK=1" FullFilePatchCode="{61f12c64-583d-41d1-b8f6-e74f54f11534}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,76 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0AD8C09D-DF69-474B-BD85-6295F44FDF67" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-10-13T18:44:16.707Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="383848" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="AlwaysRequiresReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Q329048: Security Update</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="D8361D81-2D0F-4833-A96B-945BA682BF48"/>
+          <upd:UpdateIdentity UpdateID="C5CAF853-4C76-47FA-93EC-E49B01DB32FD"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="42AAD4F1-57A8-4965-B34B-B5664922C9BE"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558F4BC3-4827-49E1-ACCF-EA79FD72D4C9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="Installed" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q329048"/>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\zipfldr.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1126"/>
+              <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\zipfldr.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2600.101"/>
+              <lar:Not>
+                <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+              </lar:Not>
+              <lar:Not>
+                <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+              </lar:Not>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:And>
+            <bar:WUv4RegKeyValue Data="2600" Value="CurrentBuildNumber" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion"/>
+            <lar:Not>
+              <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:WUv4RegKeyValue Data="ServerNT" Value="ProductType" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions"/>
+            </lar:Not>
+          </lar:And>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="LanmanNT" Value="ProductType" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="s8XckP2HuX4xokNCuecDtLNPRQk=" DigestAlgorithm="SHA1" FileName="Q329048_xp.exe" Size="383848" Modified="2002-09-25T16:48:05.0706825-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z" Program="Q329048_xp.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

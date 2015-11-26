@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a65d5548-ac7c-42f0-b17e-67f285faf9ef" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-11-08T23:26:56.122Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="927720" MinDownloadSize="545304">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\NETAPI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7108"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\NETAPI32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7087"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\WKSSVC.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7108"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\WKSSVC.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\LSASRV.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7108"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\LSASRV.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="XKo5nIeq6ti82Kcz7n457cCZy+U=" DigestAlgorithm="SHA1" FileName="Windows2000-KB924270-x86-PTG.EXE" Size="927720" Modified="2006-09-18T15:15:43.4970000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="NY550ks8BrKGO5MYt2wH1qItWyk=" DigestAlgorithm="SHA1" FileName="Windows2000-KB924270-x86-Express-PTG.EXE" Size="494896" Modified="2006-09-18T15:15:43.8700000-07:00" PatchingType="Express"/>
+      <upd:File Digest="/r323hrX15+MG8CYp35Pd1Ja3WY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB924270-x86-PTG.psf" Size="1713464" Modified="2006-09-18T15:15:44.7930000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

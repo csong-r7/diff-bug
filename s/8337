@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6E0064C8-D04D-4629-8328-84048415C942" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2004-01-30T23:49:41.730Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="17107184" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Cumulative Security Update for Internet Explorer for Windows Server 2003 64-bit Edition (KB832894)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="B200A06A-909B-4F0F-BC17-74C536528BAA"/>
+          <upd:UpdateIdentity UpdateID="0D27B716-280A-42A2-864A-BCD065C162E9"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="AABD43AD-A183-4f0b-8EEE-8DBBCD67687F"/>
+        <upd:UpdateIdentity UpdateID="D633BDC5-C56A-45DE-8519-A67FD1E87F29"/>
+        <upd:UpdateIdentity UpdateID="40EC40D6-6513-45B8-AE3D-6CED21A8F8B4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="DBF57A08-0D5A-46FF-B30C-7715EB9498E9"/>
+          <upd:UpdateIdentity UpdateID="7F44C2A7-BC36-470B-BE3B-C01B6DC5DD4E"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="Installed" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB832894"/>
+          <bar:FileVersion Csidl="37" Path="\urlmon.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.115"/>
+          <bar:FileVersion Csidl="37" Path="\mshtml.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.118"/>
+          <bar:FileVersion Csidl="37" Path="\shdocvw.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.118"/>
+          <bar:FileVersion Csidl="37" Path="\browseui.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.115"/>
+          <bar:FileVersion Csidl="37" Path="\wininet.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.118"/>
+          <bar:WUv4RegKeyValue Data="1024" Value="Compatibility Flags" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{69DEAF94-AF66-11D3-BEC0-00105AA9B6AE}"/>
+          <bar:WUv4RegKeyValue Data="1024" Value="Compatibility Flags" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{D32C3BAD-5213-49BD-A7D5-E6DE6C0D8249}"/>
+          <bar:WUv4RegKeyValue Data="1024" Value="Compatibility Flags" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{4B106874-DD36-11D0-8B44-00A024DD9EFF}"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileVersion Csidl="37" Path="\urlmon.dll" Comparison="LessThan" Version="6.0.3790.115"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="R7hYSSHe0CJHo5QJWTdY38GKbwU=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB832894-IA64-JPN.EXE" Size="17107184" Modified="2004-01-16T20:01:30.6437500-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z" Program="WindowsServer2003-KB832894-IA64-JPN.EXE">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

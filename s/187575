@@ -1,0 +1,51 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="65ac5b0e-a62c-4dd4-ba81-b2fa66efae68" RevisionNumber="10"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-08T21:11:35.807Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="389872" MinDownloadSize="337398">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="43" Path="\microsoft shared\triedit\dhtmled.ocx" Comparison="GreaterThanOrEqualTo" Version="6.1.0.9231"/>
+          <lar:Not>
+            <bar:FileExists Csidl="43" Path="\microsoft shared\triedit\dhtmled.ocx"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Nbs+YO8EvUb/V6G+hEI3CnO6qFc=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB891781-x86-esn.exe" Size="389872" Modified="2005-02-07T16:49:29.7862857-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="T2uYvl6/l70g/kcz3nSkGB/VMQQ=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB891781-x86-esn.psf" Size="114420" Modified="2005-02-07T16:49:29.9737821-08:00" PatchingType="Express"/>
+      <upd:File Digest="VyXwL9NWv+Z5RCYTJH5bexnidXc=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB891781-x86-express-esn.exe" Size="337136" Modified="2005-02-07T16:49:30.2862761-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

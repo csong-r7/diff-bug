@@ -1,0 +1,117 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0d7dbabd-d74f-404e-b1fa-b8f3ffb8f165" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-01-08T20:02:29.881Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="576552" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ar</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3427"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\afd.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5657"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\afd.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:Not>
+            <lar:Or>
+              <lar:And>
+                <lar:Or>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Comparison="EqualTo" Data="5"/>
+                  <lar:Not>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Type="REG_DWORD"/>
+                  </lar:Not>
+                </lar:Or>
+                <lar:And>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="6.5.645.000"/>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.482.000"/>
+                </lar:And>
+              </lar:And>
+              <lar:And>
+                <lar:And>
+                  <lar:Not>
+                    <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Comparison="EqualTo" Data="5"/>
+                  </lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Type="REG_DWORD"/>
+                </lar:And>
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="6.5.645.000"/>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.843.006"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="7.0.844.000"/>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.865.000"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+          <lar:Or>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3394"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\drivers\afd.sys"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+              <lar:Or>
+                <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5625"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="37" Path="\drivers\afd.sys"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="dq7efDoaf6O8zM9ET1GHJJx9/x0=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB956803-x86-ARA.exe" Size="576552" Modified="2008-09-24T19:02:25.473" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

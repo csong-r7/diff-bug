@@ -1,0 +1,37 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a7a0db29-17c4-43c7-8830-632b5f7c622a" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="Windows Locale" PublicationState="Published" CreationDate="2008-01-17T21:43:05.184Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>DreamScene RTL filter</upd:Title>
+        <upd:Description>This detectoid will return true (is Installed) if the install language of the OS is anything other than Arabic or Hebrew.  The AND logic lets short-circuit evaluation kick in.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e7441a84-4561-465f-9e0e-7fc16fa25ea7"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <lar:Not>
+              <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="0401"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Nls\Language" Value="InstallLanguage" Comparison="EqualTo" Data="040d"/>
+            </lar:Not>
+            <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6000"/>
+          </lar:And>
+          <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6001"/>
+          <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6002"/>
+          <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6003"/>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="79b269dc-970a-4353-92c5-a073b31d1981" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T01:13:27.742Z" PublisherID="7980a4e4-329e-4642-a0c7-08a9b99dcdaf" MaxDownloadSize="930160" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update for Microsoft Forefront Client Security ENU x86 (KB975962)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="0a487050-8b0f-4f81-b401-be4ceacd61cd"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalledForProduct PatchCode="{71E0C3BA-F4F0-4289-84BF-A90235AE667E}" ProductCode="{E8B56B38-A826-11DB-8C83-0011430C73A4}"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:Processor Architecture="0"/>
+          <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5" MinorVersion="0" ServicePackMajor="4"/>
+          <lar:Or>
+            <mar:MsiProductInstalled ProductCode="{e8b56b38-a826-11db-8c83-0011430c73a4}" Language="1033"/>
+            <mar:MsiProductInstalled ProductCode="{e8b56b39-a826-11db-8c83-0011430c73a4}" Language="1033"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="psiWeG6qnrSARLT7F9E8RyPIzUE=" DigestAlgorithm="SHA1" FileName="FCSSSA-KB975962-x86-ENU.exe" Size="930160" Modified="2009-10-05T11:44:02.11Z">
+        <upd:AdditionalDigest Algorithm="SHA256">jXMxnkqad3RgDLMiMMy2gH/Sz0UvtPaqJGnXFTo6vZ4=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="FCSSSA.msp /q" Program="FCSSSA-KB975962-x86-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

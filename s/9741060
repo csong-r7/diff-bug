@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0bfd33a2-fb85-414a-b8ea-ba96c8d75ce1" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedHardDiskSpace="1260" MaxDownloadSize="1472352" MinDownloadSize="0" PublicationState="Published" CreationDate="2013-10-16T14:29:26.764Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>.NET 3.5 SP1 GDR</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        <upd:UpdateIdentity UpdateID="df38d2ba-864b-4124-a47e-009607f7a902"/>
+        <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+          <upd:UpdateIdentity UpdateID="cb263e3f-6c5a-4b71-88fa-1706f9549f51"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{ce2cdd62-0124-36ca-84d3-9f4dcf5c5bd9}"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="42" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Entity.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="42" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Services.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="42" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Services.Client.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.DynamicData.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Extensions.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Entity.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Services.dll"/>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="38" Version="3.5.30729.196" Comparison="GreaterThanOrEqualTo" Path="\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Services.Client.dll"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="Version" Type="REG_SZ" RegType32="true"/>
+            <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.30729.01" RegType32="true"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="MhRwo2f3rdgqAo+qhO6P04STvls=" DigestAlgorithm="SHA1" FileName="NDP35SP1-KB958484-IA64.exe" Size="1472352" Modified="2009-01-22T16:19:21Z">
+        <upd:AdditionalDigest Algorithm="SHA256">B80sJ8OBXO7hy/6T/JzZ7jVzUoTRbAv4F1esqiK6pOw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /norestart" Program="NDP35SP1-KB958484-IA64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

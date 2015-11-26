@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="47ef7248-044d-40bc-b083-6b1917fc5e72" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-08-28T19:29:54.152Z" PublisherID="accf3894-3556-4c96-87a3-36f77f5be973" MaxDownloadSize="693209" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary 0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="daa70353-99b4-4e04-b776-03973d54d20f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Administrator Console\Setup" Value="ProductVersion" Comparison="GreaterThanOrEqualTo" Data="3.0.6018.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{F5D279B4-FAC0-4BDF-B1A9-AF54FB60A109}" MinMsiVersion="1">
+            <TargetProduct MinMsiVersion="500">
+              <TargetProductCode Validate="true">{6F9D17DA-C519-4C5A-820C-5823EE714B9D}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">1.0.1200.0</TargetVersion>
+              <TargetLanguage Validate="false">0</TargetLanguage>
+              <UpdatedLanguages>2052</UpdatedLanguages>
+              <UpgradeCode Validate="true">{0B8458E0-48BB-40E8-9B39-21C53A698BBC}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{6F9D17DA-C519-4C5A-820C-5823EE714B9D}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>SCAC</PatchFamily>
+              <Sequence>1.0.1200.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="hthsZ2MatWEBuvP9cPWsZNLIXrQ=" DigestAlgorithm="SHA1" FileName="KB2677596_AppController_amd64.cab" Size="693209" Modified="2012-05-11T16:40:01.48Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">ETDlNAxxjbpiFIVm8PBZm3LCup3UpUmLTxEnLm+FNLo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{f5d279b4-fac0-4bdf-b1a9-af54fb60a109}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="944b305b-aa0b-4354-a9c8-e8b72f99e87f" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-04-07T22:06:45.456Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="671096" MinDownloadSize="129240">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing">
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.8838"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.0"/>
+            <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.7.0.0"/>
+            <bar:FileVersion Path="Internet Explorer\iexplore.exe" Comparison="LessThan" Version="8.0.6001.18702" Csidl="38"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="37" Path="\vbscript.dll"/>
+          <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.6.0.0"/>
+          <bar:FileVersion Csidl="37" Path="\vbscript.dll" Comparison="LessThan" Version="5.7.0.0"/>
+          <bar:FileVersion Path="Internet Explorer\iexplore.exe" Comparison="LessThan" Version="8.0.6001.18702" Csidl="38"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="X13WiAE2M1UPQL4HgpVAbl/45as=" DigestAlgorithm="SHA1" FileName="windowsxp-kb981350-x86-csy.exe" Size="671096" Modified="2010-03-24T03:15:00.42" PatchingType="SelfContained"/>
+      <upd:File Digest="a9ghso4LqT2MmPrn+oX07FmshHw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB981350-x86-express-CSY.cab" Size="100687" Modified="2010-03-24T03:15:00.92" PatchingType="Express"/>
+      <upd:File Digest="TXVPoP8SURk1a43d3+Z/KKOjFV8=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB981350-x86-CSY.psf" Size="515086" Modified="2010-03-24T03:15:01.217" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

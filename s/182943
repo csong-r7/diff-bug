@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ae7f4716-d7e1-4ebd-ad10-2cd03bc9f0b0" RevisionNumber="11"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-01-18T07:09:13.051Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1555176" MinDownloadSize="386054">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>da</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary da</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8ddbd40f-b0bb-4511-954e-575ea48dfea8"/>
+        <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1581"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\user32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1617"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\user32.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="G1eFuRlq3PZ3vOXfEd8mw5kWy8w=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB891711-x86-DAN.exe" Size="1555176" Modified="2005-01-10T20:44:13.1026862-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="Deylunrwzz+O+aGWbJcrhO8W73Y=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB891711-x86-DAN.psf" Size="14086384" Modified="2005-01-10T20:44:19.4141762-08:00" PatchingType="Express"/>
+      <upd:File Digest="khpL0yxPDPkDx/0uYaM/wRhtVDo=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB891711-x86-express-DAN.exe" Size="336104" Modified="2005-01-10T20:44:19.7266262-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

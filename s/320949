@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="dc874ac2-c3c4-45d5-8a54-bba0504c2732" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-08-03T23:58:09.018Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="781800" MinDownloadSize="504525">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\mpr.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6824"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mpr.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\KERNEL32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7099"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\KERNEL32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="tpzlrhg2HE3xUBWKGXj0ZaM3h2w=" DigestAlgorithm="SHA1" FileName="Windows2000-KB917422-x86-JPN.EXE" Size="781800" Modified="2006-07-19T16:10:52.8630000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="9eg+VIsckAL5f5MLjxu0xUFlDIg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB917422-x86-Express-JPN.EXE" Size="490800" Modified="2006-07-19T16:10:53.1000000-07:00" PatchingType="Express"/>
+      <upd:File Digest="19LYKHfk92I335HSnlR8NCbBcXM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB917422-x86-JPN.psf" Size="1358648" Modified="2006-07-19T16:10:53.5830000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,79 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="365582f7-9647-43a2-8f0b-60a50815f643" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2014-09-16T16:00:45.519Z" PublisherID="7980a4e4-329e-4642-a0c7-08a9b99dcdaf"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>FEP2010: NRI Enabled Detectoid</upd:Title>
+        <upd:Description>This detectoid returns true if NRI should be installed on a machine</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="181811a4-54bd-4b11-a884-56c1bed280e6"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft Security Client" Value="DisplayVersion" Comparison="GreaterThanOrEqualTo" Data="4.1.0000.0"/>
+          <!-- Must not be disabled in either user or policy
+                         Can be set using both disable RTP and disable NRI and BM registry key values
+                         Disable from RTP overrides the enable option from NRI -->
+          <lar:Not>
+            <lar:Or>
+              <!-- Disabled in policy for RTP? -->
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              <!-- Disabled by the user for RTP? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <!-- Disabled in user store? -->
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for NRI and BM? -->
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for BM / by the user for NRI? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for NRI / by the user for BM? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled by the user for NRI and BM? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Type="REG_DWORD"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

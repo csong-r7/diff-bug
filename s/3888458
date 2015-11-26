@@ -1,0 +1,351 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="22674e28-a38e-46d9-a0f6-f838bc4a0439" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-06-03T01:30:03.797Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="151839" MinDownloadSize="151839">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB979916
+-ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:UpdateIdentity UpdateID="d7f1d4f3-8c9b-4ca5-964a-ffb09b8ef369"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Type="REG_DWORD"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="Install" Comparison="EqualTo" Data="1" RegType32="false"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Type="REG_DWORD" RegType32="false"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Value="SP" Comparison="EqualTo" Data="2"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3" Dependency="Language Pack"/>
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="979916-27_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB979916_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3" Dependency="Language Pack"/>
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_for_KB979916_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_for_KB979916_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_8_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_8_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-TW" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_7_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_7_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="zh-CN" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_6_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_6_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ko-KR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_5_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_5_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="ja-JP" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:02Z" lastUpdateTimeStamp="2010-03-04T07:42:02Z">
+            <assemblyIdentity name="Package_4_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_4_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="fr-FR" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:01Z" lastUpdateTimeStamp="2010-03-04T07:42:01Z">
+            <assemblyIdentity name="Package_3_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_3_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="en-US" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:01Z" lastUpdateTimeStamp="2010-03-04T07:42:01Z">
+            <assemblyIdentity name="Package_2_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_2_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx2-ServerCore-OC-WOW64-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WindowsFoundation-LanguagePack-Package" language="de-DE" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:01Z" lastUpdateTimeStamp="2010-03-04T07:42:01Z">
+            <assemblyIdentity name="Package_1_for_KB979916" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB979916" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=979916" creationTimeStamp="2010-03-04T07:42:12Z" lastUpdateTimeStamp="2010-03-04T07:42:12Z">
+            <assemblyIdentity name="Package_1_for_KB979916_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB979916_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="QaSDO2+L9+b2I1iCBYb9HN/27Wg=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB979916-ia64.cab" Size="151839" Modified="2010-03-08T20:29:44.263" PatchingType="SelfContained"/>
+      <upd:File Digest="gkBXkiyGVqcgJ8643Cu7E5j3ycM=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB979916-ia64.psf" Size="1284018" Modified="2010-03-08T20:29:44.717" PatchingType="Express"/>
+      <upd:File Digest="altUqb5oWXkRdC0RFmQ2hSC6igs=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB979916-ia64-EXPRESS.cab" Size="48893" Modified="2010-03-08T20:29:44.797" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

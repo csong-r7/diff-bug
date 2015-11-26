@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="29244a16-0bea-4dc9-a6bc-c11ead317355" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedHardDiskSpace="470" PublicationState="Published" CreationDate="2012-04-05T02:22:44.357Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="19893104" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>VJS-Exp-All languages</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7733f622-e45c-457e-a5ff-b755f5db0652"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="0403b289-b2a7-40e0-9901-42d492a9e4fe"/>
+          <upd:UpdateIdentity UpdateID="1c1fa47a-f33e-4840-8f07-ac614bf58aab"/>
+          <upd:UpdateIdentity UpdateID="671ac15f-c813-4645-8149-fa262584c9af"/>
+          <upd:UpdateIdentity UpdateID="4082acd7-1aa5-4e81-811b-85a8d5b08f07"/>
+          <upd:UpdateIdentity UpdateID="1646492f-eff4-4f50-9103-48f3bb467f19"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a0dd7e72-90ec-41e3-b370-c86a245cd44f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:Not>
+            <mar:MsiProductInstalled ProductCode="{94160B78-D7C5-4706-8E03-9D8B3763C7DB}"/>
+          </lar:Not>
+          <mar:MsiPatchInstalledForProduct PatchCode="{2E131283-ECA2-41F2-BBE0-D7FA123CE6B5}" ProductCode="{94160B78-D7C5-4706-8E03-9D8B3763C7DB}"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9EYWITwiHexeHXghwCYzhPKPtJM=" DigestAlgorithm="SHA1" FileName="VS80sp1-KB926750-X86-ENU.exe" Size="19893104" Modified="2007-01-27T15:43:46.407Z">
+        <upd:AdditionalDigest Algorithm="SHA256">zVjOPVq6JAoVkTvNAW9iRCixoWgpVLJYHUl0Sc1eI7Y=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="VS80sp1-KB926750-X86-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

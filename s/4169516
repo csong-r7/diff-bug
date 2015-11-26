@@ -1,0 +1,404 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ad4ee161-e650-4ddf-bce3-8aeb8aa59adc" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2011-04-06T21:55:43.862Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1468999" MinDownloadSize="1468999">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d7f1d4f3-8c9b-4ca5-964a-ffb09b8ef369"/>
+          <upd:UpdateIdentity UpdateID="4d790e24-b3f8-4864-a2b6-49d082e3bbdc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:Or>
+            <lar:And>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mshtml.dll" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mshtml.dll" Comparison="GreaterThanOrEqualTo" Version="8.0.0.0" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mshtml.dll" Comparison="LessThan" Version="9.0.0.0" Csidl="37"/>
+            </lar:And>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mshtml.dll" Csidl="37"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:02Z" lastUpdateTimeStamp="2011-02-18T16:09:02Z">
+            <assemblyIdentity name="Package_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-13_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510531_SP1" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-14_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510531_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:14Z" lastUpdateTimeStamp="2011-02-18T16:09:14Z">
+            <assemblyIdentity name="Package_1_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.20904" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6381fdd3535061aa1ed2af34a32657cb" version="6.1.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:01Z" lastUpdateTimeStamp="2011-02-18T16:09:01Z">
+            <assemblyIdentity name="Package_1_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.21663" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b2f6bd8c3ba0056681a854e6abe28d8d" version="6.1.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510531-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.17562" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.17562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5aa0cd39c4451fddffa8936d3e568cfe" version="6.1.7601.17562" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_2_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.20904" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="207f2aadb2d835ca118bc3f5bf431dd6" version="8.0.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:01Z" lastUpdateTimeStamp="2011-02-18T16:09:01Z">
+            <assemblyIdentity name="Package_2_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.21663" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="56f0090d4c2215e9c77c86d173c02c0c" version="8.0.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510531-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.17562" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.17562" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8b6de0bc5c43a25c22cf4c413cdde7c4" version="8.0.7601.17562" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_3_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7601.21663" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b2f6bd8c3ba0056681a854e6abe28d8d" version="6.1.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:01Z" lastUpdateTimeStamp="2011-02-18T16:09:01Z">
+            <assemblyIdentity name="Package_3_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.20904" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6381fdd3535061aa1ed2af34a32657cb" version="6.1.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510531-6_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.16762" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-VBScript" version="6.1.7600.16762" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="be2048d089792be8d8b53c192d34bef6" version="6.1.7600.16762" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_4_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7601.21663" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="56f0090d4c2215e9c77c86d173c02c0c" version="8.0.7601.21663" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:01Z" lastUpdateTimeStamp="2011-02-18T16:09:01Z">
+            <assemblyIdentity name="Package_4_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.20904" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="207f2aadb2d835ca118bc3f5bf431dd6" version="8.0.7600.20904" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2510531-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.16762" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-Scripting-JScript" version="8.0.7600.16762" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="857b522cf8c3e073798ded23d82fac69" version="8.0.7600.16762" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_for_KB2510531_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:02Z" lastUpdateTimeStamp="2011-02-18T16:09:02Z">
+            <assemblyIdentity name="Package_for_KB2510531_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_for_KB2510531_SP1_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-7_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:02Z" lastUpdateTimeStamp="2011-02-18T16:09:02Z">
+            <assemblyIdentity name="Package_for_KB2510531_SP1" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2510531" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2510531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2510531" creationTimeStamp="2011-02-18T16:09:15Z" lastUpdateTimeStamp="2011-02-18T16:09:15Z">
+            <assemblyIdentity name="Package_for_KB2510531_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2510531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-ServerCore-Package" version="6.1.7600.16385" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-InternetExplorer-Package" language="neutral" version="8.0.7601.17514" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2510531-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510531_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2510531-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2510531_SP1_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="nV0kClkDqh7FG30zdQkIZXm6p7U=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2510531-ia64.cab" Size="1468999" Modified="2011-03-10T13:25:38.953" PatchingType="SelfContained"/>
+      <upd:File Digest="Meg9c39+buaSDpq6xqX+JVv+D5A=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2510531-ia64-EXPRESS.cab" Size="53177" Modified="2011-03-10T13:25:39.093" PatchingType="Express"/>
+      <upd:File Digest="MuANzA+MVhUP2zrFW4zSfJqsZeY=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2510531-ia64.psf" Size="42201870" Modified="2011-03-10T13:25:46.953" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,187 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="88e016ee-9a1b-4680-8934-74cd95fed502" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="35100320" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-03-04T14:22:57.445Z" PublisherID="f248021c-c6ca-4019-966a-9984689a67b9">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Skype for Windows desktop Recognised Users Version</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+          <upd:UpdateIdentity UpdateID="91a34436-99b8-4644-a282-a7f292422dd4"/>
+          <upd:UpdateIdentity UpdateID="77a1d80c-5efc-4546-9397-1eaef135377a"/>
+          <upd:UpdateIdentity UpdateID="a4750906-d3eb-42db-8b6f-9ddb45c4733b"/>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+          <upd:UpdateIdentity UpdateID="8998699c-434c-4222-b880-855ea4421d2c"/>
+          <upd:UpdateIdentity UpdateID="71c1e8bb-9a5d-4e56-a456-10b0624c7188"/>
+          <upd:UpdateIdentity UpdateID="f8c1d184-7116-498a-903e-25b17eb66bac"/>
+          <upd:UpdateIdentity UpdateID="23b28b6a-2629-424b-92ae-1b0bda447d2f"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="6750007f-c908-4f2c-8aff-48ca6d36add6"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" RegType32="true"/>
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" Value="SkypeFolder" Type="REG_SZ" RegType32="true"/>
+            <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Skype.exe" Comparison="EqualTo" Version="6.11.60.102" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone" Value="SkypeFolder" RegType32="true"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <lar:And>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" RegType32="true"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" Value="SkypeFolder" Type="REG_SZ" RegType32="true"/>
+              <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Skype.exe" Comparison="LessThanOrEqualTo" Version="6.11.60.102" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone" Value="SkypeFolder" RegType32="true"/>
+            </lar:And>
+            <lar:Not>
+              <lar:And>
+                <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" RegType32="true"/>
+                <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" Value="SkypeFolder" Type="REG_SZ" RegType32="true"/>
+              </lar:And>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <lar:And>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" RegType32="true"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" Value="PartnerCode" Type="REG_SZ" RegType32="true"/>
+              <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Skype\Phone\" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{EE7257A2-39A2-4D2F-9DAC-F9F25B8AE1D8}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{EE7257A2-39A2-4D2F-9DAC-F9F25B8AE1D8}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{EE7257A2-39A2-4D2F-9DAC-F9F25B8AE1D8}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{EE7257A2-39A2-4D2F-9DAC-F9F25B8AE1D8}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{D0197E45-D866-44D0-90AF-529F28F15ABA}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D0197E45-D866-44D0-90AF-529F28F15ABA}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D0197E45-D866-44D0-90AF-529F28F15ABA}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D0197E45-D866-44D0-90AF-529F28F15ABA}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{AA59DDE4-B672-4621-A016-4C248204957A}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{AA59DDE4-B672-4621-A016-4C248204957A}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{AA59DDE4-B672-4621-A016-4C248204957A}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{AA59DDE4-B672-4621-A016-4C248204957A}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{D6F879CC-59D6-4D4B-AE9B-D761E48D25ED}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D6F879CC-59D6-4D4B-AE9B-D761E48D25ED}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D6F879CC-59D6-4D4B-AE9B-D761E48D25ED}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D6F879CC-59D6-4D4B-AE9B-D761E48D25ED}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{5335DADB-34BA-4AE8-A519-648D78498846}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5335DADB-34BA-4AE8-A519-648D78498846}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5335DADB-34BA-4AE8-A519-648D78498846}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5335DADB-34BA-4AE8-A519-648D78498846}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{E633D396-5188-4E9D-8F6B-BFB8BF3467E8}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{E633D396-5188-4E9D-8F6B-BFB8BF3467E8}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{E633D396-5188-4E9D-8F6B-BFB8BF3467E8}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{E633D396-5188-4E9D-8F6B-BFB8BF3467E8}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{D103C4BA-F905-437A-8049-DB24763BBE36}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D103C4BA-F905-437A-8049-DB24763BBE36}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D103C4BA-F905-437A-8049-DB24763BBE36}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{D103C4BA-F905-437A-8049-DB24763BBE36}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{24D753CA-6AE9-4E30-8F5F-EFC93E08BF3D}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{24D753CA-6AE9-4E30-8F5F-EFC93E08BF3D}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{24D753CA-6AE9-4E30-8F5F-EFC93E08BF3D}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{24D753CA-6AE9-4E30-8F5F-EFC93E08BF3D}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+            <lar:And>
+              <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ExcludeVersionMin="true" ExcludeVersionMax="true" ProductCode="{5C82DAE5-6EB0-4374-9254-BE3319BA4E82}"/>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5C82DAE5-6EB0-4374-9254-BE3319BA4E82}" Key="HKEY_LOCAL_MACHINE"/>
+              <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" RegType32="true" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5C82DAE5-6EB0-4374-9254-BE3319BA4E82}" Key="HKEY_LOCAL_MACHINE" Type="REG_DWORD" Value="PartnerCode"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows\CurrentVersion\Uninstall\{5C82DAE5-6EB0-4374-9254-BE3319BA4E82}" Value="PartnerCode" Comparison="EqualTo" Data="60" RegType32="true"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="bcqVDgtjE+5GOLE3uZcfK7PKXFQ=" DigestAlgorithm="SHA1" FileName="SkypeSetupFull(6.11.60.102).exe" Size="35100320" Modified="2014-02-11T07:51:04Z">
+        <upd:AdditionalDigest Algorithm="SHA256">Vs7oJdCcCUW1RgKG7p418X/XogXLWWU9ncHkZee17iE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/QUIET /RESUMESKYPE" Program="SkypeSetupFull(6.11.60.102).exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Successfully installed</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Successfully installed: Pending Reboot</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50001">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Unknown error</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50002">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, copying MSI file</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50003">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, extracting MSI file</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50004">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, verifying MSI file</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50005">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, initializing MSI</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50006">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, previous installation not complete</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="50007">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Error, download failed</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="713a8c67-e753-4e06-8cef-5ca51bb852c4" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-09-04T04:34:10.535Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="564976" MinDownloadSize="503750">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>el</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary el</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8eb8b3af-c51f-4759-8347-46daa955ff08"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="43" Path="\Microsoft Shared\Triedit\triedit.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.0.9235"/>
+          <lar:Not>
+            <bar:FileExists Csidl="43" Path="\Microsoft Shared\Triedit\triedit.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="uG1F/7y1kXmj18ZBgh0GcXEroMo=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956844-x86-ELL.EXE" Size="564976" Modified="2009-08-06T15:37:09.047" PatchingType="SelfContained"/>
+      <upd:File Digest="rJO4Wr7TN/tUAXFXh45YG9DhLAk=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956844-x86-Express-ELL.EXE" Size="499064" Modified="2009-08-06T15:37:09.78" PatchingType="Express"/>
+      <upd:File Digest="7QuQAsaze7OOABsxH6w9+Rq9t4c=" DigestAlgorithm="SHA1" FileName="Windows2000-KB956844-x86-ELL.psf" Size="94076" Modified="2009-08-06T15:37:10.453" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

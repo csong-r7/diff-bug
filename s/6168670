@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="018daff6-37ea-460c-938f-54b10cc01200" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2012-10-31T17:10:38.032Z" PublisherID="7980a4e4-329e-4642-a0c7-08a9b99dcdaf"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Forefront Endpoint Protection 2010: AM Product Enabled Detectoid</upd:Title>
+        <upd:Description>Detects whether or not the FCS AM service is enabled and running.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a38c835c-2950-4e87-86cc-6911a52c34a3"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!-- MpClient.dll must exist in the installation directory -->
+          <bar:FileExistsPrependRegSz Path="MpClient.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware" Value="InstallLocation"/>
+          <!-- The product configuration root must exist -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware"/>
+          <!-- The service must be installed -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\msmpsvc"/>
+          <!-- The product must not be disabled by turning off the service -->
+          <lar:Not>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\msmpsvc" Value="Start" Comparison="EqualTo" Data="4"/>
+          </lar:Not>
+          <!-- The product must not be disabled by either user preference or group policy -->
+          <lar:Not>
+            <lar:And>
+              <lar:Or>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              </lar:Or>
+              <lar:Or>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              </lar:Or>
+            </lar:And>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

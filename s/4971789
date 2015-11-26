@@ -1,0 +1,53 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a2898b8b-d85d-415d-b32d-a48f7181fb3b" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:55:00.408Z" PublisherID="923ae562-605a-4ba7-baca-950d77fd85ea" MaxDownloadSize="5794072" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>BB07</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c053ff66-1bf5-456c-bbb0-f1089ef3c03e"/>
+          <upd:UpdateIdentity UpdateID="85ead0be-0e0a-4128-aae8-a6b0779b3021"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+          <upd:UpdateIdentity UpdateID="3cc048fc-e0cc-441e-b983-36ddbe48e0ed"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="d147a5f2-9622-485c-a692-9943e8805f9c"/>
+        <upd:UpdateIdentity UpdateID="efd52563-4f5e-4fe6-ab1f-6761c94f7470"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b86cf33d-92ac-43d2-886b-be8a12f81ee1"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSN\Toolbar\" Value="Version" Comparison="GreaterThan" Data="7.1.000.0" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSN\Toolbar\" Value="Version" Comparison="GreaterThanOrEqualTo" Data="4.0.0000.0" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSN\Toolbar" Value="Version" Comparison="LessThan" Data="7.1.0000.0" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="K3Ejdb2cx+s3jDA6tzYoRm92Qko=" DigestAlgorithm="SHA1" FileName="BingBarMUSetup-Partner.EXE" Size="5794072" Modified="2012-02-17T14:19:59.24Z">
+        <upd:AdditionalDigest Algorithm="SHA256">XZrMTQNQcFZGQtnL1lrwd8/mEJOHxOZpWHhsY8yNx6k=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Program="BingBarMUSetup-Partner.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,53 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a8e3367e-9af4-498c-bbbd-ec1f503718dc" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2010-01-27T17:56:13.900Z" PublisherID="7980a4e4-329e-4642-a0c7-08a9b99dcdaf"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>FCSv1: Product Enabled</upd:Title>
+        <upd:Description>Detects whether the Microsoft Forefront Client Security product has been disabled by either configuration or policy.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="0a487050-8b0f-4f81-b401-be4ceacd61cd"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!-- MpClient.dll must exist in the installation directory -->
+          <bar:FileExistsPrependRegSz Path="MpClient.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Forefront\Client Security\1.0\AM" Value="InstallLocation"/>
+          <!-- The product configuration root must exist -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Forefront\Client Security\1.0\AM"/>
+          <!-- The service must be installed -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\fcsam"/>
+          <!-- The product must not be disabled by turning off the service -->
+          <lar:Not>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\fcsam" Value="Start" Comparison="EqualTo" Data="4"/>
+          </lar:Not>
+          <!-- The configurations for turning off the service must not
+                         be set, either in policy or in the product configuration.
+
+                         The logic below fixes a minor bug where the product was
+                         turned off with one policy (AS off) and one config (AV).
+                    -->
+          <lar:Not>
+            <lar:And>
+              <lar:Or>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Forefront\Client Security\1.0\AM" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Forefront\Client Security\1.0\AM" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              </lar:Or>
+              <lar:Or>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Forefront\Client Security\1.0\AM" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Forefront\Client Security\1.0\AM" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              </lar:Or>
+            </lar:And>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

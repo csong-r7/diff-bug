@@ -1,0 +1,80 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f22d71f9-6983-4271-a5c2-183bbee64541" RevisionNumber="204"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="1914104" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-11-11T00:27:12.659Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb2918614-x86-fra</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5be762cc-de5d-430a-99fd-d67fb1d227c6"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msihnd.dll" Comparison="GreaterThanOrEqualTo" Version="4.5.6002.23415"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msihnd.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msi.dll" Comparison="GreaterThanOrEqualTo" Version="4.5.6002.23415"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msi.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\crypt32.dll" Comparison="GreaterThanOrEqualTo" Version="5.131.3790.5362"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\msi.dll"/>
+            <bar:FileVersion Csidl="37" Path="\msi.dll" Comparison="GreaterThanOrEqualTo" Version="4.5.6001.22159"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\msihnd.dll"/>
+            <bar:FileExists Csidl="37" Path="\msi.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\msi.dll"/>
+            <bar:FileVersion Csidl="37" Path="\msi.dll" Comparison="GreaterThanOrEqualTo" Version="4.5.6001.22159"/>
+            <bar:FileVersion Csidl="37" Path="\msi.dll" Comparison="LessThanOrEqualTo" Version="4.5.6002.23330"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\msihnd.dll"/>
+            <bar:FileExists Csidl="37" Path="\msi.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="dB0dQ0e3RUHIq+V0FXUqzve1M5E=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2918614-x86-fra.exe" Size="1914104" Modified="2014-07-22T07:56:33Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">+gyfvLDYn/T/n8I+VpuGUaMJ6ZFL5peeBwnoA8BT4HY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

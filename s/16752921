@@ -1,0 +1,82 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a712d1e4-a23b-4bbc-b69f-65d03ec1f69e" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="717536" MinDownloadSize="533034" PublicationState="Published" CreationDate="2015-03-10T02:02:15.538Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>nl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsserver2003-kb3046049-x86-nld</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e0823a95-2884-43e8-bddc-a19eac2e516c"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\schannel.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5564"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msv1_0.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4587"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\ksecdd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5014"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+            <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+            <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileExists Csidl="37" Path="\schannel.dll"/>
+          <bar:FileExists Csidl="37" Path="\msv1_0.dll"/>
+          <bar:FileExists Csidl="37" Path="\drivers\ksecdd.sys"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="x/KdqDGohbdeVQsIAcUAMXtkxRM=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3046049-x86-nld.exe" Size="717536" Modified="2015-03-07T09:47:49Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">igAMAXsCkLZnRQxvA29f3ZoifFbOqxru1WhTt4C5Yeg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="7gm9Q+lWc4Nfh62RHEGaROg4f/w=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3046049-x86-express-nld.exe" Size="511704" Modified="2015-03-07T09:47:50Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">L2TN7SQESeV2Jj0vhSblbeR+e5sEPShqasJgBkf8E44=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="R+fnHJ+rr3rIUY/+aaEbOIi3gtw=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb3046049-x86-nld.psf" Size="519103" Modified="2015-03-07T09:47:50Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">7/JBNABiBzEF0T7THw7M76N42lwI0qeSICN2l8bTSC0=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

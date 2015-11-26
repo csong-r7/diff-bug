@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f87d0dd2-f3dc-4754-babe-25ad18974702" RevisionNumber="108"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-04-04T22:25:53.833Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="638344" MinDownloadSize="196574">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\winsrv.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3103"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\winsrv.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="2ZEHK24H9E4VEik6z78Haa4sKtY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB930178-x86-express-JPN.cab" Size="155933" Modified="2007-03-30T14:36:24.133" PatchingType="Express"/>
+      <upd:File Digest="sOHEeyeHGgrOpgHPNYGpLea9Kyk=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB930178-x86-JPN.exe" Size="638344" Modified="2007-03-30T14:36:24.71" PatchingType="SelfContained"/>
+      <upd:File Digest="2NAwnrzF/4+q8bPvpCDtudivkSA=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB930178-x86-JPN.psf" Size="494616" Modified="2007-03-30T14:36:25.29" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

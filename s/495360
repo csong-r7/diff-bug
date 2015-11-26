@@ -1,0 +1,59 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="debbd219-e3eb-4e28-a743-93b4d2cf071a" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-05-01T00:30:50.990Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="725744" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:UpdateIdentity UpdateID="77a1d80c-5efc-4546-9397-1eaef135377a"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Csidl="36" Path="\SysWOW64\w03a2409.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.2487"/>
+          <bar:FileVersion Csidl="37" Path="\w03a2409.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.2487"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.1241"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent\agentdpv.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="36" Path="\msagent64\agentdpv.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.1241"/>
+            <lar:Not>
+              <bar:FileExists Csidl="36" Path="\msagent64\agentdpv.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer\ActiveX Compatibility\{F5BE8BD2-7DE6-11D0-91FE-00C04FD701A5}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\ActiveX Compatibility\{F5BE8BD2-7DE6-11D0-91FE-00C04FD701A5}" Value="Compatibility Flags" Comparison="EqualTo" Data="1024"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ueE3xncXSkUFjr4anUSEZwPTFUY=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB890046-x64-JPN.exe" Size="725744" Modified="2005-08-05T16:06:49.82" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,45 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="be7798ef-166d-4993-a9f1-eb75d991770c" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-07-06T23:48:28.448Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="640904" MinDownloadSize="185124">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary he</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="971a1cc1-e3aa-4257-a087-22de1474099f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersion Csidl="37" Path="\inetsrv\w3svc.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3163"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents" Value="iis_www" Comparison="EqualTo" Data="1"/>
+          <bar:FileVersion Path="\inetsrv\w3svc.dll" Comparison="LessThan" Version="5.1.2600.3163" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="GOJ+UjEcuAFfusT1xn58uG5ud2M=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB939373-x86-express-HEB.cab" Size="155986" Modified="2007-06-29T14:45:32.057" PatchingType="Express"/>
+      <upd:File Digest="RR1P/iUSc3uRRcW+5TFN0lao+DY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB939373-x86-HEB.exe" Size="640904" Modified="2007-06-29T14:45:32.62" PatchingType="SelfContained"/>
+      <upd:File Digest="/QY1puotuSNtDvlLbiSE+gNxydE=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB939373-x86-HEB.psf" Size="332824" Modified="2007-06-29T14:45:33.167" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

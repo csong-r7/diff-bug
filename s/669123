@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7c133a35-009b-456d-8410-fb7f484f0771" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-08-07T02:43:27.490Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="430072" MinDownloadSize="322741">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="61324697-eb51-4b21-9731-c431c3e3493d"/>
+          <upd:UpdateIdentity UpdateID="11367cca-26cd-4ae5-b826-8988733dbd17"/>
+          <upd:UpdateIdentity UpdateID="11d66d41-a783-4501-82dd-3e3b487cba93"/>
+          <upd:UpdateIdentity UpdateID="0c770fe1-04e3-44d9-ac9a-d902d509b8ba"/>
+          <upd:UpdateIdentity UpdateID="bdc29f4c-646c-4f37-9d28-230e47a0b4f7"/>
+          <upd:UpdateIdentity UpdateID="7a62d92d-bad0-4ab8-ae61-d6cc4383e6ff"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:Not>
+              <bar:FileExists Path="dplayx.dll" Csidl="37"/>
+            </lar:Not>
+            <bar:FileVersion Path="dplayx.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6922" Csidl="37"/>
+          </lar:Or>
+          <lar:Or>
+            <lar:Not>
+              <bar:FileExists Path="dpwsockx.dll" Csidl="37"/>
+            </lar:Not>
+            <bar:FileVersion Path="dpwsockx.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6922" Csidl="37"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DirectX" Value="Version" Comparison="EqualTo" Data="4.07.00.0700"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="2dApUNm8hamxPwP4hwexHxHlcCQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB839643-x86-ENU.EXE" Size="430072" Modified="2004-06-10T13:40:52.61" PatchingType="SelfContained"/>
+      <upd:File Digest="KBDPGl3aRiK+kDLyrs+J5aX/oo8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB839643-x86-ENU.psf" Size="154348" Modified="2004-06-10T13:40:53.203" PatchingType="Express"/>
+      <upd:File Digest="IZcQ/dFQDgcHk+YpZv96z7jsGHA=" DigestAlgorithm="SHA1" FileName="WINDOWS2000-KB839643-X86-ENU-express.EXE" Size="320744" Modified="2004-06-10T13:40:54.143" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

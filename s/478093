@@ -1,0 +1,69 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9f83437e-685a-4fc1-bd28-1321ff75b9ed" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-04-03T22:38:08.282Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1624432" MinDownloadSize="508034">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\GDI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\GDI32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\mf3216.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mf3216.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\USER32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\USER32.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\WIN32K.SYS" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\WIN32K.SYS"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="qEIgqalbnY2F2nAqF2YoLKqrLDY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB925902-x86-Express-KOR.EXE" Size="496000" Modified="2007-03-30T23:59:08.347" PatchingType="Express"/>
+      <upd:File Digest="+ingAIyxERbLyObOmUZmh1wdZpY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB925902-x86-KOR.EXE" Size="1624432" Modified="2007-03-30T23:59:11.8" PatchingType="SelfContained"/>
+      <upd:File Digest="6iI85u023reIGcIrUDVKyM7h39s=" DigestAlgorithm="SHA1" FileName="Windows2000-KB925902-x86-KOR.psf" Size="7893382" Modified="2007-03-30T23:59:23.407" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

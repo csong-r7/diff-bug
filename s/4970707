@@ -1,0 +1,62 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ff4fb864-be3b-4cb8-b775-e75dfa2a6412" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:20.506Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="3704311" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Office Communications Server 2007 R2, Mediation Server (KB 977937)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="bfc25b1a-afde-4907-9514-509f9aba5aea"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{F5983126-242C-4C5D-96E6-95A8F7986196}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{8DFC18F1-7864-4D84-8D41-A34C93B7AA8D}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="false">{B8502EC8-AD90-4795-A313-84F4240F995A}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.196</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{64F26F60-2578-435A-AE96-D8A68F89E253}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{B8502EC8-AD90-4795-A313-84F4240F995A}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>mediatio</PatchFamily>
+              <Sequence>1.0.196.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="r8ShQVAy+0FtPpLWC4HU7GtSxFE=" DigestAlgorithm="SHA1" FileName="OCS2007R2-KB977937-amd64-MediationServer.cab" Size="3704311" Modified="2010-04-20T17:11:02.843Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">2jz44QNKryrmQiztg89cq5ZpfU2kYugWRMzyLhYc7iA=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{8dfc18f1-7864-4d84-8d41-a34c93b7aa8d}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,49 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9f4f44d8-bfec-48c6-a02c-2d9ea220f6e2" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" IsPublic="false" UpdateType="Detectoid" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2015-05-28T21:37:40.252Z" PublisherID="fa34d14e-27d3-42c2-bc5f-070f466300d1"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>WHOS Test Key</upd:Title>
+        <upd:Description>Evaluates if a WHOS test key is present and if yes then it offers package</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <!--Windows 7-->
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+          <!--Windows RT-->
+          <upd:UpdateIdentity UpdateID="226af257-f398-425c-88c0-06b612799953"/>
+          <!--Windows RT 8.1 Drivers-->
+          <upd:UpdateIdentity UpdateID="c4d963d4-22ed-4092-8ada-08c3d1bd437b"/>
+          <!--Windows RT 8.1 and later drivers-->
+          <upd:UpdateIdentity UpdateID="39093783-e241-4809-af52-707961f822ae"/>
+          <!--Windows 8-->
+          <upd:UpdateIdentity UpdateID="2ee2ad83-828c-4405-9479-544d767993fc"/>
+          <!--Windows 8.1 Drivers-->
+          <upd:UpdateIdentity UpdateID="f7b29b7a-086b-43f9-9cc8-e1a2f8a31e08"/>
+          <!--Windows 8.1 and later drivers-->
+          <upd:UpdateIdentity UpdateID="405706ed-f1d7-47ea-91e1-eb8860039715"/>
+          <!--Windows 10.0-->
+          <upd:UpdateIdentity UpdateID="34f268b4-7e2d-40e1-8966-8bb6ea3dad27"/>
+          <!--Windows Server-->
+          <upd:UpdateIdentity UpdateID="323cceaf-b60b-4a0d-8a8a-3069efde76bf"/>
+          <!--Windows Server 2012 R2 and later drivers-->
+          <upd:UpdateIdentity UpdateID="f3c2263d-b256-4c49-a246-973c0e366449"/>
+          <!--Windows 8.1 Dynamic Update-->
+          <upd:UpdateIdentity UpdateID="18e5ea77-e3d1-43b6-a0a8-fa3dbcd42e93"/>
+          <!--Graphics Drivers Dynamic Update-->
+          <upd:UpdateIdentity UpdateID="8c27cdba-6a1c-455e-af20-46b7771bbb96"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DriverFlighting\Partner" Value="TargetRing" Comparison="EqualTo" Data="Drivers"/>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

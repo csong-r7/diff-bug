@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="80a756f3-dc68-45e0-800b-0e614df58af7" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="50811104" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-05-11T22:52:55.523Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows Malicious Software Removal Tool - May 2015 (KB890830) Multi-Lingual - v5 full</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f8c1d184-7116-498a-903e-25b17eb66bac"/>
+          <upd:UpdateIdentity UpdateID="23b28b6a-2629-424b-92ae-1b0bda447d2f"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2ee2ad83-828c-4405-9479-544d767993fc"/>
+          <upd:UpdateIdentity UpdateID="6407468e-edc7-4ecd-8c32-521f64cee65e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mrt.exe" Comparison="GreaterThanOrEqualTo" Version="5.24.11401.0" Csidl="37"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\MRT" Value="DontOfferThroughWUAU" Comparison="EqualTo" Data="1"/>
+          </lar:Not>
+          <lar:Or>
+            <lar:Not>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\mrt.exe" Comparison="EqualTo" Version="5.23.11300.0" Csidl="37"/>
+            </lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\RemovalTools\MRT" Value="SendFullPackage" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ijnIxK96cUHIldjKBt5m5vrZWxQ=" DigestAlgorithm="SHA1" FileName="Windows-KB890830-V5.24.exe" Size="50811104" Modified="2015-05-01T17:58:58Z">
+        <upd:AdditionalDigest Algorithm="SHA256">OGgruQffEZ0KPmIfPZaV0TqV5m8s5EzLk5C6s9agugo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/Q /W" Program="Windows-KB890830-V5.24.exe" RebootByDefault="false" DefaultResult="Succeeded">
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="false" Result="Failed" Code="1603"/>
+        <cmd:ReturnCode Reboot="false" Result="Failed" Code="-2147024894"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

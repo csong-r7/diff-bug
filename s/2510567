@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="83206986-7290-416e-a39a-4dad944dab06" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-03-04T19:26:48.779Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="563240" MinDownloadSize="493547">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\SCHANNEL.DLL" Comparison="GreaterThanOrEqualTo" Version="5.1.2195.7213"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\SCHANNEL.DLL"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="xnpDdPgKyHKniC9TZkw4tubf5B4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960225-x86-Express-JPN.EXE" Size="492912" Modified="2009-01-22T02:16:36.78" PatchingType="Express"/>
+      <upd:File Digest="xfvcbwVcHO8O1TnvT9uT2BF50BE=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960225-x86-JPN.EXE" Size="563240" Modified="2009-01-22T02:16:37.39" PatchingType="SelfContained"/>
+      <upd:File Digest="d3g4fIak4a3AAX2HtFY6d+BRHIQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB960225-x86-JPN.psf" Size="210293" Modified="2009-01-22T02:16:38.093" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

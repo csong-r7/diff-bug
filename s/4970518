@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="99616202-6bc7-4897-95d3-2b2c57bd2ac3" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:32:38.222Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="4052336" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>DotfuscatorCE_5.0.2500</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c9834186-a976-472b-8384-6bb8f2aa43d9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiProductInstalled ProductCode="{1AA5BD63-6614-44B2-88A7-605191EDB835}" VersionMax="5.0.2500.0" VersionMin="5.0.2500.0"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\VisualStudio\10.0\External Tools\Dot&amp;fuscator Software Services" Value="ToolCmd" Type="REG_SZ" RegType32="true"/>
+          <bar:FileVersionPrependRegSz Path="PreEmptive Solutions\Dotfuscator Community Edition\Dotfuscator.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2300.0" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\VisualStudio\10.0\Setup\VS" Value="ProductDir" RegType32="true"/>
+          <bar:FileVersionPrependRegSz Path="PreEmptive Solutions\Dotfuscator Community Edition\Dotfuscator.exe" Comparison="LessThanOrEqualTo" Version="5.0.2500.0" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\VisualStudio\10.0\Setup\VS" Value="ProductDir" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ovlVhuaMALF5XZBBzAVWp4VqJ58=" DigestAlgorithm="SHA1" FileName="DotfuscatorCE_5.0.2500.exe" Size="4052336" Modified="2011-10-13T18:48:25.63Z">
+        <upd:AdditionalDigest Algorithm="SHA256">WR8YHXCnEGIhI2+am+Te6mO9A3C2NNab+yG9+5oNfcY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="DotfuscatorCE_5.0.2500.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

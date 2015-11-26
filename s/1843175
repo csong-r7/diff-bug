@@ -1,0 +1,70 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c22cae31-b715-4c18-bb66-ca4bc99998a6" RevisionNumber="106"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="Windows Locale" PublicationState="Published" CreationDate="2008-10-27T21:55:21.643Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NOT RMS/Lenovo multirecover - XP</upd:Title>
+        <upd:Description>This detectoid will be used to block offering of XPSP3 to computers with RMS components installed.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <lar:And>
+              <lar:Not>
+                <bar:FileVersion Path="drivers\safnt.sys" Comparison="EqualTo" Version="3.0.1.4579" Csidl="37"/>
+              </lar:Not>
+              <lar:Not>
+                <bar:FileVersion Path="drivers\safnt.sys" Comparison="EqualTo" Version="3.0.1.3" Csidl="37"/>
+              </lar:Not>
+            </lar:And>
+            <lar:Or>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\HotFix\KB951618-v2" Value="Installed" Comparison="EqualTo" Data="1"/>
+            </lar:Or>
+          </lar:Or>
+          <lar:Not>
+            <lar:And>
+              <lar:Or>
+                <lar:And>
+                  <bar:FileExists Path="system\msadc\msadce.dll" Csidl="43"/>
+                  <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5"/>
+                  <bar:FileVersion Path="system\msadc\msadce.dll" Comparison="LessThan" Version="2.81.1134.0" Csidl="43"/>
+                </lar:And>
+                <lar:And>
+                  <bar:FileExists Path="system\msadc\msadce.dll" Csidl="43"/>
+                  <bar:WindowsVersion Comparison="EqualTo" MajorVersion="6"/>
+                  <bar:FileVersion Path="system\msadc\msadce.dll" Comparison="LessThan" Version="6.0.6000.16683" Csidl="43"/>
+                </lar:And>
+              </lar:Or>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Retail Management System"/>
+              <lar:Or>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{22AF6BEF-B0ED-4A81-AEBB-C5D446401F10}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{4933D9B8-B971-41CE-A759-7C25B371A9EC}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{4D5F9987-798E-48E4-80FF-38F5C3A44709}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{0DB2E633-8B54-11D5-94C8-00A0CC56091E}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{981E06B5-8E9E-45D7-9532-63432362114F}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F85F9D94-CAAE-11D6-9530-00C0A8F2A46D}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{67113D69-F366-4AF0-8D25-B175CC84A62D}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{910A114D-E9A3-4E95-9C8F-5663BF6343E4}"/>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{259B1E06-B294-41F0-AE5B-866BC41ACA58}"/>
+              </lar:Or>
+            </lar:And>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="62c4bcd5-8d28-4fd9-8b3f-18aa139eec56" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-10-05T22:30:15.655Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1473080" MinDownloadSize="673976">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.5032"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="5K9v1Dcbe7xlKot/nwEEd5W68Nc=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2731847-v2-x86-esn.exe" Size="1473080" Modified="2012-09-20T22:03:12.86Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">TMMo3xepOCuqKC4Lamwy/Em3eFlN2XLQ/+OvAXvOEkM=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="ChvMyWa1qJKS6QzAl14Ks5ZtHds=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2731847-v2-x86-express-esn.exe" Size="510520" Modified="2012-09-20T22:03:13.36Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">KvqldFt5lzL6blBZaohKSzu9AjRWJO1nY+w3iXnsSIQ=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="yLWPurPASIOIIQnbIKadhv1JyDg=" DigestAlgorithm="SHA1" FileName="windowsserver2003-kb2731847-v2-x86-esn.psf" Size="18713885" Modified="2012-09-20T22:03:23.67Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">HVhAGsXMQ+BVXW72uBHAQz8ssQ9185BSTgMI7qdXD9s=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

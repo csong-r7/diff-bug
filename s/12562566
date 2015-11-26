@@ -1,0 +1,480 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7101ccc3-745e-4894-b0ff-a8a9d275ee1d" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="1434" RecommendedMemory="1024" RecommendedHardDiskSpace="800" MaxDownloadSize="1077195968" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-06-23T19:48:17.628Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ITA x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="56750722-19b4-4449-a547-5b68f19eee38"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!--differentiate x64 from x86 WOW-->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012"/>
+          <!--Check the language-->
+          <lar:Or>
+            <lar:And>
+              <!--At Least one loc instance needs to be patched-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5099.9"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--Or at least one shared feature needs to be patched-->
+            <lar:Or>
+              <!--<lar:And>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040" RegType32="true" />
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0" RegType32="true" />-->
+              <!--<bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="LessThan" Data="11.2.5099.9" RegType32="true" />-->
+              <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+              <!--<lar:Not>
+          <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+        </lar:Not>
+      </lar:And>-->
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5099.9"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5099.9"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5099.9"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\ClientSetup\CurrentVersion" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\ClientSetup\CurrentVersion" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="11.2.5058.0"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\ClientSetup\CurrentVersion" Value="CurrentVersion" Comparison="LessThan" Data="11.2.5099.9"/>
+              </lar:And>
+              <!--For Express / Express Adv - Client Tools SDK only-->
+              <lar:And>
+                <lar:Not>
+                  <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                    <lar:And>
+                      <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                    </lar:And>
+                  </bar:RegKeyLoop>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\ClientSetup\CurrentVersion" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <!--<lar:Not>
+            <lar:And>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60" RegType32="true" />-->
+                <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+                <!--<lar:Not>
+                <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+              </lar:Not>
+            </lar:And>
+          </lar:Not>-->
+                <lar:Or>
+                  <lar:And>
+                    <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                    <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5099.9" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                    <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012\1040"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.5058.0" Csidl="38"/>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5099.9" Csidl="38"/>
+                    <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012\1040"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+          <lar:And>
+            <!--Check if File Version of Non-Instance Neutral is correct-->
+            <lar:Not>
+              <!--sql_bids_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_bids_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_bids_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_common_core_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_common_core_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_common_core_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_engine_core_shared_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_is_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_is_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_is_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_ssms_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_ssms_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_ssms_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_tools_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_tools_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_tools_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <!--Check if File Version of Non-Instance Loc is correct-->
+            <!--<lar:Not>-->
+            <!--sqlbrowser_keyfile.dll-->
+            <!--<lar:And>
+        <bar:FileVersionPrependRegSz Path="KeyFile\1040\sqlbrowser_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>
+        <bar:FileVersionPrependRegSz Path="KeyFile\1040\sqlbrowser_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--<bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040" RegType32="true" />-->
+            <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+            <!--<lar:Not>
+          <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+        </lar:Not>
+      </lar:And>
+    </lar:Not>-->
+            <!--<lar:Not>-->
+            <!--sqlsqm_keyfile.dll-->
+            <!--<lar:And>-->
+            <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--</lar:And>-->
+            <!--</lar:Not>-->
+            <lar:Not>
+              <!--sqlsupport11_0_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+            <lar:Not>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Csidl="38"/>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Csidl="38"/>
+              </lar:And>
+            </lar:Not>
+            <!--Check if File Version of Instance Aware Neutral is correct-->
+            <lar:Not>
+              <!--sql_engine_core_inst_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="EqualTo" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <lar:Or>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                    </lar:Or>
+                  </lar:And>
+                </lar:Or>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <!--<lar:Not>-->
+            <!--sql_fulltext_keyfile.dll-->
+            <!--<bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+        <lar:And>
+          <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040" />
+          <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>
+          <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+            <!--</lar:And>
+      </bar:RegKeyLoop>
+    </lar:Not>-->
+            <lar:Not>
+              <!--sql_rs_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <lar:Not>
+              <!--sql_as_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!--differentiate x64 from x86 WOW-->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012"/>
+          <!--Check the language-->
+          <lar:Or>
+            <!--At Least one loc instance needs to be patched-->
+            <lar:And>
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5058.0"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--At Least one loc instance needs to be patched (for DS issue)-->
+            <lar:And>
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="EqualTo" Data="11.2.5058.0"/>
+                  <lar:Or>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                  </lar:Or>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:And>
+            <!--Or at least one shared feature needs to be patched-->
+            <lar:Or>
+              <!--<lar:And>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040" RegType32="true" />
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60" RegType32="true" />
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="LessThan" Data="11.2.5058.0" RegType32="true" />-->
+              <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+              <!--<lar:Not>
+          <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+        </lar:Not>
+      </lar:And>-->
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5058.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5058.0"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="11.2.5058.0"/>
+              </lar:And>
+              <!--For Express / Express Adv - Client Tools SDK only-->
+              <lar:And>
+                <lar:Not>
+                  <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                    <lar:And>
+                      <bar:RegSzToVersion Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                    </lar:And>
+                  </bar:RegKeyLoop>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\BIDS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\DTS\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60"/>
+                </lar:Not>
+                <!--<lar:Not>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040\CurrentVersion" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="11.0.2100.60" RegType32="true" />-->
+                <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+                <!--<lar:Not>
+              <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+            </lar:Not>
+          </lar:And>
+        </lar:Not>-->
+                <lar:Or>
+                  <lar:And>
+                    <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                    <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                    <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012\1040"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Csidl="38"/>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Csidl="38"/>
+                    <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110\SQLServer2012\1040"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Or>
+          <lar:Or>
+            <!--Check if File Version of Non-Instance Neutral is correct-->
+            <lar:Or>
+              <!--sql_bids_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_bids_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_bids_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_common_core_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_common_core_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_common_core_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_engine_core_shared_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_engine_core_shared_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_is_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_is_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_is_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_ssms_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_ssms_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_ssms_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sql_tools_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_tools_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_tools_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Or>
+            <!--Check if File Version of Non-Instance Loc is correct-->
+            <lar:Or>
+              <!--sqlbrowser_keyfile.dll-->
+              <!--<lar:And>
+        <bar:FileVersionPrependRegSz Path="KeyFile\1040\sqlbrowser_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>
+        <bar:FileVersionPrependRegSz Path="KeyFile\1040\sqlbrowser_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--<bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server Redist\SQLBrowser\1040" RegType32="true" />-->
+              <!--When only no WOW is installed on x64 OS, x64 package is offered to sqlbrowser. Otherwise, offer x86 package to sqlbrowser.-->
+              <!--<lar:Not>
+          <bar:FileExistsPrependRegSz Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" RegType32="true" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" />
+        </lar:Not>
+      </lar:And>-->
+              <!--sqlsqm_keyfile.dll-->
+              <!--<lar:And>-->
+              <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--<bar:FileVersionPrependRegSz Path="KeyFile\1033\sqlsqm_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--</lar:And>-->
+              <!--sqlsupport11_0_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlsupport11_0_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <!--sqlncli_keyfile.dll-->
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\110" Value="VerSpecificRootDir"/>
+              </lar:And>
+              <lar:And>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Csidl="38"/>
+                <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="Microsoft SQL Server\110\KeyFile\1040\sqlncli_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Csidl="38"/>
+              </lar:And>
+            </lar:Or>
+            <!--Check if File Version of Instance Aware Neutral is correct-->
+            <lar:Or>
+              <!--sql_engine_core_inst_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                    <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="EqualTo" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                    <lar:Or>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="MPT_Agent_Core_CNI" Comparison="EqualTo" Data="4"/>
+                      <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="ConfigurationState" Value="SQL_Engine_Core_inst" Comparison="EqualTo" Data="4"/>
+                    </lar:Or>
+                  </lar:And>
+                </lar:Or>
+              </bar:RegKeyLoop>
+              <!--sql_fulltext_keyfile.dll-->
+              <!--<bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+        <lar:And>
+          <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040" />
+          <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>
+          <bar:FileVersionPrependRegSz Path="sql_fulltext_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules"/>-->
+              <!--</lar:And>
+      </bar:RegKeyLoop>-->
+              <!--sql_rs_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_rs_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+              <!--sql_as_keyfile.dll-->
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1040"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2011.110.2100.60" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_as_keyfile.dll" Comparison="LessThan" Version="2011.110.5058.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Or>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="FsTq5Q9ddpk3jScVDTmlk4Rfg9I=" DigestAlgorithm="SHA1" FileName="SQLServer2012SP2-KB2958429-x64-ITA.exe" Size="1077195968" Modified="2014-06-12T21:10:35Z">
+        <upd:AdditionalDigest Algorithm="SHA256">hNpbrF5F0DDjIudS5LPlCAW5/x5gtHcD8vcBl4eYfNU=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole /IAcceptSQLServerLicenseTerms" Program="SQLServer2012SP2-KB2958429-x64-ITA.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

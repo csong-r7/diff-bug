@@ -1,0 +1,85 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4ba756ff-acc8-4804-a034-4ba70e97ff30" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="2223352" MinDownloadSize="1018714" PublicationState="Published" CreationDate="2015-07-14T03:04:14.753Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ie7-windowsserver2003-kb3074886-x86-ptb</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="37bd9a6b-cec8-40db-8605-8fe73774a725"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+            <bar:FileVersion Csidl="37" Path="\mshtml.dll" Comparison="GreaterThanOrEqualTo" Version="7.0.6000.21482"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="GreaterThanOrEqualTo" Version="7.0.5730.11"/>
+              <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="LessThan" Version="7.1.0.0"/>
+            </lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\7.0\WU" Value="ForcePostUpdateInstall" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.0.5730.11"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="7.1.0.0"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="GreaterThanOrEqualTo" Version="7.0.5730.11"/>
+              <bar:FileVersion Csidl="38" Path="\Internet Explorer\iexplore.exe" Comparison="LessThan" Version="7.1.0.0"/>
+            </lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer\Setup\7.0\WU" Value="ForcePostUpdateInstall" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.0.5730.11"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer" Value="Version" Comparison="LessThanOrEqualTo" Data="7.1.0.0"/>
+          </lar:And>
+          <bar:FileExists Csidl="37" Path="\mshtml.dll"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9382Y9oKV0+DyRUYWKPC6iwoaUM=" DigestAlgorithm="SHA1" FileName="ie7-windowsserver2003-kb3074886-x86-ptb.exe" Size="2223352" Modified="2015-07-08T14:22:30Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Hnl8/ItsQwDY2giTkLBvfyt8C6OJr2uqdXi+f6dmjD4=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="TYWbn9oZ8Z/BDQxiUcJAHvDXQ/M=" DigestAlgorithm="SHA1" FileName="ie7-windowsserver2003-kb3074886-x86-express-ptb.exe" Size="512248" Modified="2015-07-08T14:22:30Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">ZXEbBXsC5PsQktAGkZcayYMsaQmN1teOxP6cdRtEJhQ=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="jbWnixU9tD4y4VetaOg7cljZNPo=" DigestAlgorithm="SHA1" FileName="ie7-windowsserver2003-kb3074886-x86-ptb.psf" Size="31206370" Modified="2015-07-08T14:22:32Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">91ewNbb209QcqPJr84ya6f/W2nAAl5ZSMQXX1oaE0W8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

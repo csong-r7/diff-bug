@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c7f1db25-77d1-4a33-8b41-0274e693fb2c" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T08:12:43.007Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="664320" MinDownloadSize="271614">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>tr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary tr</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="26427c31-6632-49d9-b7c6-a91b5a65ed2c"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\localspl.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6226"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\localspl.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\localspl.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\localspl.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="YgIvMDbQ9LeUBBlPl36wZ7h2ybE=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2712808-x86-trk.exe" Size="664320" Modified="2012-07-25T12:17:12.883Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">nEkt4RpVwpxEVK/+SAavl4/r03PXZIgkg1LvPjMLpMk=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="U+ucST+It+jV0GNKdjvkuX4ptW4=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2712808-x86-express-trk.cab" Size="246415" Modified="2012-07-25T12:17:13.21Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">BGES6kpjbHbirQXaW214+9TiowpcVBBsN4PZGQlpAS4=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="Oczk18Dku9N6X40VAFV8MHC2j9g=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2712808-x86-trk.psf" Size="713109" Modified="2012-07-25T12:17:13.723Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">wfZkBWR9CkKij+HFxpnTKpd0dOWcPO5PYswP1YRJgzc=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

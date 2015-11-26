@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7AB5E86B-4BB3-4FF9-B3F6-2334884DD516" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-08-20T01:14:23.230Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2750240" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="AlwaysRequiresReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Q327696: Internet Information Services Security Roll-up Package</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="929120EA-7433-4D15-B32B-FCD95D20E8A3"/>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2BF7ED9C-6F43-493A-B156-DB20F08C44C4"/>
+          <upd:UpdateIdentity UpdateID="DFC8409B-BA29-4258-9293-5C35B99053CF"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3B4B8621-726E-43A6-B43B-37D07EC7019F"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:WUv4RegKeyValue Data="1" Value="Installed" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q327696"/>
+          <bar:FileVersion Csidl="37" Path="\w3svc.dll" Comparison="LessThan" Version="5.0.2195.6672"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="1" Value="iis_common" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager\Subcomponents"/>
+          <bar:WUv4RegKeyValue Data="5" Value="MajorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\INetStp"/>
+          <bar:WUv4RegKeyValue Data="0" Value="MinorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\INetStp"/>
+          <bar:WUv4RegKeyValue Data="2195" Value="CurrentBuildNumber" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion"/>
+          <lar:Or>
+            <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            <bar:WUv4RegKeyValue Data="768" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Or>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="1024" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="IeIuknaNOqHvK2ayHJBpLacXkpA=" DigestAlgorithm="SHA1" FileName="Q327696_W2K.exe" Size="2750240" Modified="2002-09-17T12:43:01.5000000-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z" Program="Q327696_W2K.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

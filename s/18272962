@@ -1,0 +1,77 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5fdae87c-bedc-4f2f-92d5-122566789993" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="600" RecommendedMemory="512" RecommendedHardDiskSpace="1900" MaxDownloadSize="192009408" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-07-14T02:50:49.948Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="caab596c-64f2-4aa9-bbe3-784c6e2ccf9c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120\SQLServer2014"/>
+          <lar:And>
+            <!-- sql_engine_core_inst_keyfile.dll -->
+            <lar:Not>
+              <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+                <lar:And>
+                  <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                  <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2014.120.2269.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                </lar:And>
+              </bar:RegKeyLoop>
+            </lar:Not>
+            <!-- sql_mds_keyfile.dll -->
+            <lar:Not>
+              <lar:And>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+                <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="LessThan" Version="2014.120.2254.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+              </lar:And>
+            </lar:Not>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120\SQLServer2014"/>
+          <lar:Or>
+            <bar:RegKeyLoop xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any">
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+                <bar:FileVersionPrependRegSz Path="sql_engine_core_inst_keyfile.dll" Comparison="LessThan" Version="2014.120.2269.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SqlPath"/>
+              </lar:And>
+            </bar:RegKeyLoop>
+            <lar:And>
+              <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="GreaterThanOrEqualTo" Version="2014.120.2000.8" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+              <bar:FileVersionPrependRegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="KeyFile\sql_mds_keyfile.dll" Comparison="LessThan" Version="2014.120.2254.0" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\120" Value="VerSpecificRootDir"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="I0WjWuUSJYmOEScCogEvETpH1ck=" DigestAlgorithm="SHA1" FileName="SQLServer2014-KB3045324-x64-ENU.exe" Size="192009408" Modified="2015-06-12T17:01:53Z">
+        <upd:AdditionalDigest Algorithm="SHA256">embYXE/wuoPmZ4vxGHvN36J1rkOnSI49npkwYYzKwtc=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /Action=Patch /Allinstances /IgnoreServiceRestartState /hideconsole /IAcceptSQLServerLicenseTerms" Program="SQLServer2014-KB3045324-x64-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2067919934"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

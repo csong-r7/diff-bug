@@ -1,0 +1,60 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5926aea6-8c6f-4204-a14d-11fd09fff410" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-09-04T06:33:03.259Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1320816" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary de</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-E2E9-4f71-8525-2FF588527978"/>
+        <upd:UpdateIdentity UpdateID="80c90263-f200-4ccf-92a5-cc4962bb2f97"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+            <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.8.6001.22886"/>
+            <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.9.0.0"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileExists Csidl="36" Path="\SysWOW64\jscript.dll"/>
+            <bar:FileVersion Csidl="36" Path="\SysWOW64\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.8.6001.22886"/>
+            <bar:FileVersion Csidl="36" Path="\SysWOW64\jscript.dll" Comparison="LessThan" Version="5.9.0.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Csidl="37" Path="\jscript.dll"/>
+          <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="GreaterThanOrEqualTo" Version="5.8.6001.18702"/>
+          <bar:FileVersion Csidl="37" Path="\jscript.dll" Comparison="LessThan" Version="5.9.0.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="7H1yKDVbX/8fxJrAS9xZIVjP684=" DigestAlgorithm="SHA1" FileName="IE8-WindowsServer2003.WindowsXP-KB971961-x64-DEU.exe" Size="1320816" Modified="2009-08-20T09:22:10.867" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

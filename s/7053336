@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8e72765e-d36f-4061-8982-c0fbb0d9c22a" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2013-02-05T23:55:55.979Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="766000" MinDownloadSize="312249">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary he</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\oleaut32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6341"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\oleaut32.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\oleaut32.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\oleaut32.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="25doQcFJt2DMQL5owoOQDqAOPso=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2802968-x86-heb.exe" Size="766000" Modified="2013-01-30T14:08:57.93Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">BCViplEKKF1fcmb6hLtEMnBuDSUvVdF4YO26BgbDfuI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="sfxkt5+82f00lwhLm/+uYNymqTA=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2802968-x86-express-heb.cab" Size="254932" Modified="2013-01-30T14:08:58.32Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">suM6cgmmnjiF8wR0aJbuWfs67msLvF3bGHpdwedB4Hg=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="mLRTSbHjIZUUEdeGj6tN9gMKVzc=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2802968-x86-heb.psf" Size="871677" Modified="2013-01-30T14:08:58.88Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">pJVKI2vYAhvZTkNc3UElJdU+1dRDAxrHLZZLYUYzs2Q=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

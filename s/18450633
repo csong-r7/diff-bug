@@ -1,0 +1,914 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e19ce85b-3447-4d09-9969-b3bbd6aa7b78" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" MaxDownloadSize="22297231" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-08-10T23:52:21.470Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" CompatibleProtocolVersion="1.4">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windows8.1-kb3083185-x64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="23b28b6a-2629-424b-92ae-1b0bda447d2f"/>
+          <upd:UpdateIdentity UpdateID="04437cf2-2157-44c9-96df-6cd88b0dc541"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="6407468e-edc7-4ecd-8c32-521f64cee65e"/>
+          <upd:UpdateIdentity UpdateID="d31bd4c3-d872-41c9-a2e7-231f372588cb"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Value="Install" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Key="HKEY_LOCAL_MACHINE" Data="1" Comparison="EqualTo"/>
+          <lar:Or>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Value="Release" Comparison="EqualTo" Data="393273"/>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Value="Release" Comparison="EqualTo" Data="393297"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-46_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB3083185_RTM" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <mum2:packageExtended xmlns:mum2="urn:schemas-microsoft-com:asm.v3" completelyOfflineCapable="no" packageSize="84303937"/>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_1_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0429de3eae788da1b7e0a7fefb7f226a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bf804b5ae39c22a2bfce134a6b2ae228" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="54037ffba4b909e1214e471dbdd6de67" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="93cf98971d8a524702177568f03f1e0a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7baee6e66ace108310f700b242f85f07" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0b61429f8b72adb89e063e5b068f5b12" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae072a40a7694c1066769df658e37997" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-8_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a6cbc9b5899a6d4e58359efad5cb64f1" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6c1d63d2d090b91fce0b74cb1a97ef8a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_1_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0429de3eae788da1b7e0a7fefb7f226a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="31ee39935d52f37a27e0e11aa0a4fd38" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bf804b5ae39c22a2bfce134a6b2ae228" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="46eea335f413e7f94d563aa454ba13f4" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="54037ffba4b909e1214e471dbdd6de67" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-6_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="57603a0edc82da3be02bdc04060c77bb" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="93cf98971d8a524702177568f03f1e0a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="da30655923ca7d8372008a0d8aebc2b6" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7baee6e66ace108310f700b242f85f07" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-10_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4813e065e05f6b4b705eca7d9fc1efc0" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0b61429f8b72adb89e063e5b068f5b12" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-12_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="746416cc7597e6212dee8747292946a5" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae072a40a7694c1066769df658e37997" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b1dc71fc0592e9f9ceac232ee1abc3af" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a6cbc9b5899a6d4e58359efad5cb64f1" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-16_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="aa2eb81a698d83176102dd645e657b00" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6c1d63d2d090b91fce0b74cb1a97ef8a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-18_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="800f8cf92f9356256a918095b65eb3da" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_2_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0429de3eae788da1b7e0a7fefb7f226a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-11_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bf804b5ae39c22a2bfce134a6b2ae228" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-12_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="54037ffba4b909e1214e471dbdd6de67" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="93cf98971d8a524702177568f03f1e0a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-14_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7baee6e66ace108310f700b242f85f07" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0b61429f8b72adb89e063e5b068f5b12" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-16_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae072a40a7694c1066769df658e37997" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a6cbc9b5899a6d4e58359efad5cb64f1" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-18_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6c1d63d2d090b91fce0b74cb1a97ef8a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_2_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-19_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0429de3eae788da1b7e0a7fefb7f226a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-20_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-sos_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="31ee39935d52f37a27e0e11aa0a4fd38" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-21_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bf804b5ae39c22a2bfce134a6b2ae228" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-22_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-peverify_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="46eea335f413e7f94d563aa454ba13f4" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-23_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="54037ffba4b909e1214e471dbdd6de67" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-24_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcr120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="57603a0edc82da3be02bdc04060c77bb" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-25_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="93cf98971d8a524702177568f03f1e0a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-26_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="NetFx4-msvcp120_CLR_DLL" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="da30655923ca7d8372008a0d8aebc2b6" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-27_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7baee6e66ace108310f700b242f85f07" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-28_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordbi_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4813e065e05f6b4b705eca7d9fc1efc0" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-29_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="0b61429f8b72adb89e063e5b068f5b12" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-30_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-mscordacwks_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="746416cc7597e6212dee8747292946a5" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-31_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ae072a40a7694c1066769df658e37997" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-32_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clrjit_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b1dc71fc0592e9f9ceac232ee1abc3af" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-33_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a6cbc9b5899a6d4e58359efad5cb64f1" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-34_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                    <assemblyIdentity name="NetFx4-clr_dll" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="aa2eb81a698d83176102dd645e657b00" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b03f5f7f11d50a3a" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-35_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.21190" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6c1d63d2d090b91fce0b74cb1a97ef8a" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-36_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                    <assemblyIdentity name="mscorlib" version="4.0.9600.18044" processorArchitecture="x86" language="neutral" publicKeyToken="b77a5c561934e089"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="800f8cf92f9356256a918095b65eb3da" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="b77a5c561934e089" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_3_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-19_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="eea4b42f1ba61ccf9be9a3d7798c1654" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_3_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-37_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="eea4b42f1ba61ccf9be9a3d7798c1654" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-38_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ce0de404f9a35357cccd4d31d063c281" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_4_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-20_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="eea4b42f1ba61ccf9be9a3d7798c1654" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_4_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-39_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="eea4b42f1ba61ccf9be9a3d7798c1654" version="4.0.9600.21190" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="3083185-40_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="NetFx4-compatjit_dll" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ce0de404f9a35357cccd4d31d063c281" version="4.0.9600.18044" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_for_KB3083185_RTM_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-25_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB3083185_RTM_GM_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_for_KB3083185_RTM_GM_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="GE" revisionCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_for_KB2919355" version="6.3.1.14" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-21_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-22_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_for_KB3083185_RTM_GM" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="GE" revisionCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_for_KB2919355" version="6.3.1.14" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-41_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-42_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-43_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="3083185-44_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB3083185" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:00Z" lastUpdateTimeStamp="2015-08-04T23:12:00Z">
+            <assemblyIdentity name="Package_for_KB3083185_RTM" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-45_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB3083185_RTM_GM" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB3083185" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=3083185" creationTimeStamp="2015-08-04T23:12:03Z" lastUpdateTimeStamp="2015-08-04T23:12:03Z">
+            <assemblyIdentity name="Package_for_KB3083185_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB3083185_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="GE" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Embedded-NetFx4-Package" version="6.3.9600.16384" processorArchitecture="amd64" language="neutral" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-NetFx4-US-OC-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinPE-NetFx-Package" language="neutral" version="6.3.9600.16384" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="3083185-26_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB3083185_RTM_BF" version="6.3.1.18" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <mum2:packageExtended xmlns:mum2="urn:schemas-microsoft-com:asm.v3" completelyOfflineCapable="no" packageSize="42157713"/>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="zjoDOTr6j8emMn/5kRBK2ozf2K0=" DigestAlgorithm="SHA1" FileName="windows8.1-kb3083185-x64.cab" Size="22297231" Modified="2015-08-05T16:31:35Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">32QTpMh0txZrY/3IIEKTbk+CZYbOK/kPU17eVRiXAwE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

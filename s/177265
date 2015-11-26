@@ -1,0 +1,110 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2299a1d6-e027-4fa2-8e6a-246b0cbd6cd9" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2004-12-15T08:19:05.370Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="912104" MinDownloadSize="456456">
+      <upd:InstallationBehavior/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary de</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="d8361d81-2d0f-4833-a96b-945ba682bf48"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <lar:Not>
+              <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+            </lar:Not>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\schedsvc.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.155"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\schedsvc.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netapi32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.122"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netapi32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstinit.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.155"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstinit.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstask.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.155"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstask.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\browser.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.105"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\browser.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp1hfm.exe" Comparison="GreaterThanOrEqualTo" Version="5.5.13.0"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\schedsvc.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1564"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\schedsvc.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netapi32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1562"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netapi32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstinit.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1564"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstinit.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mstask.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1564"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mstask.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <bar:FileVersion Csidl="37" Path="\xpsp2res.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1555"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="x3kuEhUqcihnWgWKXredoR17q0w=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841873-x86-deu.exe" Size="912104" Modified="2004-07-09T18:23:41.7308819-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="wk731s+HFyTkfPsZX6Pe3+pVlco=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841873-x86-deu.psf" Size="1798896" Modified="2004-07-09T18:23:46.6370377-07:00" PatchingType="Express"/>
+      <upd:File Digest="PEUM6hiRXlQtG8M+I6ossmqbo1M=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB841873-x86-deu-express.exe" Size="318696" Modified="2004-07-09T18:23:47.9026384-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

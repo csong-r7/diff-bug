@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="56cd9140-d3ef-4fa7-bfbe-a4070371c364" RevisionNumber="106"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T05:29:38.075Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3048960" MinDownloadSize="587895">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2900.6242"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="rkCx8cjXmuvjjoqLN/O2yaxVJLs=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2691442-x86-ptg.exe" Size="3048960" Modified="2012-06-18T14:55:02.423Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Glra9y5QPL+m/6nzk4BEoXan5Xt29tn4q70tWVb9/ow=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="HPe8xiBEPNk+hY4CsRzzlewxyZ8=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2691442-x86-express-ptg.cab" Size="255837" Modified="2012-06-18T14:55:02.783Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">Ch0tTcAqL997T5xc2gN7v/L0Ya/q/Dx35V6USh/jyCE=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="dW/Fesc/YzeVQ5U0mpmxpmKQv4I=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2691442-x86-ptg.psf" Size="8496844" Modified="2012-06-18T14:55:06.73Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">z4YjpIEs/4/HVsIKkQSW6fiM4VdaFwq4/ZG+3sbh87A=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

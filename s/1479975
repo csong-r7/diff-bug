@@ -1,0 +1,82 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="bd30946a-876f-4445-aa29-c8e1569f0c9d" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-08-06T18:22:22.149Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1553992" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\INETCOMM.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4990.2500"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\INETCOMM.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Outlook Express\MSOE.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4990.2500"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Outlook Express\MSOE.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:And>
+              <lar:Or>
+                <bar:FileVersion Csidl="38" Path="\Outlook Express\WAB.EXE" Comparison="GreaterThanOrEqualTo" Version="5.50.4990.2500"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="38" Path="\Outlook Express\WAB.EXE"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="38" Path="\Outlook Express\WABIMP.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4990.2500"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="38" Path="\Outlook Express\WABIMP.DLL"/>
+                </lar:Not>
+              </lar:Or>
+              <lar:Or>
+                <bar:FileVersion Csidl="43" Path="\System\WAB32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4990.2500"/>
+                <lar:Not>
+                  <bar:FileExists Csidl="43" Path="\System\WAB32.DLL"/>
+                </lar:Not>
+              </lar:Or>
+            </lar:And>
+          </lar:And>
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="GreaterThanOrEqualTo" Data="5.50.4807.1700"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="LessThan" Data="5.50.5000.0"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="GreaterThanOrEqualTo" Data="5.50.4807.1700"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="LessThan" Data="5.50.5000.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="nJOzFpMvzxphC3vDpaL6dl4NkFc=" DigestAlgorithm="SHA1" FileName="OE5.5sp2-KB951066-Windows2000-x86-HUN.exe" Size="1553992" Modified="2008-07-23T05:16:40.023" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,69 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a764e6dd-05b6-4d63-93de-af50ffd4aa6d" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-08-05T21:45:14.946Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="598520" MinDownloadSize="524157">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>tr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary tr</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="26427c31-6632-49d9-b7c6-a91b5a65ed2c"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\spoolss.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7054"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\spoolss.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\spoolsv.exe" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7059"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\spoolsv.exe"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\faxui.dll" Comparison="GreaterThanOrEqualTo" Version="0.2.0.2"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\faxui.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\WIN32SPL.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7054"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\WIN32SPL.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="RkmX6T4X6UCppbNxkp7e3unK2gw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896423-x86-Express-TRK.EXE" Size="486120" Modified="2005-07-19T18:38:09.3300000-07:00" PatchingType="Express"/>
+      <upd:File Digest="Tubn5sw080UfL/7FDT873h3swRY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896423-x86-TRK.EXE" Size="598520" Modified="2005-07-19T18:38:11.9530000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="0j27ZICn1lZOp7QYukJ9+d8qRyU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896423-x86-TRK.psf" Size="307950" Modified="2005-07-19T18:38:13.1530000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,35 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c6cb3489-c942-473a-a25a-81e04f5773a8" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2014-06-10T00:12:53.351Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Block update offering to Virtual Machines</upd:Title>
+        <upd:Description>Do not offer update to Virtual Machines</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f8c1d184-7116-498a-903e-25b17eb66bac"/>
+          <upd:UpdateIdentity UpdateID="38ef50a8-dffe-449e-a287-35a57128e49f"/>
+          <upd:UpdateIdentity UpdateID="23b28b6a-2629-424b-92ae-1b0bda447d2f"/>
+          <upd:UpdateIdentity UpdateID="04437cf2-2157-44c9-96df-6cd88b0dc541"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:WmiQuery xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Namespace="root\cimv2" WqlQuery="Select Manufacturer,Model From Win32_ComputerSystem Where Manufacturer = 'Microsoft Corporation' AND Model = 'Virtual Machine'"/>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

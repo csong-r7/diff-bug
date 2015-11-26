@@ -1,0 +1,41 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3577bea6-507b-4dc6-a799-7814ee600c8e" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2015-01-09T17:42:58.207Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>NOT (.NET 4.5.2 or higher exists)</upd:Title>
+        <upd:Description>This detectoid checks that the machine does not have the .NET 4.5.2 or higher products already installed.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+          <upd:UpdateIdentity UpdateID="7af068bd-e532-41bd-8a11-a4099504e4a9"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="23b28b6a-2629-424b-92ae-1b0bda447d2f"/>
+          <upd:UpdateIdentity UpdateID="04437cf2-2157-44c9-96df-6cd88b0dc541"/>
+          <upd:UpdateIdentity UpdateID="2323ef1d-c8f1-448f-9af4-f435a16e786f"/>
+          <upd:UpdateIdentity UpdateID="f8c1d184-7116-498a-903e-25b17eb66bac"/>
+          <upd:UpdateIdentity UpdateID="38ef50a8-dffe-449e-a287-35a57128e49f"/>
+          <upd:UpdateIdentity UpdateID="62b0b314-9712-482e-8477-d991a6c642cd"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Value="Install" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Key="HKEY_LOCAL_MACHINE" Data="1" Comparison="EqualTo"/>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Value="Release" Comparison="GreaterThanOrEqualTo" Data="379893"/>
+          </lar:And>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

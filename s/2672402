@@ -1,0 +1,31 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1E7E9F0E-8102-4E4C-B609-BDABACDC184C" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" IsPublic="false" UpdateType="Detectoid" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2009-04-21T21:47:28.202Z" PublisherID="fa34d14e-27d3-42c2-bc5f-070f466300d1"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Biometric Devices</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="614FAE29-54EA-466F-BC5B-3ABA4597A8EE"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:Not>
+            <bar:WmiQuery Namespace="root\cimv2" WqlQuery="Select * from Win32_PnPEntity WHERE ClassGuid LIKE '{53d29ef7-377c-4d14-864b-eb3a85769359}'"/>
+          </lar:Not>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\DeviceClasses\{e2b5183a-99ea-4cc3-ad6b-80ca8d715b80}"/>
+            <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WbioSrvc\WBDI" Value="WindowsUpdateDriverServicing" Type="REG_DWORD"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

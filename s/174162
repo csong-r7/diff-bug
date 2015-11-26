@@ -1,0 +1,113 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7ab8bfa3-3a81-4eaa-a560-7dd0d4ee298c" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2004-11-20T08:33:20.691Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2206712" MinDownloadSize="2097152">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary fr</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5be762cc-de5d-430a-99fd-d67fb1d227c6"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\linkinfo.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6958"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\linkinfo.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6970"/>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\webvw.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.6975"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\webvw.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Path="\shell32.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.6975" Csidl="37"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\shell32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\GRPCONV.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6966"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\GRPCONV.EXE"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\NTLANMAN.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6824"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\NTLANMAN.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.00.2920.0000" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <bar:RegSzToVersion Value="Version" Comparison="LessThanOrEqualTo" Data="5.00.3700.1000" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <lar:Or>
+                  <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.6969"/>
+                  <lar:Not>
+                    <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                  </lar:Not>
+                </lar:Or>
+              </lar:And>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="EqualTo" Data="6.0.2600.0000" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <lar:Or>
+                  <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2750.167"/>
+                  <lar:Not>
+                    <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                  </lar:Not>
+                </lar:Or>
+              </lar:And>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="EqualTo" Data="6.0.2800.1106" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <lar:Or>
+                  <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1584"/>
+                  <lar:Not>
+                    <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+                  </lar:Not>
+                </lar:Or>
+              </lar:And>
+              <lar:And>
+                <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.50.4134.0600" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+                <bar:RegSzToVersion Value="Version" Comparison="LessThan" Data="6.0.2600.0000" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+              </lar:And>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="CZNZQ/b1kMY0qoAc/va6+y1Cxm0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB841356-x86-express-FRA.exe" Size="339176" Modified="2004-10-11T20:01:05.1757978-07:00" PatchingType="Express"/>
+      <upd:File Digest="s+nC2sO7SfyT7usyM9oJS7bq4OA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB841356-x86-FRA.EXE" Size="2206712" Modified="2004-10-11T20:01:10.0975783-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="x0xHKkUBYWFsCnS8pA1nGKR8bVs=" DigestAlgorithm="SHA1" FileName="Windows2000-KB841356-x86-FRA.PSF" Size="8741612" Modified="2004-10-11T20:01:22.4098419-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

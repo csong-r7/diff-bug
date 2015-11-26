@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7842cb1f-fea1-4282-8168-ef83d2b1260e" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:54:43.716Z" PublisherID="923ae562-605a-4ba7-baca-950d77fd85ea" MaxDownloadSize="4095568" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>MDDS</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be0074f9-abd2-4cb2-bd14-6d72629172c0"/>
+        <upd:UpdateIdentity UpdateID="72083b5a-c212-4dda-bd57-406b49e0b78a"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+          <upd:UpdateIdentity UpdateID="3cc048fc-e0cc-441e-b983-36ddbe48e0ed"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e6690bd-5de0-4d77-92b0-9e5c1a2d23f0"/>
+        <upd:UpdateIdentity UpdateID="84bf237b-51e9-480a-ae21-adf6a75e94d5"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="0ea196ba-7a32-4e76-afd8-46bd54ecd3c6"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSN\Toolbar" Value="Version" Comparison="GreaterThanOrEqualTo" Data="7.0.822.0" RegType32="true"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Windows Live\Toolbar" Value="Version" Comparison="LessThan" Data="15.0.0000.0" RegType32="true"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="DfSAGm0WJDmZQDC/yGsFgSps4eo=" DigestAlgorithm="SHA1" FileName="BingBarSetup-Partner.EXE" Size="4095568" Modified="2011-11-16T12:49:04.65Z">
+        <upd:AdditionalDigest Algorithm="SHA256">tHnbw8m5Tq/yA+WTsScLYyXpM36G7eGJ/LKUn9q0izE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/c:&quot;BBSetup.exe cablocation=.\BingBarPartnerConfig.cab ismu=true&quot;" Program="BingBarSetup-Partner.EXE" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

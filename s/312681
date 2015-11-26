@@ -1,0 +1,112 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ce108430-ac3f-482c-b0e0-5c419c8372b3" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-06-23T18:11:40.614Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1101624" MinDownloadSize="308867">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary de</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2db5dd9f-33ad-4ad7-a79f-c271a7f3e1eb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\rasmans.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2908"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\rasmans.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\winipsec.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\winipsec.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\rasmans.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\rasmans.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\polstore.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\polstore.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\oakley.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\oakley.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ipsmsnap.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ipsmsnap.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ipsecsvc.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ipsecsvc.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ipsecsnp.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ipsecsnp.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\ipsec.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1842"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\ipsec.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\gptext.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1581"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\gptext.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8d5wjUMwlddhVaLvxHa8FMEYU84=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB911280-v2-x86-DEU.exe" Size="1101624" Modified="2006-06-22T10:31:46.1100000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="dUeNMEPAgFrKz4/9ezDO+c5/NKw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB911280-v2-x86-DEU.psf" Size="3940156" Modified="2006-06-22T10:31:47.5170000-07:00" PatchingType="Express"/>
+      <upd:File Digest="VDyuTOEBHUQJOErmgug3jV5/+h8=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB911280-v2-x86-express-DEU.cab" Size="154011" Modified="2006-06-22T10:31:47.7370000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q /Z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

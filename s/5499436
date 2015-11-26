@@ -1,0 +1,39 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="13452708-c326-465d-b82f-c7ca2c39557f" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2012-04-27T02:10:41.407Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>IE version less than 10</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Path="\internet explorer\iexplore.exe" Comparison="LessThan" Version="10.0.0.0" Csidl="38"/>
+          <bar:FileExists Path="\internet explorer\iexplore.exe" Csidl="42"/>
+          <lar:Not>
+            <lar:Or>
+              <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~x86~~9.4.8112.16443"/>
+              <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~amd64~~9.4.8112.16443"/>
+              <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~x86~~9.1.8112.16443"/>
+              <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~amd64~~9.1.8112.16443"/>
+            </lar:Or>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

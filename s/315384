@@ -1,0 +1,76 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="24a7d768-8cd0-40cf-b5bc-da8cecdd2fa5" RevisionNumber="110"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" RecommendedCpuSpeed="133" RecommendedMemory="128" RecommendedHardDiskSpace="2097152" PublicationState="Published" CreationDate="2006-06-30T22:41:19.824Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="331309304" MinDownloadSize="173015040">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>RU Package for 2003 SP1</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b200a06a-909b-4f0f-bc17-74c536528baa"/>
+          <upd:UpdateIdentity UpdateID="0bdb7d2e-0753-419c-a01f-b690e83cc854"/>
+          <upd:UpdateIdentity UpdateID="0605b3f8-494e-4b21-b52a-8eaaaebfebee"/>
+          <upd:UpdateIdentity UpdateID="ce12ec73-196e-47d9-a01d-cdb901e4e5f7"/>
+          <upd:UpdateIdentity UpdateID="d8c46fba-117b-4d92-ba53-cc216e54e3f8"/>
+          <upd:UpdateIdentity UpdateID="f97b5974-a697-4420-983a-f522490cc3b1"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Policies\Microsoft\Windows\WindowsUpdate" Value="DoNotAllowSP" Comparison="EqualTo" Data="1"/>
+          </lar:Not>
+          <lar:Not>
+            <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup" Value="ServicePackInstallType" Comparison="EqualTo" Data="0"/>
+          </lar:Not>
+          <lar:Or>
+            <lar:Not>
+              <lar:And>
+                <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="c:\dell.sdr"/>
+                <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\ProductOptions" Value="ProductType" Comparison="EqualTo" Data="LanmanNT"/>
+                <lar:Or>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\mraid35x.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\perc2.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\a320raid.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\aac.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\symmpi.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\cercsr6.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\aarich.sys" Csidl="37"/>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="drivers\fasttx2k.sys" Csidl="37"/>
+                </lar:Or>
+              </lar:And>
+            </lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB898792" Value="Installed" Comparison="EqualTo" Data="1"/>
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\DELL" Value="Dell_RegFix_Success" Type="REG_SZ"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="VaTQy6NxEoaji54zuwOwlw9B0Rs=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-SP1-x86fre-RUS-1830.psf" Size="966842622" Modified="2005-05-26T15:42:23.0100000-07:00" PatchingType="Express"/>
+      <upd:File Digest="3zlmojghdPVTkFoENabx2maRV9Q=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB889101-SP1-Express-x86-RUS.exe" Size="3567864" Modified="2005-05-26T15:43:28.7000000-07:00" PatchingType="Express"/>
+      <upd:File Digest="k5Pi8aqemOmphOiE7R+IiYuklzY=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB889101-SP1-x86-RUS.exe" Size="331309304" Modified="2005-05-26T15:44:55.9970000-07:00" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

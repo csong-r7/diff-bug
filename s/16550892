@@ -1,0 +1,26 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8EEA480D-79C9-40E9-8A71-81863C172962" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" IsPublic="false" UpdateType="Detectoid" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2015-02-16T23:19:10.317Z" PublisherID="fa34d14e-27d3-42c2-bc5f-070f466300d1"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Driver Flighting Check for Bluetooth Partner Test</upd:Title>
+        <upd:Description>Evaluates to true if client machine is targeting to "Partner" Ring of Bluetooth device class</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="34f268b4-7e2d-40e1-8966-8bb6ea3dad27"/>
+        <upd:UpdateIdentity UpdateID="A8EAF51F-F36C-468A-9C3C-DC54EB910DEE"/>
+        <upd:UpdateIdentity UpdateID="B019F992-467C-491D-B64C-4F4B78F2DDF6"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSz xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\DriverFlighting\Bluetooth" Value="TargetRing" Comparison="EqualTo" Data="Partner"/>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

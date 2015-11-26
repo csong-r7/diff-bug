@@ -1,0 +1,71 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7d61291f-fc9f-4b9d-bec1-959704228b66" RevisionNumber="53"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-04-04T22:08:32.338Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a" MaxDownloadSize="15518976" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot" CanRequestUserInput="true"/>
+      <upd:Language>en</upd:Language>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ITA Clustered</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="798d58a3-de4b-4a93-a80e-36d51d048675"/>
+          <upd:UpdateIdentity UpdateID="e69303f8-e1fb-4173-8e16-ac885c8c8e47"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="6c8fbf16-aa21-4f76-803f-f17a67cc010a"/>
+          <upd:UpdateIdentity UpdateID="54b06614-73c7-4c2d-b437-b2a23d2f8b8f"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="83a83e29-7d55-44a0-afed-aea164bc35e6"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Exchange\setup" Value="RollupMinorVersion" Comparison="EqualTo" Data="1"/>
+          <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\MICROSOFT\Exchange\setup" Value="RollupMajorversion" Comparison="EqualTo" Data="6603"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:ClusteredOS/>
+          <lar:Or>
+            <lar:And>
+              <lar:Not>
+                <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Exchange\Setup"/>
+              </lar:Not>
+              <bar:WindowsLanguage Language="it"/>
+            </lar:And>
+            <lar:And>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Exchange\Setup" Value="ServicePackBuild" Comparison="EqualTo" Data="6249"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Exchange" Value="Server Language" Comparison="EqualTo" Data="1040"/>
+            </lar:And>
+            <lar:And>
+              <lar:Not>
+                <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Exchange\Setup" Value="ServicePackBuild" Comparison="EqualTo" Data="6249"/>
+              </lar:Not>
+              <bar:WindowsLanguage Language="it"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="U90/QYu+4/k6zq7+X0QlMNs4iSE=" DigestAlgorithm="SHA1" FileName="Exchange2000-KB870540-v2-x86-ITA.exe" Size="15518976" Modified="2005-04-12T14:40:30.6Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Y96H1RjQv3V5gsISd9tjBqTx4R5fBg32LvvCaxDo4uE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="/norestart"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

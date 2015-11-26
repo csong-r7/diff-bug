@@ -1,0 +1,338 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3082d1ca-db12-4b94-9e2c-c1aa6a4bc8be" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-06-03T20:43:36.042Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="851031" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:UninstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Internet Explorer 8 DEU Language Pack</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="5dc511c3-867e-47ae-a47e-39e722739763"/>
+        <upd:UpdateIdentity UpdateID="5c322b6e-2623-45a4-b11d-2092b314eb44"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\MUI\UILanguages\de-DE" Value="LCID" Comparison="EqualTo" Data="1031"/>
+          <lar:Not>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-8-Package~31bf3856ad364e35~amd64~~8.0.6001.18702"/>
+          </lar:Not>
+          <lar:Or>
+            <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6001"/>
+            <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6002"/>
+            <lar:And>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB937287~31bf3856ad364e35~amd64~~6.0.1.18000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_1_for_KB949939~31bf3856ad364e35~amd64~~6.0.1.0"/>
+            </lar:And>
+            <lar:And>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB937287~31bf3856ad364e35~amd64~~6.0.0.18000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_1_for_KB949939~31bf3856ad364e35~amd64~~6.0.1.0"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" company="Microsoft Corporation" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved." description="Internet Explorer 8 Language Pack" displayName="Internet Explorer 8 de-DE Sprachpaket" manifestVersion="1.0" supportInformation="http://go.microsoft.com/fwlink/?LinkId=133041">
+            <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-InternetExplorer-8-LanguagePack" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702"/>
+            <package identifier="KB944036" releaseType="Update" restart="possible">
+              <parent>
+                <assemblyIdentity buildType="release" language="neutral" name="Microsoft-Windows-InternetExplorer-8-Package" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702"/>
+              </parent>
+              <update description="Internet Explorer 8" displayName="Internet Explorer 8" name="Internet-Explorer-8-amd64">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Advpack.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Help-Browser.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-ieframe.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IEInstal.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IEUser.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdministrationKit.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitBranding.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitEngine.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitMostFiles.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Behaviors.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Controls.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-DataControl.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-DevTools.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Eula.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ExtensionManager.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Feedsbs.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLApplication.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLConverter.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLEditing.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLEditingSupport.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLRendering.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-IELowUtil.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-IExpress.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Infocard.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-InternetControlPanel.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-InternetExplorer.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JScriptDebugUI.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JSProfilerCore.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JSProfilerUI.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ObjectControlViewer.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-OfflineFavorites.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Ratings.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Setup.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Setup-Support.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-RuntimeUtilities.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-winfxdocobj.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-InetRes-Adm.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-JS-DebuggerIDE.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Scripting-JScript.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Scripting-VBScript.Resources" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-InternetExplorer-8-Deployment-LanguagePack" processorArchitecture="wow64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitMostFiles.Resources" processorArchitecture="wow64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-InternetExplorer.Resources" processorArchitecture="wow64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Advpack.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Help-Browser.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-ieframe.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IEInstal.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IEUser.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdministrationKit.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitBranding.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-AdminKitEngine.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Behaviors.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Controls.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-DataControl.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-DevTools.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Eula.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ExtensionManager.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Feedsbs.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLApplication.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLConverter.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLEditing.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLEditingSupport.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-HTMLRendering.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-IExpress.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-IELowUtil.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Infocard.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-InternetControlPanel.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JScriptDebugUI.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JSProfilerCore.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-JSProfilerUI.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-ObjectControlViewer.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-OfflineFavorites.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Ratings.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Setup.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-Setup-Support.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-RuntimeUtilities.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-IE-winfxdocobj.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-InetRes-Adm.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-JS-DebuggerIDE.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Scripting-JScript.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-Scripting-VBScript.Resources" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity buildType="release" language="de-DE" name="Microsoft-Windows-InternetExplorer-8-Deployment-LanguagePack" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="VEbW8op78/3Lb+JS21LajyJAxhE=" DigestAlgorithm="SHA1" FileName="KB944036.cab" Size="851031" Modified="2009-03-23T22:29:45" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,76 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f2a50742-8c85-46db-abe3-3232601a9361" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-08-20T13:40:46.724Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="573816" MinDownloadSize="257463">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>he</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary he</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f9a9479c-1e0d-40ad-bb88-537ba6eef7bb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\t2embed.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3589"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\t2embed.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\fontsub.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3589"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\fontsub.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\t2embed.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5830"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\t2embed.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\fontsub.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5830"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\fontsub.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="4269wzIERriBB+0K7lmjsEnFLwg=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB961371-v2-x86-HEB.exe" Size="573816" Modified="2009-08-05T01:43:33" PatchingType="SelfContained"/>
+      <upd:File Digest="zb1IXCVvKFjK+KcLRYo+NvpPgdI=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB961371-v2-x86-express-HEB.cab" Size="245098" Modified="2009-08-05T01:43:33" PatchingType="Express"/>
+      <upd:File Digest="2xpQp21hbtkOHwTyda99w0nkyTA=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB961371-v2-x86-HEB.psf" Size="1042441" Modified="2009-08-05T01:43:34" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,69 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1149acd1-2699-4b66-8d8c-83a3b7b27fdb" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="1024" RecommendedMemory="1000" RecommendedHardDiskSpace="1" PublicationState="Published" CreationDate="2012-04-05T02:49:57.891Z" PublisherID="290b7cad-a8f9-4f13-917e-9b88ee5a6c05" MaxDownloadSize="1394552" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="aaa3d3e8-1c48-43d4-a583-229849e8eec7"/>
+        <upd:UpdateIdentity UpdateID="5df43a11-6aab-4be2-b8e8-d616857e2d2a"/>
+        <upd:UpdateIdentity UpdateID="c338c16c-f0b2-4d28-9018-e07af285861a"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="eac7e88b-d8d4-4158-a828-c8fc1325a816"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <mar:MsiFeatureInstalledForProduct AllFeaturesRequired="true" AllProductsRequired="true">
+            <mar:Feature>SERVER</mar:Feature>
+            <mar:Product>{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}</mar:Product>
+          </mar:MsiFeatureInstalledForProduct>
+          <lar:Or>
+            <mar:MsiPatchInstalledForProduct PatchCode="{342fa12e-f35d-45ab-bfa7-8226b7b26e53}" ProductCode="{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}"/>
+            <mar:MsiPatchInstalledForProduct PatchCode="{c8bc9153-f9c9-45d8-b22b-b6ff7ebe624b}" ProductCode="{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiFeatureInstalledForProduct AllFeaturesRequired="true" AllProductsRequired="true">
+            <mar:Feature>SERVER</mar:Feature>
+            <mar:Product>{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}</mar:Product>
+          </mar:MsiFeatureInstalledForProduct>
+          <lar:Not>
+            <mar:MsiPatchInstalledForProduct PatchCode="{342fa12e-f35d-45ab-bfa7-8226b7b26e53}" ProductCode="{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}"/>
+          </lar:Not>
+          <lar:Not>
+            <mar:MsiPatchInstalledForProduct PatchCode="{c8bc9153-f9c9-45d8-b22b-b6ff7ebe624b}" ProductCode="{0CDBAFE3-08E1-47DF-9E91-C86A540C9C08}"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="jBJaq2p88XqJ4Op2YUX6+WcY3Fk=" DigestAlgorithm="SHA1" FileName="HIS2006-SP1-KB2579597-ENU.exe" Size="1394552" Modified="2011-09-08T18:54:38.733Z">
+        <upd:AdditionalDigest Algorithm="SHA256">W1tBV/f5QTctHAB7WuSQEUX+s5dsSYfpNdurFpHFq1A=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="HIS2006-SP1-KB2579597-ENU.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

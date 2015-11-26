@@ -1,0 +1,35 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d22b3d16-bc75-418f-b648-e5f3d32490ee" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2009-11-09T14:25:00.150Z" PublisherID="377c55d0-1cd2-4b33-a783-07ba418bb7fe"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>System Center Configuration Manager 2007</upd:Title>
+        <upd:Description>The System Center Configuration Manager 2007category will allow Service Packs and Updates to be offered to Configuration Manager product family</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="78f4e068-1609-4e7a-ac8e-174288fa70a1"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS" RegType32="true"/>
+          <lar:Or>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\SMS\Setup" Value="Full Version" Comparison="BeginsWith" Data="4.00" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\ConfigMgr\Setup" Value="Full UI Version" Comparison="BeginsWith" Data="4.00" RegType32="true"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation CategoryType="Product" ProhibitsSubcategories="true" ExcludedByDefault="false"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

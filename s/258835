@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="15d77b3d-1621-4587-a575-687002a6b1fc" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-10-08T04:18:35.676Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="647672" MinDownloadSize="498535">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\srvsvc.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.6697"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\srvsvc.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\SRV.SYS" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7044"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\SRV.SYS"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="aHo3VV4St7ON5x8YrVtnfx5Q0FM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896422-x86-CSY.EXE" Size="647672" Modified="2005-06-13T13:21:16.7800000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="QbbYw9UxLz6E0EMgoFihGA0UrvQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896422-x86-CSY.psf" Size="435438" Modified="2005-06-13T13:21:17.1870000-07:00" PatchingType="Express"/>
+      <upd:File Digest="I4w/ncqpFn18iU2EmJiwHPe5g8Q=" DigestAlgorithm="SHA1" FileName="Windows2000-KB896422-x86-Express-CSY.EXE" Size="488680" Modified="2005-06-13T13:21:17.5770000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,385 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9e7bd8f3-b410-4a16-a881-d14ab45631d0" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2011-07-11T15:38:02.624Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="415374" MinDownloadSize="415374">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KB2532531</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="28eb9ce9-b17c-4a99-904a-88214399ac5e"/>
+          <upd:UpdateIdentity UpdateID="1af6287e-3381-44fb-9b51-2d6177658334"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f4b9c883-f4db-4fb5-b204-3343c11fa021"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.16820" Csidl="37"/>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="LessThan" Version="6.1.7600.20480" Csidl="37"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7600.20972" Csidl="37"/>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="LessThan" Version="6.1.7601.0" Csidl="37"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7601.17621" Csidl="37"/>
+              <bar:FileVersion Path="umpnpmgr.dll" Comparison="LessThan" Version="6.1.7601.20480" Csidl="37"/>
+            </lar:And>
+            <bar:FileVersion Path="umpnpmgr.dll" Comparison="GreaterThanOrEqualTo" Version="6.1.7601.21733" Csidl="37"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-13_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2532531_SP1" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-14_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2532531_RTM" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:15Z" lastUpdateTimeStamp="2011-04-28T11:33:15Z">
+            <assemblyIdentity name="Package_1_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_1_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2532531-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.17607" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.17607" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_2_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_2_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2532531-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.17607" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.17607" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_3_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_3_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2532531-6_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.16805" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.16805" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_4_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="distribution">
+                    <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7601.21716" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_4_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" releaseType="Security Update" restart="required">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.20955" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+              <update name="2532531-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateDriver elevate="revision">
+                    <assemblyIdentity name="bth.inf" version="6.1.7600.16805" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                  </updateDriver>
+                </applicable>
+                <driver inf="bth.inf" ranking="currentDevices">
+                  <assemblyIdentity name="bth.inf" version="6.1.7600.16805" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="driverUpdate" versionScope="nonSxS"/>
+                </driver>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_for_KB2532531_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_for_KB2532531_RTM" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_for_KB2532531_SP1_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-7_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:07Z" lastUpdateTimeStamp="2011-04-28T11:33:07Z">
+            <assemblyIdentity name="Package_for_KB2532531_SP1" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB2532531" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2532531" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2532531" creationTimeStamp="2011-04-28T11:33:16Z" lastUpdateTimeStamp="2011-04-28T11:33:16Z">
+            <assemblyIdentity name="Package_for_KB2532531_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2532531_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7600.16385" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Drivers-Package" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="WinEmb-INF-bth" language="neutral" version="6.1.7601.17514" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2532531-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2532531_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="2532531-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2532531_SP1_BF" version="6.1.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="RiXkfgTocItmiV3lQ57HIhzM1Bs=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2532531-x64.cab" Size="415374" Modified="2011-05-10T10:32:11.883" PatchingType="SelfContained"/>
+      <upd:File Digest="mG6xLm0mxChs+2fHM4AmTeRnuQw=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2532531-x64-EXPRESS.cab" Size="36227" Modified="2011-05-10T10:32:11.93" PatchingType="Express"/>
+      <upd:File Digest="0+g/DyV39DBAh7eUAfhxgrFCDBc=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2532531-x64.psf" Size="4675644" Modified="2011-05-10T10:32:12.43" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

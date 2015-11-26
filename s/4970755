@@ -1,0 +1,65 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6a62c3bf-7028-4d2e-8424-52f56c4678d3" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:58.164Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="154910" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Communications Server 2007 R2, Unified Communications Managed API 2.0 Workflow Redist 64-bit: April 2011</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="9d9c73c9-8ab1-4bbf-b871-ee5098bace19"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <mar:MsiPatchInstalled/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F87237FF-7282-494F-AE26-033B7F10E972}" Value="DisplayVersion" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.225"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{A766C25B-A1D1-4711-A726-AC3E7CA4AAB3}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.206"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{A83E9965-AE68-4F6C-A795-265B91030B67}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="false">{F87237FF-7282-494F-AE26-033B7F10E972}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.225</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{F9BDDD1A-F7C5-4D46-8B6D-38098DAC5490}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{F87237FF-7282-494F-AE26-033B7F10E972}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>ucmawork</PatchFamily>
+              <Sequence>1.0.225.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="H2nKXS4FbQRRVlJ3Gpn5Bs7mPns=" DigestAlgorithm="SHA1" FileName="UcmaWorkflowRedist.cab" Size="154910" Modified="2011-04-05T13:39:25.94Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">RNdb8F9yoOdsOx+IJHhoj6gwUrr5IuLW4DQSNoO6acw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{a83e9965-ae68-4f6c-a795-265b91030b67}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

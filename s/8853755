@@ -1,0 +1,79 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="27913120-0c52-4d50-1427-88490f4d5549" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="29825680" MinDownloadSize="0" PublicationState="Published" CreationDate="2013-08-13T00:15:46.886Z" PublisherID="603af380-4255-47c4-8954-cc14655d153d">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot" CanRequestUserInput="false"/>
+      <upd:Language>lt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Mui LTH amd64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="0c524dc1-1427-0050-8121-88490f4d5549"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2f3d1aba-2192-47b4-9c8d-87b41f693af4"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalledForProduct xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" PatchCode="{9ed9030e-b2ab-4155-8f01-ca11ec24a5a3}" ProductCode="{0c524dc1-1427-0050-8121-88490f4d5549}"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <lar:And>
+              <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\MSCRMClient\LangPacks\1063" Value="CRM_LangPack_Version" Comparison="GreaterThanOrEqualTo" Data="5.0.9690.1992"/>
+              <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\MSCRMClient\LangPacks\1063" Value="CRM_LangPack_Version" Comparison="LessThan" Data="5.0.9690.3448"/>
+            </lar:And>
+            <lar:And>
+              <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\MSCRM\LangPacks\1063" Value="CRM_LangPack_Version" Comparison="GreaterThanOrEqualTo" Data="5.0.9690.1992"/>
+              <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\MSCRM\LangPacks\1063" Value="CRM_LangPack_Version" Comparison="LessThan" Data="5.0.9690.3448"/>
+            </lar:And>
+          </lar:Or>
+          <lar:Not>
+            <mar:MsiPatchInstalledForProduct xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" PatchCode="{8E144EE9-3205-4AAD-9B32-8734ACA0D046}" ProductCode="{0C524DC1-1427-0050-8121-88490F4D5549}"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="OdmUY92QC9/tWu0i5BfyWV0I9UQ=" DigestAlgorithm="SHA1" FileName="CRM2011-Mui-KB2791312-LTH-amd64.exe" Size="29825680" Modified="2013-03-25T23:36:09Z">
+        <upd:AdditionalDigest Algorithm="SHA256">PgXDOLiifpkMRBQn5eyQmroGavpvIq1Pp/tnWU4fJ8M=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/quiet /norestart CRM.PATCH.ARGS=&quot;/q /norestart&quot;" Program="CRM2011-Mui-KB2791312-LTH-amd64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="3">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Do not have sufficient permission to access MSCRM_CONFIG</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="2">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded and require restart</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Cancelled" Code="2147483647">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install cancelled</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

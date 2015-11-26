@@ -1,0 +1,89 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7b53d5d0-6365-4aa4-97df-c89e103323ab" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-06-13T22:48:26.379Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="877328" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="b200a06a-909b-4f0f-bc17-74c536528baa"/>
+          <upd:UpdateIdentity UpdateID="ce12ec73-196e-47d9-a01d-cdb901e4e5f7"/>
+          <upd:UpdateIdentity UpdateID="0bdb7d2e-0753-419c-a01f-b690e83cc854"/>
+          <upd:UpdateIdentity UpdateID="d8c46fba-117b-4d92-ba53-cc216e54e3f8"/>
+          <upd:UpdateIdentity UpdateID="f0d78d3e-b746-4566-b05a-baba70acaee0"/>
+          <upd:UpdateIdentity UpdateID="f1b3a0e1-0941-4b7a-baab-0a9e259d16e6"/>
+          <upd:UpdateIdentity UpdateID="74ce3499-57a0-402d-9bd1-b7268ee9a547"/>
+          <upd:UpdateIdentity UpdateID="d2fe29ea-197b-44b0-ab45-a7d8be1d56f6"/>
+          <upd:UpdateIdentity UpdateID="614de9d3-ce33-428a-a965-1b83829b1cd3"/>
+          <upd:UpdateIdentity UpdateID="fea8705e-78c8-4a1c-83b7-ac0c70cba6f4"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Press Interactive Training"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Step By Step Interactive Training\SP2\KB898458" Value="PackageVersion" Comparison="EqualTo" Data="1.0"/>
+          </lar:And>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Interactive Training"/>
+            <lar:Or>
+              <bar:FileVersion Path="Help\MIT\Training\mrun32.exe" Comparison="GreaterThanOrEqualTo" Version="3.4.1.101" Csidl="36"/>
+              <lar:Not>
+                <bar:FileExists Path="Help\MIT\Training\mrun32.exe" Csidl="36"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Interactive Training"/>
+            <lar:Or>
+              <bar:FileVersion Path="Help\SBSI\Training\orun32.exe" Comparison="GreaterThanOrEqualTo" Version="3.5.0.117" Csidl="36"/>
+              <lar:Not>
+                <bar:FileExists Path="Help\SBSI\Training\orun32.exe" Csidl="36"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Press Interactive Training"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Interactive Training"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Interactive Training"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="vx+H2P45hyv0cBeHWPwDLKJXKAs=" DigestAlgorithm="SHA1" FileName="StepByStepInteractiveTraining-KB898458-x86-CHT.exe" Size="877328" Modified="2005-06-13T11:22:11.7030000-07:00" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

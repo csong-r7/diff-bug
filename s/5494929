@@ -1,0 +1,30 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3333902a-bef2-4507-b42a-fe8219658d52" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2012-04-23T22:59:17.678Z" PublisherID="bccf8ca0-2819-4598-8d15-c1506e363e92"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>AMP: Product Enabled</upd:Title>
+        <upd:Description>Detects whether Windows 8 antimalware protection has been disabled by either configuration or policy.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8c3fcc84-7410-4a95-8b89-a166a0190486"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <!-- WD filter must be installed, this is unique to Win8 Defender and used to distinguish 
+               between former Defender version (downlevel) -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WdFilter"/>
+          <!-- MpClient.dll exists in the Program Files folder -->
+          <bar:FileExists Path="Windows Defender\MpClient.dll" Csidl="38"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

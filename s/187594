@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b86a0717-5c71-4986-80d3-ae999ace7610" RevisionNumber="10"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-08T21:12:17.102Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="367096" MinDownloadSize="361237">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\hlink.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.227"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\hlink.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Mi3uQ+ITBr4yDums9LFIgHbwOrY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB888113-x86-CHT.EXE" Size="367096" Modified="2005-02-07T16:53:06.6571217-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="8944Q7qGDMu5yD7SmcYWGQL6hHI=" DigestAlgorithm="SHA1" FileName="Windows2000-KB888113-x86-CHT.psf" Size="122604" Modified="2005-02-07T16:53:06.8289934-08:00" PatchingType="Express"/>
+      <upd:File Digest="zca4aUBxL6o2EZ4MgcK76t7yunI=" DigestAlgorithm="SHA1" FileName="Windows2000-KB888113-x86-Express-CHT.EXE" Size="336104" Modified="2005-02-07T16:53:07.1727368-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

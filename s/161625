@@ -1,0 +1,53 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3424a020-db32-4d45-9ebc-09021dddcbab" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2004-10-12T02:29:49.743Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="527088" MinDownloadSize="352522">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32b55feb-b5f5-47a7-8cc2-6a095c680267"/>
+          <upd:UpdateIdentity UpdateID="0d27b716-280a-42a2-864a-bcd065c162e9"/>
+          <upd:UpdateIdentity UpdateID="b200a06a-909b-4f0f-bc17-74c536528baa"/>
+          <upd:UpdateIdentity UpdateID="0bdb7d2e-0753-419c-a01f-b690e83cc854"/>
+          <upd:UpdateIdentity UpdateID="0605b3f8-494e-4b21-b52a-8eaaaebfebee"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <bar:FileVersion Csidl="37" Path="\inetsrv\smtpsvc.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.3790.211"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\inetsrv\smtpsvc.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="XnnsXIJ+F5zt6EZEDj4B4o3iXS8=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB885881-x86-esn.EXE" Size="527088" Modified="2004-09-29T15:48:51.4977275-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="2kq/jXC+rZzYWPcCxi0BcVnqEj0=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB885881-x86-esn.psf" Size="1152244" Modified="2004-09-29T15:48:54.1227611-07:00" PatchingType="Express"/>
+      <upd:File Digest="njJYJm1GNujbVYkrX/oYHHCpjAQ=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB885881-x86-express-esn.EXE" Size="333040" Modified="2004-09-29T15:48:54.7321439-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

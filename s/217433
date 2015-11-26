@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7949bcfb-c4e1-4482-9cc1-2b6039019b8d" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-06-10T23:32:54.352Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="599792" MinDownloadSize="482375">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\webclnt.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1673"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\webclnt.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mrxdav.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1673"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mrxdav.sys"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="r0p9iNQo2YEHxLXmP0DM5a5MEBk=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896426-x86-express-PTG.exe" Size="482032" Modified="2005-06-10T15:40:45.9470000-07:00" PatchingType="Express"/>
+      <upd:File Digest="rwpq2K0bkvlui3fx11JsGpPM05I=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896426-x86-PTG.exe" Size="599792" Modified="2005-06-10T15:40:46.4430000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="D/4BvZqjgBeeK2c/fyIAhd8ZXto=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB896426-x86-PTG.psf" Size="264946" Modified="2005-06-10T15:40:46.6930000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

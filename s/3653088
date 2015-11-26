@@ -1,0 +1,101 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e90debe5-7597-40f7-b3e0-3a1d7c0c2569" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2010-03-17T20:42:49.949Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Multi-Proc Filter for Vista-WS08 SP2</upd:Title>
+        <upd:Description>Filter to block the vista/server 08 SP2 offering in 2 scenarios &#x2013; one a combination of single CPU package and motherboard, one with multiple CPUs &#x2013; the machine with a specific Intel chipset bugchecks during boot while initializing CPUs. Since this happens during very early stage of system boot, machine will become unusable. </upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:Or>
+            <cbsar:CbsPackageInstalledByIdentity PackageIdentity="Package_for_KB973879~31bf3856ad364e35~amd64~~6.0.2.0"/>
+            <lar:And>
+              <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="6.0.6001.18296" Csidl="37"/>
+              <bar:FileVersion Path="\ntoskrnl.exe" Comparison="LessThan" Version="6.0.6001.20000" Csidl="37"/>
+            </lar:And>
+            <bar:FileVersion Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="6.0.6001.22478" Csidl="37"/>
+          </lar:Or>
+          <lar:Not>
+            <lar:Or>
+              <lar:And>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\0" Value="VendorIdentifier" Comparison="EqualTo" Data="GenuineIntel"/>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\0" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 6 Model 23 Stepping 10"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\0" Value="VendorIdentifier" Comparison="EqualTo" Data="GenuineIntel"/>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\0" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\1" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\1" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\2" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\2" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\3" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\3" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\4" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\4" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\5" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\5" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\6" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\6" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\7" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\7" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\8" Value="Identifier" Type="REG_SZ"/>
+                    <lar:Not>
+                      <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="HARDWARE\DESCRIPTION\System\CentralProcessor\8" Value="Identifier" Comparison="EqualTo" Data="Intel64 Family 15 Model 3 Stepping 4"/>
+                    </lar:Not>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

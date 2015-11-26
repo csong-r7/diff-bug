@@ -1,0 +1,112 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2a64ef43-6518-5573-f9ee-65be5c4d6d29" RevisionNumber="12"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-04-13T08:33:55.614Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3111144" MinDownloadSize="407314">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary it</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\shsvcs.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1605"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\shsvcs.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\cscdll.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1599"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\cscdll.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\lsasrv.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1597"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\lsasrv.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\rdbss.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1599"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\rdbss.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\mrxsmb.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1599"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\mrxsmb.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1605"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntkrnlpa.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1605"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\lsasrv.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2525"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\lsasrv.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\rdbss.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2541"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\rdbss.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\drivers\mrxsmb.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2541"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\drivers\mrxsmb.sys"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="hL0vFq1Wfqmjjhdpr/m7UK9/uRg=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB885835-x86-express-ITA.exe" Size="343784" Modified="2004-12-13T15:19:22.1800000-08:00" PatchingType="Express"/>
+      <upd:File Digest="i28xKd7kMtWate8J2Uya/BPqgJQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB885835-x86-ITA.exe" Size="3111144" Modified="2004-12-13T15:19:24.1800000-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="ZqJN8epVFlZJz14srT6Etzy/b28=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB885835-x86-ITA.psf" Size="58490608" Modified="2004-12-13T15:19:52.6970000-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

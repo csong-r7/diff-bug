@@ -1,0 +1,81 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9710c1cb-9434-4bf2-9cb7-36a2a0bcfa81" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-12-02T23:02:59.742Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="857840" MinDownloadSize="505448">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\dnsapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7280"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\dnsapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\msafd.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7158"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\msafd.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\AFD.SYS" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7204"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\AFD.SYS"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\tcpip.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7162"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\tcpip.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\dnsrslvr.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7280"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\dnsrslvr.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mswsock.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7158"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mswsock.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="t9kP2+gJMGsy1nR+KYjD3KsHuMY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB951748-V2-x86-KOR.EXE" Size="857840" Modified="2009-11-18T16:17:55.763" PatchingType="SelfContained"/>
+      <upd:File Digest="0q0YlGp93Lr5tK9bib+sIBHiX5c=" DigestAlgorithm="SHA1" FileName="Windows2000-KB951748-V2-x86-Express-KOR.EXE" Size="493928" Modified="2009-11-18T16:17:56.5" PatchingType="Express"/>
+      <upd:File Digest="jL+95/A1uKLhxwjh/8pnikD5APg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB951748-V2-x86-KOR.psf" Size="1745263" Modified="2009-11-18T16:17:57.843" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

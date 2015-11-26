@@ -1,0 +1,59 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d57fb20f-48be-4426-ab70-fa1481454cfb" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedHardDiskSpace="6200" PublicationState="Published" CreationDate="2012-04-05T02:26:52.446Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="39795568" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>VSTS-RUS-IDE</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="dc9c82cd-d478-41a3-8e3f-abceb0cd67ec"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a6351685-5f61-4a24-897d-b23512ae27c6"/>
+          <upd:UpdateIdentity UpdateID="5e6b73a4-b06e-4845-af09-f695bb47dd47"/>
+          <upd:UpdateIdentity UpdateID="a1104092-a142-417e-a099-bedd5c5791e5"/>
+          <upd:UpdateIdentity UpdateID="69655950-ab30-40fe-84d4-08301d04702f"/>
+          <upd:UpdateIdentity UpdateID="aa707881-b406-4186-95d3-5b163e963ef7"/>
+          <upd:UpdateIdentity UpdateID="01047472-8be3-4b94-af79-e98af69d68aa"/>
+          <upd:UpdateIdentity UpdateID="cc568a69-8e82-42b9-8e23-8bd30305d547"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="a0dd7e72-90ec-41e3-b370-c86a245cd44f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <mar:MsiProductInstalled ProductCode="{d1d2308e-b8e4-41fa-89ac-82f65b9a255a}"/>
+          <lar:Not>
+            <mar:MsiProductInstalled ProductCode="{2718BEB4-8D7A-45E1-819A-8ECD23F7A6C7}"/>
+          </lar:Not>
+          <mar:MsiPatchInstalledForProduct PatchCode="{8093FFBD-B2BF-4C60-839C-0E0D7C96155B}" ProductCode="{2718BEB4-8D7A-45E1-819A-8ECD23F7A6C7}"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="etc0yAWRPyR9O6VuV6e50vscXcQ=" DigestAlgorithm="SHA1" FileName="VS80sp1-KB928425-X86-RUS.exe" Size="39795568" Modified="2007-01-26T23:26:42.867Z">
+        <upd:AdditionalDigest Algorithm="SHA256">Au2iFzj/iKQwZqMT92QVvnJfqQ8s2gIIdN++EekWryk=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q" Program="VS80sp1-KB928425-X86-RUS.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="3debc5d1-c5aa-4672-a958-a7ce7e605ff4" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-05-10T08:02:10.679Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1170936" MinDownloadSize="492240">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>el</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary el</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8eb8b3af-c51f-4759-8347-46daa955ff08"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\webvw.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.7036"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\webvw.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="QKsT/MOMGmvF4Q9O7WVrjtsN+J8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB894320-x86-ELL.EXE" Size="1170936" Modified="2005-05-09T15:51:08.2930000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="Qfd2Li35dwIw4J3RoDqnx4SpRPg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB894320-x86-ELL.psf" Size="710894" Modified="2005-05-09T15:51:08.8570000-07:00" PatchingType="Express"/>
+      <upd:File Digest="6u5FpEhqgf3OvneD3WIO88b1XeQ=" DigestAlgorithm="SHA1" FileName="Windows2000-KB894320-x86-Express-ELL.EXE" Size="490728" Modified="2005-05-09T15:51:09.3870000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

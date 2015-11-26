@@ -1,0 +1,128 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="d28f8a00-5615-44eb-a1a9-dfd975d2cd3b" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-06-03T19:46:02.617Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="393937" MinDownloadSize="0">
+      <upd:InstallationBehavior/>
+      <upd:UninstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Internet Explorer 8 SRB Language Pack</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="5dc511c3-867e-47ae-a47e-39e722739763"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d"/>
+        <upd:UpdateIdentity UpdateID="5c322b6e-2623-45a4-b11d-2092b314eb44"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Control\MUI\UILanguages\sr-Cyrl-CS" Value="LCID" Comparison="EqualTo" Data="3098"/>
+          <lar:Not>
+            <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Microsoft-Windows-InternetExplorer-8-Package~31bf3856ad364e35~x86~~8.0.6001.18702"/>
+          </lar:Not>
+          <lar:Or>
+            <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6001"/>
+            <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6002"/>
+            <lar:And>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB937287~31bf3856ad364e35~x86~~6.0.1.18000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_1_for_KB949939~31bf3856ad364e35~x86~~6.0.1.0"/>
+            </lar:And>
+            <lar:And>
+              <bar:WindowsVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Comparison="EqualTo" MajorVersion="6" MinorVersion="0" BuildNumber="6000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_for_KB937287~31bf3856ad364e35~x86~~6.0.0.18000"/>
+              <cbsar:CbsPackageInstalledByIdentity xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" PackageIdentity="Package_1_for_KB949939~31bf3856ad364e35~x86~~6.0.1.0"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" company="Microsoft Corporation" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved." description="Internet Explorer 8 LIP Pack" displayName="Internet Explorer 8 sr-Cyrl-CS LIP Pack" manifestVersion="1.0" supportInformation="http://go.microsoft.com/fwlink/?LinkId=133041">
+            <assemblyIdentity buildType="release" language="sr-Cyrl-CS" name="Microsoft-Windows-InternetExplorer-8-LIPPack" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702"/>
+            <package identifier="KB944036" releaseType="Update" restart="possible">
+              <parent>
+                <assemblyIdentity buildType="release" language="neutral" name="Microsoft-Windows-InternetExplorer-8-Package" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702"/>
+              </parent>
+              <update name="Internet-Explorer-8-x86" description="Internet Explorer 8" displayName="Internet Explorer 8">
+                <applicable disposition="staged">
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-ieframe.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-AdminKitBranding.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Behaviors.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ClientNetworkProtocolImplementation.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ExtensionManager.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLApplication.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLEditingSupport.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-HTMLRendering.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetControlPanel.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-InternetExplorer.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-ObjectControlViewer.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-OfflineFavorites.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-PluggableHandlersAndSecurityZones.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Ratings.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                  <updateComponent elevate="install">
+                    <assemblyIdentity name="Microsoft-Windows-IE-Setup-Support.Resources" version="8.0.6001.18702" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="sr-Cyrl-CS" buildType="release" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity buildType="release" language="sr-Cyrl-CS" name="Microsoft-Windows-InternetExplorer-8-Deployment-LIPPack" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" version="8.0.6001.18702" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="fJOtSEoqiLh71sncGC9ZRC0c48g=" DigestAlgorithm="SHA1" FileName="KB944036.cab" Size="393937" Modified="2009-05-01T21:49:31" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

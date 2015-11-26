@@ -1,0 +1,70 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="439afe0e-6dea-4467-a074-b2feedb49725" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-10-04T05:56:19.635Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="689680" MinDownloadSize="297986">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\netapi32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6260"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\netapi32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\browser.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6260"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\browser.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\netapi32.dll"/>
+            <bar:FileExists Csidl="37" Path="\browser.dll"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\netapi32.dll"/>
+          <bar:FileExists Csidl="37" Path="\browser.dll"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="vrzbArGvo14DvuFAoj2pgf2fUhs=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2705219-v2-x86-jpn.exe" Size="689680" Modified="2012-09-25T23:40:22.197Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">PPsIWa89sOZHSURjmcyXiewnTPFj/+VmCbXxVy03mx4=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="QrfaNniA7UoV+xecltKrv0+maqQ=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2705219-v2-x86-express-jpn.cab" Size="255879" Modified="2012-09-25T23:40:22.573Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">UH3E51jXvk5wisDGplLgodKGYf4wPUzxtTKASYiWSpA=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="eb5RddLA0MpKPIMtWp6MeAKYzzQ=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2705219-v2-x86-jpn.psf" Size="708323" Modified="2012-09-25T23:40:23.163Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">b3rTa2AaJ+7fJpQZtB5fEpcF389jcv811j/8anDAMbA=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

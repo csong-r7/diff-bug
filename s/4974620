@@ -1,0 +1,49 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="194d5e94-ead2-4483-8660-3c49a31c6a00" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" RecommendedCpuSpeed="500" RecommendedMemory="2048" RecommendedHardDiskSpace="100" PublicationState="Published" CreationDate="2012-04-05T04:21:48.626Z" PublisherID="700ef90e-915e-f91f-fd7b-150fd21c9d88" MaxDownloadSize="92171243" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>KOR x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3811ec41-e21e-441c-9945-9f474b8fe1fc"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="e9ece729-676d-4b57-b4d1-7e0ab0589707"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiApplicationInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <!--Excel 2010 exists-->
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Office\14.0\Excel\InstallRoot" Value="Path" Type="REG_SZ" RegType32="true"/>
+          <mar:MsiProductInstalled ProductCode="{DEB870D6-6A52-4D98-B3B6-2771B5CDF40B}" VersionMax="10.50.1600.1" VersionMin="10.50.1600.1" Language="1042"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiApplicationMetadata>
+          <mar:ProductCode Version="10.51.2500.0">{04a1081b-f96d-4509-8e47-72a4b3722da7}</mar:ProductCode>
+        </mar:MsiApplicationMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="5F3zx3XW/m0jiIoPtj8x5+nDWF4=" DigestAlgorithm="SHA1" FileName="PowerPivot_for_Excel_x86.cab" Size="92171243" Modified="2012-01-16T14:23:35.41Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">0DpkE3us9tWmZsMxE2A7FbSBJhB87n1Kl9D85fZ8Aik=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstallerApp">
+      <msp:MsiData ProductCode="{04a1081b-f96d-4509-8e47-72a4b3722da7}" MsiFile="PowerPivot_for_Excel_x86.msi" CommandLine="IACCEPTLICENSETERMS=YES"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

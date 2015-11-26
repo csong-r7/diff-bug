@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4028c8ce-b990-4656-99eb-deb8e30b1c4f" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2008-08-06T21:02:14.570Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="578272" MinDownloadSize="493304">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\es.dll" Comparison="GreaterThanOrEqualTo" Version="2000.2.3550.0"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\es.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="b72aRn1QbO2CxSw8rz7M6s8beyM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB950974-x86-ENU.EXE" Size="578272" Modified="2008-07-23T05:21:44.47" PatchingType="SelfContained"/>
+      <upd:File Digest="nXsbDif3caUQCI8hMz7A7gmuggo=" DigestAlgorithm="SHA1" FileName="Windows2000-KB950974-x86-ENU.psf" Size="628780" Modified="2008-07-23T05:21:44.97" PatchingType="Express"/>
+      <upd:File Digest="6159FSuSEIDq2/bAvV3Ei89ODwg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB950974-x86-Express-ENU.EXE" Size="493096" Modified="2008-07-23T05:21:45.347" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

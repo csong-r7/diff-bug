@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7CA2AA16-D452-4A35-8320-E1F0C468ECE3" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-10-21T18:33:24.470Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="254224" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>el</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update (326886)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="929120EA-7433-4D15-B32B-FCD95D20E8A3"/>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="8EB8B3AF-C51F-4759-8347-46DAA955FF08"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3B4B8621-726E-43A6-B43B-37D07EC7019F"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="Windows 2000 Hotfix (Pre-SP4) [See Q326886 for more information]" Value="Comments" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q326886"/>
+          <bar:WUv4RegKeyValue Data="1" Value="Installed" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q326886"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:WUv4RegKeyValue Data="2195" Value="CurrentBuildNumber" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion"/>
+          <lar:Or>
+            <bar:WUv4RegKeyValue Data="256" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            <bar:WUv4RegKeyValue Data="512" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+            <bar:WUv4RegKeyValue Data="768" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Or>
+          <lar:Not>
+            <bar:WUv4RegKeyValue Data="1024" Value="CSDVersion" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ZBBpxE+xpxicEsuL8ohXnqXmmRU=" DigestAlgorithm="SHA1" FileName="Q326886_w2k_sp4_el.exe" Size="254224" Modified="2003-07-17T12:01:17.3515625-07:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="-q /Z" Program="Q326886_w2k_sp4_el.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

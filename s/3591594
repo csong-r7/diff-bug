@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b292f518-b36e-421e-acb7-84e0defc9bf1" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-04T21:01:57.821Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="598912" MinDownloadSize="522875">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>it</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary it</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="c31c34cf-df02-4b8e-b88d-a76ca2e2aebb"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="be2c4060-3808-4e4a-bf54-ca20404ceb46"/>
+          <upd:UpdateIdentity UpdateID="d7b3edf7-11a3-4977-a0a8-5e560f075df2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\kdcsvc.dll" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4628"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\kdcsvc.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\NTDS"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\NTDS"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="aar8nznDY41K8ZY6yFR17oWisWM=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB977290-x86-ITA.exe" Size="598912" Modified="2010-01-13T22:17:48.793" PatchingType="SelfContained"/>
+      <upd:File Digest="ryYDuIoghCwaLTM2+N8BFp9WJBo=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB977290-x86-express-ITA.exe" Size="498048" Modified="2010-01-13T22:17:49.26" PatchingType="Express"/>
+      <upd:File Digest="4j0X0uocrbULBuEFg6+Jnqd8Sn8=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB977290-x86-ITA.psf" Size="901156" Modified="2010-01-13T22:17:49.823" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

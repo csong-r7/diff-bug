@@ -1,0 +1,78 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="347901d5-db8f-4895-9f55-33cffe50657f" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-12-03T17:59:32.583Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="885496" MinDownloadSize="580210">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\Microsoft Shared\TextConv\msconv97.dll" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8165.0"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\Microsoft Shared\TextConv\msconv97.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\mswrd6.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+          <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\mswrd8.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+          <bar:FileVersion Csidl="38" Path="\Windows NT\Accessories\write.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="43" Path="\Microsoft Shared\TextConv\html32.cnv" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8166.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="43" Path="\Microsoft Shared\TextConv\html32.cnv"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="43" Path="\Microsoft Shared\TextConv\mswrd632.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+              <lar:Not>
+                <bar:FileExists Csidl="43" Path="\Microsoft Shared\TextConv\mswrd632.wpc"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="43" Path="\Microsoft Shared\TextConv\mswrd832.cnv" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8313.0"/>
+              <lar:Not>
+                <bar:FileExists Csidl="43" Path="\Microsoft Shared\TextConv\mswrd832.cnv"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="43" Path="\Microsoft Shared\TextConv\write32.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+              <lar:Not>
+                <bar:FileExists Csidl="43" Path="\Microsoft Shared\TextConv\write32.wpc"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="miHXQtoiZS4pJy8OSpR/3usQgYI=" DigestAlgorithm="SHA1" FileName="Windows2000-KB973904-x86-KOR.EXE" Size="885496" Modified="2009-11-25T09:32:52.11" PatchingType="SelfContained"/>
+      <upd:File Digest="TwmcKDNTPk8YTyHcztRKCULJCKA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB973904-x86-Express-KOR.EXE" Size="493432" Modified="2009-11-25T09:32:52.393" PatchingType="Express"/>
+      <upd:File Digest="QsUVgw4nXQF1oJjNawjgT0dTsGA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB973904-x86-KOR.psf" Size="1210748" Modified="2009-11-25T09:32:53.003" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

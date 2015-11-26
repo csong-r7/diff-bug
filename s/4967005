@@ -1,0 +1,44 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9dda2b73-6e2c-4aee-aa32-3b97cb380659" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-04-04T22:33:31.554Z" PublisherID="df1d1c6e-04c7-4008-8ef0-68425f93d12a" MaxDownloadSize="2538376" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>ENU Non-Clustered</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8659973c-8ef9-4260-a659-cd9c5979d2ac"/>
+        <upd:UpdateIdentity UpdateID="6c8fbf16-aa21-4f76-803f-f17a67cc010a"/>
+        <upd:UpdateIdentity UpdateID="42fc76c2-c51e-4907-8a26-1272ca1a1615"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="83a83e29-7d55-44a0-afed-aea164bc35e6"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Updates\Exchange Server 2000\SP4\KB976703" Value="PackageVersion" Comparison="EqualTo" Data="1"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Not>
+          <bar:ClusteredOS/>
+        </lar:Not>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="bVYb4222N4JSjpRX8tJG0ezyL34=" DigestAlgorithm="SHA1" FileName="Exchange2000-KB976703-x86-ENU.exe" Size="2538376" Modified="2010-03-30T20:39:12.317Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">eVjP4teTLlJ9L3mB+cvXO2aWGtPIAqY2y1VOG6KsqDY=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="/norestart /quiet"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

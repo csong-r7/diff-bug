@@ -1,0 +1,49 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f19516ee-258b-4862-a960-62cb1f8d74ee" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-04-05T02:35:46.234Z" PublisherID="3a4af7d4-087e-48b9-b5e3-1cb26d43995b" MaxDownloadSize="1147808" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>VS 2005 RTM STD x86 ENG</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5eee054c-9420-456a-bcb7-775c5f33bf96"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="f61ce0bd-ba78-4399-bb1c-098da328f2cc"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\9DE697F1BCD4F6449970E79BC8817497" Value="0EEDF7F0258333042A16F38A4BEC64C6" Type="REG_SZ"/>
+          <bar:FileVersionPrependRegSz Path="vssrvc.exe" Comparison="GreaterThanOrEqualTo" Version="1.1.465.15" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\9DE697F1BCD4F6449970E79BC8817497" Value="0EEDF7F0258333042A16F38A4BEC64C6"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\9DE697F1BCD4F6449970E79BC8817497" Value="0EEDF7F0258333042A16F38A4BEC64C6" Type="REG_SZ"/>
+          <bar:FileVersionPrependRegSz Path="vssrvc.exe" Comparison="LessThanOrEqualTo" Version="1.1.465.14" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\9DE697F1BCD4F6449970E79BC8817497" Value="0EEDF7F0258333042A16F38A4BEC64C6"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="FbTZF+UcVaZySl/pBrS+kEHwv54=" DigestAlgorithm="SHA1" FileName="VS2005-STD-KB937986.exe" Size="1147808" Modified="2007-11-08T00:59:18.393Z">
+        <upd:AdditionalDigest Algorithm="SHA256">7UAJJ/Sdl4WDb1Kb3E7bC1xI+7koHhFjdz3Rb8Ce418=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q:a" Program="VS2005-STD-KB937986.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,107 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fe72ad53-da2e-4911-a409-9851ada731c2" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2009-01-09T00:00:17.646Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>951748 filter - block Zone Alarm users</upd:Title>
+        <upd:Description>This detectoid is to block users that have specific versions of Zone Alarm from receiving 941748 DNS Client Update.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:Not>
+            <lar:Or>
+              <lar:And>
+                <lar:Or>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Comparison="EqualTo" Data="5"/>
+                  <lar:Not>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Type="REG_DWORD"/>
+                  </lar:Not>
+                </lar:Or>
+                <lar:And>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="6.5.645.000"/>
+                  <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.482.000"/>
+                </lar:And>
+              </lar:And>
+              <lar:And>
+                <lar:And>
+                  <lar:Not>
+                    <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Comparison="EqualTo" Data="5"/>
+                  </lar:Not>
+                  <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="IntegrityMode" Type="REG_DWORD"/>
+                </lar:And>
+                <lar:Or>
+                  <lar:And>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="6.5.645.000"/>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.843.006"/>
+                  </lar:And>
+                  <lar:And>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="GreaterThanOrEqualTo" Data="7.0.844.000"/>
+                    <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Zone Labs\ZoneAlarm" Value="CurrentVersion" Comparison="LessThanOrEqualTo" Data="7.0.865.000"/>
+                  </lar:And>
+                </lar:Or>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+          <lar:Or>
+            <lar:And>
+              <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5" MinorVersion="0" BuildNumber="2195"/>
+              <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7204"/>
+            </lar:And>
+            <lar:And>
+              <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5" MinorVersion="1" BuildNumber="2600"/>
+              <lar:Or>
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1951"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.3463"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="768"/>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.5695"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+            <lar:And>
+              <bar:WindowsVersion Comparison="EqualTo" MajorVersion="5" MinorVersion="2" BuildNumber="3790"/>
+              <lar:Or>
+                <lar:And>
+                  <lar:Not>
+                    <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Type="REG_DWORD"/>
+                  </lar:Not>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.826"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.3229"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+                  <bar:FileVersion Csidl="37" Path="\drivers\afd.sys" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.4392"/>
+                </lar:And>
+              </lar:Or>
+            </lar:And>
+          </lar:Or>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

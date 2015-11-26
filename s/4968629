@@ -1,0 +1,64 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6430e9d1-a459-4278-baed-6745c460594d" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T01:10:40.228Z" PublisherID="4f18dc97-f61b-47c4-b9ac-2b83f7ac6214" MaxDownloadSize="5189747" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>de</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>DEU</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16bbef09-2963-42f3-927d-8ea7e5816b4a"/>
+        <upd:UpdateIdentity UpdateID="269444e4-9b18-455d-8b68-9e08df5a159d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2cdbfa44-e2cb-4455-b334-fce74ded8eda"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:FileVersionPrependRegSz Path="\wspsrv.exe" Comparison="LessThan" Version="5.0.5721.263" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory"/>
+          <bar:FileExistsPrependRegSz Path="\wspsrv.exe" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Fpc" Value="InstallDirectory"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{40182F92-BCDA-4AE6-B80C-C490AF767571}" MinMsiVersion="3">
+            <TargetProduct MinMsiVersion="200">
+              <TargetProductCode Validate="true">{DD4CEE59-5192-4CE1-8AFA-1CFA8EB37209}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">5.0.5721</TargetVersion>
+              <TargetLanguage Validate="true">1031</TargetLanguage>
+              <UpdatedLanguages>1031</UpdatedLanguages>
+              <UpgradeCode Validate="true">{5511D21C-DE76-471F-B405-A59952F00E85}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{DD4CEE59-5192-4CE1-8AFA-1CFA8EB37209}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>DD4CEE5951924CE18AFA1CFA8EB37209</PatchFamily>
+              <Sequence>0.5721.18950.55238</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="rZ4HWPJEOlgPs0cIFsv+QCxK4qA=" DigestAlgorithm="SHA1" FileName="ISA2006-Supp-KB970811-X86-deu.cab" Size="5189747" Modified="2009-07-07T10:28:21.31Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Z1oyAxhjhpOGZmirDcr2c5A3nANiMZK9sc7zuvvnulE=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{40182f92-bcda-4ae6-b80c-c490af767571}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

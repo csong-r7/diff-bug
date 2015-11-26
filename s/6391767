@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f4b64cfb-99f7-450a-adb5-61c894554922" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-12-06T11:06:48.960Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="677920" MinDownloadSize="277665">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\dpnet.dll" Comparison="GreaterThanOrEqualTo" Version="5.3.2600.6311"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\dpnet.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\dpnet.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\dpnet.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="h7rWVTWIViDaXO4UV5oO5CX+D9E=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2770660-x86-rus.exe" Size="677920" Modified="2012-11-19T21:45:11.22Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">hplmY0uvHtz/fT/SVNF3rrJLTiuzXJ4q0eUuG25sZS4=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="lhTUIOpQMrGZHD+Woi+q921gjv8=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2770660-x86-express-rus.cab" Size="255901" Modified="2012-11-19T21:45:11.533Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">Ql/RrGd5W+jLyBLZwjRUqIkhVjxJQT1AxNpcfENBWPw=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="LHSSOVpcBi5kIpXSXP9hOcrvjHU=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2770660-x86-rus.psf" Size="399616" Modified="2012-11-19T21:45:11.923Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">0q+G/6nIzd88ioOVs2O0w+i8Wtx/Xtw1rAdSCf+AnH0=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

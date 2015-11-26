@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="af05842b-d0c1-475c-8a07-7da64821ebaf" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2012-04-05T02:37:16.575Z" PublisherID="3cd72817-9ef2-4c5a-9bac-3c245085f03a" MaxDownloadSize="5255165" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Update package for Office Communications Server 2007 R2, Communicator Web Access: (KB 975614)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="63a482b2-76ec-48bc-9210-7dd30f7bd0d9"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="22bf57a8-4fe1-425f-bdaa-32b4f655284b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <mar:MsiPatchInstallable/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{1233E00F-96CA-49F3-9D69-4299668F6DB7}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.37"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Real-Time Communications\{902F4F35-D5DC-4363-8671-D5EF0D26C21D}" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.6907.196"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata>
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{DD62102D-3AAB-4716-9BEF-8C0D6CA716E1}" MinMsiVersion="4">
+            <TargetProduct MinMsiVersion="300">
+              <TargetProductCode Validate="false">{171F0022-3F41-4C65-8F3B-698F545C957B}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">3.5.6907.0</TargetVersion>
+              <UpdatedVersion>3.5.6907.196</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="true">{EDB490C0-6F97-4A58-86C2-4AE3162DF5B4}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{171F0022-3F41-4C65-8F3B-698F545C957B}</TargetProductCode>
+            <SequenceData>
+              <PatchFamily>cwamain</PatchFamily>
+              <Sequence>1.0.196.0</Sequence>
+              <Attributes>0</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="0yDizUUfMNVz7it4dP/+eTav6Gc=" DigestAlgorithm="SHA1" FileName="OCS2007R2-KB975614-amd64-Cwamain.cab" Size="5255165" Modified="2010-04-20T17:10:30.283Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">z8RC/jamnuvzUjlahRQDAjfHLoo9nubmqT+FUmyl2QU=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="msp:WindowsInstaller">
+      <msp:MspData FullFilePatchCode="{dd62102d-3aab-4716-9bef-8c0d6ca716e1}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="75805b7d-f21c-479d-abbc-dbe2214381f4" RevisionNumber="201"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" MaxDownloadSize="665240" MinDownloadSize="270489" PublicationState="Published" CreationDate="2013-10-07T23:49:50.642Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fi</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>windowsxp-kb2847311-x86-fin</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="cca37ce0-6151-428e-9aa8-006ff23c2b8d"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\atmfd.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2.236"/>
+            <lar:Not>
+              <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\atmfd.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\atmfd.dll"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="37" Path="\atmfd.dll"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="0YOkKWTiGS1gsd44RI/uGQGeT7U=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2847311-x86-fin.exe" Size="665240" Modified="2013-09-17T17:12:49Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">vwmUpbmn7y4Lt5NVthkR0RKV27Mkff6DcqgAs4jPfZI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="hWdaTIq9FHiPFWYtGdjvooHrgPw=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2847311-x86-express-fin.cab" Size="256071" Modified="2013-09-17T17:12:49Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">fmNx/uulgWDd0MiF6DLiVhfPHLIBZy+gD+52u84hlV8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="4RrmNyU90Kzv/KJr2dqYfN3T09g=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2847311-x86-fin.psf" Size="399723" Modified="2013-09-17T17:12:50Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">MLFwUNGqsCMLE8i6ZYAn85Vz8x0+Zk5jijbNL4LFE2Q=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

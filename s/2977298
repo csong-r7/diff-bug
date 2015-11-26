@@ -1,0 +1,34 @@
+
+
+  <upd:Update xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="598909f8-e1a4-4c08-bb76-624ba2cb48c7" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="Service Pack" PublicationState="Published" CreationDate="2009-08-27T03:57:40.370Z" PublisherID="6736ae6a-2e17-4c6f-9fbc-289ac22be240"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>HPC v2 Build Range: RTM without HA</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="5964c9f1-8e72-4891-a03a-2aed1c4115d2"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <mar:MsiProductInstalled ProductCode="{21ce1d35-ab84-46fe-b2fd-b57271be7b93}" VersionMax="2.1.1703.0" ExcludeVersionMax="true" VersionMin="2.0.1551.0"/>
+            <mar:MsiProductInstalled ProductCode="{3eec9986-ede0-4ee2-acfb-a3cd78a16f6d}" VersionMax="2.1.1703.0" ExcludeVersionMax="true" VersionMin="2.0.1551.0"/>
+          </lar:Or>
+          <lar:Not>
+            <mar:MsiComponentInstalledForProduct AllComponentsRequired="true">
+              <mar:Component>{42BF513C-2351-4DD4-9036-6D40F13F715B}</mar:Component>
+              <mar:Product>{21CE1D35-AB84-46fe-B2FD-B57271BE7B93}</mar:Product>
+            </mar:MsiComponentInstalledForProduct>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

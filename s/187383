@@ -1,0 +1,53 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c404af59-c2de-41ed-91b2-8ca3fd7b0d69" RevisionNumber="10"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-08T20:41:09.237Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1148920" MinDownloadSize="353074">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pl</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="362b580c-ef1b-44ed-9ba4-a5d5440ad788"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\sp3res.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7004"/>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\SHELL32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.7009"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\SHELL32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9pijjj8sfB1LDoOkP84Oy9mU9mU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890047-x86-Express-PLK.EXE" Size="342248" Modified="2005-02-07T15:53:16.2104346-08:00" PatchingType="Express"/>
+      <upd:File Digest="6oKOKUzV4OUE3MMXw7DzLFmyGV0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890047-x86-PLK.EXE" Size="1148920" Modified="2005-02-07T15:53:17.5229094-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="1LQ5gyvrT7xnXv8WOBt5UcYedTw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890047-x86-PLK.psf" Size="1801964" Modified="2005-02-07T15:53:18.8041348-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

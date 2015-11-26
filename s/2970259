@@ -1,0 +1,365 @@
+
+
+  <upd:Update xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="e8f24f67-3bb6-4ab2-835b-80322c683aae" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2009-08-20T20:14:16.844Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="135009" MinDownloadSize="135009">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="03be6df6-1320-4fc2-ba74-de7d5e3191bc"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="59653007-E2E9-4f71-8525-2FF588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <cbsar:CbsPackageInstallable/>
+          <lar:Or>
+            <bar:LicenseDword Value="Kernel-ProductInfo" Comparison="EqualTo" Data="1"/>
+            <bar:LicenseDword Value="Kernel-ProductInfo" Comparison="EqualTo" Data="3"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-13_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:08Z" lastUpdateTimeStamp="2009-07-22T18:20:08Z">
+            <assemblyIdentity name="Package_1_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6001.22476" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5e28a65c1adfc6927733a3ddda9103b5" version="6.0.6001.22476" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:19:58Z" lastUpdateTimeStamp="2009-07-22T18:19:58Z">
+            <assemblyIdentity name="Package_1_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6001.22476" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5e28a65c1adfc6927733a3ddda9103b5" version="6.0.6001.22476" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="973768-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6001.18295" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="d7f4c58530224590bbf4497447171c5b" version="6.0.6001.18295" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_2_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6002.22181" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="703d0e5d28799419cb2db1cfa8ef6d24" version="6.0.6002.22181" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_2_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6002.22181" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="703d0e5d28799419cb2db1cfa8ef6d24" version="6.0.6002.22181" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="973768-5_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6002.18072" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e931c298ce7f764ac904a72476fc99b0" version="6.0.6002.18072" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_3_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6000.21090" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6921bd51c7aa74062b26b1ab4e4924d1" version="6.0.6000.21090" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_3_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6000.21090" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6921bd51c7aa74062b26b1ab4e4924d1" version="6.0.6000.21090" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="973768-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-ehome-ehkeyctl" version="6.0.6000.16891" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="478f82fafac3f5392fabc3d7e18b808e" version="6.0.6000.16891" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_for_KB973768_client_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_for_KB973768_client_0" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_for_KB973768_client_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-2_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_for_KB973768_client_1" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_for_KB973768_client_2_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-4_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_for_KB973768_client_2" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB973768" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_for_KB973768_client_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-7_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_1_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="973768-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_2_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="973768-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_0_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:00Z" lastUpdateTimeStamp="2009-07-22T18:20:00Z">
+            <assemblyIdentity name="Package_for_KB973768_client" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_1" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="973768-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_2" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="973768-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_0" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB973768" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=973768" creationTimeStamp="2009-07-22T18:20:09Z" lastUpdateTimeStamp="2009-07-22T18:20:09Z">
+            <assemblyIdentity name="Package_for_KB973768_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB973768_BF" applicabilityEvaluation="deep" releaseType="Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_45_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-MediaCenter-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="amd64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="973768-10_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB973768_client_BF" version="6.0.1.0" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8i0IFjHx4U1q1Mu0nVXKGvMQGNY=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB973768-x64.cab" Size="135009" Modified="2009-07-29T13:36:21" PatchingType="SelfContained"/>
+      <upd:File Digest="wdfnAr8jd7dt10W3jy9kZJ+mNUY=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB973768-x64-EXPRESS.cab" Size="39947" Modified="2009-07-29T13:36:22" PatchingType="Express"/>
+      <upd:File Digest="OUwCFGSQJa+HupNwUxYrWy79h9U=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB973768-x64.psf" Size="767391" Modified="2009-07-29T13:36:22" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

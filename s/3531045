@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c1641628-db42-4c0d-8332-027048651259" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-01-06T22:55:03.733Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="588528" MinDownloadSize="498705">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\fontsub.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7348"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\fontsub.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\t2embed.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7348"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\t2embed.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="40mGvk+d5FuZRC9HA5bioTpvz3s=" DigestAlgorithm="SHA1" FileName="Windows2000-KB972270-x86-HUN.EXE" Size="588528" Modified="2009-11-18T16:31:33.08" PatchingType="SelfContained"/>
+      <upd:File Digest="VOyKX1YXH+whGuQ483rr0sRpW2o=" DigestAlgorithm="SHA1" FileName="Windows2000-KB972270-x86-Express-HUN.EXE" Size="497512" Modified="2009-11-18T16:31:33.313" PatchingType="Express"/>
+      <upd:File Digest="cYgamzLU8K0cdpqj6M+mlWcBmb0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB972270-x86-HUN.psf" Size="363887" Modified="2009-11-18T16:31:33.58" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

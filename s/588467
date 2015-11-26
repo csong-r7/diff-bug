@@ -1,0 +1,57 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b7b1e0d5-eac0-4808-aeee-3538d4fef09b" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-07-04T19:58:26.677Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3562424" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CHT</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="925a2f73-b455-43f1-945b-05d7970ce96a"/>
+          <upd:UpdateIdentity UpdateID="fea8705e-78c8-4a1c-83b7-ac0c70cba6f4"/>
+          <upd:UpdateIdentity UpdateID="d2fe29ea-197b-44b0-ab45-a7d8be1d56f6"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+          <upd:UpdateIdentity UpdateID="4cb6ebd5-e38a-4826-9f76-1416a6f563b0"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Path="Microsoft.NET\Framework\v1.0.3705\System.Web.dll" Comparison="GreaterThanOrEqualTo" Version="1.0.3705.6060" Csidl="36"/>
+          <bar:FileExists Path="Microsoft.NET\Framework\v1.0.3705\System.Web.dll" Csidl="36"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:Or>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\TabletPC" Value="Installed" Comparison="EqualTo" Data="1"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\MediaCenter" Value="Installed" Comparison="EqualTo" Data="1"/>
+          </lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{FDC11A6F-17D1-48f9-9EA3-9051954BAA24}" Value="Version" Comparison="EqualTo" Data="1.0.3705.3"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="E7m23Yg2aSlxsOfAxs4wOlSobEE=" DigestAlgorithm="SHA1" FileName="NDP1.0sp3-KB930494-X86-Ocm-Cht.exe" Size="3562424" Modified="2007-06-29T15:04:56.667" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

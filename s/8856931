@@ -1,0 +1,84 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="95e0e190-4087-4592-9ea2-052e3166921e" RevisionNumber="203"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2013-08-13T01:57:15.316Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Not Nalpeiron</upd:Title>
+        <upd:Description>This detectoid is used to block the Nalpeion Users from being offered KB2770917, due to a known issue.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2ee2ad83-828c-4405-9479-544d767993fc"/>
+          <upd:UpdateIdentity UpdateID="a105a108-7c9b-4518-bbbe-73f0fe30012b"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:And>
+            <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="0"/>
+            <lar:Not>
+              <lar:Or>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\nlssrv32.exe" Csidl="37"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\nlssrv32.exe" Comparison="LessThanOrEqualTo" Version="6.3.9.0" Csidl="37"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\ASTsrv.exe" Csidl="37"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\ASTsrv.exe" Comparison="LessThan" Version="7.0.0.0" Csidl="37"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Nalserv.exe" Csidl="37"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Nalserv.exe" Comparison="LessThan" Version="6.10.0.0" Csidl="37"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+              </lar:Or>
+            </lar:Not>
+          </lar:And>
+          <lar:And>
+            <bar:Processor xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Architecture="9"/>
+            <lar:Not>
+              <lar:Or>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\nlssrv32.exe" Csidl="36"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\nlssrv32.exe" Comparison="LessThanOrEqualTo" Version="6.3.9.0" Csidl="36"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\ASTsrv.exe" Csidl="36"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\ASTsrv.exe" Comparison="LessThan" Version="7.0.0.0" Csidl="36"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+                <lar:And>
+                  <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\Nalserv.exe" Csidl="36"/>
+                  <lar:And>
+                    <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\SysWOW64\Nalserv.exe" Comparison="LessThan" Version="6.10.0.0" Csidl="36"/>
+                    <bar:FileModified xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Csidl="36" Modified="2012-12-15T19:43:17.0000000Z" Comparison="LessThan" Path="\apppatch\sysmain.sdb"/>
+                  </lar:And>
+                </lar:And>
+              </lar:Or>
+            </lar:Not>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

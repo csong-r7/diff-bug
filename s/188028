@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f1be86d9-4a81-41e2-a87f-7df75fa309da" RevisionNumber="11"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-17T02:49:02.732Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="523256" MinDownloadSize="352276">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>fi</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary fi</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="cca37ce0-6151-428e-9aa8-006ff23c2b8d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Path="\hypertrm.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7000" Csidl="37"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\hypertrm.dll"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="mKmSuFcKwfbkXGvIxZaEvtaQiYM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB873339-x86-Express-FIN.EXE" Size="339176" Modified="2004-12-13T16:49:21.3110362-08:00" PatchingType="Express"/>
+      <upd:File Digest="VdTCsnrq4wIwepBjv3nMTtTL8k4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB873339-x86-FIN.EXE" Size="523256" Modified="2004-12-13T16:49:21.8266513-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="EwnkQu2AISk3imHebPPXHSdOQyk=" DigestAlgorithm="SHA1" FileName="Windows2000-KB873339-x86-FIN.psf" Size="305388" Modified="2004-12-13T16:49:22.1547700-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

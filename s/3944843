@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="181811a4-54bd-4b11-a884-56c1bed280e6" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2010-06-14T23:10:00.218Z" PublisherID="7980a4e4-329e-4642-a0c7-08a9b99dcdaf"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>FEP2010: NIS Enabled Detectoid</upd:Title>
+        <upd:Description>This detectoid returns true if NIS is enabled on a machine that has the Torino client installed.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="018daff6-37ea-460c-938f-54b10cc01200"/>
+        <upd:UpdateIdentity UpdateID="a38c835c-2950-4e87-86cc-6911a52c34a3"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!-- NIS is supported by the AM product -->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\NIS"/>
+          <!-- NIS Service is installed -->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\services\NisSrv"/>
+          <!-- NIS Service is not disabled -->
+          <lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\services\NisSrv" Value="Start" Comparison="EqualTo" Data="4"/>
+          </lar:Not>
+          <!-- Must not be disabled in either user or policy
+          Can be set using both disable RTP and disable NIS registry key values
+          Disable from RTP overrides the enable option from NIS -->
+          <lar:Not>
+            <lar:Or>
+              <!-- Disabled in policy for RTP? -->
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              <!-- Disabled in policy for NIS? -->
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              <!-- Not disabled by the user for RTP? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <!-- Disabled in user store? -->
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Not disabled by the user for NIS? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Type="REG_DWORD"/>
+                </lar:Not>
+                <!-- Disabled in user store? -->
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

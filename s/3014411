@@ -1,0 +1,891 @@
+
+
+  <upd:Update xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2b5bdf2e-2e73-4b00-8be4-75c1c0bfed8b" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2009-09-04T04:40:53.860Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="897745" MinDownloadSize="897745">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <cbsar:CbsPackageInstallable/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\wlansvc" RegType32="true"/>
+          <bar:FileExists Path="\wlanapi.dll" Csidl="37"/>
+          <bar:FileExists Path="\wlanmsm.dll" Csidl="37"/>
+          <bar:FileExists Path="\wlansvc.dll" Csidl="37"/>
+          <bar:FileExists Path="\wlansec.dll" Csidl="37"/>
+          <bar:FileExists Path="\wlanhlp.dll" Csidl="37"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-36_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-37_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_10_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-18_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8efed37bb52f1f34c25db436dab8023b" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_10_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-27_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8efed37bb52f1f34c25db436dab8023b" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-28_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6000.16884" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="488872679d84a2bda932b56211cc93a4" version="6.0.6000.16884" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:44Z" lastUpdateTimeStamp="2009-07-13T15:07:44Z">
+            <assemblyIdentity name="Package_1_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b319c94e3af8d5176d0906c05ecc864e" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:33Z" lastUpdateTimeStamp="2009-07-13T15:07:33Z">
+            <assemblyIdentity name="Package_1_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b319c94e3af8d5176d0906c05ecc864e" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7f225cf8b4285a824711f7659b439791" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_2_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="19e0bba59318b51a245569a7cea5f2ef" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_2_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="19e0bba59318b51a245569a7cea5f2ef" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9770a3f2069049fe4f304533b8998a66" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_3_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-5_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="19e0bba59318b51a245569a7cea5f2ef" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_3_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="19e0bba59318b51a245569a7cea5f2ef" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-8_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="9770a3f2069049fe4f304533b8998a66" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_4_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b319c94e3af8d5176d0906c05ecc864e" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_4_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="b319c94e3af8d5176d0906c05ecc864e" version="6.0.6001.22468" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-10_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="7f225cf8b4285a824711f7659b439791" version="6.0.6001.18288" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_5_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f9103c5246e89439ff6cdcba5cab8d4b" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_5_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f9103c5246e89439ff6cdcba5cab8d4b" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bb5379fb432d0ac10234d122d95ff624" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_6_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e24efac872c74704a80370537dba1ea8" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_6_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e24efac872c74704a80370537dba1ea8" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-16_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c91d1bd31ceacd515f2b510557cecac3" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_7_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e24efac872c74704a80370537dba1ea8" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_7_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-19_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e24efac872c74704a80370537dba1ea8" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-20_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Layer2SecurityHelperClass" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c91d1bd31ceacd515f2b510557cecac3" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_8_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-14_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f9103c5246e89439ff6cdcba5cab8d4b" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_8_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-21_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="f9103c5246e89439ff6cdcba5cab8d4b" version="6.0.6002.22170" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-22_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="bb5379fb432d0ac10234d122d95ff624" version="6.0.6002.18064" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_9_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-17_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c67b0661fcd0e5217c21bdc8b92fc82b" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_9_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-25_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="c67b0661fcd0e5217c21bdc8b92fc82b" version="6.0.6000.21082" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="970710-26_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Wlansvc" version="6.0.6000.16884" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="dbf05e911397a1858488dada5b843352" version="6.0.6000.16884" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_client_0_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-19_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_9_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-20_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_10_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_client_0" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-29_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_9_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-30_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_10_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_client_1_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-4_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_client_1" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_client_2_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_client_2" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-17_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-18_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_client_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-21_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_1_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_2_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-25_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_0_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_client" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-31_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_1" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-33_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_2" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-35_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_0" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_server_0_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-7_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_server_0" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_server_1_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_7_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-16_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_8_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_server_1" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_7_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_8_for_KB970710" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_server_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-22_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server_0_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server_1_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:34Z" lastUpdateTimeStamp="2009-07-13T15:07:34Z">
+            <assemblyIdentity name="Package_for_KB970710_server" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-32_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server_0" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-34_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server_1" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB970710" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=970710" creationTimeStamp="2009-07-13T15:07:45Z" lastUpdateTimeStamp="2009-07-13T15:07:45Z">
+            <assemblyIdentity name="Package_for_KB970710_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB970710_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Package_30_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                <assemblyIdentity name="Package_20_for_KB936330" language="neutral" version="6.0.1.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" language="neutral" version="6.0.6000.16386" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-WirelessNetworking-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Package_16_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                <assemblyIdentity name="Package_206_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="970710-26_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_client_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="970710-27_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB970710_server_BF" version="6.0.1.1" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="dBhYG99fb0uRRrrBFylQMwTMRgo=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB970710-x86.cab" Size="897745" Modified="2009-08-19T19:53:22.27" PatchingType="SelfContained"/>
+      <upd:File Digest="uGpTXpIwL6cvHEH+/L7Qas0GUIs=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB970710-x86-EXPRESS.cab" Size="98048" Modified="2009-08-19T19:53:22.473" PatchingType="Express"/>
+      <upd:File Digest="lg/cpg7I1n7+83/3AiVYY/paoNE=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB970710-x86.psf" Size="8309112" Modified="2009-08-19T19:53:24.69" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cbs:Cbs">
+      <cbs:CbsData PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

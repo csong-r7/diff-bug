@@ -1,0 +1,61 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="79c00689-4610-4628-9e15-d739e7a47b1e" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-08-04T00:29:47.271Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="573416" MinDownloadSize="489098">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-cn</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-cn</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="30b6a809-9ba3-4c0f-9ca3-f569d01dab11"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\dnsapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7100"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\dnsapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\rasadhlp.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7098"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\rasadhlp.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\dnsrslvr.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7102"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\dnsrslvr.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="161Wj66EKVDYlJ/a/nO9ANV2lLs=" DigestAlgorithm="SHA1" FileName="Windows2000-KB920683-x86-CHS.EXE" Size="573416" Modified="2006-07-19T16:34:19.1700000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="TxPBJO2XXnNo05XefqfcA7U5Qdk=" DigestAlgorithm="SHA1" FileName="Windows2000-KB920683-x86-Express-CHS.EXE" Size="488752" Modified="2006-07-19T16:34:19.3900000-07:00" PatchingType="Express"/>
+      <upd:File Digest="YPiGUHWh0M6YkNcq60v/K+QDsM8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB920683-x86-CHS.psf" Size="490296" Modified="2006-07-19T16:34:19.7330000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

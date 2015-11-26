@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8c548eb5-01b4-4bda-8ffd-733d4feeb4e7" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-06-18T18:53:19.905Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1612144" MinDownloadSize="552349">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\mup.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7006"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\mup.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\NTKRNLPA.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\NTKRNLPA.EXE"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\NTOSKRNL.EXE" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7133"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\NTOSKRNL.EXE"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="v0C90WzvVQrERZGAopF9pYlV5Ds=" DigestAlgorithm="SHA1" FileName="Windows2000-KB931784-x86-Express-NOR.EXE" Size="499072" Modified="2007-03-30T15:53:37.563" PatchingType="Express"/>
+      <upd:File Digest="Z38bqkl+XuqrWQMMrglQCRNvSps=" DigestAlgorithm="SHA1" FileName="Windows2000-KB931784-x86-NOR.EXE" Size="1612144" Modified="2007-03-30T15:53:38.58" PatchingType="SelfContained"/>
+      <upd:File Digest="70vrptfPZKsoVydMcU4ASwwZjDU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB931784-x86-NOR.psf" Size="7843718" Modified="2007-03-30T15:53:42.907" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

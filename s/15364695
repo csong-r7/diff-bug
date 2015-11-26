@@ -1,0 +1,46 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="62ee4567-ad16-4f80-874d-2bd084ecee5f" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" MaxDownloadSize="2248872" MinDownloadSize="0" PublicationState="Published" CreationDate="2014-10-14T00:50:00.238Z" PublisherID="da2b4819-1efc-baf6-381b-8c682cf3f754">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>JA</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="40ec40d6-6513-45b8-ae3d-6ced21a8f8b4"/>
+        <upd:UpdateIdentity UpdateID="50bb1d21-f01a-451c-9b1f-6c41e3c43ee7"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="50bb1d21-f01a-451c-9b1f-6c41e3c43ee7"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Service Bus\1.1\Microsoft.ServiceBus.dll" Comparison="GreaterThanOrEqualTo" Version="2.1.40512.2" Csidl="38"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{f438c511-5a64-433e-97ec-5e5343da670a}" VersionMax="2.0.30904.0" VersionMin="2.0.30904.0"/>
+          <bar:WindowsLanguage xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Language="JA"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="SlH6ZHthbGmyMVQlvHGKwdICcI0=" DigestAlgorithm="SHA1" FileName="AppServer-KB2972621-x64-JA.exe" Size="2248872" Modified="2014-09-30T14:24:32Z">
+        <upd:AdditionalDigest Algorithm="SHA256">cb2QZHGRZhmSo28dQAhrNiO8k4Llw5QEZCbgKZRxKT8=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/quiet /branch LDR" Program="AppServer-KB2972621-x64-JA.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

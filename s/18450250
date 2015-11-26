@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6e0fb11c-b7ef-4d77-8329-9c19717de5ba" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="500" RecommendedMemory="128" RecommendedHardDiskSpace="25" MaxDownloadSize="13155552" MinDownloadSize="0" PublicationState="Published" CreationDate="2015-08-10T23:18:17.712Z" PublisherID="e19b4f1e-3b06-11dc-a787-966056d89593">
+      <upd:InstallationBehavior/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CoreRuntimex64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="bfe5b177-a086-47a0-b102-097e4fa1f807"/>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+          <upd:UpdateIdentity UpdateID="a105a108-7c9b-4518-bbbe-73f0fe30012b"/>
+          <upd:UpdateIdentity UpdateID="2ee2ad83-828c-4405-9479-544d767993fc"/>
+          <upd:UpdateIdentity UpdateID="6407468e-edc7-4ecd-8c32-521f64cee65e"/>
+          <upd:UpdateIdentity UpdateID="d31bd4c3-d872-41c9-a2e7-231f372588cb"/>
+          <upd:UpdateIdentity UpdateID="a3c2375d-0c8a-42f9-bce0-28333e198407"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="f11bb8aa-d277-480f-ba44-10f776ee203a"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="9f3dd20a-1004-470e-ba65-3dc62d982958"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{89f4137d-6c26-4a84-bdb8-2e5a4bb71e00}"/>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.1.40728.00" RegType32="true"/>
+          <lar:Not>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight\Components\Debugging" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{89f4137d-6c26-4a84-bdb8-2e5a4bb71e00}"/>
+          <lar:Or>
+            <lar:Not>
+              <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="EqualTo" Data="1.0.30109.0" RegType32="true"/>
+            </lar:Not>
+            <lar:Not>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="ActivationRequired" Comparison="EqualTo" Data="1" RegType32="true"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="LessThan" Data="5.1.40728.00" RegType32="true"/>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight" Value="Version" Comparison="GreaterThanOrEqualTo" Data="1.0.20816.0" RegType32="true"/>
+          <lar:Not>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Silverlight\Components\Debugging" RegType32="true"/>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="UZY3r1DMQIiJT1FGUJUUBgdQhtM=" DigestAlgorithm="SHA1" FileName="Silverlight_x64.exe" Size="13155552" Modified="2015-08-02T19:27:00Z">
+        <upd:AdditionalDigest Algorithm="SHA256">xvS36ToOgTZecsSGiXQI925Bx7eyZcL9AjdycMktZok=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q /ignorewarnings /enableAutomaticUpdates" Program="Silverlight_x64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="1508"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="1511"/>
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,124 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="a21f159c-6a47-45c4-ba48-f10849162ab8" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-11-18T08:33:21.409Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="597392" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady"/>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS"/>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\Fundamentals"/>
+            </lar:Or>
+            <lar:And>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\wmvcore.dll"/>
+              </lar:Not>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\wmnetmgr.dll"/>
+              </lar:Not>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3268"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="9.0.0.3286"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3358"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="9.0.0.4499"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.3703"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="10.0.0.3801"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.4066"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="10.0.0.4299"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.4362"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="10.0.0.4999"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5251"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThanOrEqualTo" Version="11.0.5721.9999"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\POSReady"/>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\WEPOS"/>
+              <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\WPA\Fundamentals"/>
+            </lar:Or>
+            <lar:And>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\wmvcore.dll"/>
+              </lar:Not>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\wmnetmgr.dll"/>
+              </lar:Not>
+            </lar:And>
+          </lar:And>
+          <lar:Or>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="9.0.0.2980"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="9.0.0.3268"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="9.0.0.3287"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="9.0.0.3358"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.3646"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="10.0.0.3703"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.3802"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="10.0.0.4066"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="10.0.0.4332"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="10.0.0.4362"/>
+            </lar:And>
+            <lar:And>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="GreaterThanOrEqualTo" Version="11.0.5721.5145"/>
+              <bar:FileVersion Csidl="37" Path="\logagent.exe" Comparison="LessThan" Version="11.0.5721.5251"/>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="beODR/cf+J1eoXQVDTzC37yH2ls=" DigestAlgorithm="SHA1" FileName="WindowsXP-SP2-WindowsMedia-KB972187-x86-HUN.exe" Size="597392" Modified="2009-11-17T15:40:27.143" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

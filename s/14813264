@@ -1,0 +1,86 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="9e682aaa-9547-43b8-8b74-c3183d1d8aaa" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2014-09-16T15:58:26.461Z" PublisherID="bccf8ca0-2819-4598-8d15-c1506e363e92"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>AMP: NIS Enabled Detectoid</upd:Title>
+        <upd:Description>This detectoid returns true if NIS is enabled on a machine that has the Torino client installed.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8c3fcc84-7410-4a95-8b89-a166a0190486"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <!-- NIS is supported by the AM product -->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\NIS"/>
+          <!-- NIS Service is installed -->
+          <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\services\WdNisSvc"/>
+          <!-- NIS Service is not disabled -->
+          <lar:Not>
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WdNisSvc" Value="Start" Comparison="EqualTo" Data="4"/>
+          </lar:Not>
+          <!-- Must not be disabled in either user or policy
+               Can be set using both disable RTP and disable NRI and BM registry key values
+               Disable from RTP overrides the enable option from NRI -->
+          <lar:Not>
+            <lar:Or>
+              <!-- Disabled in policy for RTP? -->
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              <!-- Disabled by the user for RTP? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableRealtimeMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <!-- Disabled in user store? -->
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\Real-Time Protection" Value="DisableRealtimeMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for NRI and BM? -->
+              <lar:And>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for BM / by the user for NRI? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled in policy for NRI / by the user for BM? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+              <!-- Disabled by the user for NRI and BM? -->
+              <lar:And>
+                <!-- Policy value exists? -->
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Type="REG_DWORD"/>
+                </lar:Not>
+                <lar:Not>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Type="REG_DWORD"/>
+                </lar:Not>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\Real-Time Protection" Value="DisableIntrusionPreventionSystem" Comparison="GreaterThanOrEqualTo" Data="1"/>
+                <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender\Real-Time Protection" Value="DisableBehaviorMonitoring" Comparison="GreaterThanOrEqualTo" Data="1"/>
+              </lar:And>
+            </lar:Or>
+          </lar:Not>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

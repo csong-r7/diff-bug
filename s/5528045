@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="1260e4a1-eedd-460f-9620-add88505cd1d" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-05-01T20:15:37.212Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3689344" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>CSY</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.1.4322\mscorwks.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.4322.2494" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.1.4322\mscorjit.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.4322.2494" Csidl="36"/>
+          <bar:FileVersion Path="\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll" Comparison="GreaterThanOrEqualTo" Version="1.1.4322.2494" Csidl="36"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{EA2F876F-0442-11D6-A550-0090278A1BB8}" Value="Version" Comparison="EqualTo" Data="1.1.4322.1"/>
+          <lar:And>
+            <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{EA2F876F-0442-11D6-A550-0090278A1BB8}"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Active Setup\Installed Components\{4CF07653-FE0F-11D4-A548-0090278A1BB8}" Value="Version" Comparison="EqualTo" Data="1.1.4322.1"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Vo4vFwSiCPZ7W1KxabU6SCa+qWM=" DigestAlgorithm="SHA1" FileName="WindowsServer2003-KB2604078-x86-CSY.exe" Size="3689344" Modified="2012-03-15T13:24:50.83Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">EF29aGafqKS/X8lgPVgpPyoS8teWANPS33vbC8Op2CQ=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

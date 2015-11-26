@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="CC7ED6BD-5B2B-4620-BCE9-8436EFA1529A" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2004-04-09T21:32:30.817Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3897088" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Cumulative Security Update for Outlook Express 6 Service Pack 1 64-bit Edition (KB837009)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="C5CAF853-4C76-47FA-93EC-E49B01DB32FD"/>
+        <upd:UpdateIdentity UpdateID="AABD43AD-A183-4f0b-8EEE-8DBBCD67687F"/>
+        <upd:UpdateIdentity UpdateID="D633BDC5-C56A-45DE-8519-A67FD1E87F29"/>
+        <upd:UpdateIdentity UpdateID="40EC40D6-6513-45B8-AE3D-6CED21A8F8B4"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558F4BC3-4827-49E1-ACCF-EA79FD72D4C9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:WUv4RegKeySubstring Data="Q837009" Value="MinorVersion" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings"/>
+          <bar:FileVersion Csidl="37" Path="\Inetcomm.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1409"/>
+          <bar:FileVersion Csidl="37" Path="\Inetres.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+          <bar:FileVersion Csidl="37" Path="\Msoeacct.dll" Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+          <bar:FileVersion Csidl="37" Path="\Msoert2.dll " Comparison="GreaterThanOrEqualTo" Version="6.0.2800.1123"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:WUv4RegKeyValue Data="6.0.2800.1106" Value="Version" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Internet Explorer"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Ta+9xN7tCi6bWj+0V0eidJ2VrhY=" DigestAlgorithm="SHA1" FileName="Q837009.exe" Size="3897088" Modified="2004-03-23T16:29:42.4151594-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="/q:a /r:n" Program="q837009.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

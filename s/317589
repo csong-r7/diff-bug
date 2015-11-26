@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="86ddbf99-78d2-4f91-be41-c3ab5df845d5" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-07-06T00:09:26.971Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="620008" MinDownloadSize="493082">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ja-nec</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ja-nec</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="a3475da7-e20a-46a8-b235-170794365b3d"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\dnsapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7085"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\dnsapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\IPHLPAPI.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7097"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\IPHLPAPI.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\DHCPCSVC.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7085"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\DHCPCSVC.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Cijc53gWOXuUb58oD0iRv2EHTo0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB914388-nec98-JPN.EXE" Size="620008" Modified="2006-05-24T17:11:30.6270000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="mBkLlOwH82OMnqszZ6/txPnHR6w=" DigestAlgorithm="SHA1" FileName="Windows2000-KB914388-nec98-Express-JPN.EXE" Size="491824" Modified="2006-05-24T17:11:31.0030000-07:00" PatchingType="Express"/>
+      <upd:File Digest="P1dYA4y1StWQ0ya0orBA/cRZtCg=" DigestAlgorithm="SHA1" FileName="Windows2000-KB914388-nec98-JPN.psf" Size="867640" Modified="2006-05-24T17:11:31.5330000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

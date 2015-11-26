@@ -1,0 +1,70 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="fbc040e4-255e-433a-bede-9f5b0487b0d4" RevisionNumber="202"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2013-02-06T22:38:31.155Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1093680" MinDownloadSize="303067">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ar</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ar</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="61dd6f14-5433-4d46-9ca1-b6a1f2aa341d"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\quartz.dll" Comparison="GreaterThanOrEqualTo" Version="6.5.2600.6333"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\mpg2splt.ax" Comparison="GreaterThanOrEqualTo" Version="6.5.2600.6333"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\mpg2splt.ax"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+            <bar:FileExists Csidl="37" Path="\mpg2splt.ax"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\quartz.dll"/>
+          <bar:FileExists Csidl="37" Path="\mpg2splt.ax"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="2VRzLtwAji5Ihfj9GDw9LQTg/Mw=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2780091-x86-ara.exe" Size="1093680" Modified="2013-01-22T15:33:32.01Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">1D3ZZESK1b83NOrkQoxR9BZlwDInvIb/UYGeudu6uWo=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="+o/T9fc/kgujvivZvWpN2JMrJ4o=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2780091-x86-express-ara.cab" Size="255269" Modified="2013-01-22T15:33:32.387Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">ivW5wvNorhGQwcIjNhtpFX+o38097KZbw/v7cnFKBXU=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="FlRtlYMf+k9LRIoA8+ugs38a+Ts=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2780091-x86-ara.psf" Size="3094251" Modified="2013-01-22T15:33:33.9Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">NdXlBNi+bE6++zX0MP6oz2ZCE7bNicAfaA1ZracWWyo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

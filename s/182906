@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="dd241cdc-6c36-4529-a89b-223c74484b0b" RevisionNumber="11"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-01-18T07:06:45.628Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="561144" MinDownloadSize="387009">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ko</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="e61b7af4-8df2-460d-b470-c91a469ccff9"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="929120ea-7433-4d15-b32b-fcd95d20e8a3"/>
+          <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\hhctrl.ocx" Comparison="GreaterThanOrEqualTo" Version="5.2.3790.233"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\hhctrl.ocx"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="yYK5zlaXhI39ZnHZp8owUucx7sc=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890175-x86-Express-KOR.EXE" Size="338152" Modified="2005-01-10T15:04:51.6422912-08:00" PatchingType="Express"/>
+      <upd:File Digest="c1qX7nXr+JFTP1Z90KXo+Ueu2CM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890175-x86-KOR.EXE" Size="561144" Modified="2005-01-10T15:04:52.1890787-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="+KyGf7BN6VLi23ibki9QkNuCtDw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB890175-x86-KOR.psf" Size="1044204" Modified="2005-01-10T15:04:53.1108062-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

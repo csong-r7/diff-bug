@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="f9548198-8965-4a58-b1c4-b49ef9692ea7" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-03T05:37:24.137Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="511736" MinDownloadSize="496473">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\CSRSRV.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7366"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\CSRSRV.DLL"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="+Ur5gGR1bxwPC0+pOjU80ztfMM4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-PTB.EXE" Size="511736" Modified="2010-01-13T11:43:12.05" PatchingType="SelfContained"/>
+      <upd:File Digest="fpUNz0eD7yYrDQmnRhkB2Sh5fiI=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-Express-PTB.EXE" Size="495480" Modified="2010-01-13T11:43:12.27" PatchingType="Express"/>
+      <upd:File Digest="qElcFzbVa3DetkU/sMRMKTJNZIE=" DigestAlgorithm="SHA1" FileName="Windows2000-KB978037-x86-PTB.psf" Size="34172" Modified="2010-01-13T11:43:12.44" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

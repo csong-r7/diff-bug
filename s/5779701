@@ -1,0 +1,70 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b8b42eec-6ac8-475f-ab65-4c0493d07086" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T03:23:42.324Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2280704" MinDownloadSize="709170">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6223"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntkrnlpa.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6223"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+            <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+          <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="HI71a0w3SKUSJHZbpGnwPaoDOCo=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2707511-x86-esn.exe" Size="2280704" Modified="2012-05-23T16:14:06.497Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">x5m/e5kMKs3Hia7iSbz66FWgtEFMQX0mnM+howXs1vI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="v4HcnDW5FrxKBh23YzRhdafNooI=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2707511-x86-express-esn.cab" Size="255757" Modified="2012-05-23T16:14:06.967Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">A0tbphGdu6qDvZG33zMamWK/FoJEUW7z7xi2x8S5PwU=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="bJNJ/+ZdAuhwuWPQjbWSkw21PsI=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2707511-x86-esn.psf" Size="18867605" Modified="2012-05-23T16:14:22.737Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">XSy0pgXeOQw04Tb0vwlK+coK+/d2/Fwa5PZrftVqNqs=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

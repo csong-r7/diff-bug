@@ -1,0 +1,48 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0161f4e0-fa9e-47bb-8be1-afdf9b1d7ae8" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-06-07T22:02:26.002Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="744304" MinDownloadSize="501557">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt-br</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt-br</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f49e86fe-c3b6-4abb-82a8-1d918e885d55"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersion Csidl="37" Path="\mpr.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7134"/>
+          <bar:FileVersion Csidl="37" Path="\KERNEL32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7135"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:FileExists Csidl="37" Path="\mpr.dll"/>
+          <bar:FileExists Csidl="37" Path="\KERNEL32.DLL"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Vf713UJV5rqydkb/VDDq+9fyOt4=" DigestAlgorithm="SHA1" FileName="Windows2000-KB935839-x86-Express-PTB.EXE" Size="499072" Modified="2007-06-01T14:11:42.587" PatchingType="Express"/>
+      <upd:File Digest="J8vO+K9WTd4H5Umz/uuEJx2p0QY=" DigestAlgorithm="SHA1" FileName="Windows2000-KB935839-x86-PTB.EXE" Size="744304" Modified="2007-06-01T14:11:43.087" PatchingType="SelfContained"/>
+      <upd:File Digest="7Ngerpr++0f7yWe6BvtzW0uVQI8=" DigestAlgorithm="SHA1" FileName="Windows2000-KB935839-x86-PTB.psf" Size="1345926" Modified="2007-06-01T14:11:43.93" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,55 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="2e8d6f7a-1e70-4ea8-851e-4fdd79f13bc4" RevisionNumber="10"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-01-11T18:49:00.366Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="902888" MinDownloadSize="460830">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary ru</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="ab3a323b-e337-4c8d-a860-86625b8b84c1"/>
+        <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\query.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1596"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\query.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\ciodm.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1596"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\ciodm.dll"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="jRebSaNU9PPz59IxS7oogOVCego=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB871250-x86-express-RUS.exe" Size="336616" Modified="2005-01-10T19:16:30.5073362-08:00" PatchingType="Express"/>
+      <upd:File Digest="GWow5FefBE8oOfnTWx1Th3/9+FY=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB871250-x86-RUS.exe" Size="902888" Modified="2005-01-10T19:16:31.3509512-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="RoEKlHg2xHdoanl9GXCur/nlwqM=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB871250-x86-RUS.psf" Size="2176752" Modified="2005-01-10T19:16:33.2100287-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

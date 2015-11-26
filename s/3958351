@@ -1,0 +1,617 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="08f61202-4d60-4f86-8a01-e0261a4483bb" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-07-06T22:01:08.631Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="636232" MinDownloadSize="636232">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+          <upd:UpdateIdentity UpdateID="35c9c83e-5644-451b-999b-d5c3940724e2"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <lar:And>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Services\SMTPSVC" RegType32="true"/>
+            <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\inetsrv\smtpsvc.dll" Csidl="37"/>
+            <lar:Or>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\inetsrv\smtpsvc.dll" Comparison="EqualTo" Version="7.0.6001.18440" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\inetsrv\smtpsvc.dll" Comparison="EqualTo" Version="7.0.6001.22648" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\inetsrv\smtpsvc.dll" Comparison="EqualTo" Version="7.0.6002.18222" Csidl="37"/>
+              <bar:FileVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\inetsrv\smtpsvc.dll" Comparison="EqualTo" Version="7.0.6002.22354" Csidl="37"/>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:15Z" lastUpdateTimeStamp="2010-06-04T11:38:15Z">
+            <assemblyIdentity name="Package_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-23_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-24_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:23Z" lastUpdateTimeStamp="2010-06-04T11:38:23Z">
+            <assemblyIdentity name="Package_1_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4a4de2094122d192509f09b69bdc2246" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:13Z" lastUpdateTimeStamp="2010-06-04T11:38:13Z">
+            <assemblyIdentity name="Package_1_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4a4de2094122d192509f09b69bdc2246" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a154730c59285aaccedf7d752474fc83" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_2_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4a4de2094122d192509f09b69bdc2246" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_2_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4a4de2094122d192509f09b69bdc2246" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-5_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="a154730c59285aaccedf7d752474fc83" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_3_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-4_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="00247db76614805648adbf4419660a25" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_3_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-6_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="00247db76614805648adbf4419660a25" version="6.0.6001.22704" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-7_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="da705cf7d2d3239310e52cdc450df509" version="6.0.6001.18485" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_4_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-7_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4db4c82154a90c9f404e9bb04c11cd19" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_4_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4db4c82154a90c9f404e9bb04c11cd19" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-11_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6b087943bdf44392760b1cbf81234fcb" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_5_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-9_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4db4c82154a90c9f404e9bb04c11cd19" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_5_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-13_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="4db4c82154a90c9f404e9bb04c11cd19" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-14_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Common" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="6b087943bdf44392760b1cbf81234fcb" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_6_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-10_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8f9829cee9888683c081c73c7053eac5" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:15Z" lastUpdateTimeStamp="2010-06-04T11:38:15Z">
+            <assemblyIdentity name="Package_6_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-15_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="8f9829cee9888683c081c73c7053eac5" version="6.0.6002.22417" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="976323-16_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="serviceLevel">
+                    <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="ed0fab6fa764ab99f7f2197e79bd0f37" version="6.0.6002.18264" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:23Z" lastUpdateTimeStamp="2010-06-04T11:38:23Z">
+            <assemblyIdentity name="Package_for_KB976323_client_1_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-2_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_for_KB976323_client_1" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_client_2_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_for_KB976323_client_2" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_4_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_client_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-13_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client_1_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-15_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client_2_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:15Z" lastUpdateTimeStamp="2010-06-04T11:38:15Z">
+            <assemblyIdentity name="Package_for_KB976323_client" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6000.16386" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-19_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client_1" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-21_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client_2" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_server_0_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:14Z" lastUpdateTimeStamp="2010-06-04T11:38:14Z">
+            <assemblyIdentity name="Package_for_KB976323_server_0" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-8_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_2_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-9_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_3_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_server_1_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-11_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-12_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:15Z" lastUpdateTimeStamp="2010-06-04T11:38:15Z">
+            <assemblyIdentity name="Package_for_KB976323_server_1" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="staged">
+                <assemblyIdentity name="Package_for_KB948465" language="neutral" version="6.0.1.18005" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-17_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_5_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-18_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_6_for_KB976323" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_server_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-14_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server_0_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-16_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server_1_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:15Z" lastUpdateTimeStamp="2010-06-04T11:38:15Z">
+            <assemblyIdentity name="Package_for_KB976323_server" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-Foundation-Package" version="6.0.6001.18000" processorArchitecture="x86" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-20_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server_0" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-22_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server_1" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB976323" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=976323" creationTimeStamp="2010-06-04T11:38:24Z" lastUpdateTimeStamp="2010-06-04T11:38:24Z">
+            <assemblyIdentity name="Package_for_KB976323_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB976323_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-AdministrationTools-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-DirectoryServices-ISM-Smtp-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release" versionScope="nonSxS"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Admin-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+                <assemblyIdentity name="Microsoft-Windows-Smtpsvc-Service-Package" language="neutral" version="6.0.6001.18000" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="x86" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="976323-17_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_client_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+              <update name="976323-18_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB976323_server_BF" version="6.0.2.3" language="neutral" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="9tKJL4gsfo4KM4dlvl6Zapn05Nw=" DigestAlgorithm="SHA1" FileName="windows6.0-kb976323-v2-x86.cab" Size="636232" Modified="2010-06-18T14:16:01.483" PatchingType="SelfContained"/>
+      <upd:File Digest="yr+QGY0+SaRsBy7cF6C5jHo8HC8=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB976323-v2-x86-EXPRESS.cab" Size="99574" Modified="2010-06-18T14:16:01.547" PatchingType="Express"/>
+      <upd:File Digest="s9RKDq/2WQTcHo96VncBOKktVI8=" DigestAlgorithm="SHA1" FileName="Windows6.0-KB976323-v2-x86.psf" Size="7079598" Modified="2010-06-18T14:16:01.953" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

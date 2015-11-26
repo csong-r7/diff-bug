@@ -1,0 +1,61 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="15fa1a7a-8f3b-4e28-bb7a-76a42a82a33d" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2006-11-08T23:21:57.688Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="652264" MinDownloadSize="501928">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary cs</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="f917e2ad-3781-4312-ba17-b0966bd80533"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\NWAPI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7109"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\NWAPI32.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\drivers\nwrdr.sys" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7110"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\drivers\nwrdr.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\NWPROVAU.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7110"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\NWPROVAU.DLL"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="hcNOJ5CgNweqNA2dkFDURBAuiuo=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923980-x86-CSY.EXE" Size="652264" Modified="2006-09-18T15:09:34.7430000-07:00" PatchingType="SelfContained"/>
+      <upd:File Digest="bb9Ejc9uA4Mj77ex4Wag+xayF6s=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923980-x86-Express-CSY.EXE" Size="495408" Modified="2006-09-18T15:09:35.1330000-07:00" PatchingType="Express"/>
+      <upd:File Digest="Hm0BzsIgZLsJEWSycu9+qlZA+uU=" DigestAlgorithm="SHA1" FileName="Windows2000-KB923980-x86-CSY.psf" Size="311096" Modified="2006-09-18T15:09:35.4000000-07:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

@@ -1,0 +1,132 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5b1e71d6-a9be-42a8-9497-51ca2a85c1d7" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedCpuSpeed="500" RecommendedMemory="192" RecommendedHardDiskSpace="600" PublicationState="Published" CreationDate="2012-04-04T22:43:39.474Z" PublisherID="dd79a08b-c3c2-4e05-9862-ee90f9585e33" MaxDownloadSize="64406384" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ru</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>RUS x86</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="1049c56b-eefa-447f-8cc6-86abf0855468"/>
+        <upd:UpdateIdentity UpdateID="e1185dcd-b5fb-4392-a725-18ae723f9f0d"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="60916385-7546-4e9b-836e-79d65e517bab"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <!--For all given x, 
+<Regroot>\Setup\Feature list has SQL_Engine
+And
+<Regroot>\Setup\Language = LCID
+And
+	SQLPath\binn\sqlserver.exe >=  {}
+-->
+        <lar:And>
+          <!-- Client Tools  -->
+          <lar:And>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="ProductCode" Comparison="EqualTo" Data="{19FA5F90-C08C-4753-B248-30ABE8F5138F}" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1049" RegType32="true"/>
+            <lar:And>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.2.3042.00" RegType32="true"/>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.99.9999.00" RegType32="true"/>
+            </lar:And>
+            <!-- Not Advanced and Toolkit  -->
+            <lar:Not>
+              <lar:Or>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Advanced" RegType32="true"/>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+              </lar:Or>
+            </lar:Not>
+          </lar:And>
+          <!-- Database Services  -->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="All" RegType32="true">
+            <lar:And>
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="FeatureList" Comparison="Contains" Data="SQL_Engine" RegType32="true"/>
+              <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1049" RegType32="true"/>
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+              <!-- Not Advanced and Toolkit  -->
+              <lar:Not>
+                <lar:Or>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="EditionType" Comparison="Contains" Data="Advanced" RegType32="true"/>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+                </lar:Or>
+              </lar:Not>
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sqlaccess.dll" Comparison="GreaterThanOrEqualTo" Version="2005.90.3042.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot" RegType32="true"/>
+                <bar:FileVersionPrependRegSz Path="sqlaccess.dll" Comparison="LessThan" Version="2005.90.9999.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot" RegType32="true"/>
+              </lar:And>
+            </lar:And>
+          </bar:RegKeyLoop>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <!--For all given x, 
+<Regroot>\Setup\Feature list has SQL_Engine
+And
+<Regroot>\Setup\Language = LCID
+And
+	SQLPath\binn\sqlserver.exe >=  {}
+-->
+        <lar:Or>
+          <!-- Client Tools  -->
+          <lar:And>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="ProductCode" Comparison="EqualTo" Data="{19FA5F90-C08C-4753-B248-30ABE8F5138F}" RegType32="true"/>
+            <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="Language" Comparison="EqualTo" Data="1049" RegType32="true"/>
+            <lar:And>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="GreaterThanOrEqualTo" Data="9.00.1399.00" RegType32="true"/>
+              <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="PatchLevel" Comparison="LessThan" Data="9.2.3042.00" RegType32="true"/>
+            </lar:And>
+            <!-- Not Advanced and Toolkit  -->
+            <lar:Not>
+              <lar:Or>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Advanced" RegType32="true"/>
+                <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server\90\Tools\Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+              </lar:Or>
+            </lar:Not>
+          </lar:And>
+          <!-- Database Services  -->
+          <bar:RegKeyLoop Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft SQL Server" TrueIf="Any" RegType32="true">
+            <lar:And>
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="FeatureList" Comparison="Contains" Data="SQL_Engine" RegType32="true"/>
+              <bar:RegDword Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Language" Comparison="EqualTo" Data="1049" RegType32="true"/>
+              <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="Edition" Comparison="EqualTo" Data="Express Edition" RegType32="true"/>
+              <!-- Not Advanced and Toolkit  -->
+              <lar:Not>
+                <lar:Or>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="EditionType" Comparison="Contains" Data="Advanced" RegType32="true"/>
+                  <bar:RegSz Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="EditionType" Comparison="Contains" Data="Toolkit" RegType32="true"/>
+                </lar:Or>
+              </lar:Not>
+              <lar:And>
+                <bar:FileVersionPrependRegSz Path="sqlaccess.dll" Comparison="GreaterThanOrEqualTo" Version="2005.90.1399.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot" RegType32="true"/>
+                <bar:FileVersionPrependRegSz Path="sqlaccess.dll" Comparison="LessThan" Version="2005.90.3042.0" Key="HKEY_LOOP_TARGET" Subkey="Setup" Value="SQLBinRoot" RegType32="true"/>
+              </lar:And>
+            </lar:And>
+          </bar:RegKeyLoop>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="5++6rWuNEoeHgCCFl1cZvpKTEeQ=" DigestAlgorithm="SHA1" FileName="SQLServer2005ExpressSP2-KB921896-x86-RUS.exe" Size="64406384" Modified="2007-03-07T01:24:43.913Z">
+        <upd:AdditionalDigest Algorithm="SHA256">Zpd4bp08ADUZgUCM2W6QfYiPtJZYVINXINUpn1U6VAo=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/quiet /allinstances /norestart" Program="SQLServer2005ExpressSP2-KB921896-x86-RUS.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

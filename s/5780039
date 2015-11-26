@@ -1,0 +1,56 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c40c90a1-9a2b-400d-af8f-82c72f0630e9" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-08-29T04:59:47.601Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1463552" MinDownloadSize="494675">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>es</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary es</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="076f2a77-facb-49ce-9b9c-21dffaa3d2e1"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6228"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="PryZGkLEBs2JLrLyW6oZnvc2+Kk=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2709162-x86-esn.exe" Size="1463552" Modified="2012-05-30T15:56:15.993Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">GbXTA3GZUvgNxgJAUT6jpQG5QZ3KnVrP4+dV2O+dznI=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="Ig+IruLvDLO0aV3Z4WGymn3vV38=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2709162-x86-express-esn.cab" Size="263466" Modified="2012-05-30T15:56:16.32Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">wz+Fc8WUrwPPqj1OGjjCzqO+ADhUvRRn+wg1uQ0DzT8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="giyLm0b8vjh6pe6AWKYQJM6gDfM=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2709162-x86-esn.psf" Size="9801621" Modified="2012-05-30T15:56:20.78Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">n1+TOe8oVmNDYmYmI+TtaqjOy0UDWHAxaRXZfa6p4Ds=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

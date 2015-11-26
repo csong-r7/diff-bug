@@ -1,0 +1,78 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="874e642b-b417-4b23-9fdd-31260ee61ea4" RevisionNumber="105"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2012-05-02T17:40:12.369Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="3221888" MinDownloadSize="981481">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>hu</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary hu</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="be2915a8-6ad0-4da1-a8bd-f26e8f71922b"/>
+        <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\win32k.sys" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6206"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntoskrnl.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6206"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ntkrnlpa.exe" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.6206"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:Or>
+            <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+            <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+            <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <bar:FileExists Csidl="37" Path="\win32k.sys"/>
+          <bar:FileExists Csidl="37" Path="\ntoskrnl.exe"/>
+          <bar:FileExists Csidl="37" Path="\ntkrnlpa.exe"/>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="L8qsIt+0OLYXR0YzTCxSQqwqkRo=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2676562-x86-hun.exe" Size="3221888" Modified="2012-04-17T12:22:09.217Z" PatchingType="SelfContained">
+        <upd:AdditionalDigest Algorithm="SHA256">Nlkknwfiz+y9Ud7QEFV+pitd9/oekyvT9RpAbm4jrn8=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="g9Mc5550NmbxYtZzFvvqaj+0KuI=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2676562-x86-express-hun.cab" Size="266885" Modified="2012-04-17T12:22:09.777Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">eMLkJBMt6tWFW3ywnx8PYZCX5f3frd6B5O8d7M4oVWs=</upd:AdditionalDigest>
+      </upd:File>
+      <upd:File Digest="Rjwj1TLe7eH/7jCVvl3wJjmOFxQ=" DigestAlgorithm="SHA1" FileName="windowsxp-kb2676562-x86-hun.psf" Size="28194323" Modified="2012-04-17T12:22:22.837Z" PatchingType="Express">
+        <upd:AdditionalDigest Algorithm="SHA256">WR3PgXmeyi+JfhUtpGIMape7A57LvpxrMu7k91NBi5U=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

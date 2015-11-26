@@ -1,0 +1,47 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="5e48afce-1126-4fb2-854f-7d3cb5559b46" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-08-08T01:50:44.955Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="761320" MinDownloadSize="532505">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>da</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary da</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="8ddbd40f-b0bb-4511-954e-575ea48dfea8"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <bar:FileVersion Csidl="37" Path="\OLEAUT32.DLL" Comparison="GreaterThanOrEqualTo" Version="2.40.4531.0"/>
+          <lar:Not>
+            <bar:FileExists Csidl="37" Path="\OLEAUT32.DLL"/>
+          </lar:Not>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="0ErsCm6D8iXSj9QVUfhiwo69z8A=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921503-x86-DAN.EXE" Size="761320" Modified="2006-09-01T16:39:16.407" PatchingType="SelfContained"/>
+      <upd:File Digest="6jFGktO0HLz6PBoLK3WhZRIH+3c=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921503-x86-Express-DAN.EXE" Size="492848" Modified="2006-09-01T16:39:16.78" PatchingType="Express"/>
+      <upd:File Digest="1cAPaaMnshlwUG4+2AMFArbZ9yM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB921503-x86-DAN.psf" Size="495928" Modified="2006-09-01T16:39:17.14" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

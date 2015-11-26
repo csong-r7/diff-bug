@@ -1,0 +1,58 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="7BE47A68-EB94-4A6F-ADEF-376716232D1A" RevisionNumber="100"/>
+    <upd:Properties UpdateType="Software" ExplicitlyDeployable="false" DefaultPropertiesLanguage="en" CreationDate="2003-02-18T20:50:50.287Z" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="305504" MinDownloadSize="0">
+      <upd:InstallationBehavior RequiresNetworkConnectivity="false" CanRequestUserInput="false" Impact="Normal" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Security Update, February 14, 2002 (Internet Explorer 5.01)</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3E0AFB10-A9FB-4c16-A60E-5790C3803437"/>
+        <upd:UpdateIdentity UpdateID="89D53468-A4CB-475E-8F8F-9417D09FACDE"/>
+        <upd:UpdateIdentity UpdateID="E61B7AF4-8DF2-460D-B470-C91A469CCFF9"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3B4B8621-726E-43A6-B43B-37D07EC7019F"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegSzToVersion Value="Version" Comparison="GreaterThanOrEqualTo" Data="5.1.0.7302" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{4f645220-306d-11d2-995d-00c04f98bbc9}"/>
+          <bar:WUv4RegKeyValue Data="1" Value="IsInstalled" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{4f645220-306d-11d2-995d-00c04f98bbc9}"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And>
+          <bar:RegSzToVersion Value="Version" Comparison="LessThan" Data="5.1.0.7302" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{4f645220-306d-11d2-995d-00c04f98bbc9},"/>
+          <bar:WUv4RegKeyValue Data="1" Value="IsInstalled" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Active Setup\Installed Components\{4f645220-306d-11d2-995d-00c04f98bbc9}"/>
+          <lar:Or>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.0.2919.6307" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.00.3105.0106" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.00.3103.1000" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.0.3314.2101" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.0.3314.2101" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.0.3315.1000" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+            <bar:RegSzToVersion Value="version" Comparison="EqualTo" Data="5.0.2920.0000" Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\Internet Explorer"/>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="smvoWufk0xbnD+hS7v13zDqf6cQ=" DigestAlgorithm="SHA1" FileName="vbs51nko.exe" Size="305504" Modified="2002-12-19T13:27:28.2421875-08:00"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand RebootByDefault="false" DefaultResult="Failed" Arguments="/q:a /r:n" Program="vbs51nko.exe">
+        <cmd:ReturnCode Code="3010" Reboot="true" Result="Succeeded"/>
+        <cmd:ReturnCode Code="0" Reboot="false" Result="Succeeded"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

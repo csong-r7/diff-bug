@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="ac44443f-cdb3-4cbe-8c6b-7e74668213fe" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2008-11-10T02:27:01.756Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2736136" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>ko</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>MSXML 6 KOR ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="657deb0e-965f-4a5e-8e63-23143810f030"/>
+          <upd:UpdateIdentity UpdateID="231a85ae-f203-420c-8180-7a7eb959ff37"/>
+          <upd:UpdateIdentity UpdateID="7570e712-afa8-4aee-b7db-3e14dddae91f"/>
+          <upd:UpdateIdentity UpdateID="27fac368-78d4-416e-9cfe-9c59aeed7b2c"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.20.1099.0" Csidl="37"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.99.9999.00" Csidl="37"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1042" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.20.1099.0" Csidl="41"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.99.9999.00" Csidl="41"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1042" Csidl="41"/>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.00.0000.0" Csidl="37"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.20.1099.0" Csidl="37"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1042" Csidl="37"/>
+          </lar:And>
+          <lar:And>
+            <bar:FileVersion Path="msxml6.dll" Comparison="GreaterThanOrEqualTo" Version="6.00.0000.0" Csidl="41"/>
+            <bar:FileVersion Path="msxml6.dll" Comparison="LessThan" Version="6.20.1099.0" Csidl="41"/>
+            <bar:FileExists Path="msxml6r.dll" Language="1042" Csidl="41"/>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="6qTTHKGxJzpEXagxq+5YnrsCnBg=" DigestAlgorithm="SHA1" FileName="msxml6-KB954459-kor-ia64.exe" Size="2736136" Modified="2008-09-24T19:10:10.277"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q REBOOT=ReallySuppress" Program="msxml6-KB954459-kor-ia64.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="3010">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Success but Reboot Required</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

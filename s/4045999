@@ -1,0 +1,39 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="6a52d2bb-dfbf-41d3-8c22-5c62db8f00a3" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="SKU or Feature" PublicationState="Published" CreationDate="2010-11-02T18:39:40.185Z" PublisherID="23c44e80-1e29-4bef-9d87-67959c8ce710"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>MSE: Product Enabled</upd:Title>
+        <upd:Description>Detects whether the Microsoft Security Essentials product has been disabled by either configuration or policy.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="6cf036b9-b546-4694-885a-938b93216b66"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Not xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Or>
+            <!-- The service has been disabled by someone -->
+            <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\msmpsvc" Value="Start" Comparison="EqualTo" Data="4"/>
+            <!-- The configurations asking that we provide protection have been turned off -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Microsoft Antimalware" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+            </lar:And>
+            <!-- The policies asking that we provide protection have been turned off -->
+            <lar:And>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+              <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Microsoft Antimalware" Value="DisableAntiVirus" Comparison="GreaterThanOrEqualTo" Data="1" RegType32="true"/>
+            </lar:And>
+          </lar:Or>
+        </lar:Not>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

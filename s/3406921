@@ -1,0 +1,95 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="c164d225-b96e-4530-97ab-84a089cf7aa5" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2009-12-03T17:59:48.496Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="859000" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>en</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary en</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dfc8409b-ba29-4258-9293-5c35b99053cf"/>
+          <upd:UpdateIdentity UpdateID="2bf7ed9c-6f43-493a-b156-db20f08c44c4"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+          <upd:UpdateIdentity UpdateID="824c2b95-8529-4939-956c-587f30b1a024"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\microsoft shared\textconv\write32.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\microsoft shared\textconv\write32.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\microsoft shared\textconv\mswrd832.cnv" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8313.0"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\microsoft shared\textconv\mswrd832.cnv"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\microsoft shared\textconv\mswrd632.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\microsoft shared\textconv\mswrd632.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\microsoft shared\textconv\msconv97.dll" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8165.0"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\microsoft shared\textconv\msconv97.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="43" Path="\microsoft shared\textconv\html32.cnv" Comparison="GreaterThanOrEqualTo" Version="2003.1100.8165.0"/>
+            <lar:Not>
+              <bar:FileExists Csidl="43" Path="\microsoft shared\textconv\html32.cnv"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\windows nt\accessories\write.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\windows nt\accessories\write.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\windows nt\accessories\mswrd8.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\windows nt\accessories\mswrd8.wpc"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\windows nt\accessories\mswrd6.wpc" Comparison="GreaterThanOrEqualTo" Version="2009.10.31.10"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\windows nt\accessories\mswrd6.wpc"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="8IySpn8b1/B2jsqYDYheuFqR1Sw=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB973904-x86-ENU.exe" Size="859000" Modified="2009-11-24T16:59:00.257" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

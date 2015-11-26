@@ -1,0 +1,54 @@
+
+
+  <upd:Update xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="0a84144e-a7c5-48cb-9cd2-179d76fb6094" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" RecommendedHardDiskSpace="1455" PublicationState="Published" CreationDate="2009-02-19T14:10:23.806Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="131608" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Registration Correction Tool</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="32500873-d1a4-4ec4-b498-0a14d849f767"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="df38d2ba-864b-4124-a47e-009607f7a902"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="5b56a815-2aef-40dc-9960-36bac15d1818"/>
+          <upd:UpdateIdentity UpdateID="b566ac9f-7c22-44e0-8615-735aea61213d"/>
+          <upd:UpdateIdentity UpdateID="ba26cc12-be7a-4f5d-baaa-c72fb8eb283d"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="ba0ae9cc-5f01-40b4-ac3f-50192b5d6aaf"/>
+          <upd:UpdateIdentity UpdateID="26997d30-08ce-4f25-b2de-699c36a8033a"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="Version" Type="REG_SZ" RegType32="true"/>
+          <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Value="Version" Comparison="GreaterThanOrEqualTo" Data="3.5.30729.01" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="HeYO7FMU1mJjUD7WqQOt1MqAe1A=" DigestAlgorithm="SHA1" FileName="clwireg_x64.exe" Size="131608" Modified="2009-01-22T16:59:28.357"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/q {2FC099BD-AC9B-33EB-809C-D332E1B27C40} {B6EC01E7-431D-4D29-B9D4-E1D74CAF0AB0} {72EB0C4F-A51D-4203-B841-E529F6C4F571} {7131646D-CD3C-40F4-97B9-CD9E4E6262EF} {B508B3F1-A24A-32C0-B310-85786919EF28} {340DFCEA-8855-4722-99B3-1BBAC5DDC088} {0ADCF9F9-7EA9-48B5-9656-D65B2B246203} {89BF6CBE-A47A-4CAB-AE77-D0D5A234CCA5} {F7855754-13F5-426B-B090-5875FAFF1B20} {2BA00471-0328-3743-93BD-FA813353A783} {F1A37352-02A5-4F9A-A902-B9537DE1086F} {2C8F9A07-43F7-4C31-9401-21B0CFAD94D3} {9C93EC33-91B7-4900-8D88-15E5695440C9} {15095BF3-A3D7-4DDF-B193-3A496881E003} {491DD792-AD81-429C-9EB4-86DD3D22E333} {7D1B85BD-AA07-48B8-808D-67A4067FC6BD} {BAF78226-3200-4DB4-BE33-4D922A799840}" Program="clwireg_x64.exe" RebootByDefault="false" DefaultResult="Succeeded">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

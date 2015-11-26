@@ -1,0 +1,106 @@
+
+
+  <upd:Update xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="af117af4-432f-4e88-98e3-e09b3e6c1898" RevisionNumber="11"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2005-02-08T21:13:43.818Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1781480" MinDownloadSize="455708">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pl</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pl</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="362b580c-ef1b-44ed-9ba4-a5d5440ad788"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="c5caf853-4c76-47fa-93ec-e49b01db32fd"/>
+          <upd:UpdateIdentity UpdateID="7f77ad43-b66c-466f-8d5e-c6a11b2df419"/>
+        </upd:AtLeastOne>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="558f4bc3-4827-49e1-accf-ea79fd72d4c9"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="256"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\rpcss.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1619"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\rpcss.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\rpcrt4.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1361"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\rpcrt4.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\olecli32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1612"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\olecli32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ole32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1619"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ole32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\olecnv32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.1619"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\olecnv32.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+          <lar:And>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="System\CurrentControlSet\Control\Windows" Value="CSDVersion" Comparison="EqualTo" Data="512"/>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\rpcss.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2595"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\rpcss.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\olecli32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2573"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\olecli32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\ole32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2595"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\ole32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\olecnv32.dll" Comparison="GreaterThanOrEqualTo" Version="5.1.2600.2595"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\olecnv32.dll"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="H+pQ0cj+LF5Z+a0CktiAdAokgdM=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB873333-x86-express-PLK.exe" Size="343784" Modified="2005-02-07T13:52:50.5607019-08:00" PatchingType="Express"/>
+      <upd:File Digest="xag8mVvRbnbvsvcYId16TkKH05Q=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB873333-x86-PLK.exe" Size="1781480" Modified="2005-02-07T13:52:52.0919225-08:00" PatchingType="SelfContained"/>
+      <upd:File Digest="vMTBhwmU4D5fCq65BzibgSkvJgQ=" DigestAlgorithm="SHA1" FileName="WindowsXP-KB873333-x86-PLK.psf" Size="72592624" Modified="2005-02-07T13:53:22.0913465-08:00" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q /Z -ER"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

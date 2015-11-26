@@ -1,0 +1,80 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="77cface6-4350-4fd8-8073-02c533966c77" RevisionNumber="104"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2007-11-06T23:10:58.941Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="1551264" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>pt</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary pt</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="42aad4f1-57a8-4965-b34b-b5664922c9be"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules">
+          <lar:And>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="GreaterThanOrEqualTo" Data="5.50.4807.1700"/>
+            <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="LessThan" Data="5.50.5000.0"/>
+          </lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\INETCOMM.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4980.1600"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\INETCOMM.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:Or>
+            <bar:FileVersion Csidl="38" Path="\Outlook Express\MSOE.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4980.1600"/>
+            <lar:Not>
+              <bar:FileExists Csidl="38" Path="\Outlook Express\MSOE.DLL"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Outlook Express\WAB.EXE" Comparison="GreaterThanOrEqualTo" Version="5.50.4980.1600"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Outlook Express\WAB.EXE"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="38" Path="\Outlook Express\WABIMP.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4980.1600"/>
+              <lar:Not>
+                <bar:FileExists Csidl="38" Path="\Outlook Express\WABIMP.DLL"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="43" Path="\System\WAB32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.50.4980.1600"/>
+              <lar:Not>
+                <bar:FileExists Csidl="43" Path="\System\WAB32.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="GreaterThanOrEqualTo" Data="5.50.4807.1700"/>
+          <bar:RegSzToVersion xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Outlook Express\Version Info" Value="Current" Comparison="LessThan" Data="5.50.5000.0"/>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="2+E1HuicBxraQBrmL0K/1/+kIxw=" DigestAlgorithm="SHA1" FileName="OE5.5sp2-KB941202-Windows2000-x86-PTG.exe" Size="1551264" Modified="2007-09-25T18:23:47.09" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

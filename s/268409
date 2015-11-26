@@ -1,0 +1,125 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:mspblob="http://www.microsoft.com/msi/patch_applicability.xsd" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4c5db907-98bc-4ce9-b516-dc4ed030d8c9" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" PublicationState="Published" CreationDate="2005-12-08T21:39:03.444Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="773892" MinDownloadSize="0">
+      <upd:InstallationBehavior Impact="RequiresExclusiveHandling" RebootBehavior="CanRequestReboot"/>
+      <upd:Language>tr</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows SharePoint Services Language Template Pack Service Pack 2, TRK</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:UpdateIdentity UpdateID="8cf9bd18-d6cb-4553-9a7f-cc032a79b617"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="dbf57a08-0d5a-46ff-b30c-7715eb9498e9"/>
+          <upd:UpdateIdentity UpdateID="7f44c2a7-bc36-470b-be3b-c01b6dc5dd4e"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Shared Tools\Web Server Extensions\6.0\InstalledLanguages\1053" Value="11.0.7969.0" Type="REG_DWORD"/>
+        </lar:Or>
+      </upd:IsInstalled>
+      <upd:IsSuperseded>
+        <mar:MsiPatchSuperseded xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+      </upd:IsSuperseded>
+      <upd:IsInstallable>
+        <lar:Or xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <mar:MsiPatchInstallable xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules"/>
+          <lar:And>
+            <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Shared Tools\Web Server Extensions\6.0\InstalledLanguages\1053"/>
+            <lar:Not>
+              <bar:RegKeyExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Web Server Extensions\6.0\ServerLanguage\1053"/>
+            </lar:Not>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <mar:MsiPatchMetadata xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules">
+          <MsiPatch xmlns="http://www.microsoft.com/msi/patch_applicability.xsd" SchemaVersion="1.0.0.0" PatchGUID="{5C05E292-E599-4FFC-A74D-6C891DB2AA6A}" MinMsiVersion="3" TargetsRTM="true">
+            <TargetProduct MinMsiVersion="100">
+              <TargetProductCode Validate="true">{9192041F-7000-11D3-8CFE-0150048383C9}</TargetProductCode>
+              <TargetVersion Validate="true" ComparisonType="Equal" ComparisonFilter="MajorMinorUpdate">11.0.5608.0</TargetVersion>
+              <UpdatedVersion>11.0.7969.0</UpdatedVersion>
+              <TargetLanguage Validate="false">1033</TargetLanguage>
+              <UpdatedLanguages>1033</UpdatedLanguages>
+              <UpgradeCode Validate="false">{01920000-6000-11D3-8CFE-0050048383C9}</UpgradeCode>
+            </TargetProduct>
+            <TargetProductCode>{9192041F-7000-11D3-8CFE-0150048383C9}</TargetProductCode>
+            <ObsoletedPatch>{8DF0EB8E-D809-4114-9CBB-0A78E62315BF}</ObsoletedPatch>
+            <ObsoletedPatch>{8103F6AA-A107-4A1C-8B9E-82200D40566A}</ObsoletedPatch>
+            <ObsoletedPatch>{4B5DD425-FFFA-4CEF-B7B7-0787AB91E6EA}</ObsoletedPatch>
+            <ObsoletedPatch>{1D9A150F-FC1E-4EE7-96BA-8E367B6341A2}</ObsoletedPatch>
+            <ObsoletedPatch>{4946F729-E572-4BA7-B558-61C64B79E783}</ObsoletedPatch>
+            <ObsoletedPatch>{07B2E225-0635-49E6-A4E0-2E50279E6B37}</ObsoletedPatch>
+            <ObsoletedPatch>{646D11D1-3EE2-45E9-81A2-3239D5043E64}</ObsoletedPatch>
+            <ObsoletedPatch>{05C31940-5B6C-4FC3-AA50-38111BA5A428}</ObsoletedPatch>
+            <ObsoletedPatch>{38C71082-02F1-4E50-BB13-D00435AF5BC0}</ObsoletedPatch>
+            <ObsoletedPatch>{CCFADB83-2346-4859-BE3D-BCE4A4874548}</ObsoletedPatch>
+            <ObsoletedPatch>{6B8C8F7D-2B8A-4B84-BED6-93E3BC6E0311}</ObsoletedPatch>
+            <ObsoletedPatch>{E81EB8D3-6106-4A9B-BF4E-3CCB2047B011}</ObsoletedPatch>
+            <ObsoletedPatch>{A01FE3AA-1BA6-42B6-94C7-93BDE32DB375}</ObsoletedPatch>
+            <ObsoletedPatch>{A5462CC1-8DCD-4593-9286-E4552764E305}</ObsoletedPatch>
+            <ObsoletedPatch>{BBC9B127-6EBA-44AB-9CEB-1D517D81B927}</ObsoletedPatch>
+            <ObsoletedPatch>{A7B509FC-8291-4A5C-B9F1-1D842354E5A2}</ObsoletedPatch>
+            <ObsoletedPatch>{AD6FE634-B84C-4BB7-A26B-7FB3CC93CA2B}</ObsoletedPatch>
+            <ObsoletedPatch>{47BBCADF-50FF-4BA1-82CB-D141709C9EA0}</ObsoletedPatch>
+            <ObsoletedPatch>{A496643A-BDC3-4F39-A026-1763EA5CF8A9}</ObsoletedPatch>
+            <ObsoletedPatch>{287B4DFB-84C6-4011-8176-BEB0D4A0264D}</ObsoletedPatch>
+            <ObsoletedPatch>{BDA39F7E-442A-4FDE-86D1-8368C8D54FAA}</ObsoletedPatch>
+            <ObsoletedPatch>{FA8F0030-7381-4FAC-BEF3-EFCAF754BE13}</ObsoletedPatch>
+            <ObsoletedPatch>{C6B6F8B2-072C-4C2B-AD72-388F1FCEFC34}</ObsoletedPatch>
+            <ObsoletedPatch>{99288A58-540B-46AD-A897-219DD882120F}</ObsoletedPatch>
+            <ObsoletedPatch>{F952CACD-7753-4904-BCE9-4B2A81EF6C0C}</ObsoletedPatch>
+            <ObsoletedPatch>{36222E7F-F716-435B-8A3C-07B1DD2C2A85}</ObsoletedPatch>
+            <ObsoletedPatch>{5AE07C66-29A1-4CAA-A77E-08C6DB62776E}</ObsoletedPatch>
+            <ObsoletedPatch>{8925E4F7-5893-4DDF-AC7D-1CACD057FECA}</ObsoletedPatch>
+            <ObsoletedPatch>{EC6728BD-F57D-47E5-BF91-5D9D1D14A690}</ObsoletedPatch>
+            <ObsoletedPatch>{05F7A719-31CB-491F-A0D4-F66B81916B7D}</ObsoletedPatch>
+            <ObsoletedPatch>{BBA14613-E99F-46B5-955C-BC8D08B12878}</ObsoletedPatch>
+            <ObsoletedPatch>{49A81593-1A6E-48AF-AA07-A1A41BA4A062}</ObsoletedPatch>
+            <ObsoletedPatch>{B53B3311-BDEA-46DD-9D36-56CD3C5C9102}</ObsoletedPatch>
+            <ObsoletedPatch>{190DF59F-0D00-48B3-B555-DECB71707C5D}</ObsoletedPatch>
+            <ObsoletedPatch>{713CB43A-5F0F-4D67-9AE1-7BB1FA08B8BC}</ObsoletedPatch>
+            <ObsoletedPatch>{F3CEE767-826F-4D7C-AD54-3DA7656D7870}</ObsoletedPatch>
+            <ObsoletedPatch>{01C11645-D579-4608-8D3A-B236AE75414C}</ObsoletedPatch>
+            <ObsoletedPatch>{03875597-4073-4348-B069-2F8D1554CE23}</ObsoletedPatch>
+            <ObsoletedPatch>{DD138CC3-67E9-4BFC-96E9-878FCCEA3125}</ObsoletedPatch>
+            <ObsoletedPatch>{2ACB7046-9203-4783-A529-9C61994BCF83}</ObsoletedPatch>
+            <ObsoletedPatch>{259AA62E-3332-49E2-973E-73B37B718296}</ObsoletedPatch>
+            <ObsoletedPatch>{2AFFE842-89A6-4E7F-9357-11837C3749A9}</ObsoletedPatch>
+            <ObsoletedPatch>{AD6DA1E2-DEC1-4FB8-A936-973999B80AF1}</ObsoletedPatch>
+            <ObsoletedPatch>{877D02C0-1844-4E24-8802-D54B6C79DB41}</ObsoletedPatch>
+            <ObsoletedPatch>{D86A8713-BD79-4C91-9D6F-1AB2572F1657}</ObsoletedPatch>
+            <ObsoletedPatch>{7024DCBE-C4DF-4B31-A250-E10E260D3A1C}</ObsoletedPatch>
+            <ObsoletedPatch>{46F6122B-AA2F-4547-9335-A66E79552ECF}</ObsoletedPatch>
+            <ObsoletedPatch>{67C0451A-4AB9-4A69-A901-A90974E5D333}</ObsoletedPatch>
+            <ObsoletedPatch>{59B97400-A86A-4E39-8AFB-97FB6A54A60C}</ObsoletedPatch>
+            <ObsoletedPatch>{89B67394-E0B5-417B-8E49-56E5DB2943FF}</ObsoletedPatch>
+            <ObsoletedPatch>{93941372-B922-4860-AD50-60A1A1DFF6ED}</ObsoletedPatch>
+            <SequenceData>
+              <PatchFamily>WSSTPKSP2_TRK</PatchFamily>
+              <Sequence>7969</Sequence>
+              <Attributes>1</Attributes>
+            </SequenceData>
+          </MsiPatch>
+        </mar:MsiPatchMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Fk4ZfTV6NmD9o2NEUCdvZHfDI44=" DigestAlgorithm="SHA1" FileName="WSSTPKSP2-TRK.CAB" Size="773892" Modified="2005-09-19T18:48:38.9500000-07:00" PatchingType="SelfContained"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="msp:WindowsInstaller">
+      <msp:MspData xmlns:msp="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsInstaller" FullFilePatchCode="{5c05e292-e599-4ffc-a74d-6c891db2aa6a}"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

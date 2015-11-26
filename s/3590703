@@ -1,0 +1,75 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4c0cc7e0-9cd2-4922-bc56-467ecf44f53a" RevisionNumber="102"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-04T04:48:58.367Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="587512" MinDownloadSize="501253">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>zh-tw</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary zh-tw</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="7f38e252-29bc-42db-9dad-5377d2fe8703"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\tsbyuv.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7359"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\tsbyuv.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <lar:And>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\avifil32.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7359"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\avifil32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msrle32.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7359"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msrle32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\msvidc32.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7359"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\msvidc32.dll"/>
+              </lar:Not>
+            </lar:Or>
+            <lar:Or>
+              <bar:FileVersion Csidl="37" Path="\MCIAVI32.DLL" Comparison="GreaterThanOrEqualTo" Version="5.0.2195.7359"/>
+              <lar:Not>
+                <bar:FileExists Csidl="37" Path="\MCIAVI32.DLL"/>
+              </lar:Not>
+            </lar:Or>
+          </lar:And>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:True/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="ID31ZmrI6vOMYGe3t8YllYsXaSA=" DigestAlgorithm="SHA1" FileName="Windows2000-KB977914-x86-CHT.EXE" Size="587512" Modified="2010-01-13T12:10:12.853" PatchingType="SelfContained"/>
+      <upd:File Digest="cDbV0DyYyNPsSf7OEmvK1Va/If0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB977914-x86-Express-CHT.EXE" Size="491384" Modified="2010-01-13T12:10:13.087" PatchingType="Express"/>
+      <upd:File Digest="M14F6wHNUGymWlatwEZjC076LP0=" DigestAlgorithm="SHA1" FileName="Windows2000-KB977914-x86-CHT.psf" Size="147836" Modified="2010-01-13T12:10:13.29" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

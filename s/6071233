@@ -1,0 +1,81 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="27395040-0c52-4d50-0405-0c4c490e4e54" RevisionNumber="200"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-10-17T00:31:57.987Z" PublisherID="603af380-4255-47c4-8954-cc14655d153d" MaxDownloadSize="42051352" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot" CanRequestUserInput="false"/>
+      <upd:Language>cs</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Client CSY i386</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="0c524d20-0405-0050-8a9e-0c4c490e4e54"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="2f3d1aba-2192-47b4-9c8d-87b41f693af4"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <mar:MsiPatchInstalledForProduct PatchCode="{d330893a-9f43-4c6e-9de0-414a6a9a64d2}" ProductCode="{0c524d20-0405-0050-8a9e-0c4c490e4e54}"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:Or>
+          <lar:And>
+            <lar:Not>
+              <mar:MsiPatchInstalledForProduct PatchCode="{11a65d36-b726-41f3-9830-7f0c113d8e4a}" ProductCode="{0c524d20-0405-0050-8a9e-0c4c490e4e54}"/>
+            </lar:Not>
+            <lar:Or>
+              <lar:And>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSCRMClient" Value="CRM_Client_Serviceability_Version" Comparison="GreaterThanOrEqualTo" Data="5.0.9690.1992"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSCRMClient" Value="CRM_Client_Serviceability_Version" Comparison="LessThan" Data="5.0.9690.2838"/>
+              </lar:And>
+              <lar:And>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSCRMClient" Value="CRM_Client_Serviceability_Version" Comparison="GreaterThanOrEqualTo" Data="5.0.9690.1992" RegType32="true"/>
+                <bar:RegSzToVersion Key="HKEY_LOCAL_MACHINE" Subkey="Software\Microsoft\MSCRMClient" Value="CRM_Client_Serviceability_Version" Comparison="LessThan" Data="5.0.9690.2838" RegType32="true"/>
+              </lar:And>
+            </lar:Or>
+          </lar:And>
+        </lar:Or>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="Asscj0WfhB79mnRmjfbphp6kk3U=" DigestAlgorithm="SHA1" FileName="CRM2011-Client-KB2739504-v2-CSY-i386.exe" Size="42051352" Modified="2012-10-16T16:49:47.923Z">
+        <upd:AdditionalDigest Algorithm="SHA256">hWJ0IJSs0uL2NLdaT3hgOXtmqPBSOjBeqA1AjfPtRtw=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand Arguments="/quiet /norestart CRM.PATCH.ARGS=&quot;/q /norestart&quot;" Program="CRM2011-Client-KB2739504-v2-CSY-i386.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Succeeded" Code="0">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Failed" Code="3">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Do not have sufficient permission to access MSCRM_CONFIG</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="true" DefaultLocalizedDescription="en" Result="Succeeded" Code="2">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install succeeded and require restart</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+        <cmd:ReturnCode Reboot="false" DefaultLocalizedDescription="en" Result="Cancelled" Code="2147483647">
+          <cmd:LocalizedDescription>
+            <cmd:Language>en</cmd:Language>
+            <cmd:Description>Install cancelled</cmd:Description>
+          </cmd:LocalizedDescription>
+        </cmd:ReturnCode>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

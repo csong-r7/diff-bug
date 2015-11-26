@@ -1,0 +1,186 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="b670b5f4-101e-4b51-8cb2-31fb5e6c802b" RevisionNumber="103"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PublicationState="Published" CreationDate="2010-12-08T22:58:39.405Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="2371331" MinDownloadSize="2371331">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:UninstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary  0</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="d7f1d4f3-8c9b-4ca5-964a-ffb09b8ef369"/>
+        <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="fdfe8200-9d98-44ba-a12a-772282bf60ef"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <cbsar:CbsPackageInstalled xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <cbsar:CbsPackageInstallable xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules"/>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Cluster\clusres.dll" Csidl="36"/>
+          <bar:FileExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Path="\Cluster\clussvc.exe" Csidl="36"/>
+        </lar:And>
+      </upd:IsInstallable>
+      <upd:Metadata>
+        <cbsar:CbsPackageApplicabilityMetadata xmlns:cbsar="http://schemas.microsoft.com/msus/2002/12/CbsApplicabilityRules">
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:51Z" lastUpdateTimeStamp="2010-08-11T16:51:51Z">
+            <assemblyIdentity name="Package_for_KB2294255" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-6_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2294255_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:55Z" lastUpdateTimeStamp="2010-08-11T16:51:55Z">
+            <assemblyIdentity name="Package_1_for_KB2294255_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255_BF" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.20777" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e2cbad044789eec0eaa7d78a9e3417f2" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2294255-2_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="distribution">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusRes" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5a1444335ff1c4503560e71f8e9922ea" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:50Z" lastUpdateTimeStamp="2010-08-11T16:51:50Z">
+            <assemblyIdentity name="Package_1_for_KB2294255" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-1_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.20777" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="e2cbad044789eec0eaa7d78a9e3417f2" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2294255-2_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.16652" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusSvc" version="6.1.7600.16652" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="dc7da4a8a441cb38f3cd94bdb0395ed0" version="6.1.7600.16652" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2294255-3_neutral_LDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusRes" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="5a1444335ff1c4503560e71f8e9922ea" version="6.1.7600.20777" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+              <update name="2294255-4_neutral_GDR">
+                <applicable disposition="staged">
+                  <updateComponent elevate="revision">
+                    <assemblyIdentity name="Microsoft-Windows-FailoverCluster-ClusRes" version="6.1.7600.16652" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                  </updateComponent>
+                </applicable>
+                <component>
+                  <assemblyIdentity name="cc0f52b4d76cde5d32857b3b54f3fbaa" version="6.1.7600.16652" processorArchitecture="ia64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS"/>
+                </component>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:56Z" lastUpdateTimeStamp="2010-08-11T16:51:56Z">
+            <assemblyIdentity name="Package_for_KB2294255_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-3_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2294255_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:51Z" lastUpdateTimeStamp="2010-08-11T16:51:51Z">
+            <assemblyIdentity name="Package_for_KB2294255_RTM" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-5_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_1_for_KB2294255" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+          <assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB2294255" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="http://support.microsoft.com/?kbid=2294255" creationTimeStamp="2010-08-11T16:51:56Z" lastUpdateTimeStamp="2010-08-11T16:51:56Z">
+            <assemblyIdentity name="Package_for_KB2294255_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+            <package identifier="KB2294255_BF" applicabilityEvaluation="deep" releaseType="Security Update" restart="possible">
+              <parent buildCompare="EQ" serviceCompare="EQ" integrate="separate" disposition="detect">
+                <assemblyIdentity name="Microsoft-Windows-FailoverCluster-FullServer-Package" language="neutral" version="6.1.7600.16385" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35" buildType="release"/>
+              </parent>
+              <installerAssembly name="Microsoft-Windows-ServicingStack" version="6.0.0.0" language="neutral" processorArchitecture="ia64" versionScope="nonSxS" publicKeyToken="31bf3856ad364e35"/>
+              <update name="2294255-4_neutral_PACKAGE">
+                <package integrate="hidden">
+                  <assemblyIdentity name="Package_for_KB2294255_RTM_BF" version="6.1.1.0" language="neutral" processorArchitecture="ia64" publicKeyToken="31bf3856ad364e35"/>
+                </package>
+              </update>
+            </package>
+          </assembly>
+        </cbsar:CbsPackageApplicabilityMetadata>
+      </upd:Metadata>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="2B8Xlv5l9/1Btp5EtGMv1UniN6I=" DigestAlgorithm="SHA1" FileName="windows6.1-kb2294255-ia64.cab" Size="2371331" Modified="2010-09-01T09:46:17.997" PatchingType="SelfContained"/>
+      <upd:File Digest="q8w7afCc+2sXpEC7nCYVe5h12j8=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2294255-ia64-EXPRESS.cab" Size="26461" Modified="2010-09-01T09:46:18.093" PatchingType="Express"/>
+      <upd:File Digest="hIdpaNgJuTLiHr38jycBuFL8Oko=" DigestAlgorithm="SHA1" FileName="Windows6.1-KB2294255-ia64.psf" Size="13355383" Modified="2010-09-01T09:46:19.747" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cbs:Cbs">
+      <cbs:CbsData xmlns:cbs="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Cbs" PackageIdentity=""/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

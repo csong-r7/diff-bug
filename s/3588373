@@ -1,0 +1,50 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:psf="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="4611efd5-4667-44a0-8d0c-b0f2f98f7a15" RevisionNumber="101"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/WindowsPatch" PublicationState="Published" CreationDate="2010-02-03T05:35:08.197Z" PublisherID="395392a0-19c0-48b7-a927-f7c15066d905" MaxDownloadSize="611568" MinDownloadSize="502741">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+      <upd:Language>no</upd:Language>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Binary no</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="16f8bc41-69d2-402d-95b2-9a4b0e5d1d76"/>
+        <upd:UpdateIdentity UpdateID="cf3b8086-5954-4857-b492-339cbdeba89b"/>
+        <upd:UpdateIdentity UpdateID="3e0afb10-a9fb-4c16-a60e-5790c3803437"/>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="3b4b8621-726e-43a6-b43b-37d07ec7019f"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="GreaterThanOrEqualTo" Version="5.0.3900.7349"/>
+            <lar:Not>
+              <bar:FileExists Csidl="37" Path="\shlwapi.dll"/>
+            </lar:Not>
+          </lar:Or>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\KB975713"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <bar:FileVersion Csidl="37" Path="\shlwapi.dll" Comparison="LessThan" Version="5.0.3900.7349"/>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="wWJp3sLeJsGPhxs6jVIk09UrVBw=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975713-x86-NOR.EXE" Size="611568" Modified="2010-01-13T11:37:36.323" PatchingType="SelfContained"/>
+      <upd:File Digest="Q4iZZlMDpo4huNP/0/I411xGn6I=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975713-x86-Express-NOR.EXE" Size="493928" Modified="2010-01-13T11:37:36.573" PatchingType="Express"/>
+      <upd:File Digest="P3g7rHxrlI0jtiUF7WORQO2vYYM=" DigestAlgorithm="SHA1" FileName="Windows2000-KB975713-x86-NOR.psf" Size="523119" Modified="2010-01-13T11:37:36.81" PatchingType="Express"/>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="psf:WindowsPatch">
+      <psf:WindowsPatchData InstallParameters="-q -z -er"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

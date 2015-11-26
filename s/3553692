@@ -1,0 +1,28 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="844232e5-549a-4a48-ab6e-ab2a1e4335f8" RevisionNumber="100"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Detectoid" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" DetectoidType="Service Pack" PublicationState="Published" CreationDate="2010-01-14T20:27:13.333Z" PublisherID="fbf8494a-c257-4dc3-ad9d-df05d751fa21"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>AntigenSMTPUpdateDetectoid-975355</upd:Title>
+        <upd:Description>Checks if Antigen for SMTP SP2 is installed.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:UpdateIdentity UpdateID="2e0ba129-e1ec-477e-9f58-bdf8219c8067"/>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <bar:FileVersionPrependRegSz Path="AntigenService.exe" Comparison="GreaterThanOrEqualTo" Version="9.2.1097.50" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{1DDAFF1B-4059-4C8C-BFB6-B79F6F9B88B0}" Value="InstallLocation"/>
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="Software\Sybari Software\Antigen for SMTP"/>
+          <bar:RegSz Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{1DDAFF1B-4059-4C8C-BFB6-B79F6F9B88B0}" Value="DisplayName" Comparison="EqualTo" Data="Microsoft Antigen for SMTP" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+  </upd:Update>
+

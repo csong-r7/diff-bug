@@ -1,0 +1,63 @@
+
+
+  <upd:Update xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cat="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="8c3fcc84-7410-4a95-8b89-a166a0190486" RevisionNumber="108"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Category" ExplicitlyDeployable="false" PerUser="false" IsPublic="false" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/Category" PublicationState="Published" CreationDate="2012-04-23T22:59:10.206Z" PublisherID="bccf8ca0-2819-4598-8d15-c1506e363e92"/>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>Windows Defender</upd:Title>
+        <upd:Description>Windows Defender helps protect your computer against pop-ups, slow performance, and security threats caused by spyware and other unwanted software.</upd:Description>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne IsCategory="true">
+          <upd:UpdateIdentity UpdateID="6964aab4-c5b5-43bd-a17d-ffb4346a8e1d"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And>
+          <lar:Or>
+            <!-- Check OS version. Windows Vista, Windows 7 and Windows 8 have Defender installed in OS -->
+            <bar:WindowsVersion Comparison="GreaterThanOrEqualTo" MajorVersion="6" MinorVersion="0"/>
+            <!-- Downlevel, this is the product GUID for Defender setup -->
+            <mar:MsiProductInstalled ProductCode="{A06275F4-324B-4E85-95E6-87B2CD729401}"/>
+          </lar:Or>
+          <!-- The service must be deployed -->
+          <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WinDefend" Value="Start" Type="REG_DWORD"/>
+          <!-- The service must not be disabled -->
+          <lar:Not>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SYSTEM\CurrentControlSet\Services\WinDefend" Value="Start" Comparison="EqualTo" Data="4"/>
+          </lar:Not>
+          <!-- The product configuration root must exist -->
+          <bar:RegKeyExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender"/>
+          <!-- If Group Policy (GP) registry value Disable AntiSpyware exists and value is not enable it means Defender is disabled          
+               This rule will precede/override ANY user setting -->
+          <lar:Not>
+            <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1"/>
+          </lar:Not>
+          <lar:Or>
+            <!-- If GP exists and AS not disabled (data = 0) it means Defender is enabled 
+                 This rule will precede/override ANY user setting -->
+            <lar:And>
+              <!-- NOTE: the following reg value exists seems redundant since we check its value however due to what seems like
+                 a bug in WU the result of the EqualTo 0 is true even if the value does not exist -->
+              <bar:RegValueExists Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender" Value="DisableAntiSpyware" Type="REG_DWORD"/>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Policies\Microsoft\Windows Defender" Value="DisableAntiSpyware" Comparison="EqualTo" Data="0"/>
+            </lar:And>
+            <!-- If we got here it means no GP so Defender is enabled unless user disabled it -->
+            <lar:Not>
+              <bar:RegDword Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\Windows Defender" Value="DisableAntiSpyware" Comparison="GreaterThanOrEqualTo" Data="1"/>
+            </lar:Not>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstalled>
+    </upd:ApplicabilityRules>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cat:Category">
+      <cat:CategoryInformation CategoryType="Product" ProhibitsSubcategories="true"/>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+

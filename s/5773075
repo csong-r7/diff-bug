@@ -1,0 +1,126 @@
+
+
+  <upd:Update xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules" xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" xmlns:upd="http://schemas.microsoft.com/msus/2002/12/Update">
+    <upd:UpdateIdentity UpdateID="801548f1-7a7c-42ca-9835-b94c4c6f0387" RevisionNumber="106"/>
+    <upd:Properties DefaultPropertiesLanguage="en" UpdateType="Software" Handler="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" PublicationState="Published" CreationDate="2012-08-28T05:26:44.169Z" PublisherID="c5f724b4-b4f6-4d61-9685-141bbb39a074" MaxDownloadSize="722792" MinDownloadSize="0">
+      <upd:InstallationBehavior RebootBehavior="CanRequestReboot"/>
+    </upd:Properties>
+    <upd:LocalizedPropertiesCollection>
+      <upd:LocalizedProperties>
+        <upd:Language>en</upd:Language>
+        <upd:Title>x86 on x64 or ia64</upd:Title>
+      </upd:LocalizedProperties>
+    </upd:LocalizedPropertiesCollection>
+    <upd:Relationships>
+      <upd:Prerequisites>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="59653007-e2e9-4f71-8525-2ff588527978"/>
+          <upd:UpdateIdentity UpdateID="aabd43ad-a183-4f0b-8eee-8dbbcd67687f"/>
+        </upd:AtLeastOne>
+        <upd:AtLeastOne>
+          <upd:UpdateIdentity UpdateID="e3fde9f8-14d6-4b5c-911c-fba9e0fc9887"/>
+        </upd:AtLeastOne>
+      </upd:Prerequisites>
+    </upd:Relationships>
+    <upd:ApplicabilityRules>
+      <upd:IsInstalled>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\atl90sp1\Servicing\9.0\kb973924\1033" Value="Install" Type="REG_DWORD" RegType32="true"/>
+          <bar:RegDword xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\atl90sp1\Servicing\9.0\kb973924\1033" Value="Install" Comparison="EqualTo" Data="1" RegType32="true"/>
+        </lar:And>
+      </upd:IsInstalled>
+      <upd:IsInstallable>
+        <lar:And xmlns:lar="http://schemas.microsoft.com/msus/2002/12/LogicalApplicabilityRules">
+          <lar:Not>
+            <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1033" Value="Version" Type="REG_SZ" RegType32="true"/>
+          </lar:Not>
+          <lar:Or>
+            <lar:And>
+              <lar:Or>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{3c3d696b-0db7-3c6d-a356-3db8ce541918}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{86CE1746-9EFF-3C9C-8755-81EA8903AC34}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{CA8A885F-E95B-3FC6-BB91-F4D9377C7686}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{6AFCA4E1-9B78-3640-8F72-A7BF33448200}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{57660847-B1F7-35BD-9118-F62EB863A598}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{820B6609-4C97-3A2B-B644-573B06A0F0CC}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{F03CB3EF-DC16-35CE-B3C1-C68EA09E5E97}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{402ED4A1-8F5B-387A-8688-997ABF58B8F2}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{887868A2-D6DE-3255-AA92-AA0B5A59B874}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{527BBE2F-1FED-3D8B-91CB-4DB0F838E69E}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{5B1F2843-B379-3FF2-B0D3-64DD143ED53A}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{5351AFB4-087A-3D7E-BD6F-E58FE5A84C05}"/>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{9A25302D-30C0-39D9-BD6F-21E6EC160475}"/>
+              </lar:Or>
+              <lar:Not>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{1F1C2DFC-2D24-3E06-BCB8-725134ADF989}"/>
+              </lar:Not>
+            </lar:And>
+            <lar:And>
+              <lar:Or>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1033" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1033" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1041" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1041" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1031" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1031" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1040" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1040" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1036" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1036" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\3082" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\3082" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1028" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1028" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\2052" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\2052" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1042" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1042" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+                <lar:And>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1049" Value="Install" Type="REG_DWORD" RegType32="true"/>
+                  <bar:RegValueExists xmlns:bar="http://schemas.microsoft.com/msus/2002/12/BaseApplicabilityRules" Key="HKEY_LOCAL_MACHINE" Subkey="SOFTWARE\Microsoft\DevDiv\VC\Servicing\9.0\RED\1049" Value="SP" Type="REG_DWORD" RegType32="true"/>
+                </lar:And>
+              </lar:Or>
+              <lar:Not>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{1F1C2DFC-2D24-3E06-BCB8-725134ADF989}"/>
+              </lar:Not>
+              <lar:Not>
+                <mar:MsiProductInstalled xmlns:mar="http://schemas.microsoft.com/msus/2002/12/MsiApplicabilityRules" ProductCode="{E503B4BF-F7BB-3D5F-8BC8-F694B1CFF942}"/>
+              </lar:Not>
+            </lar:And>
+          </lar:Or>
+        </lar:And>
+      </upd:IsInstallable>
+    </upd:ApplicabilityRules>
+    <upd:Files>
+      <upd:File Digest="gLh5kRviBd5p18WeqX+Baf97iC4=" DigestAlgorithm="SHA1" FileName="ATL90SP1-KB973924-x86.exe" Size="722792" Modified="2009-07-23T16:30:59.703Z">
+        <upd:AdditionalDigest Algorithm="SHA256">C0QGoXiRB2JQXpp5NG4CAVMGWd3WQpEur02k4U3iyNI=</upd:AdditionalDigest>
+      </upd:File>
+    </upd:Files>
+    <upd:HandlerSpecificData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pub="http://schemas.microsoft.com/msus/2002/12/Publishing" xsi:type="cmd:CommandLineInstallation">
+      <cmd:InstallCommand xmlns:cmd="http://schemas.microsoft.com/msus/2002/12/UpdateHandlers/CommandLineInstallation" Arguments="/q:a /r:n" Program="ATL90SP1-KB973924-x86.exe" RebootByDefault="false" DefaultResult="Failed">
+        <cmd:ReturnCode Reboot="false" Result="Succeeded" Code="0"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="3010"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="1641"/>
+        <cmd:ReturnCode Reboot="true" Result="Succeeded" Code="-2147021886"/>
+      </cmd:InstallCommand>
+    </upd:HandlerSpecificData>
+  </upd:Update>
+
